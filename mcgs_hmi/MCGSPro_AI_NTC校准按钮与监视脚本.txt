@@ -1,0 +1,1460 @@
+============================================================
+MCGSPro PSC330 / PSC316 AI+NTC校准完整脚本
+生成日期：2026-09-08
+
+使用前提：
+1. 所有R开头变量都是设备连接变量。
+2. 所有偏移、温度、压力及可能出现负数的连接变量必须配置为
+   16位有符号整数。
+3. 本脚本使用“直接给连接变量赋值”的写法，不使用!SetDevice。
+4. 按钮脚本全部放在按钮的“抬起脚本”中。
+5. 最后一段监视脚本放在200ms循环策略中。
+6. 写入前必须让PSC330完全停机，R0709_开关机步骤=0。
+============================================================
+
+
+============================================================
+一、PSC330按钮脚本
+============================================================
+
+------------------------------------------------------------
+1. “读取当前值并备份原偏移”按钮抬起脚本
+
+n330CalSelectionOK = 0
+n330CalScale = 1
+
+If n330CalType = 0 Then
+    If n330CalChannel = 0 Then
+        n330CalCurrent = R0500_330_AI0房间压差
+        n330CalOldOffset = R0499_330_AI0偏移
+        n330CalSelectionOK = 1
+    EndIf
+    If n330CalChannel = 1 Then
+        n330CalCurrent = R0501_330_AI1回风湿度
+        n330CalOldOffset = R0498_330_AI1偏移
+        n330CalScale = 10
+        n330CalSelectionOK = 1
+    EndIf
+    If n330CalChannel = 2 Then
+        n330CalCurrent = R0903_330_AI2_CO2
+        n330CalOldOffset = R0497_330_AI2偏移
+        n330CalSelectionOK = 1
+    EndIf
+    If n330CalChannel = 3 Then
+        n330CalCurrent = R1125_330_AI3送风压力
+        n330CalOldOffset = R0496_330_AI3偏移
+        n330CalSelectionOK = 1
+    EndIf
+    If n330CalChannel = 4 Then
+        n330CalCurrent = R1126_330_AI3送风风速
+        n330CalOldOffset = R0496_330_AI3偏移
+        n330CalScale = 10
+        n330CalSelectionOK = 1
+    EndIf
+    If n330CalChannel = 5 Then
+        n330CalCurrent = R0519_330_AI4新风湿度
+        n330CalOldOffset = R0457_330_AI4偏移
+        n330CalScale = 10
+        n330CalSelectionOK = 1
+    EndIf
+Else
+    If n330CalType = 1 Then
+        n330CalScale = 10
+        If n330CalChannel = 0 Then
+            n330CalCurrent = R0511_330_NTC0回风温度
+            n330CalOldOffset = R0495_330_NTC0偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 1 Then
+            n330CalCurrent = R0510_330_NTC1送风温度
+            n330CalOldOffset = R0494_330_NTC1偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 2 Then
+            n330CalCurrent = R0512_330_NTC2新风温度
+            n330CalOldOffset = R0493_330_NTC2偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 3 Then
+            n330CalCurrent = R0513_330_NTC3预热后温度
+            n330CalOldOffset = R0492_330_NTC3偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 4 Then
+            n330CalCurrent = R0515_330_NTC4_A1盘管温度
+            n330CalOldOffset = R0491_330_NTC4偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 5 Then
+            n330CalCurrent = R0516_330_NTC5_A2盘管温度
+            n330CalOldOffset = R0490_330_NTC5偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 6 Then
+            n330CalCurrent = R0514_330_NTC6_B1盘管温度
+            n330CalOldOffset = R0489_330_NTC6偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 7 Then
+            n330CalCurrent = R0517_330_NTC7_B2盘管温度
+            n330CalOldOffset = R0488_330_NTC7偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 8 Then
+            n330CalCurrent = R0520_330_NTC8_C1盘管温度
+            n330CalOldOffset = R0487_330_NTC8偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 9 Then
+            n330CalCurrent = R0521_330_NTC9_C2盘管温度
+            n330CalOldOffset = R0486_330_NTC9偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 10 Then
+            n330CalCurrent = R0522_330_NTC10_D1盘管温度
+            n330CalOldOffset = R0485_330_NTC10偏移
+            n330CalSelectionOK = 1
+        EndIf
+        If n330CalChannel = 11 Then
+            n330CalCurrent = R0523_330_NTC11_D2盘管温度
+            n330CalOldOffset = R0484_330_NTC11偏移
+            n330CalSelectionOK = 1
+        EndIf
+    EndIf
+EndIf
+
+If n330CalSelectionOK <> 1 Then
+    n330CalResult = 100
+    Exit
+EndIf
+
+If n330CalCurrent = 9999 Then
+    n330CalResult = 101
+    Exit
+EndIf
+
+n330CalBackupType = n330CalType
+n330CalBackupChannel = n330CalChannel
+n330CalBackupOffset = n330CalOldOffset
+n330CalBackupValid = 1
+n330CalExpectedOffset = n330CalOldOffset
+n330CalResult = 1
+
+
+------------------------------------------------------------
+2. “计算新偏移”按钮抬起脚本
+
+If n330CalSelectionOK <> 1 Then
+    n330CalResult = 100
+    Exit
+EndIf
+
+If n330CalCurrent = 9999 Then
+    n330CalResult = 101
+    Exit
+EndIf
+
+If n330CalBackupValid <> 1 Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+If n330CalBackupType <> n330CalType Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+If n330CalBackupChannel <> n330CalChannel Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+n330CalStandardRaw = n330CalStandard * n330CalScale
+n330CalExpectedOffset = n330CalOldOffset + n330CalStandardRaw - n330CalCurrent
+
+If n330CalType = 0 Then
+    If n330CalExpectedOffset < -5000 Or n330CalExpectedOffset > 5000 Then
+        n330CalResult = 102
+        Exit
+    EndIf
+Else
+    If n330CalExpectedOffset < -500 Or n330CalExpectedOffset > 500 Then
+        n330CalResult = 102
+        Exit
+    EndIf
+EndIf
+
+n330CalResult = 2
+
+
+------------------------------------------------------------
+3. “确认写入”按钮抬起脚本
+
+If n330CalWriteCheck = 1 Then
+    n330CalResult = 106
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n330CalResult = 103
+    Exit
+EndIf
+
+If n330CalResult <> 2 Then
+    n330CalResult = 108
+    Exit
+EndIf
+
+If n330CalType = 0 Then
+    If n330CalExpectedOffset < -5000 Or n330CalExpectedOffset > 5000 Then
+        n330CalResult = 102
+        Exit
+    EndIf
+Else
+    If n330CalExpectedOffset < -500 Or n330CalExpectedOffset > 500 Then
+        n330CalResult = 102
+        Exit
+    EndIf
+EndIf
+
+n330CalWriteType = n330CalType
+n330CalWriteChannel = n330CalChannel
+n330CalTimeout = 0
+n330CalSaveWait = 0
+n330CalWriteCheck = 1
+n330CalResult = 3
+
+If n330CalWriteType = 0 Then
+    If n330CalWriteChannel = 0 Then
+        R0499_330_AI0偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0498_330_AI1偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0497_330_AI2偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 3 Then
+        R0496_330_AI3偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 4 Then
+        R0496_330_AI3偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0457_330_AI4偏移 = n330CalExpectedOffset
+    EndIf
+Else
+    If n330CalWriteChannel = 0 Then
+        R0495_330_NTC0偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0494_330_NTC1偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0493_330_NTC2偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 3 Then
+        R0492_330_NTC3偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 4 Then
+        R0491_330_NTC4偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0490_330_NTC5偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 6 Then
+        R0489_330_NTC6偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 7 Then
+        R0488_330_NTC7偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 8 Then
+        R0487_330_NTC8偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 9 Then
+        R0486_330_NTC9偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 10 Then
+        R0485_330_NTC10偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 11 Then
+        R0484_330_NTC11偏移 = n330CalExpectedOffset
+    EndIf
+EndIf
+
+
+------------------------------------------------------------
+4. “恢复本通道原偏移”按钮抬起脚本
+
+If n330CalWriteCheck = 1 Then
+    n330CalResult = 106
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n330CalResult = 103
+    Exit
+EndIf
+
+If n330CalBackupValid <> 1 Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+If n330CalBackupType <> n330CalType Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+If n330CalBackupChannel <> n330CalChannel Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+n330CalExpectedOffset = n330CalBackupOffset
+n330CalWriteType = n330CalBackupType
+n330CalWriteChannel = n330CalBackupChannel
+n330CalTimeout = 0
+n330CalSaveWait = 0
+n330CalWriteCheck = 1
+n330CalResult = 3
+
+If n330CalWriteType = 0 Then
+    If n330CalWriteChannel = 0 Then
+        R0499_330_AI0偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0498_330_AI1偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0497_330_AI2偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
+        R0496_330_AI3偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0457_330_AI4偏移 = n330CalExpectedOffset
+    EndIf
+Else
+    If n330CalWriteChannel = 0 Then
+        R0495_330_NTC0偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0494_330_NTC1偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0493_330_NTC2偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 3 Then
+        R0492_330_NTC3偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 4 Then
+        R0491_330_NTC4偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0490_330_NTC5偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 6 Then
+        R0489_330_NTC6偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 7 Then
+        R0488_330_NTC7偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 8 Then
+        R0487_330_NTC8偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 9 Then
+        R0486_330_NTC9偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 10 Then
+        R0485_330_NTC10偏移 = n330CalExpectedOffset
+    EndIf
+    If n330CalWriteChannel = 11 Then
+        R0484_330_NTC11偏移 = n330CalExpectedOffset
+    EndIf
+EndIf
+
+
+------------------------------------------------------------
+5. “偏移清零”按钮抬起脚本
+注意：清零不是恢复出厂，也不是恢复原值。
+
+If n330CalWriteCheck = 1 Then
+    n330CalResult = 106
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n330CalResult = 103
+    Exit
+EndIf
+
+If n330CalBackupValid <> 1 Then
+    n330CalResult = 107
+    Exit
+EndIf
+
+n330CalExpectedOffset = 0
+n330CalWriteType = n330CalType
+n330CalWriteChannel = n330CalChannel
+n330CalTimeout = 0
+n330CalSaveWait = 0
+n330CalWriteCheck = 1
+n330CalResult = 3
+
+If n330CalWriteType = 0 Then
+    If n330CalWriteChannel = 0 Then
+        R0499_330_AI0偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0498_330_AI1偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0497_330_AI2偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
+        R0496_330_AI3偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0457_330_AI4偏移 = 0
+    EndIf
+Else
+    If n330CalWriteChannel = 0 Then
+        R0495_330_NTC0偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 1 Then
+        R0494_330_NTC1偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 2 Then
+        R0493_330_NTC2偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 3 Then
+        R0492_330_NTC3偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 4 Then
+        R0491_330_NTC4偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 5 Then
+        R0490_330_NTC5偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 6 Then
+        R0489_330_NTC6偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 7 Then
+        R0488_330_NTC7偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 8 Then
+        R0487_330_NTC8偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 9 Then
+        R0486_330_NTC9偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 10 Then
+        R0485_330_NTC10偏移 = 0
+    EndIf
+    If n330CalWriteChannel = 11 Then
+        R0484_330_NTC11偏移 = 0
+    EndIf
+EndIf
+
+
+------------------------------------------------------------
+6. “取消本次操作”按钮抬起脚本
+
+n330CalWriteCheck = 0
+n330CalSaveWait = 0
+n330CalTimeout = 0
+n330CalExpectedOffset = n330CalOldOffset
+n330CalResult = 0
+
+
+============================================================
+二、PSC316按钮脚本
+============================================================
+
+------------------------------------------------------------
+1. “读取当前值并备份原偏移”按钮抬起脚本
+
+n316CalSelectionOK = 0
+n316CalScale = 1
+
+If n316CalUnit < 1 Or n316CalUnit > 4 Then
+    n316CalResult = 100
+    Exit
+EndIf
+
+If n316CalType = 0 Then
+    If n316CalChannel < 0 Or n316CalChannel > 3 Then
+        n316CalResult = 100
+        Exit
+    EndIf
+
+    If n316CalUnit = 1 Then
+        If n316CalChannel = 0 Then
+            n316CalCurrent = R1573_1_316_高压1
+            n316CalOldOffset = R2654_1_316_AI0高压1偏移
+        EndIf
+        If n316CalChannel = 1 Then
+            n316CalCurrent = R1575_1_316_高压2
+            n316CalOldOffset = R2655_1_316_AI1高压2偏移
+        EndIf
+        If n316CalChannel = 2 Then
+            n316CalCurrent = R1574_1_316_低压1
+            n316CalOldOffset = R2656_1_316_AI2低压1偏移
+        EndIf
+        If n316CalChannel = 3 Then
+            n316CalCurrent = R1576_1_316_低压2
+            n316CalOldOffset = R2657_1_316_AI3低压2偏移
+        EndIf
+    EndIf
+
+    If n316CalUnit = 2 Then
+        If n316CalChannel = 0 Then
+            n316CalCurrent = R1643_2_316_高压1
+            n316CalOldOffset = R2658_2_316_AI0高压1偏移
+        EndIf
+        If n316CalChannel = 1 Then
+            n316CalCurrent = R1645_2_316_高压2
+            n316CalOldOffset = R2659_2_316_AI1高压2偏移
+        EndIf
+        If n316CalChannel = 2 Then
+            n316CalCurrent = R1644_2_316_低压1
+            n316CalOldOffset = R2660_2_316_AI2低压1偏移
+        EndIf
+        If n316CalChannel = 3 Then
+            n316CalCurrent = R1646_2_316_低压2
+            n316CalOldOffset = R2661_2_316_AI3低压2偏移
+        EndIf
+    EndIf
+
+    If n316CalUnit = 3 Then
+        If n316CalChannel = 0 Then
+            n316CalCurrent = R1713_3_316_高压1
+            n316CalOldOffset = R2662_3_316_AI0高压1偏移
+        EndIf
+        If n316CalChannel = 1 Then
+            n316CalCurrent = R1715_3_316_高压2
+            n316CalOldOffset = R2663_3_316_AI1高压2偏移
+        EndIf
+        If n316CalChannel = 2 Then
+            n316CalCurrent = R1714_3_316_低压1
+            n316CalOldOffset = R2664_3_316_AI2低压1偏移
+        EndIf
+        If n316CalChannel = 3 Then
+            n316CalCurrent = R1716_3_316_低压2
+            n316CalOldOffset = R2665_3_316_AI3低压2偏移
+        EndIf
+    EndIf
+
+    If n316CalUnit = 4 Then
+        If n316CalChannel = 0 Then
+            n316CalCurrent = R1783_4_316_高压1
+            n316CalOldOffset = R2666_4_316_AI0高压1偏移
+        EndIf
+        If n316CalChannel = 1 Then
+            n316CalCurrent = R1785_4_316_高压2
+            n316CalOldOffset = R2667_4_316_AI1高压2偏移
+        EndIf
+        If n316CalChannel = 2 Then
+            n316CalCurrent = R1784_4_316_低压1
+            n316CalOldOffset = R2668_4_316_AI2低压1偏移
+        EndIf
+        If n316CalChannel = 3 Then
+            n316CalCurrent = R1786_4_316_低压2
+            n316CalOldOffset = R2669_4_316_AI3低压2偏移
+        EndIf
+    EndIf
+    n316CalSelectionOK = 1
+Else
+    If n316CalType = 1 Then
+        If n316CalChannel < 0 Or n316CalChannel > 7 Then
+            n316CalResult = 100
+            Exit
+        EndIf
+        n316CalScale = 10
+
+        If n316CalUnit = 1 Then
+            If n316CalChannel = 0 Then
+                n316CalCurrent = R1552_1_316_NTC0环境温度
+                n316CalOldOffset = R2534_1_316_NTC0环境偏移
+            EndIf
+            If n316CalChannel = 1 Then
+                n316CalCurrent = R1561_1_316_NTC1盘管1温度
+                n316CalOldOffset = R2535_1_316_NTC1盘管1偏移
+            EndIf
+            If n316CalChannel = 2 Then
+                n316CalCurrent = R1562_1_316_NTC2盘管2温度
+                n316CalOldOffset = R2536_1_316_NTC2盘管2偏移
+            EndIf
+            If n316CalChannel = 3 Then
+                n316CalCurrent = R1563_1_316_NTC3排气1温度
+                n316CalOldOffset = R2537_1_316_NTC3排气1偏移
+            EndIf
+            If n316CalChannel = 4 Then
+                n316CalCurrent = R1564_1_316_NTC4排气2温度
+                n316CalOldOffset = R2538_1_316_NTC4排气2偏移
+            EndIf
+            If n316CalChannel = 5 Then
+                n316CalCurrent = R1565_1_316_NTC5吸气1温度
+                n316CalOldOffset = R2539_1_316_NTC5吸气1偏移
+            EndIf
+            If n316CalChannel = 6 Then
+                n316CalCurrent = R1566_1_316_NTC6吸气2温度
+                n316CalOldOffset = R2540_1_316_NTC6吸气2偏移
+            EndIf
+            If n316CalChannel = 7 Then
+                n316CalCurrent = R1553_1_316_NTC7阀后1温度
+                n316CalOldOffset = R2541_1_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+
+        If n316CalUnit = 2 Then
+            If n316CalChannel = 0 Then
+                n316CalCurrent = R1622_2_316_NTC0环境温度
+                n316CalOldOffset = R2550_2_316_NTC0环境偏移
+            EndIf
+            If n316CalChannel = 1 Then
+                n316CalCurrent = R1631_2_316_NTC1盘管1温度
+                n316CalOldOffset = R2551_2_316_NTC1盘管1偏移
+            EndIf
+            If n316CalChannel = 2 Then
+                n316CalCurrent = R1632_2_316_NTC2盘管2温度
+                n316CalOldOffset = R2552_2_316_NTC2盘管2偏移
+            EndIf
+            If n316CalChannel = 3 Then
+                n316CalCurrent = R1633_2_316_NTC3排气1温度
+                n316CalOldOffset = R2553_2_316_NTC3排气1偏移
+            EndIf
+            If n316CalChannel = 4 Then
+                n316CalCurrent = R1634_2_316_NTC4排气2温度
+                n316CalOldOffset = R2554_2_316_NTC4排气2偏移
+            EndIf
+            If n316CalChannel = 5 Then
+                n316CalCurrent = R1635_2_316_NTC5吸气1温度
+                n316CalOldOffset = R2555_2_316_NTC5吸气1偏移
+            EndIf
+            If n316CalChannel = 6 Then
+                n316CalCurrent = R1636_2_316_NTC6吸气2温度
+                n316CalOldOffset = R2556_2_316_NTC6吸气2偏移
+            EndIf
+            If n316CalChannel = 7 Then
+                n316CalCurrent = R1623_2_316_NTC7阀后1温度
+                n316CalOldOffset = R2557_2_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+
+        If n316CalUnit = 3 Then
+            If n316CalChannel = 0 Then
+                n316CalCurrent = R1692_3_316_NTC0环境温度
+                n316CalOldOffset = R2566_3_316_NTC0环境偏移
+            EndIf
+            If n316CalChannel = 1 Then
+                n316CalCurrent = R1701_3_316_NTC1盘管1温度
+                n316CalOldOffset = R2567_3_316_NTC1盘管1偏移
+            EndIf
+            If n316CalChannel = 2 Then
+                n316CalCurrent = R1702_3_316_NTC2盘管2温度
+                n316CalOldOffset = R2568_3_316_NTC2盘管2偏移
+            EndIf
+            If n316CalChannel = 3 Then
+                n316CalCurrent = R1703_3_316_NTC3排气1温度
+                n316CalOldOffset = R2569_3_316_NTC3排气1偏移
+            EndIf
+            If n316CalChannel = 4 Then
+                n316CalCurrent = R1704_3_316_NTC4排气2温度
+                n316CalOldOffset = R2570_3_316_NTC4排气2偏移
+            EndIf
+            If n316CalChannel = 5 Then
+                n316CalCurrent = R1705_3_316_NTC5吸气1温度
+                n316CalOldOffset = R2571_3_316_NTC5吸气1偏移
+            EndIf
+            If n316CalChannel = 6 Then
+                n316CalCurrent = R1706_3_316_NTC6吸气2温度
+                n316CalOldOffset = R2572_3_316_NTC6吸气2偏移
+            EndIf
+            If n316CalChannel = 7 Then
+                n316CalCurrent = R1693_3_316_NTC7阀后1温度
+                n316CalOldOffset = R2573_3_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+
+        If n316CalUnit = 4 Then
+            If n316CalChannel = 0 Then
+                n316CalCurrent = R1762_4_316_NTC0环境温度
+                n316CalOldOffset = R2582_4_316_NTC0环境偏移
+            EndIf
+            If n316CalChannel = 1 Then
+                n316CalCurrent = R1771_4_316_NTC1盘管1温度
+                n316CalOldOffset = R2583_4_316_NTC1盘管1偏移
+            EndIf
+            If n316CalChannel = 2 Then
+                n316CalCurrent = R1772_4_316_NTC2盘管2温度
+                n316CalOldOffset = R2584_4_316_NTC2盘管2偏移
+            EndIf
+            If n316CalChannel = 3 Then
+                n316CalCurrent = R1773_4_316_NTC3排气1温度
+                n316CalOldOffset = R2585_4_316_NTC3排气1偏移
+            EndIf
+            If n316CalChannel = 4 Then
+                n316CalCurrent = R1774_4_316_NTC4排气2温度
+                n316CalOldOffset = R2586_4_316_NTC4排气2偏移
+            EndIf
+            If n316CalChannel = 5 Then
+                n316CalCurrent = R1775_4_316_NTC5吸气1温度
+                n316CalOldOffset = R2587_4_316_NTC5吸气1偏移
+            EndIf
+            If n316CalChannel = 6 Then
+                n316CalCurrent = R1776_4_316_NTC6吸气2温度
+                n316CalOldOffset = R2588_4_316_NTC6吸气2偏移
+            EndIf
+            If n316CalChannel = 7 Then
+                n316CalCurrent = R1763_4_316_NTC7阀后1温度
+                n316CalOldOffset = R2589_4_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+        n316CalSelectionOK = 1
+    EndIf
+EndIf
+
+If n316CalSelectionOK <> 1 Then
+    n316CalResult = 100
+    Exit
+EndIf
+
+If n316CalCurrent = 9999 Then
+    n316CalResult = 101
+    Exit
+EndIf
+
+If n316CalOnline <> 1 Then
+    n316CalResult = 104
+    Exit
+EndIf
+
+n316CalBackupUnit = n316CalUnit
+n316CalBackupType = n316CalType
+n316CalBackupChannel = n316CalChannel
+n316CalBackupOffset = n316CalOldOffset
+n316CalBackupValid = 1
+n316CalExpectedOffset = n316CalOldOffset
+n316CalResult = 1
+
+
+------------------------------------------------------------
+2. “计算新偏移”按钮抬起脚本
+
+If n316CalSelectionOK <> 1 Then
+    n316CalResult = 100
+    Exit
+EndIf
+
+If n316CalCurrent = 9999 Then
+    n316CalResult = 101
+    Exit
+EndIf
+
+If n316CalBackupValid <> 1 Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+If n316CalBackupUnit <> n316CalUnit Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupType <> n316CalType Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupChannel <> n316CalChannel Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+n316CalStandardRaw = n316CalStandard * n316CalScale
+n316CalExpectedOffset = n316CalOldOffset + n316CalStandardRaw - n316CalCurrent
+
+If n316CalType = 0 Then
+    If n316CalExpectedOffset < -5000 Or n316CalExpectedOffset > 5000 Then
+        n316CalResult = 102
+        Exit
+    EndIf
+Else
+    If n316CalExpectedOffset < -500 Or n316CalExpectedOffset > 500 Then
+        n316CalResult = 102
+        Exit
+    EndIf
+EndIf
+
+n316CalResult = 2
+
+
+------------------------------------------------------------
+3. “确认写入”按钮抬起脚本
+
+If n316CalWriteCheck = 1 Then
+    n316CalResult = 109
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n316CalResult = 103
+    Exit
+EndIf
+
+If n316CalOnline <> 1 Then
+    n316CalResult = 104
+    Exit
+EndIf
+
+If n316CalGatewayStatus = 1 Then
+    n316CalResult = 105
+    Exit
+EndIf
+
+If n316CalResult <> 2 Then
+    n316CalResult = 111
+    Exit
+EndIf
+
+If n316CalType = 0 Then
+    If n316CalExpectedOffset < -5000 Or n316CalExpectedOffset > 5000 Then
+        n316CalResult = 102
+        Exit
+    EndIf
+Else
+    If n316CalExpectedOffset < -500 Or n316CalExpectedOffset > 500 Then
+        n316CalResult = 102
+        Exit
+    EndIf
+EndIf
+
+n316CalWriteUnit = n316CalUnit
+n316CalWriteType = n316CalType
+n316CalWriteChannel = n316CalChannel
+n316CalTimeout = 0
+n316CalSaveWait = 0
+n316CalSawBusy = 0
+n316CalWriteCheck = 1
+n316CalResult = 3
+
+If n316CalWriteType = 0 Then
+    If n316CalWriteUnit = 1 Then
+        If n316CalWriteChannel = 0 Then
+            R2654_1_316_AI0高压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2655_1_316_AI1高压2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2656_1_316_AI2低压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2657_1_316_AI3低压2偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 2 Then
+        If n316CalWriteChannel = 0 Then
+            R2658_2_316_AI0高压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2659_2_316_AI1高压2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2660_2_316_AI2低压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2661_2_316_AI3低压2偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 3 Then
+        If n316CalWriteChannel = 0 Then
+            R2662_3_316_AI0高压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2663_3_316_AI1高压2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2664_3_316_AI2低压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2665_3_316_AI3低压2偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 4 Then
+        If n316CalWriteChannel = 0 Then
+            R2666_4_316_AI0高压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2667_4_316_AI1高压2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2668_4_316_AI2低压1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2669_4_316_AI3低压2偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+Else
+    If n316CalWriteUnit = 1 Then
+        If n316CalWriteChannel = 0 Then
+            R2534_1_316_NTC0环境偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2535_1_316_NTC1盘管1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2536_1_316_NTC2盘管2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2537_1_316_NTC3排气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 4 Then
+            R2538_1_316_NTC4排气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 5 Then
+            R2539_1_316_NTC5吸气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 6 Then
+            R2540_1_316_NTC6吸气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 7 Then
+            R2541_1_316_NTC7阀后1偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 2 Then
+        If n316CalWriteChannel = 0 Then
+            R2550_2_316_NTC0环境偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2551_2_316_NTC1盘管1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2552_2_316_NTC2盘管2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2553_2_316_NTC3排气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 4 Then
+            R2554_2_316_NTC4排气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 5 Then
+            R2555_2_316_NTC5吸气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 6 Then
+            R2556_2_316_NTC6吸气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 7 Then
+            R2557_2_316_NTC7阀后1偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 3 Then
+        If n316CalWriteChannel = 0 Then
+            R2566_3_316_NTC0环境偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2567_3_316_NTC1盘管1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2568_3_316_NTC2盘管2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2569_3_316_NTC3排气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 4 Then
+            R2570_3_316_NTC4排气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 5 Then
+            R2571_3_316_NTC5吸气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 6 Then
+            R2572_3_316_NTC6吸气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 7 Then
+            R2573_3_316_NTC7阀后1偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+    If n316CalWriteUnit = 4 Then
+        If n316CalWriteChannel = 0 Then
+            R2582_4_316_NTC0环境偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 1 Then
+            R2583_4_316_NTC1盘管1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 2 Then
+            R2584_4_316_NTC2盘管2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 3 Then
+            R2585_4_316_NTC3排气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 4 Then
+            R2586_4_316_NTC4排气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 5 Then
+            R2587_4_316_NTC5吸气1偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 6 Then
+            R2588_4_316_NTC6吸气2偏移 = n316CalExpectedOffset
+        EndIf
+        If n316CalWriteChannel = 7 Then
+            R2589_4_316_NTC7阀后1偏移 = n316CalExpectedOffset
+        EndIf
+    EndIf
+EndIf
+
+
+------------------------------------------------------------
+4. “恢复本通道原偏移”按钮抬起脚本
+
+If n316CalWriteCheck = 1 Then
+    n316CalResult = 109
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n316CalResult = 103
+    Exit
+EndIf
+
+If n316CalBackupValid <> 1 Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+If n316CalBackupUnit <> n316CalUnit Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupType <> n316CalType Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupChannel <> n316CalChannel Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+n316CalExpectedOffset = n316CalBackupOffset
+n316CalResult = 2
+
+'复用“确认写入”按钮完成恢复：
+'此按钮只把预期值设为备份值。
+'按完本按钮后，再按一次“确认写入”。
+
+
+------------------------------------------------------------
+5. “偏移清零”按钮抬起脚本
+注意：清零不是恢复原值。清零后仍须再按“确认写入”。
+
+If n316CalWriteCheck = 1 Then
+    n316CalResult = 109
+    Exit
+EndIf
+
+If R0709_开关机步骤 <> 0 Then
+    n316CalResult = 103
+    Exit
+EndIf
+
+If n316CalBackupValid <> 1 Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+If n316CalBackupUnit <> n316CalUnit Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupType <> n316CalType Then
+    n316CalResult = 110
+    Exit
+EndIf
+If n316CalBackupChannel <> n316CalChannel Then
+    n316CalResult = 110
+    Exit
+EndIf
+
+n316CalExpectedOffset = 0
+n316CalResult = 2
+
+
+------------------------------------------------------------
+6. “取消本次操作”按钮抬起脚本
+
+'这里只停止MCGS继续监视，不会撤回已经发给控制器的写入。
+n316CalWriteCheck = 0
+n316CalSaveWait = 0
+n316CalTimeout = 0
+n316CalSawBusy = 0
+n316CalExpectedOffset = n316CalOldOffset
+n316CalResult = 0
+
+
+============================================================
+三、200ms循环策略脚本
+策略名称建议：校准写入监视
+执行周期：200ms
+============================================================
+
+'-----------------------------------------------------------
+'1. 实时显示当前所选PSC316的在线、写状态和错误码
+'-----------------------------------------------------------
+
+If n316CalUnit = 1 Then
+    n316CalOnline = R1872_1_外机_在线状态
+    n316CalGatewayStatus = R1873_1_外机_写状态
+    n316CalGatewayError = R1874_1_外机_错误码
+EndIf
+If n316CalUnit = 2 Then
+    n316CalOnline = R1920_2_外机_在线状态
+    n316CalGatewayStatus = R1921_2_外机_写状态
+    n316CalGatewayError = R1922_2_外机_错误码
+EndIf
+If n316CalUnit = 3 Then
+    n316CalOnline = R1968_3_外机_在线状态
+    n316CalGatewayStatus = R1969_3_外机_写状态
+    n316CalGatewayError = R1970_3_外机_错误码
+EndIf
+If n316CalUnit = 4 Then
+    n316CalOnline = R2016_4_外机_在线状态
+    n316CalGatewayStatus = R2017_4_外机_写状态
+    n316CalGatewayError = R2018_4_外机_错误码
+EndIf
+
+'-----------------------------------------------------------
+'2. PSC330写入读回监视
+'-----------------------------------------------------------
+
+If n330CalWriteCheck = 1 Then
+    n330CalTimeout = n330CalTimeout + 1
+
+    If n330CalWriteType = 0 Then
+        If n330CalWriteChannel = 0 Then
+            n330CalReadback = R0499_330_AI0偏移
+        EndIf
+        If n330CalWriteChannel = 1 Then
+            n330CalReadback = R0498_330_AI1偏移
+        EndIf
+        If n330CalWriteChannel = 2 Then
+            n330CalReadback = R0497_330_AI2偏移
+        EndIf
+        If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
+            n330CalReadback = R0496_330_AI3偏移
+        EndIf
+        If n330CalWriteChannel = 5 Then
+            n330CalReadback = R0457_330_AI4偏移
+        EndIf
+    Else
+        If n330CalWriteChannel = 0 Then
+            n330CalReadback = R0495_330_NTC0偏移
+        EndIf
+        If n330CalWriteChannel = 1 Then
+            n330CalReadback = R0494_330_NTC1偏移
+        EndIf
+        If n330CalWriteChannel = 2 Then
+            n330CalReadback = R0493_330_NTC2偏移
+        EndIf
+        If n330CalWriteChannel = 3 Then
+            n330CalReadback = R0492_330_NTC3偏移
+        EndIf
+        If n330CalWriteChannel = 4 Then
+            n330CalReadback = R0491_330_NTC4偏移
+        EndIf
+        If n330CalWriteChannel = 5 Then
+            n330CalReadback = R0490_330_NTC5偏移
+        EndIf
+        If n330CalWriteChannel = 6 Then
+            n330CalReadback = R0489_330_NTC6偏移
+        EndIf
+        If n330CalWriteChannel = 7 Then
+            n330CalReadback = R0488_330_NTC7偏移
+        EndIf
+        If n330CalWriteChannel = 8 Then
+            n330CalReadback = R0487_330_NTC8偏移
+        EndIf
+        If n330CalWriteChannel = 9 Then
+            n330CalReadback = R0486_330_NTC9偏移
+        EndIf
+        If n330CalWriteChannel = 10 Then
+            n330CalReadback = R0485_330_NTC10偏移
+        EndIf
+        If n330CalWriteChannel = 11 Then
+            n330CalReadback = R0484_330_NTC11偏移
+        EndIf
+    EndIf
+
+    If n330CalReadback = n330CalExpectedOffset Then
+        n330CalWriteCheck = 0
+        n330CalSaveWait = 1
+        n330CalResult = 4
+    Else
+        If n330CalTimeout >= 100 Then
+            n330CalWriteCheck = 0
+            n330CalResult = 105
+        EndIf
+    EndIf
+EndIf
+
+If n330CalSaveWait > 0 Then
+    n330CalSaveWait = n330CalSaveWait + 1
+    If n330CalSaveWait >= 25 Then
+        n330CalSaveWait = 0
+        n330CalResult = 5
+    EndIf
+EndIf
+
+'-----------------------------------------------------------
+'3. PSC316网关写状态和目标地址读回监视
+'-----------------------------------------------------------
+
+If n316CalWriteCheck = 1 Then
+    n316CalTimeout = n316CalTimeout + 1
+
+    If n316CalWriteUnit = 1 Then
+        n316CalWriteStatus = R1873_1_外机_写状态
+        n316CalWriteError = R1874_1_外机_错误码
+    EndIf
+    If n316CalWriteUnit = 2 Then
+        n316CalWriteStatus = R1921_2_外机_写状态
+        n316CalWriteError = R1922_2_外机_错误码
+    EndIf
+    If n316CalWriteUnit = 3 Then
+        n316CalWriteStatus = R1969_3_外机_写状态
+        n316CalWriteError = R1970_3_外机_错误码
+    EndIf
+    If n316CalWriteUnit = 4 Then
+        n316CalWriteStatus = R2017_4_外机_写状态
+        n316CalWriteError = R2018_4_外机_错误码
+    EndIf
+
+    If n316CalWriteStatus = 1 Then
+        n316CalSawBusy = 1
+    EndIf
+
+    If n316CalWriteType = 0 Then
+        If n316CalWriteUnit = 1 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2654_1_316_AI0高压1偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2655_1_316_AI1高压2偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2656_1_316_AI2低压1偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2657_1_316_AI3低压2偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 2 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2658_2_316_AI0高压1偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2659_2_316_AI1高压2偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2660_2_316_AI2低压1偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2661_2_316_AI3低压2偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 3 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2662_3_316_AI0高压1偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2663_3_316_AI1高压2偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2664_3_316_AI2低压1偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2665_3_316_AI3低压2偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 4 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2666_4_316_AI0高压1偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2667_4_316_AI1高压2偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2668_4_316_AI2低压1偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2669_4_316_AI3低压2偏移
+            EndIf
+        EndIf
+    Else
+        If n316CalWriteUnit = 1 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2534_1_316_NTC0环境偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2535_1_316_NTC1盘管1偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2536_1_316_NTC2盘管2偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2537_1_316_NTC3排气1偏移
+            EndIf
+            If n316CalWriteChannel = 4 Then
+                n316CalReadback = R2538_1_316_NTC4排气2偏移
+            EndIf
+            If n316CalWriteChannel = 5 Then
+                n316CalReadback = R2539_1_316_NTC5吸气1偏移
+            EndIf
+            If n316CalWriteChannel = 6 Then
+                n316CalReadback = R2540_1_316_NTC6吸气2偏移
+            EndIf
+            If n316CalWriteChannel = 7 Then
+                n316CalReadback = R2541_1_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 2 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2550_2_316_NTC0环境偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2551_2_316_NTC1盘管1偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2552_2_316_NTC2盘管2偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2553_2_316_NTC3排气1偏移
+            EndIf
+            If n316CalWriteChannel = 4 Then
+                n316CalReadback = R2554_2_316_NTC4排气2偏移
+            EndIf
+            If n316CalWriteChannel = 5 Then
+                n316CalReadback = R2555_2_316_NTC5吸气1偏移
+            EndIf
+            If n316CalWriteChannel = 6 Then
+                n316CalReadback = R2556_2_316_NTC6吸气2偏移
+            EndIf
+            If n316CalWriteChannel = 7 Then
+                n316CalReadback = R2557_2_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 3 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2566_3_316_NTC0环境偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2567_3_316_NTC1盘管1偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2568_3_316_NTC2盘管2偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2569_3_316_NTC3排气1偏移
+            EndIf
+            If n316CalWriteChannel = 4 Then
+                n316CalReadback = R2570_3_316_NTC4排气2偏移
+            EndIf
+            If n316CalWriteChannel = 5 Then
+                n316CalReadback = R2571_3_316_NTC5吸气1偏移
+            EndIf
+            If n316CalWriteChannel = 6 Then
+                n316CalReadback = R2572_3_316_NTC6吸气2偏移
+            EndIf
+            If n316CalWriteChannel = 7 Then
+                n316CalReadback = R2573_3_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+        If n316CalWriteUnit = 4 Then
+            If n316CalWriteChannel = 0 Then
+                n316CalReadback = R2582_4_316_NTC0环境偏移
+            EndIf
+            If n316CalWriteChannel = 1 Then
+                n316CalReadback = R2583_4_316_NTC1盘管1偏移
+            EndIf
+            If n316CalWriteChannel = 2 Then
+                n316CalReadback = R2584_4_316_NTC2盘管2偏移
+            EndIf
+            If n316CalWriteChannel = 3 Then
+                n316CalReadback = R2585_4_316_NTC3排气1偏移
+            EndIf
+            If n316CalWriteChannel = 4 Then
+                n316CalReadback = R2586_4_316_NTC4排气2偏移
+            EndIf
+            If n316CalWriteChannel = 5 Then
+                n316CalReadback = R2587_4_316_NTC5吸气1偏移
+            EndIf
+            If n316CalWriteChannel = 6 Then
+                n316CalReadback = R2588_4_316_NTC6吸气2偏移
+            EndIf
+            If n316CalWriteChannel = 7 Then
+                n316CalReadback = R2589_4_316_NTC7阀后1偏移
+            EndIf
+        EndIf
+    EndIf
+
+    If n316CalWriteStatus = 3 Then
+        n316CalWriteCheck = 0
+        n316CalResult = 106
+    Else
+        If n316CalWriteStatus = 2 Then
+            If n316CalSawBusy = 1 Then
+                If n316CalReadback = n316CalExpectedOffset Then
+                    n316CalWriteCheck = 0
+                    n316CalSaveWait = 1
+                    n316CalResult = 4
+                Else
+                    n316CalWriteCheck = 0
+                    n316CalResult = 107
+                EndIf
+            EndIf
+        EndIf
+    EndIf
+
+    If n316CalTimeout >= 100 Then
+        n316CalWriteCheck = 0
+        n316CalResult = 108
+    EndIf
+EndIf
+
+If n316CalSaveWait > 0 Then
+    n316CalSaveWait = n316CalSaveWait + 1
+    If n316CalSaveWait >= 25 Then
+        n316CalSaveWait = 0
+        n316CalResult = 5
+    EndIf
+EndIf
+
+
+============================================================
+四、通道选择按钮脚本
+每个按钮只放对应的三行或两行。
+============================================================
+
+PSC330选择AI0示例：
+n330CalType = 0
+n330CalChannel = 0
+n330CalSelectionOK = 0
+
+PSC330选择NTC0示例：
+n330CalType = 1
+n330CalChannel = 0
+n330CalSelectionOK = 0
+
+PSC316选择1号外机：
+n316CalUnit = 1
+n316CalSelectionOK = 0
+
+PSC316选择AI0高压1：
+n316CalType = 0
+n316CalChannel = 0
+n316CalSelectionOK = 0
+
+PSC316选择NTC0环境温度：
+n316CalType = 1
+n316CalChannel = 0
+n316CalSelectionOK = 0
+
+其它按钮只修改表中对应的Unit、Type和Channel数字。

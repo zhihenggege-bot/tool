@@ -1,0 +1,125 @@
+flowchart TB
+    START(["控制周期开始"]) --> INPUT["取得目标需求 T<br/>室内温湿度PID：0～CN<br/>环境制冷：≥HLM满载，≤HLC空载，中间线性向上取整<br/>环境制热：≤HRM满载，≥HRC空载，中间线性向上取整"]
+    INPUT --> LIMIT["限制 T 在 0～CN<br/>CN最大为8台"]
+    LIMIT --> SAFETY{"整机停机、消防、紧急停机<br/>或要求全部压缩机停止？"}
+
+    SAFETY -- "是" --> STOPALL["撤销全部压缩机运行命令<br/>紧急保护按保护逻辑立即处理"]
+    STOPALL --> HOLD0["实际运行数降为0<br/>所有外机板运行计时停止"]
+
+    SAFETY -- "否" --> EVENT{"是否发生重新选择事件？"}
+    EVENT -- "否" --> STABLE{"当前运行数量和组合<br/>仍满足上一次选择结果？"}
+    STABLE -- "是" --> NOROTATE["保持原组合<br/>禁止仅因运行时间变化自动轮换"]
+    NOROTATE --> TIMER
+    STABLE -- "否" --> FILTER
+
+    EVENT -- "是" --> FILTER["重新建立候选表和目标组合<br/>排除禁用、故障、通信异常、蒸发盘管锁定<br/>化霜外机不参与普通加减载<br/>剩余需求≥2时优先完整健康双压外机"]
+    FILTER --> COUNT["读取实际运行数量 C"]
+    COUNT --> COMPARE{"比较目标 T 与实际 C"}
+
+    COMPARE -- "T = 0" --> NORMALSTOP{"是否还有压缩机运行？"}
+    NORMALSTOP -- "否" --> HOLD0
+    NORMALSTOP -- "是" --> UNLOADENTRY
+
+    COMPARE -- "C < T，需要加载" --> LOADENTRY
+    COMPARE -- "C > T，需要减载" --> UNLOADENTRY
+    COMPARE -- "C = T" --> VALID{"原选择组合是否有效？<br/>运行压缩机健康、未禁用、未退出候选"}
+    VALID -- "是" --> NOROTATE
+    VALID -- "否" --> REPAIR["撤销失效压缩机命令<br/>按完整双压外机优先重新建立目标组合"]
+    REPAIR --> COUNT
+
+    subgraph LOAD["加载流程：每次只启动1台"]
+        LOADENTRY["进入加载选择"] --> RUNNINGUNIT{"目标组合中的双压外机<br/>是否已有1台运行、另1台可启动？"}
+        RUNNINGUNIT -- "有" --> RUNSELECT["优先补齐该外机第二台压缩机"]
+        RUNNINGUNIT -- "没有" --> STOPPEDUNIT["从目标组合中选择尚未运行的外机"]
+
+        RUNSELECT --> RUNBOARD{"存在多个可加载运行外机？"}
+        RUNBOARD -- "是" --> RUNBOARDSELECT["优先板运行时间较短者<br/>时长差≤2小时按外机序号"]
+        RUNBOARD -- "否" --> COMPSELECT
+        RUNBOARDSELECT --> COMPSELECT
+
+        STOPPEDUNIT --> BOARDCOMPARE{"候选外机板运行时间<br/>最大值与最小值相差≤2小时？"}
+        BOARDCOMPARE -- "是" --> BOARDNO["按外机序号选择<br/>外机1→2→3→4"]
+        BOARDCOMPARE -- "否" --> BOARDSHORT["选择板累计运行时间最短的外机"]
+        BOARDNO --> COMPSELECT
+        BOARDSHORT --> COMPSELECT
+
+        COMPSELECT["在选中外机内选择压缩机<br/>优先累计运行时间较短者"] --> CANSTART{"满足启动条件？<br/>最小停机≥120秒<br/>全局动作间隔≥30秒"}
+        CANSTART -- "否" --> LOADWAIT["等待条件满足<br/>或选择其他真正可启动的候选"]
+        LOADWAIT --> LOADENTRY
+        CANSTART -- "是" --> STARTONE["下发1台压缩机启动命令"]
+        STARTONE --> FEEDBACK{"规定时间内收到运行反馈？"}
+        FEEDBACK -- "是" --> RECOUNTLOAD["重新读取实际运行数量 C"]
+        FEEDBACK -- "否" --> BYPASS["撤销该压缩机命令<br/>临时排除并选择其他压缩机补位"]
+        BYPASS --> LOADENTRY
+        RECOUNTLOAD --> LOADEND{"C达到T？"}
+        LOADEND -- "否" --> GAPLOAD["等待全局30秒动作间隔"]
+        GAPLOAD --> LOADENTRY
+        LOADEND -- "是" --> LOCK["锁定本次选择组合"]
+    end
+
+    subgraph UNLOAD["减载流程：每次只关闭1台"]
+        UNLOADENTRY["进入减载选择"] --> UNLOADCANDIDATE["筛选正在运行且允许关闭的压缩机<br/>化霜外机不参与普通减载"]
+        UNLOADCANDIDATE --> CANUNLOAD{"存在满足最小运行时间的候选？<br/>最小运行≥180秒"}
+        CANUNLOAD -- "否" --> UNLOADWAIT["保持当前状态并等待"]
+        UNLOADWAIT --> UNLOADENTRY
+        CANUNLOAD -- "是" --> LONGBOARD["优先选择板累计运行时间最长的外机"]
+        LONGBOARD --> LONGCOMP["同一外机内<br/>优先关闭累计运行时间较长的压缩机"]
+        LONGCOMP --> STOPONE["撤销1台压缩机运行命令"]
+        STOPONE --> RECOUNTUNLOAD["重新读取实际运行数量 C"]
+        RECOUNTUNLOAD --> UNLOADEND{"C已经降到T？"}
+        UNLOADEND -- "否" --> GAPUNLOAD["等待全局30秒动作间隔"]
+        GAPUNLOAD --> UNLOADENTRY
+        UNLOADEND -- "是" --> LOCK
+    end
+
+    LOCK --> NOROTATE
+
+    subgraph BOARDTIME["每块PSC316外机板运行时间"]
+        TIMER["每秒检查该外机两台压缩机"] --> ANYRUN{"至少一台压缩机运行？"}
+        ANYRUN -- "是" --> ADDTIME["外机板累计运行时间 +1秒<br/>两台同时运行也只加1秒"]
+        ANYRUN -- "否" --> PAUSETIME["外机板累计运行时间保持不变"]
+        ADDTIME --> SAVE["按保存策略写入非易失存储<br/>并上传PSC330用于排序"]
+        PAUSETIME --> SAVE
+    end
+
+    subgraph EVENTS["触发重新选择的条件"]
+        E1["目标需求发生变化：0～8台"]
+        E2["开机后首次选择"]
+        E3["运行压缩机故障或被禁用"]
+        E4["外机通信故障或恢复"]
+        E5["进入或退出化霜"]
+        E6["原启动命令超时无反馈"]
+    end
+
+    subgraph DISTRIBUTION["健康双压缩机外机的优先分布"]
+        D0["T=0：0"]
+        D1["T=1：1"]
+        D2["T=2：2（同一外机优先）"]
+        D3["T=3：2+1"]
+        D4["T=4：2+2"]
+        D5["T=5：2+2+1"]
+        D6["T=6：2+2+2"]
+        D7["T=7：2+2+2+1"]
+        D8["T=8：2+2+2+2"]
+    end
+
+    NOTE1["故障重组选例<br/>目标2台：外机1仅剩1台健康，外机2有2台健康<br/>最终结果=外机2两台；只有无外机可独立提供2台时才采用1+1"]:::note
+    NOTE2["组合只在重新选择时建立<br/>正常稳定运行时，即使板运行时间排序变化<br/>也不得主动停机轮换"]:::note
+    NOTE3["外机板运行时间定义<br/>任意压缩机运行就计时<br/>两台全停才停止计时"]:::note
+
+    EVENTS -. "任一条件成立" .-> EVENT
+    DISTRIBUTION -. "用于形成目标组合" .-> LOADENTRY
+    FILTER -. "资源不足时允许降级" .-> NOTE1
+    NOROTATE -.-> NOTE2
+    TIMER -.-> NOTE3
+
+    classDef start fill:#176b87,color:#ffffff,stroke:#0e4457,stroke-width:2px;
+    classDef decision fill:#fff4cc,color:#1f2933,stroke:#b7791f,stroke-width:1.5px;
+    classDef action fill:#e8f4ea,color:#1f2933,stroke:#3c7a4a,stroke-width:1.2px;
+    classDef stop fill:#fde8e7,color:#1f2933,stroke:#b33a3a,stroke-width:1.5px;
+    classDef note fill:#eef2f7,color:#1f2933,stroke:#65758b,stroke-dasharray:5 4;
+
+    class START start;
+    class SAFETY,EVENT,STABLE,COMPARE,NORMALSTOP,VALID,RUNNINGUNIT,RUNBOARD,BOARDCOMPARE,CANSTART,FEEDBACK,LOADEND,CANUNLOAD,UNLOADEND,ANYRUN decision;
+    class INPUT,LIMIT,FILTER,COUNT,NOROTATE,REPAIR,LOADENTRY,RUNSELECT,STOPPEDUNIT,RUNBOARDSELECT,BOARDNO,BOARDSHORT,COMPSELECT,LOADWAIT,STARTONE,RECOUNTLOAD,BYPASS,GAPLOAD,LOCK,UNLOADENTRY,UNLOADCANDIDATE,UNLOADWAIT,LONGBOARD,LONGCOMP,STOPONE,RECOUNTUNLOAD,GAPUNLOAD,TIMER,ADDTIME,PAUSETIME,SAVE action;
+    class STOPALL,HOLD0 stop;

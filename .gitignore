@@ -1,0 +1,44 @@
+# ===== 外层基线仓库 .gitignore =====
+# 目的:只收纳顶层的监控工具/HMI/文档源码作为基线,排除:
+#   (a) 两个已各自独立版本控制的固件仓库(在它们自己的 repo 里)
+#   (b) 可再生的编译/打包产物与大二进制
+# 漏排的任何"代码"可用 git add -f 强制加入。
+
+# --- 已独立版本控制的固件仓库(不作为嵌入仓库纳入外层) ---
+PSC316RK-V12-外机/
+PSC330RK-V10-内机/
+
+# --- Python 监控工具:打包/构建/发布产物 ---
+psc330_monitor_tool/**/build_exe*/
+psc330_monitor_tool/**/release*/
+psc330_monitor_tool/**/dist/
+**/__pycache__/
+*.pyc
+*.pyo
+*.spec
+
+# --- HMI 工程内嵌的 Python 工具链(打包 PIL 等二进制) ---
+mcgs_hmi/.tools/
+mcgs_hmi/.tools32/
+
+# --- HMI 备份与编辑器残留 ---
+mcgs_hmi/backups/
+*.MCP.bak
+*.MCP.user.bak
+*.MCP.mcgs
+*_McgsPro*.old
+*.mcgs
+
+# --- 备份 / 临时 / 编辑器残留 ---
+.codex-tmp/
+.codex-tmp-before-encoding-repair/
+_utf8tmp/
+backups/
+*.bak
+*.old
+~$*
+*.ldb
+
+# --- 大归档与固件二进制镜像 ---
+*.zip
+*.bin

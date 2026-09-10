@@ -1,0 +1,263 @@
+============================================================
+MCGSPro PSC330 每天单时段定时完整脚本
+生成日期：2026-09-08
+
+功能：
+1. 只设置一个开始时间和一个结束时间。
+2. 星期一至星期日每天都执行相同时间。
+3. 默认00:00至00:00，表示尚未设置有效时段，不自动开机。
+4. 支持跨午夜，例如22:00至06:00。
+5. 使用设备连接变量直接赋值，不使用!SetDevice。
+
+脚本安装位置：
+1. 第一段放到“启用每天定时”按钮的抬起脚本。
+2. 第二段放到“停止定时并关机”按钮的抬起脚本。
+3. 第三段放到1秒循环策略。
+============================================================
+
+
+============================================================
+一、“启用每天定时”按钮抬起脚本
+============================================================
+
+'检查开始时间
+If nDailyStartHour < 0 Or nDailyStartHour > 23 Then
+    nDailyScheduleConfigError = 1
+    nDailyScheduleResult = 101
+    Exit
+EndIf
+
+If nDailyStartMinute < 0 Or nDailyStartMinute > 59 Then
+    nDailyScheduleConfigError = 1
+    nDailyScheduleResult = 101
+    Exit
+EndIf
+
+'检查结束时间
+If nDailyEndHour < 0 Or nDailyEndHour > 23 Then
+    nDailyScheduleConfigError = 1
+    nDailyScheduleResult = 101
+    Exit
+EndIf
+
+If nDailyEndMinute < 0 Or nDailyEndMinute > 59 Then
+    nDailyScheduleConfigError = 1
+    nDailyScheduleResult = 101
+    Exit
+EndIf
+
+'取消尚未完成的退出任务
+nDailyScheduleExitPending = 0
+nDailyScheduleConfigError = 0
+nDailyScheduleResult = 1
+
+'本地使能必须掉电保持
+bDailyScheduleEnable = 1
+
+'直接写PSC330定时模式使能
+R0165_定时模式使能 = 1
+
+
+============================================================
+二、“停止定时并关机”按钮抬起脚本
+============================================================
+
+'停止本地定时计算
+bDailyScheduleEnable = 0
+
+'先要求PSC330按正常关机顺序关机
+R1388_定时运行目标 = 0
+
+'循环策略等待709回到0后，才退出定时控制
+nDailyScheduleExitPending = 1
+nDailyScheduleResult = 5
+
+
+============================================================
+三、1秒循环策略脚本
+策略名称建议：每天单时段定时
+执行周期：1000ms
+============================================================
+
+'-----------------------------------------------------------
+'1. 读取触摸屏当前时间
+'-----------------------------------------------------------
+
+iDailyScheduleNow = !TimeGetCurrentTime()
+
+If iDailyScheduleNow <= 0 Then
+    nDailyScheduleClockError = 1
+    nDailyScheduleTarget = 0
+    nDailyScheduleActive = 0
+
+    '时钟异常时，已启用定时则要求安全停机
+    If bDailyScheduleEnable = 1 Then
+        R1388_定时运行目标 = 0
+    EndIf
+
+    nDailyScheduleResult = 102
+    Exit
+EndIf
+
+nDailyScheduleClockError = 0
+nDailyNowHour = !TimeGetHour(iDailyScheduleNow)
+nDailyNowMinute = !TimeGetMinute(iDailyScheduleNow)
+nDailyNowSecond = !TimeGetSecond(iDailyScheduleNow)
+strDailyScheduleNow = !TimeI2Str(iDailyScheduleNow,"%Y-%m-%d %H:%M:%S")
+
+'-----------------------------------------------------------
+'2. 检查设置范围
+'-----------------------------------------------------------
+
+nDailyScheduleConfigError = 0
+
+If nDailyStartHour < 0 Or nDailyStartHour > 23 Then
+    nDailyScheduleConfigError = 1
+EndIf
+
+If nDailyStartMinute < 0 Or nDailyStartMinute > 59 Then
+    nDailyScheduleConfigError = 1
+EndIf
+
+If nDailyEndHour < 0 Or nDailyEndHour > 23 Then
+    nDailyScheduleConfigError = 1
+EndIf
+
+If nDailyEndMinute < 0 Or nDailyEndMinute > 59 Then
+    nDailyScheduleConfigError = 1
+EndIf
+
+If nDailyScheduleConfigError = 1 Then
+    nDailyScheduleTarget = 0
+    nDailyScheduleActive = 0
+
+    '设置越界时，已启用定时则要求安全停机
+    If bDailyScheduleEnable = 1 Then
+        R1388_定时运行目标 = 0
+    EndIf
+
+    nDailyScheduleResult = 101
+    Exit
+EndIf
+
+'-----------------------------------------------------------
+'3. 把时间换算成当天分钟数
+'-----------------------------------------------------------
+
+nDailyNowTotalMinute = nDailyNowHour * 60 + nDailyNowMinute
+nDailyStartTotalMinute = nDailyStartHour * 60 + nDailyStartMinute
+nDailyEndTotalMinute = nDailyEndHour * 60 + nDailyEndMinute
+
+'-----------------------------------------------------------
+'4. 判断当前是否在每天运行时段内
+'
+'普通时段示例：08:00至18:00，18:00到点立即停机
+'跨午夜示例：22:00至06:00，06:00到点立即停机
+'开始时间等于结束时间时，按无有效时段处理，目标为停机。
+'-----------------------------------------------------------
+
+nDailyScheduleActive = 0
+
+If nDailyStartTotalMinute <> nDailyEndTotalMinute Then
+    If nDailyStartTotalMinute < nDailyEndTotalMinute Then
+        If nDailyNowTotalMinute >= nDailyStartTotalMinute Then
+            If nDailyNowTotalMinute < nDailyEndTotalMinute Then
+                nDailyScheduleActive = 1
+            EndIf
+        EndIf
+    Else
+        '开始时间大于结束时间，表示跨午夜
+        If nDailyNowTotalMinute >= nDailyStartTotalMinute Then
+            nDailyScheduleActive = 1
+        EndIf
+
+        If nDailyNowTotalMinute < nDailyEndTotalMinute Then
+            nDailyScheduleActive = 1
+        EndIf
+    EndIf
+EndIf
+
+nDailyScheduleTarget = nDailyScheduleActive
+
+'-----------------------------------------------------------
+'5. “停止定时并关机”的退出流程
+'
+'必须先保持165=1、1388=0，让PSC330完成正常关机。
+'只有709回到0后，才能把165改成0退出定时控制。
+'-----------------------------------------------------------
+
+If nDailyScheduleExitPending = 1 Then
+    If R0165_定时模式使能 <> 1 Then
+        R0165_定时模式使能 = 1
+    EndIf
+
+    If R1388_定时运行目标 <> 0 Then
+        R1388_定时运行目标 = 0
+    EndIf
+
+    If R0709_开关机步骤 = 0 Then
+        R0165_定时模式使能 = 0
+        nDailyScheduleExitPending = 0
+        nDailyScheduleResult = 6
+    Else
+        nDailyScheduleResult = 5
+    EndIf
+
+    Exit
+EndIf
+
+'-----------------------------------------------------------
+'6. 定时启用后，把计算目标写给PSC330
+'-----------------------------------------------------------
+
+If bDailyScheduleEnable = 1 Then
+    '保证PSC330处于定时控制
+    If R0165_定时模式使能 <> 1 Then
+        R0165_定时模式使能 = 1
+    EndIf
+
+    '只有目标变化或设备读回不一致时才重写
+    If R1388_定时运行目标 <> nDailyScheduleTarget Then
+        R1388_定时运行目标 = nDailyScheduleTarget
+        nDailyScheduleResult = 3
+    Else
+        If R0714_当前控制方式 = 3 Then
+            nDailyScheduleResult = 2
+        Else
+            nDailyScheduleResult = 4
+        EndIf
+    EndIf
+Else
+    '本地未启用且没有退出任务时，不干涉普通控制
+    If nDailyScheduleResult <> 6 Then
+        nDailyScheduleResult = 0
+    EndIf
+EndIf
+
+
+============================================================
+四、可选：“恢复默认00:00至00:00”按钮抬起脚本
+============================================================
+
+nDailyStartHour = 0
+nDailyStartMinute = 0
+nDailyEndHour = 0
+nDailyEndMinute = 0
+nDailyScheduleConfigError = 0
+nDailyScheduleResult = 7
+
+
+============================================================
+五、结果码
+============================================================
+
+0   定时未启用
+1   已按启用按钮，等待PSC330读回
+2   定时运行正常，控制方式714已经为3
+3   正在把当前目标写入1388
+4   165或714尚未确认进入定时控制
+5   正在按正常顺序关机，等待709回到0
+6   已关机并退出定时控制
+7   已恢复默认时间00:00至00:00
+101 时间设置越界
+102 触摸屏时钟异常

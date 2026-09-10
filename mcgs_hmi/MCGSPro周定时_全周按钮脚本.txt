@@ -1,0 +1,164 @@
+'========================================================
+'一、14个“启用/停用本时段”按钮
+'每段脚本分别放到对应按钮的“抬起脚本”
+'不要放到“按下脚本”
+'========================================================
+
+'星期一第1时段
+If bMon1Enable = 0 Then
+    bMon1Enable = 1
+Else
+    bMon1Enable = 0
+EndIf
+
+'星期一第2时段
+If bMon2Enable = 0 Then
+    bMon2Enable = 1
+Else
+    bMon2Enable = 0
+EndIf
+
+'星期二第1时段
+If bTue1Enable = 0 Then
+    bTue1Enable = 1
+Else
+    bTue1Enable = 0
+EndIf
+
+'星期二第2时段
+If bTue2Enable = 0 Then
+    bTue2Enable = 1
+Else
+    bTue2Enable = 0
+EndIf
+
+'星期三第1时段
+If bWed1Enable = 0 Then
+    bWed1Enable = 1
+Else
+    bWed1Enable = 0
+EndIf
+
+'星期三第2时段
+If bWed2Enable = 0 Then
+    bWed2Enable = 1
+Else
+    bWed2Enable = 0
+EndIf
+
+'星期四第1时段
+If bThu1Enable = 0 Then
+    bThu1Enable = 1
+Else
+    bThu1Enable = 0
+EndIf
+
+'星期四第2时段
+If bThu2Enable = 0 Then
+    bThu2Enable = 1
+Else
+    bThu2Enable = 0
+EndIf
+
+'星期五第1时段
+If bFri1Enable = 0 Then
+    bFri1Enable = 1
+Else
+    bFri1Enable = 0
+EndIf
+
+'星期五第2时段
+If bFri2Enable = 0 Then
+    bFri2Enable = 1
+Else
+    bFri2Enable = 0
+EndIf
+
+'星期六第1时段
+If bSat1Enable = 0 Then
+    bSat1Enable = 1
+Else
+    bSat1Enable = 0
+EndIf
+
+'星期六第2时段
+If bSat2Enable = 0 Then
+    bSat2Enable = 1
+Else
+    bSat2Enable = 0
+EndIf
+
+'星期日第1时段
+If bSun1Enable = 0 Then
+    bSun1Enable = 1
+Else
+    bSun1Enable = 0
+EndIf
+
+'星期日第2时段
+If bSun2Enable = 0 Then
+    bSun2Enable = 1
+Else
+    bSun2Enable = 0
+EndIf
+
+'========================================================
+'二、“启用周定时”按钮的抬起脚本
+'========================================================
+If nScheduleClockError <> 0 Then
+    nScheduleResult = 101
+Else
+    If nScheduleConfigError <> 0 Then
+        nScheduleResult = 102
+    Else
+        bScheduleMasterEnable = 1
+        nScheduleExitStep = 0
+        nScheduleWriteCooldown = 0
+        nScheduleResult = 1
+        nScheduleModeOne = 1
+        R0165_定时模式使能 = 1
+    EndIf
+EndIf
+
+'========================================================
+'三、“退出定时并保持当前状态”按钮的抬起脚本
+'退出后由163设置的本地/远程/PLC来源接管
+'========================================================
+bScheduleMasterEnable = 0
+nScheduleExitStep = 2
+nScheduleWriteCooldown = 0
+nScheduleResult = 9
+nScheduleModeZero = 0
+R0165_定时模式使能 = 0
+
+'========================================================
+'四、“停机并退出定时”按钮的抬起脚本
+'先正常停机，709回到0后循环策略自动退出165
+'========================================================
+bScheduleMasterEnable = 0
+nScheduleTarget = 0
+nScheduleExitStep = 1
+nScheduleWriteCooldown = 0
+nScheduleResult = 7
+nScheduleModeZero = 0
+R1388_定时运行目标 = 0
+
+'========================================================
+'五、“全部时段禁用”按钮的抬起脚本
+'这里只关闭14个时段，不退出定时模式
+'下一次循环会计算目标为0并要求正常停机
+'========================================================
+bMon1Enable = 0
+bMon2Enable = 0
+bTue1Enable = 0
+bTue2Enable = 0
+bWed1Enable = 0
+bWed2Enable = 0
+bThu1Enable = 0
+bThu2Enable = 0
+bFri1Enable = 0
+bFri2Enable = 0
+bSat1Enable = 0
+bSat2Enable = 0
+bSun1Enable = 0
+bSun2Enable = 0

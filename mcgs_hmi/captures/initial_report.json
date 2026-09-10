@@ -1,0 +1,685 @@
+﻿PIL does not seem to be installed. PIL is required for capture_as_image
+{
+  "project": "D:\\Companty\\WEll thinker\\F\\code\\mcgs_hmi\\PSC330_\u5b9a\u9891\u76f4\u81a8\u673a_HMI\u5f00\u53d1_1024x600.MCP",
+  "action": "inspect",
+  "process_id": 108080,
+  "main": {
+    "handle": 471812,
+    "title": "McgsPro\u7ec4\u6001\u73af\u5883",
+    "class_name": "#32770",
+    "visible": true,
+    "enabled": true,
+    "rectangle": [
+      763,
+      464,
+      1157,
+      686
+    ]
+  },
+  "main_descendants": [
+    {
+      "handle": 864608,
+      "title": "\u786e\u5b9a",
+      "class_name": "Button",
+      "visible": true,
+      "enabled": true,
+      "rectangle": [
+        1026,
+        625,
+        1126,
+        660
+      ],
+      "control_id": 2
+    },
+    {
+      "handle": 7156072,
+      "title": "",
+      "class_name": "Static",
+      "visible": true,
+      "enabled": true,
+      "rectangle": [
+        800,
+        537,
+        840,
+        577
+      ],
+      "control_id": 20
+    },
+    {
+      "handle": 733540,
+      "title": "\u4e0d\u80fd\u540c\u65f6\u7528\u4e24\u4e2a\u7ec4\u6001\u73af\u5883\u6253\u5f00\u540c\u4e00\u4e2a\u5de5\u7a0b!",
+      "class_name": "Static",
+      "visible": true,
+      "enabled": true,
+      "rectangle": [
+        850,
+        547,
+        1108,
+        570
+      ],
+      "control_id": 65535
+    }
+  ],
+  "windows": [
+    {
+      "handle": 471812,
+      "title": "McgsPro\u7ec4\u6001\u73af\u5883",
+      "class_name": "#32770",
+      "visible": true,
+      "enabled": true,
+      "rectangle": [
+        763,
+        464,
+        1157,
+        686
+      ],
+      "descendants": [
+        {
+          "handle": 864608,
+          "title": "\u786e\u5b9a",
+          "class_name": "Button",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            1026,
+            625,
+            1126,
+            660
+          ],
+          "control_id": 2
+        },
+        {
+          "handle": 7156072,
+          "title": "",
+          "class_name": "Static",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            800,
+            537,
+            840,
+            577
+          ],
+          "control_id": 20
+        },
+        {
+          "handle": 733540,
+          "title": "\u4e0d\u80fd\u540c\u65f6\u7528\u4e24\u4e2a\u7ec4\u6001\u73af\u5883\u6253\u5f00\u540c\u4e00\u4e2a\u5de5\u7a0b!",
+          "class_name": "Static",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            850,
+            547,
+            1108,
+            570
+          ],
+          "control_id": 65535
+        }
+      ]
+    },
+    {
+      "handle": 7811938,
+      "title": "McgsPro\u7ec4\u6001\u73af\u5883",
+      "class_name": "Afx:00E20000:8:00010003:00000000:67EA2C9B",
+      "visible": true,
+      "enabled": false,
+      "rectangle": [
+        -9,
+        -9,
+        1929,
+        1159
+      ],
+      "descendants": [
+        {
+          "handle": 864982,
+          "title": "",
+          "class_name": "MDIClient",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            0,
+            84,
+            1920,
+            1129
+          ],
+          "control_id": 59648
+        },
+        {
+          "handle": 537022,
+          "title": "",
+          "class_name": "Afx:00E20000:b:00010003:00000006:7D2B2607",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            660,
+            456,
+            1260,
+            756
+          ],
+          "control_id": 65280
+        },
+        {
+          "handle": 667160,
+          "title": "",
+          "class_name": "SysTabControl32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            676,
+            500,
+            1244,
+            741
+          ],
+          "control_id": 31001
+        },
+        {
+          "handle": 995770,
+          "title": "",
+          "class_name": "msctls_updown32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1196,
+            511,
+            1244,
+            535
+          ],
+          "control_id": 1
+        },
+        {
+          "handle": 3092982,
+          "title": "",
+          "class_name": "SysListView32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            685,
+            543,
+            1145,
+            735
+          ],
+          "control_id": 31002
+        },
+        {
+          "handle": 1714484,
+          "title": "",
+          "class_name": "SysHeader32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            688,
+            546,
+            688,
+            546
+          ],
+          "control_id": 0
+        },
+        {
+          "handle": 2304604,
+          "title": "",
+          "class_name": "SysListView32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            685,
+            543,
+            1145,
+            735
+          ],
+          "control_id": 31002
+        },
+        {
+          "handle": 6173084,
+          "title": "",
+          "class_name": "SysHeader32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            688,
+            546,
+            688,
+            546
+          ],
+          "control_id": 0
+        },
+        {
+          "handle": 2699696,
+          "title": "",
+          "class_name": "SysListView32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            685,
+            543,
+            1145,
+            735
+          ],
+          "control_id": 31002
+        },
+        {
+          "handle": 471446,
+          "title": "",
+          "class_name": "SysHeader32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            688,
+            546,
+            688,
+            546
+          ],
+          "control_id": 0
+        },
+        {
+          "handle": 6827428,
+          "title": "",
+          "class_name": "SysListView32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            685,
+            543,
+            1145,
+            735
+          ],
+          "control_id": 31002
+        },
+        {
+          "handle": 471438,
+          "title": "",
+          "class_name": "SysHeader32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            688,
+            546,
+            688,
+            546
+          ],
+          "control_id": 0
+        },
+        {
+          "handle": 10825248,
+          "title": "",
+          "class_name": "SysListView32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            685,
+            543,
+            1145,
+            735
+          ],
+          "control_id": 31002
+        },
+        {
+          "handle": 12398976,
+          "title": "",
+          "class_name": "SysHeader32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            688,
+            546,
+            688,
+            546
+          ],
+          "control_id": 0
+        },
+        {
+          "handle": 537156,
+          "title": "\u52a8\u753b\u7ec4\u6001",
+          "class_name": "Button",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1155,
+            551,
+            1235,
+            581
+          ],
+          "control_id": 31003
+        },
+        {
+          "handle": 7221786,
+          "title": "\u65b0\u5efa\u7a97\u53e3",
+          "class_name": "Button",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1155,
+            591,
+            1235,
+            621
+          ],
+          "control_id": 31004
+        },
+        {
+          "handle": 10892008,
+          "title": "\u7a97\u53e3\u5c5e\u6027",
+          "class_name": "Button",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1155,
+            651,
+            1235,
+            681
+          ],
+          "control_id": 31005
+        },
+        {
+          "handle": 3812078,
+          "title": "\u6807\u51c6\u5de5\u5177\u6761",
+          "class_name": "AfxControlBar110u",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            0,
+            54,
+            1920,
+            84
+          ],
+          "control_id": 59419
+        },
+        {
+          "handle": 1454854,
+          "title": "\u8868\u683c\u7f16\u8f91\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59409
+        },
+        {
+          "handle": 6368582,
+          "title": "\u52a8\u753b\u7f16\u8f91\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            84,
+            -2,
+            84
+          ],
+          "control_id": 59408
+        },
+        {
+          "handle": 2896450,
+          "title": "\u8bbe\u5907\u7a97\u53e3\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59407
+        },
+        {
+          "handle": 5256048,
+          "title": "\u83dc\u5355\u7ec4\u6001\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59406
+        },
+        {
+          "handle": 5059512,
+          "title": "",
+          "class_name": "ComboBox",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            587,
+            59,
+            704,
+            80
+          ],
+          "control_id": 34111
+        },
+        {
+          "handle": 1061528,
+          "title": "\u52a8\u753b\u7ec4\u6001\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59405
+        },
+        {
+          "handle": 996004,
+          "title": "100%",
+          "class_name": "ComboBox",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            594,
+            59,
+            671,
+            80
+          ],
+          "control_id": 34026
+        },
+        {
+          "handle": 8199120,
+          "title": "",
+          "class_name": "ComboBox",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            705,
+            59,
+            822,
+            80
+          ],
+          "control_id": 34111
+        },
+        {
+          "handle": 35394656,
+          "title": "\u72b6\u60010",
+          "class_name": "ComboBox",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            925,
+            59,
+            1012,
+            80
+          ],
+          "control_id": 34116
+        },
+        {
+          "handle": 602714,
+          "title": "\u7b56\u7565\u7ec4\u6001\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59404
+        },
+        {
+          "handle": 2503360,
+          "title": "\u5de5\u4f5c\u53f0\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            -2,
+            54
+          ],
+          "control_id": 59403
+        },
+        {
+          "handle": 1257898,
+          "title": "",
+          "class_name": "ComboBox",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            502,
+            59,
+            619,
+            80
+          ],
+          "control_id": 34111
+        },
+        {
+          "handle": 2699922,
+          "title": "\u6807\u51c6\u5de5\u5177\u6761",
+          "class_name": "ToolbarWindow32",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            -2,
+            54,
+            114,
+            86
+          ],
+          "control_id": 59402
+        },
+        {
+          "handle": 1127284,
+          "title": "",
+          "class_name": "AfxControlBar110u",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            0,
+            1150,
+            1920,
+            1150
+          ],
+          "control_id": 59422
+        },
+        {
+          "handle": 27140848,
+          "title": "",
+          "class_name": "AfxControlBar110u",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            0,
+            84,
+            0,
+            1150
+          ],
+          "control_id": 59420
+        },
+        {
+          "handle": 996190,
+          "title": "",
+          "class_name": "AfxControlBar110u",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            1920,
+            84,
+            1920,
+            1150
+          ],
+          "control_id": 59421
+        },
+        {
+          "handle": 405988,
+          "title": "\u51c6\u5907\u5c31\u7eea,\u7b49\u5f85\u64cd\u4f5c\u3002",
+          "class_name": "msctls_statusbar32",
+          "visible": true,
+          "enabled": true,
+          "rectangle": [
+            0,
+            1129,
+            1920,
+            1150
+          ],
+          "control_id": 59393
+        },
+        {
+          "handle": 405992,
+          "title": "",
+          "class_name": "Edit",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1682,
+            1132,
+            1720,
+            1149
+          ],
+          "control_id": 100
+        },
+        {
+          "handle": 405982,
+          "title": "",
+          "class_name": "Edit",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1727,
+            1132,
+            1765,
+            1149
+          ],
+          "control_id": 101
+        },
+        {
+          "handle": 405980,
+          "title": "",
+          "class_name": "Edit",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1796,
+            1132,
+            1834,
+            1149
+          ],
+          "control_id": 102
+        },
+        {
+          "handle": 2173734,
+          "title": "",
+          "class_name": "Edit",
+          "visible": false,
+          "enabled": true,
+          "rectangle": [
+            1841,
+            1132,
+            1879,
+            1149
+          ],
+          "control_id": 103
+        }
+      ]
+    }
+  ],
+  "success": false,
+  "error": "AttributeError: 'NoneType' object has no attribute 'save'"
+}

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>压缩机0-8台加减载完整流程图</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+      background: #f4f6f8;
+      color: #17202a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #d9e0e6;
+    }
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .actions { display: flex; gap: 8px; }
+    button {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid #9ba8b3;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #17202a;
+      cursor: pointer;
+      font: inherit;
+    }
+    button.primary {
+      border-color: #176b87;
+      background: #176b87;
+      color: #ffffff;
+    }
+    button:disabled { opacity: 0.5; cursor: wait; }
+    main {
+      width: min(100%, 1800px);
+      margin: 0 auto;
+      padding: 18px;
+    }
+    #diagram {
+      min-height: 70vh;
+      overflow: auto;
+      padding: 18px;
+      background: #ffffff;
+      border: 1px solid #d9e0e6;
+      border-radius: 6px;
+    }
+    #diagram svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-width: 1100px;
+    }
+    #status {
+      padding: 32px;
+      text-align: center;
+      color: #53616d;
+    }
+    @media (max-width: 760px) {
+      header { align-items: flex-start; flex-direction: column; }
+      main { padding: 10px; }
+    }
+    @media print {
+      header { display: none; }
+      main { padding: 0; }
+      #diagram { border: 0; padding: 0; overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>压缩机0-8台加减载完整流程图</h1>
+    <div class="actions">
+      <button id="downloadSvg" class="primary" disabled>下载 SVG</button>
+      <button id="downloadPng" disabled>下载 PNG</button>
+      <button onclick="window.print()">打印</button>
+    </div>
+  </header>
+  <main>
+    <div id="diagram"><div id="status">正在生成流程图...</div></div>
+  </main>
+
+  <script type="text/plain" id="source">
+flowchart TB
+    START(["控制周期开始"]) --> INPUT["取得目标需求 T<br/>室内温湿度PID：0～CN<br/>环境制冷：≥HLM满载，≤HLC空载，中间线性向上取整<br/>环境制热：≤HRM满载，≥HRC空载，中间线性向上取整"]
+    INPUT --> LIMIT["限制 T 在 0～CN<br/>CN最大为8台"]
+    LIMIT --> SAFETY{"整机停机、消防、紧急停机<br/>或要求全部压缩机停止？"}
+
+    SAFETY -- "是" --> STOPALL["撤销全部压缩机运行命令<br/>紧急保护按保护逻辑立即处理"]
+    STOPALL --> HOLD0["实际运行数降为0<br/>所有外机板运行计时停止"]
+
+    SAFETY -- "否" --> EVENT{"是否发生重新选择事件？"}
+    EVENT -- "否" --> STABLE{"当前运行数量和组合<br/>仍满足上一次选择结果？"}
+    STABLE -- "是" --> NOROTATE["保持原组合<br/>禁止仅因运行时间变化自动轮换"]
+    NOROTATE --> TIMER
+    STABLE -- "否" --> FILTER
+
+    EVENT -- "是" --> FILTER["重新建立候选表和目标组合<br/>排除禁用、故障、通信异常、蒸发盘管锁定<br/>化霜外机不参与普通加减载<br/>剩余需求≥2时优先完整健康双压外机"]
+    FILTER --> COUNT["读取实际运行数量 C"]
+    COUNT --> COMPARE{"比较目标 T 与实际 C"}
+
+    COMPARE -- "T = 0" --> NORMALSTOP{"是否还有压缩机运行？"}
+    NORMALSTOP -- "否" --> HOLD0
+    NORMALSTOP -- "是" --> UNLOADENTRY
+    COMPARE -- "C < T，需要加载" --> LOADENTRY
+    COMPARE -- "C > T，需要减载" --> UNLOADENTRY
+    COMPARE -- "C = T" --> VALID{"原选择组合是否有效？<br/>运行压缩机健康、未禁用、未退出候选"}
+    VALID -- "是" --> NOROTATE
+    VALID -- "否" --> REPAIR["撤销失效压缩机命令<br/>按完整双压外机优先重新建立目标组合"]
+    REPAIR --> COUNT
+
+    subgraph LOAD["加载流程：每次只启动1台"]
+        LOADENTRY["进入加载选择"] --> RUNNINGUNIT{"目标组合中的双压外机<br/>是否已有1台运行、另1台可启动？"}
+        RUNNINGUNIT -- "有" --> RUNSELECT["优先补齐该外机第二台压缩机"]
+        RUNNINGUNIT -- "没有" --> STOPPEDUNIT["从目标组合中选择尚未运行的外机"]
+        RUNSELECT --> RUNBOARD{"存在多个可加载运行外机？"}
+        RUNBOARD -- "是" --> RUNBOARDSELECT["优先板运行时间较短者<br/>时长差≤2小时按外机序号"]
+        RUNBOARD -- "否" --> COMPSELECT
+        RUNBOARDSELECT --> COMPSELECT
+        STOPPEDUNIT --> BOARDCOMPARE{"候选外机板运行时间<br/>最大值与最小值相差≤2小时？"}
+        BOARDCOMPARE -- "是" --> BOARDNO["按外机序号选择<br/>外机1→2→3→4"]
+        BOARDCOMPARE -- "否" --> BOARDSHORT["选择板累计运行时间最短的外机"]
+        BOARDNO --> COMPSELECT
+        BOARDSHORT --> COMPSELECT
+        COMPSELECT["在选中外机内选择压缩机<br/>优先累计运行时间较短者"] --> CANSTART{"满足启动条件？<br/>最小停机≥120秒<br/>全局动作间隔≥30秒"}
+        CANSTART -- "否" --> LOADWAIT["等待条件满足<br/>或选择其他真正可启动的候选"]
+        LOADWAIT --> LOADENTRY
+        CANSTART -- "是" --> STARTONE["下发1台压缩机启动命令"]
+        STARTONE --> FEEDBACK{"规定时间内收到运行反馈？"}
+        FEEDBACK -- "是" --> RECOUNTLOAD["重新读取实际运行数量 C"]
+        FEEDBACK -- "否" --> BYPASS["撤销该压缩机命令<br/>临时排除并选择其他压缩机补位"]
+        BYPASS --> LOADENTRY
+        RECOUNTLOAD --> LOADEND{"C达到T？"}
+        LOADEND -- "否" --> GAPLOAD["等待全局30秒动作间隔"]
+        GAPLOAD --> LOADENTRY
+        LOADEND -- "是" --> LOCK["锁定本次选择组合"]
+    end
+
+    subgraph UNLOAD["减载流程：每次只关闭1台"]
+        UNLOADENTRY["进入减载选择"] --> UNLOADCANDIDATE["筛选正在运行且允许关闭的压缩机<br/>化霜外机不参与普通减载"]
+        UNLOADCANDIDATE --> CANUNLOAD{"存在满足最小运行时间的候选？<br/>最小运行≥180秒"}
+        CANUNLOAD -- "否" --> UNLOADWAIT["保持当前状态并等待"]
+        UNLOADWAIT --> UNLOADENTRY
+        CANUNLOAD -- "是" --> LONGBOARD["优先选择板累计运行时间最长的外机"]
+        LONGBOARD --> LONGCOMP["同一外机内<br/>优先关闭累计运行时间较长的压缩机"]
+        LONGCOMP --> STOPONE["撤销1台压缩机运行命令"]
+        STOPONE --> RECOUNTUNLOAD["重新读取实际运行数量 C"]
+        RECOUNTUNLOAD --> UNLOADEND{"C已经降到T？"}
+        UNLOADEND -- "否" --> GAPUNLOAD["等待全局30秒动作间隔"]
+        GAPUNLOAD --> UNLOADENTRY
+        UNLOADEND -- "是" --> LOCK
+    end
+
+    LOCK --> NOROTATE
+
+    subgraph BOARDTIME["每块PSC316外机板运行时间"]
+        TIMER["每秒检查该外机两台压缩机"] --> ANYRUN{"至少一台压缩机运行？"}
+        ANYRUN -- "是" --> ADDTIME["外机板累计运行时间 +1秒<br/>两台同时运行也只加1秒"]
+        ANYRUN -- "否" --> PAUSETIME["外机板累计运行时间保持不变"]
+        ADDTIME --> SAVE["按保存策略写入非易失存储<br/>并上传PSC330用于排序"]
+        PAUSETIME --> SAVE
+    end
+
+    subgraph EVENTS["只在以下事件重新选择"]
+        E1["目标需求变化：0～8台"]
+        E2["开机后首次选择"]
+        E3["压缩机故障或禁用"]
+        E4["外机通信故障或恢复"]
+        E5["进入或退出化霜"]
+        E6["启动命令超时无反馈"]
+    end
+
+    subgraph DISTRIBUTION["健康双压缩机外机的0～8台优先分布"]
+        D0["T=0：0"]
+        D1["T=1：1"]
+        D2["T=2：2（同一外机）"]
+        D3["T=3：2+1"]
+        D4["T=4：2+2"]
+        D5["T=5：2+2+1"]
+        D6["T=6：2+2+2"]
+        D7["T=7：2+2+2+1"]
+        D8["T=8：2+2+2+2"]
+    end
+
+    NOTE1["故障重组选例<br/>目标2台：外机1仅剩1台健康，外机2有2台健康<br/>最终结果=外机2两台；只有无外机可独立提供2台时才采用1+1"]:::note
+    NOTE2["稳定运行时禁止轮换<br/>板运行时间排序变化本身不触发停机重选"]:::note
+    NOTE3["外机板运行时间<br/>任意压缩机运行即每秒+1<br/>两台全停才暂停"]:::note
+
+    EVENTS -. "任一条件成立" .-> EVENT
+    DISTRIBUTION -. "形成目标组合" .-> LOADENTRY
+    FILTER -. "资源不足时补位或降级" .-> NOTE1
+    NOROTATE -.-> NOTE2
+    TIMER -.-> NOTE3
+
+    classDef start fill:#176b87,color:#ffffff,stroke:#0e4457,stroke-width:2px;
+    classDef decision fill:#fff4cc,color:#1f2933,stroke:#b7791f,stroke-width:1.5px;
+    classDef action fill:#e8f4ea,color:#1f2933,stroke:#3c7a4a,stroke-width:1.2px;
+    classDef stop fill:#fde8e7,color:#1f2933,stroke:#b33a3a,stroke-width:1.5px;
+    classDef note fill:#eef2f7,color:#1f2933,stroke:#65758b,stroke-dasharray:5 4;
+
+    class START start;
+    class SAFETY,EVENT,STABLE,COMPARE,NORMALSTOP,VALID,RUNNINGUNIT,RUNBOARD,BOARDCOMPARE,CANSTART,FEEDBACK,LOADEND,CANUNLOAD,UNLOADEND,ANYRUN decision;
+    class INPUT,LIMIT,FILTER,COUNT,NOROTATE,REPAIR,LOADENTRY,RUNSELECT,STOPPEDUNIT,RUNBOARDSELECT,BOARDNO,BOARDSHORT,COMPSELECT,LOADWAIT,STARTONE,RECOUNTLOAD,BYPASS,GAPLOAD,LOCK,UNLOADENTRY,UNLOADCANDIDATE,UNLOADWAIT,LONGBOARD,LONGCOMP,STOPONE,RECOUNTUNLOAD,GAPUNLOAD,TIMER,ADDTIME,PAUSETIME,SAVE action;
+    class STOPALL,HOLD0 stop;
+  </script>
+
+  <script type="module">
+    const diagram = document.querySelector("#diagram");
+    const source = document.querySelector("#source").textContent.trim();
+    const svgButton = document.querySelector("#downloadSvg");
+    const pngButton = document.querySelector("#downloadPng");
+    let svgText = "";
+
+    function download(blob, name) {
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = name;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    }
+
+    try {
+      const { default: mermaid } = await import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs");
+      mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "loose",
+        theme: "base",
+        flowchart: { htmlLabels: true, curve: "basis", nodeSpacing: 28, rankSpacing: 42 },
+        themeVariables: {
+          fontFamily: "Microsoft YaHei, Segoe UI, sans-serif",
+          fontSize: "16px",
+          primaryTextColor: "#17202a",
+          lineColor: "#53616d"
+        }
+      });
+      const result = await mermaid.render("compressor-flowchart", source);
+      svgText = result.svg;
+      diagram.innerHTML = svgText;
+      result.bindFunctions?.(diagram);
+      svgButton.disabled = false;
+      pngButton.disabled = false;
+    } catch (error) {
+      diagram.innerHTML = `<div id="status">流程图组件加载失败，请确认电脑可以访问网络后重新打开。<br>${String(error)}</div>`;
+    }
+
+    svgButton.addEventListener("click", () => {
+      download(new Blob([svgText], { type: "image/svg+xml;charset=utf-8" }), "压缩机0-8台加减载完整流程图.svg");
+    });
+
+    pngButton.addEventListener("click", () => {
+      const svg = diagram.querySelector("svg");
+      if (!svg) return;
+      const box = svg.viewBox.baseVal;
+      const scale = 2;
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.ceil(box.width * scale);
+      canvas.height = Math.ceil(box.height * scale);
+      const context = canvas.getContext("2d");
+      context.setTransform(scale, 0, 0, scale, 0, 0);
+      context.fillStyle = "#ffffff";
+      context.fillRect(0, 0, box.width, box.height);
+      const image = new Image();
+      image.onload = () => {
+        context.drawImage(image, 0, 0, box.width, box.height);
+        canvas.toBlob(blob => download(blob, "压缩机0-8台加减载完整流程图.png"), "image/png");
+      };
+      image.src = URL.createObjectURL(new Blob([svgText], { type: "image/svg+xml;charset=utf-8" }));
+    });
+  </script>
+</body>
+</html>

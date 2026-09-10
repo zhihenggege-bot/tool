@@ -1,0 +1,591 @@
+'========================================================
+'PSC330周定时开关机：周一至周日，每天2个时段
+'放置位置：运行策略 -> 循环策略 -> 脚本程序
+'执行周期：1000ms
+'
+'PSC330真实寄存器：
+'163：普通模式下的控制来源，0本地、1远程、2 PLC；本脚本不修改
+'165：定时模式使能，0普通控制、1定时控制
+'714：当前实际控制方式，只读，0本地、1远程、2 PLC、3定时
+'1388：定时运行目标，0停机、1运行
+'========================================================
+
+'固定写入值
+nScheduleModeOne = 1
+nScheduleModeZero = 0
+
+'--------------------------------------------------------
+'1. 读取触摸屏当前时间
+'--------------------------------------------------------
+iScheduleNow = !TimeGetCurrentTime()
+
+If iScheduleNow > 0 Then
+    nRTCWeek = !TimeGetDayOfWeek(iScheduleNow)
+    nRTCHour = !TimeGetHour(iScheduleNow)
+    nRTCMinute = !TimeGetMinute(iScheduleNow)
+    nRTCSecond = !TimeGetSecond(iScheduleNow)
+    strScheduleNow = !TimeI2Str(iScheduleNow,"%Y-%m-%d %H:%M:%S")
+
+    If nRTCWeek >= 1 And nRTCWeek <= 7 Then
+        nScheduleClockError = 0
+        nNowWeekMin = (nRTCWeek - 1) * 1440 + nRTCHour * 60 + nRTCMinute
+    Else
+        nScheduleClockError = 1
+        nScheduleResult = 101
+    EndIf
+Else
+    nScheduleClockError = 1
+    nScheduleResult = 101
+EndIf
+
+'--------------------------------------------------------
+'2. 检查14个时段的设置范围
+'只检查已经启用的时段
+'--------------------------------------------------------
+nScheduleConfigError = 0
+
+If bMon1Enable = 1 Then
+    If nMon1StartHour < 0 Or nMon1StartHour > 23 Or nMon1StartMin < 0 Or nMon1StartMin > 59 Or nMon1EndHour < 0 Or nMon1EndHour > 23 Or nMon1EndMin < 0 Or nMon1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bMon2Enable = 1 Then
+    If nMon2StartHour < 0 Or nMon2StartHour > 23 Or nMon2StartMin < 0 Or nMon2StartMin > 59 Or nMon2EndHour < 0 Or nMon2EndHour > 23 Or nMon2EndMin < 0 Or nMon2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bTue1Enable = 1 Then
+    If nTue1StartHour < 0 Or nTue1StartHour > 23 Or nTue1StartMin < 0 Or nTue1StartMin > 59 Or nTue1EndHour < 0 Or nTue1EndHour > 23 Or nTue1EndMin < 0 Or nTue1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bTue2Enable = 1 Then
+    If nTue2StartHour < 0 Or nTue2StartHour > 23 Or nTue2StartMin < 0 Or nTue2StartMin > 59 Or nTue2EndHour < 0 Or nTue2EndHour > 23 Or nTue2EndMin < 0 Or nTue2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bWed1Enable = 1 Then
+    If nWed1StartHour < 0 Or nWed1StartHour > 23 Or nWed1StartMin < 0 Or nWed1StartMin > 59 Or nWed1EndHour < 0 Or nWed1EndHour > 23 Or nWed1EndMin < 0 Or nWed1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bWed2Enable = 1 Then
+    If nWed2StartHour < 0 Or nWed2StartHour > 23 Or nWed2StartMin < 0 Or nWed2StartMin > 59 Or nWed2EndHour < 0 Or nWed2EndHour > 23 Or nWed2EndMin < 0 Or nWed2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bThu1Enable = 1 Then
+    If nThu1StartHour < 0 Or nThu1StartHour > 23 Or nThu1StartMin < 0 Or nThu1StartMin > 59 Or nThu1EndHour < 0 Or nThu1EndHour > 23 Or nThu1EndMin < 0 Or nThu1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bThu2Enable = 1 Then
+    If nThu2StartHour < 0 Or nThu2StartHour > 23 Or nThu2StartMin < 0 Or nThu2StartMin > 59 Or nThu2EndHour < 0 Or nThu2EndHour > 23 Or nThu2EndMin < 0 Or nThu2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bFri1Enable = 1 Then
+    If nFri1StartHour < 0 Or nFri1StartHour > 23 Or nFri1StartMin < 0 Or nFri1StartMin > 59 Or nFri1EndHour < 0 Or nFri1EndHour > 23 Or nFri1EndMin < 0 Or nFri1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bFri2Enable = 1 Then
+    If nFri2StartHour < 0 Or nFri2StartHour > 23 Or nFri2StartMin < 0 Or nFri2StartMin > 59 Or nFri2EndHour < 0 Or nFri2EndHour > 23 Or nFri2EndMin < 0 Or nFri2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bSat1Enable = 1 Then
+    If nSat1StartHour < 0 Or nSat1StartHour > 23 Or nSat1StartMin < 0 Or nSat1StartMin > 59 Or nSat1EndHour < 0 Or nSat1EndHour > 23 Or nSat1EndMin < 0 Or nSat1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bSat2Enable = 1 Then
+    If nSat2StartHour < 0 Or nSat2StartHour > 23 Or nSat2StartMin < 0 Or nSat2StartMin > 59 Or nSat2EndHour < 0 Or nSat2EndHour > 23 Or nSat2EndMin < 0 Or nSat2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bSun1Enable = 1 Then
+    If nSun1StartHour < 0 Or nSun1StartHour > 23 Or nSun1StartMin < 0 Or nSun1StartMin > 59 Or nSun1EndHour < 0 Or nSun1EndHour > 23 Or nSun1EndMin < 0 Or nSun1EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If bSun2Enable = 1 Then
+    If nSun2StartHour < 0 Or nSun2StartHour > 23 Or nSun2StartMin < 0 Or nSun2StartMin > 59 Or nSun2EndHour < 0 Or nSun2EndHour > 23 Or nSun2EndMin < 0 Or nSun2EndMin > 59 Then
+        nScheduleConfigError = 1
+    EndIf
+EndIf
+
+If nScheduleConfigError = 1 Then
+    nScheduleResult = 102
+EndIf
+
+'--------------------------------------------------------
+'3. 清除14个时段的实时Active状态
+'--------------------------------------------------------
+bMon1Active = 0
+bMon2Active = 0
+bTue1Active = 0
+bTue2Active = 0
+bWed1Active = 0
+bWed2Active = 0
+bThu1Active = 0
+bThu2Active = 0
+bFri1Active = 0
+bFri2Active = 0
+bSat1Active = 0
+bSat2Active = 0
+bSun1Active = 0
+bSun2Active = 0
+
+'--------------------------------------------------------
+'4. 时间正常、设置合法时计算14个时段
+'开始时间等于结束时间：该时段无效，不按全天运行
+'结束时间早于开始时间：自动按跨午夜处理
+'--------------------------------------------------------
+If nScheduleClockError = 0 Then
+    If nScheduleConfigError = 0 Then
+
+        '星期一第1时段，星期索引0
+        If bMon1Enable = 1 Then
+            If nMon1StartHour <> nMon1EndHour Or nMon1StartMin <> nMon1EndMin Then
+                nPeriodStartWeekMin = 0 * 1440 + nMon1StartHour * 60 + nMon1StartMin
+                nPeriodEndWeekMin = 0 * 1440 + nMon1EndHour * 60 + nMon1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bMon1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bMon1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期一第2时段，星期索引0
+        If bMon2Enable = 1 Then
+            If nMon2StartHour <> nMon2EndHour Or nMon2StartMin <> nMon2EndMin Then
+                nPeriodStartWeekMin = 0 * 1440 + nMon2StartHour * 60 + nMon2StartMin
+                nPeriodEndWeekMin = 0 * 1440 + nMon2EndHour * 60 + nMon2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bMon2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bMon2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期二第1时段，星期索引1
+        If bTue1Enable = 1 Then
+            If nTue1StartHour <> nTue1EndHour Or nTue1StartMin <> nTue1EndMin Then
+                nPeriodStartWeekMin = 1 * 1440 + nTue1StartHour * 60 + nTue1StartMin
+                nPeriodEndWeekMin = 1 * 1440 + nTue1EndHour * 60 + nTue1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bTue1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bTue1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期二第2时段，星期索引1
+        If bTue2Enable = 1 Then
+            If nTue2StartHour <> nTue2EndHour Or nTue2StartMin <> nTue2EndMin Then
+                nPeriodStartWeekMin = 1 * 1440 + nTue2StartHour * 60 + nTue2StartMin
+                nPeriodEndWeekMin = 1 * 1440 + nTue2EndHour * 60 + nTue2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bTue2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bTue2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期三第1时段，星期索引2
+        If bWed1Enable = 1 Then
+            If nWed1StartHour <> nWed1EndHour Or nWed1StartMin <> nWed1EndMin Then
+                nPeriodStartWeekMin = 2 * 1440 + nWed1StartHour * 60 + nWed1StartMin
+                nPeriodEndWeekMin = 2 * 1440 + nWed1EndHour * 60 + nWed1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bWed1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bWed1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期三第2时段，星期索引2
+        If bWed2Enable = 1 Then
+            If nWed2StartHour <> nWed2EndHour Or nWed2StartMin <> nWed2EndMin Then
+                nPeriodStartWeekMin = 2 * 1440 + nWed2StartHour * 60 + nWed2StartMin
+                nPeriodEndWeekMin = 2 * 1440 + nWed2EndHour * 60 + nWed2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bWed2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bWed2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期四第1时段，星期索引3
+        If bThu1Enable = 1 Then
+            If nThu1StartHour <> nThu1EndHour Or nThu1StartMin <> nThu1EndMin Then
+                nPeriodStartWeekMin = 3 * 1440 + nThu1StartHour * 60 + nThu1StartMin
+                nPeriodEndWeekMin = 3 * 1440 + nThu1EndHour * 60 + nThu1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bThu1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bThu1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期四第2时段，星期索引3
+        If bThu2Enable = 1 Then
+            If nThu2StartHour <> nThu2EndHour Or nThu2StartMin <> nThu2EndMin Then
+                nPeriodStartWeekMin = 3 * 1440 + nThu2StartHour * 60 + nThu2StartMin
+                nPeriodEndWeekMin = 3 * 1440 + nThu2EndHour * 60 + nThu2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bThu2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bThu2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期五第1时段，星期索引4
+        If bFri1Enable = 1 Then
+            If nFri1StartHour <> nFri1EndHour Or nFri1StartMin <> nFri1EndMin Then
+                nPeriodStartWeekMin = 4 * 1440 + nFri1StartHour * 60 + nFri1StartMin
+                nPeriodEndWeekMin = 4 * 1440 + nFri1EndHour * 60 + nFri1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bFri1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bFri1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期五第2时段，星期索引4
+        If bFri2Enable = 1 Then
+            If nFri2StartHour <> nFri2EndHour Or nFri2StartMin <> nFri2EndMin Then
+                nPeriodStartWeekMin = 4 * 1440 + nFri2StartHour * 60 + nFri2StartMin
+                nPeriodEndWeekMin = 4 * 1440 + nFri2EndHour * 60 + nFri2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bFri2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bFri2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期六第1时段，星期索引5
+        If bSat1Enable = 1 Then
+            If nSat1StartHour <> nSat1EndHour Or nSat1StartMin <> nSat1EndMin Then
+                nPeriodStartWeekMin = 5 * 1440 + nSat1StartHour * 60 + nSat1StartMin
+                nPeriodEndWeekMin = 5 * 1440 + nSat1EndHour * 60 + nSat1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bSat1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bSat1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期六第2时段，星期索引5
+        If bSat2Enable = 1 Then
+            If nSat2StartHour <> nSat2EndHour Or nSat2StartMin <> nSat2EndMin Then
+                nPeriodStartWeekMin = 5 * 1440 + nSat2StartHour * 60 + nSat2StartMin
+                nPeriodEndWeekMin = 5 * 1440 + nSat2EndHour * 60 + nSat2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bSat2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bSat2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期日第1时段，星期索引6
+        If bSun1Enable = 1 Then
+            If nSun1StartHour <> nSun1EndHour Or nSun1StartMin <> nSun1EndMin Then
+                nPeriodStartWeekMin = 6 * 1440 + nSun1StartHour * 60 + nSun1StartMin
+                nPeriodEndWeekMin = 6 * 1440 + nSun1EndHour * 60 + nSun1EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bSun1Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bSun1Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '星期日第2时段，星期索引6
+        If bSun2Enable = 1 Then
+            If nSun2StartHour <> nSun2EndHour Or nSun2StartMin <> nSun2EndMin Then
+                nPeriodStartWeekMin = 6 * 1440 + nSun2StartHour * 60 + nSun2StartMin
+                nPeriodEndWeekMin = 6 * 1440 + nSun2EndHour * 60 + nSun2EndMin
+                If nPeriodEndWeekMin <= nPeriodStartWeekMin Then
+                    nPeriodEndWeekMin = nPeriodEndWeekMin + 1440
+                EndIf
+                If nNowWeekMin >= nPeriodStartWeekMin Then
+                    If nNowWeekMin < nPeriodEndWeekMin Then
+                        bSun2Active = 1
+                    EndIf
+                EndIf
+                If nNowWeekMin + 10080 >= nPeriodStartWeekMin Then
+                    If nNowWeekMin + 10080 < nPeriodEndWeekMin Then
+                        bSun2Active = 1
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+
+        '14个时段做“或”运算，只要任意时段有效就要求运行
+        nScheduleTarget = 0
+
+        If bScheduleMasterEnable = 1 Then
+            If bMon1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bMon2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bTue1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bTue2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bWed1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bWed2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bThu1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bThu2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bFri1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bFri2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bSat1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bSat2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bSun1Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+            If bSun2Active = 1 Then
+                nScheduleTarget = 1
+            EndIf
+        EndIf
+    EndIf
+EndIf
+
+'--------------------------------------------------------
+'5. 写入重试冷却，每次循环1秒
+'--------------------------------------------------------
+If nScheduleWriteCooldown > 0 Then
+    nScheduleWriteCooldown = nScheduleWriteCooldown - 1
+EndIf
+
+'--------------------------------------------------------
+'6. 停机并退出定时
+'先写1388=0，等709=0，再写165=0
+'--------------------------------------------------------
+If nScheduleExitStep = 1 Then
+    nScheduleTarget = 0
+
+    If R1388_定时运行目标 <> 0 Then
+        If nScheduleWriteCooldown = 0 Then
+            R1388_定时运行目标 = 0
+            nScheduleWriteCooldown = 5
+            nScheduleResult = 7
+        EndIf
+    Else
+        If R0709_开关机步骤 = 0 Then
+            If R0165_定时模式使能 <> 0 Then
+                If nScheduleWriteCooldown = 0 Then
+                    R0165_定时模式使能 = 0
+                    nScheduleWriteCooldown = 5
+                    nScheduleResult = 8
+                EndIf
+            Else
+                nScheduleExitStep = 0
+                nScheduleResult = 5
+            EndIf
+        EndIf
+    EndIf
+Else
+    '----------------------------------------------------
+    '7. 直接退出定时并保持当前状态
+    '只退出165，不主动改1388
+    '退出后163选择的本地/远程/PLC来源立即接管
+    '----------------------------------------------------
+    If nScheduleExitStep = 2 Then
+        If R0165_定时模式使能 <> 0 Then
+            If nScheduleWriteCooldown = 0 Then
+                R0165_定时模式使能 = 0
+                nScheduleWriteCooldown = 5
+                nScheduleResult = 9
+            EndIf
+        Else
+            nScheduleExitStep = 0
+            nScheduleResult = 6
+        EndIf
+    Else
+        '------------------------------------------------
+        '8. 正常周定时控制
+        '时钟或设置错误时保持PSC330当前目标，不发送新命令
+        '------------------------------------------------
+        If bScheduleMasterEnable = 1 Then
+            If nScheduleClockError = 0 Then
+                If nScheduleConfigError = 0 Then
+                    '必须先确认165精确读回1
+                    If R0165_定时模式使能 <> 1 Then
+                        If nScheduleWriteCooldown = 0 Then
+                            R0165_定时模式使能 = 1
+                            nScheduleWriteCooldown = 5
+                            nScheduleResult = 1
+                        EndIf
+                    Else
+                        '165已为1后才写1388
+                        If R1388_定时运行目标 <> nScheduleTarget Then
+                            If nScheduleWriteCooldown = 0 Then
+                                R1388_定时运行目标 = nScheduleTarget
+                                nScheduleWriteCooldown = 5
+                                nScheduleResult = 3
+                            EndIf
+                        Else
+                            If R0714_当前控制方式 = 3 Then
+                                nScheduleResult = 2
+                            Else
+                                nScheduleResult = 4
+                            EndIf
+                        EndIf
+                    EndIf
+                EndIf
+            EndIf
+        EndIf
+    EndIf
+EndIf
