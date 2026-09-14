@@ -1,0 +1,1247 @@
+<title>直膨机固件审计清单</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* ── 令牌:先定义完整浅色,再在媒体/属性块中只改令牌 ───────────────── */
+:root{
+  --paper:#F1F4F6;          /* 冷偏蓝的工业灰底 */
+  --panel:#FFFFFF;
+  --panel-2:#F7F9FA;
+  --ink:#0D1620;
+  --ink-2:#3C4A56;
+  --ink-3:#6B7A87;
+  --rule:#DCE3E8;
+  --rule-2:#C6D0D7;
+  --trace:#0E7183;          /* 示波器迹线青 —— 唯一强调色 */
+  --trace-soft:#E2EFF2;
+  --crit:#A93226;
+  --crit-soft:#F7E6E3;
+  --warn:#8A5705;
+  --warn-soft:#F8EEDC;
+  --clean:#41607A;
+  --clean-soft:#E7EDF3;
+  --ok:#3F6B45;
+  --ok-soft:#E7EFE7;
+  --radius:3px;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"IBM Plex Sans","Helvetica Neue",Arial,"Microsoft YaHei","PingFang SC",sans-serif;
+  --cond:"IBM Plex Sans Condensed","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C141B;
+    --panel:#121C25;
+    --panel-2:#16212B;
+    --ink:#E4EBF0;
+    --ink-2:#A9B8C4;
+    --ink-3:#7A8B99;
+    --rule:#25333F;
+    --rule-2:#33434F;
+    --trace:#4FB3C4;
+    --trace-soft:#14313A;
+    --crit:#E08072;
+    --crit-soft:#33201D;
+    --warn:#D8A54E;
+    --warn-soft:#2E2517;
+    --clean:#8FAEC8;
+    --clean-soft:#1B2833;
+    --ok:#84BE8C;
+    --ok-soft:#1A251C;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C141B;
+  --panel:#121C25;
+  --panel-2:#16212B;
+  --ink:#E4EBF0;
+  --ink-2:#A9B8C4;
+  --ink-3:#7A8B99;
+  --rule:#25333F;
+  --rule-2:#33434F;
+  --trace:#4FB3C4;
+  --trace-soft:#14313A;
+  --crit:#E08072;
+  --crit-soft:#33201D;
+  --warn:#D8A54E;
+  --warn-soft:#2E2517;
+  --clean:#8FAEC8;
+  --clean-soft:#1B2833;
+  --ok:#84BE8C;
+  --ok-soft:#1A251C;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.62;
+  padding-block:0 80px;
+  padding-inline:20px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto}
+
+/* ── 页头 ─────────────────────────────────────────────────────────── */
+header.masthead{
+  border-bottom:2px solid var(--ink);
+  padding-block:36px 20px;
+  margin-bottom:8px;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--trace);
+  margin:0 0 12px;
+}
+h1{
+  font-family:var(--cond);
+  font-weight:700;
+  font-size:clamp(28px,5vw,46px);
+  line-height:1.06;
+  letter-spacing:-.012em;
+  text-wrap:balance;
+  margin:0 0 12px;
+}
+.standfirst{
+  max-width:64ch;
+  color:var(--ink-2);
+  margin:0;
+  font-size:15.5px;
+}
+
+/* ── 概要数据条 ───────────────────────────────────────────────────── */
+.stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:34px;
+}
+.stat{
+  flex:1 1 150px;
+  padding:16px 20px 16px 0;
+  border-right:1px solid var(--rule);
+  min-width:0;
+}
+.stat:last-child{border-right:0}
+.stat .k{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  display:block;
+  margin-bottom:5px;
+}
+.stat .v{
+  font-family:var(--cond);
+  font-weight:700;
+  font-size:25px;
+  line-height:1.1;
+  font-variant-numeric:tabular-nums;
+  display:block;
+}
+.stat .n{font-size:12px;color:var(--ink-3);display:block;margin-top:3px}
+
+/* ── 段落标题 ─────────────────────────────────────────────────────── */
+section{margin-block:0 40px}
+h2{
+  font-family:var(--cond);
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:-.005em;
+  margin:0 0 4px;
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  text-wrap:balance;
+}
+h2 .num{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  color:var(--trace);
+  letter-spacing:0;
+}
+.secnote{
+  color:var(--ink-2);
+  font-size:13.5px;
+  max-width:76ch;
+  margin:0 0 16px;
+  padding-left:0;
+}
+h3{
+  font-family:var(--cond);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.01em;
+  margin:26px 0 8px;
+  color:var(--ink);
+}
+
+/* ── 条目表 ───────────────────────────────────────────────────────── */
+ul.items{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+li.item{
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr);
+  gap:0 12px;
+  border-bottom:1px solid var(--rule);
+  border-left:3px solid var(--rule-2);
+  padding:13px 14px 13px 12px;
+  background:var(--panel);
+  transition:background .12s ease;
+}
+li.item:hover{background:var(--panel-2)}
+li.item.sev-block{border-left-color:var(--crit)}
+li.item.sev-crit{border-left-color:var(--crit)}
+li.item.sev-warn{border-left-color:var(--warn)}
+li.item.sev-clean{border-left-color:var(--clean)}
+li.item.sev-ok{border-left-color:var(--ok)}
+li.item.done{opacity:.48}
+li.item.done .t{text-decoration:line-through;text-decoration-color:var(--rule-2)}
+
+li.item input[type=checkbox]{
+  grid-row:1 / span 3;
+  margin:3px 0 0;
+  width:15px;height:15px;
+  accent-color:var(--trace);
+  cursor:pointer;
+}
+li.item input[type=checkbox]:focus-visible{outline:2px solid var(--trace);outline-offset:2px}
+
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:3px}
+.t{font-weight:600;font-size:14.5px;line-height:1.42;flex:1 1 320px;min-width:0}
+.chip{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  padding:2px 7px;
+  border-radius:2px;
+  white-space:nowrap;
+  flex:none;
+}
+.chip.block,.chip.crit{background:var(--crit-soft);color:var(--crit)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.clean{background:var(--clean-soft);color:var(--clean)}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.conf{background:transparent;color:var(--ink-3);border:1px solid var(--rule-2)}
+
+.loc{
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--trace);
+  display:block;
+  margin-bottom:5px;
+  word-break:break-all;
+}
+.d{color:var(--ink-2);font-size:13.5px;margin:0 0 6px;max-width:88ch}
+.act{font-size:13px;margin:0;color:var(--ink)}
+.act b{
+  font-family:var(--cond);
+  font-weight:600;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-right:6px;
+}
+code{
+  font-family:var(--mono);
+  font-size:.875em;
+  background:var(--panel-2);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:.5px 4px;
+  word-break:break-word;
+}
+li.item code{background:var(--paper)}
+
+/* ── 证据块 ───────────────────────────────────────────────────────── */
+pre{
+  font-family:var(--mono);
+  font-size:12px;
+  line-height:1.6;
+  background:var(--panel-2);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--trace);
+  border-radius:var(--radius);
+  padding:13px 15px;
+  overflow-x:auto;
+  margin:12px 0;
+  color:var(--ink-2);
+}
+pre .hl{color:var(--crit);font-weight:500}
+pre .cm{color:var(--ink-3)}
+
+/* ── 表格(宽表独占滚动容器) ──────────────────────────────────────── */
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:var(--radius);margin:12px 0;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+th{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  text-align:left;
+  font-weight:500;
+  padding:9px 12px;
+  border-bottom:1px solid var(--rule-2);
+  white-space:nowrap;
+  background:var(--panel-2);
+}
+td{padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.m{font-family:var(--mono);font-size:12px;color:var(--trace);white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;text-align:right;font-family:var(--mono)}
+
+/* ── 工具条 ───────────────────────────────────────────────────────── */
+.toolbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 10px;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule-2);
+  padding-block:10px;
+  margin-bottom:26px;
+}
+.fbtn{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  padding:5px 11px;
+  border:1px solid var(--rule-2);
+  border-radius:2px;
+  background:var(--panel);
+  color:var(--ink-2);
+  cursor:pointer;
+}
+.fbtn:hover{border-color:var(--trace);color:var(--trace)}
+.fbtn:focus-visible{outline:2px solid var(--trace);outline-offset:2px}
+.fbtn[aria-pressed=true]{background:var(--trace);border-color:var(--trace);color:var(--paper)}
+.prog{
+  margin-left:auto;
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.prog b{color:var(--trace);font-weight:500}
+
+/* ── 两栏对照 ─────────────────────────────────────────────────────── */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px;margin:14px 0}
+.card{
+  background:var(--panel);
+  border:1px solid var(--rule);
+  border-top:2px solid var(--trace);
+  border-radius:var(--radius);
+  padding:14px 16px;
+}
+.card h4{
+  font-family:var(--cond);
+  font-weight:700;
+  font-size:14.5px;
+  margin:0 0 3px;
+  letter-spacing:.005em;
+}
+.card .sub{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin:0 0 8px}
+.card p{margin:0;font-size:13px;color:var(--ink-2)}
+.card p+p{margin-top:6px}
+
+/* ── 结论框 ───────────────────────────────────────────────────────── */
+.callout{
+  border:1px solid var(--rule-2);
+  border-left:3px solid var(--trace);
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:16px 18px;
+  margin:16px 0;
+}
+.callout h4{font-family:var(--cond);font-weight:700;font-size:15px;margin:0 0 6px}
+.callout p{margin:0;font-size:14px;color:var(--ink-2);max-width:80ch}
+.callout p+p{margin-top:8px}
+
+footer{
+  border-top:1px solid var(--rule);
+  margin-top:44px;
+  padding-top:16px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  max-width:80ch;
+}
+footer p{margin:0 0 6px}
+
+@media (max-width:560px){
+  .stat{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--rule)}
+  .stat:last-child{border-bottom:0}
+  li.item{padding-right:10px}
+  .prog{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">PSC316RK-V12 外机 · PSC330RK-V10 内机 · 只读审计,未改动任何代码</p>
+  <h1>直膨机固件审计清单</h1>
+  <p class="standfirst">对两个工程约 33,000 行源码逐项核查的结果。最要紧的一条不在业务逻辑里,而在构建链上 —— 固件有一批模块实际是用预编译的二进制目标文件链进去的,源码已不在仓库中。请先读 §0。</p>
+</header>
+
+<div class="stats">
+  <div class="stat">
+    <span class="k">阻断级</span>
+    <span class="v" id="c-block">5</span>
+    <span class="n">构建完整性问题</span>
+  </div>
+  <div class="stat">
+    <span class="k">缺失源文件</span>
+    <span class="v" id="c-missing">15</span>
+    <span class="n">外机 8 · 内机 7</span>
+  </div>
+  <div class="stat">
+    <span class="k">待处理条目</span>
+    <span class="v" id="c-total">78</span>
+    <span class="n">含待确认与清理项</span>
+  </div>
+  <div class="stat">
+    <span class="k">操作系统</span>
+    <span class="v">无 RTOS</span>
+    <span class="n">裸机超循环</span>
+  </div>
+  <div class="stat">
+    <span class="k">Flash 余量</span>
+    <span class="v">~73%</span>
+    <span class="n">外机 69/256K · 内机 129/512K</span>
+  </div>
+  <div class="stat">
+    <span class="k">注释损坏</span>
+    <span class="v">8,687</span>
+    <span class="n">处 U+FFFD,不可逆</span>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button class="fbtn" data-f="all" aria-pressed="true">全部</button>
+  <button class="fbtn" data-f="block" aria-pressed="false">阻断</button>
+  <button class="fbtn" data-f="crit" aria-pressed="false">严重</button>
+  <button class="fbtn" data-f="warn" aria-pressed="false">建议</button>
+  <button class="fbtn" data-f="clean" aria-pressed="false">清理</button>
+  <button class="fbtn" data-f="todo" aria-pressed="false">未完成</button>
+  <span class="prog">已处理 <b id="p-done">0</b> / <span id="p-total">0</span> · 勾选状态存在本机浏览器</span>
+</div>
+
+<!-- ══════════════ §0 ══════════════ -->
+<section id="s0">
+  <h2><span class="num">§0</span>阻断级:固件是"源码 + 二进制"混合构建的</h2>
+  <p class="secnote">这一节决定其余所有结论的有效性。Keil 工程把一批模块以<strong>预编译目标文件</strong>(<code>&lt;FileType&gt;3&lt;/FileType&gt;</code>)的身份链入,这些模块的 <code>.c</code> 要么已被删掉,要么还在磁盘上却根本不参与编译。改这些文件不会有任何效果,而构建日志显示 <code>0 Error(s), 0 Warning(s)</code>,不会有任何提示。</p>
+
+  <div class="cols">
+    <div class="card">
+      <h4>PSC330RK-V10 内机</h4>
+      <p class="sub">Project/PSC330RK-V10.uvprojx</p>
+      <p>链接 12 个预编译 <code>.o</code>。其中 <strong>7 个源文件在仓库中不存在</strong>:<code>sysrun.c</code>、<code>usart.c</code>、<code>adc.c</code>、<code>dac.c</code>、<code>io.c</code>、<code>i2c_driver.c</code>、<code>normalfunction.c</code>。</p>
+      <p>另有 <code>eev.c</code>、<code>Adciic.c</code> 两个文件<strong>在磁盘上但不在工程成员里</strong>,同样只链旧二进制。</p>
+    </div>
+    <div class="card">
+      <h4>PSC316RK-V12 外机</h4>
+      <p class="sub">USER/PSC316RK-V12.uvprojx</p>
+      <p>链接 11 个预编译 <code>.o</code>。其中 <strong>8 个源文件不存在</strong>:<code>adc.c</code>、<code>dac.c</code>、<code>i2c_driver.c</code>、<code>io.c</code>、<code>normalfunction.c</code>、<code>usart.c</code>、<code>icpwm.c</code>、<code>eev.c</code>。</p>
+      <p>好消息:<code>sysrun.c</code>、<code>Adciic.c</code> 在外机是<strong>活源码</strong>,且内容与内机丢失的那份同源 —— 可作重建参照。</p>
+    </div>
+  </div>
+
+  <h3>证据</h3>
+  <pre>Project/PSC330RK-V10.uvprojx
+  &lt;File&gt;
+    &lt;FileName&gt;sysrun.o&lt;/FileName&gt;
+    &lt;FileType&gt;<span class="hl">3</span>&lt;/FileType&gt;          <span class="cm">← 3 = 预编译目标文件,不是 C 源文件</span>
+    &lt;FilePath&gt;.\Obj\sysrun.o&lt;/FilePath&gt;
+  &lt;/File&gt;
+
+Project/Obj/sysrun.d                              <span class="cm">← 依赖文件指向的原始路径</span>
+  .\obj\sysrun.o: ..\User\wellthinker\src\sysrun.c  <span class="hl">← 该路径下已无此文件</span>
+
+.codex-tmp/build_20260909.log                     <span class="cm">← 一次真实增量构建</span>
+  compiling NergryAdjust.c...
+  compiling user.c...
+  compiling ErrorCheck.c...
+  compiling CompAction.c...
+  linking...                                      <span class="hl">← 直接链接,9 个模块一个都没编译</span>
+  ".\Obj\PSC330RK-V10.axf" - 0 Error(s), 0 Warning(s).</pre>
+
+  <ul class="items">
+
+    <li class="item sev-block" data-sev="block">
+      <input type="checkbox" id="k01">
+      <div>
+        <div class="head"><span class="t">内机 7 个模块的源码已丢失,固件靠旧二进制维持</span><span class="chip block">阻断</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330RK-V10.uvprojx:653-660 等 12 处 · PSC330RK-V10-内机/Project/Obj/*.o</span>
+        <p class="d">受影响模块里包含 <code>sysrun.c</code> —— 它提供 <code>SysRunInit</code>、<code>sysRunfile</code>、<code>Time_check</code>、<code>IWDG_Configuration</code>、<code>WriteParamaterEEprom</code>,以及 <code>uc100ms</code>/<code>uc1s</code> 等全部时标变量的<strong>定义</strong>。整个系统的时间基准、看门狗喂狗、参数掉电保存都在这个二进制里。全项目约 30 处读 <code>uc100ms</code>,其中就包括 EEV PID 的扫描周期计时。</p>
+        <p class="act"><b>动作</b>找回或重建这 7 个源文件;把工程成员从 <code>.o</code> 换回 <code>.c</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-block" data-sev="block">
+      <input type="checkbox" id="k02">
+      <div>
+        <div class="head"><span class="t">外机 <code>eev.c</code> 源码彻底丢失,阀门脉冲输出只在二进制里</span><span class="chip block">阻断</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316RK-V12.uvprojx · OBJ/eev.o(427 KB,2025-11-03)</span>
+        <p class="d">全库找不到任何 <code>eev.c</code>;<code>MT1Output()</code>、<code>MT2Output()</code> 在源码里<strong>没有任何定义</strong>,却在 <code>sys.c</code> 的 <code>SystemAction()</code> 里被每轮调用。反汇编确认这两个符号来自 <code>eev.o</code>。EEV 仲裁(<code>EEV_Priority</code>)在外机是活源码,但它下面真正驱动阀门的这一层不可读、不可改。</p>
+        <p class="act"><b>动作</b>优先找回 <code>eev.c</code>。若确已丢失,可用内机的 <code>User/EEV/eev.c</code>(1958 行,同族驱动)对照重建。</p>
+      </div>
+    </li>
+
+    <li class="item sev-block" data-sev="block">
+      <input type="checkbox" id="k03">
+      <div>
+        <div class="head"><span class="t">内机 <code>eev.c</code> 与 <code>Adciic.c</code> 在磁盘上却不参与编译</span><span class="chip block">阻断</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330RK-V10-内机/User/EEV/eev.c · User/NTC16bit/Adciic.c</span>
+        <p class="d">这两个文件存在于磁盘,但工程成员是 <code>eev.o</code> / <code>adciic.o</code>。链接进去的是 <code>eev.o</code>(2025-09-29)。内机的 <code>EEV_Priority()</code>、<code>MT1Output()</code>…<code>MT8Output()</code> 全在 <code>eev.c</code> 里 —— 也就是说 EEV 的仲裁层和脉冲层都来自那个冻结的二进制,只有 PID 层(<code>eevCTRL.c</code>)是活的。</p>
+        <p class="act"><b>动作</b>把 <code>eev.c</code>、<code>Adciic.c</code> 改回工程成员。改之前先确认现有源码与已链接的 <code>.o</code> 行为一致。</p>
+      </div>
+    </li>
+
+    <li class="item sev-block" data-sev="block">
+      <input type="checkbox" id="k04">
+      <div>
+        <div class="head"><span class="t">外机 <code>stm32f4xx_it.c</code> 在 2026-09-01 的改动没有进入固件</span><span class="chip block">阻断</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">User/src/stm32f4xx_it.c(源 2026-09-01 12:44) vs Project/Obj/stm32f4xx_it.o(2025-09-29 14:21)</span>
+        <p class="d">源文件比被链接的目标文件<strong>晚 11 个月</strong>。该文件承载全部串口中断服务程序与 <code>SysTick_Handler</code>,目标文件不可能包含那次修改。修改者不会收到任何提示 —— 构建依然是 0 错误 0 警告。</p>
+        <p class="act"><b>动作</b>确认 2026-09-01 那次改动的意图是否仍需生效;若是,必须让该文件重新参与编译。</p>
+      </div>
+    </li>
+
+    <li class="item sev-block" data-sev="block">
+      <input type="checkbox" id="k05">
+      <div>
+        <div class="head"><span class="t">固件源码完全不在版本控制内,没有回滚兜底</span><span class="chip block">阻断</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">仓库根 D:\Companty\WEll thinker\F\code · git ls-files 共 115 项</span>
+        <p class="d">被跟踪的是 <code>mcgs_hmi</code>、<code>tools</code> 和各路文档,匹配 <code>PSC330RK|PSC316RK</code> 的跟踪文件数为 <strong>0</strong>。这也是为什么上面那份丢失的 <code>sysrun.c</code> 无法从 git 历史找回。<code>.o</code> 文件同样未被跟踪,只存在于本机磁盘。</p>
+        <p class="act"><b>动作</b>把两个固件工程纳入版本控制(至少 <code>User/</code>、<code>SYSTEM/</code>、<code>WELLTHINKER/</code> 与 <code>*.uvprojx</code>),并明确 <code>Obj/</code>、<code>OBJ/</code> 的忽略策略。</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ §1 ══════════════ -->
+<section id="s1">
+  <h2><span class="num">§1</span>有没有跑操作系统</h2>
+  <p class="secnote">没有。两个工程都是裸机超循环,没有任何 RTOS。</p>
+
+  <div class="callout">
+    <h4>结论:无操作系统,协作式超循环调度的裸机程序</h4>
+    <p>两个 <code>main.c</code> 结构完全相同:<code>SystemUserInit(); while(1){ SystemAction(); User(); }</code>。没有任何任务创建、调度器启动或 RTOS 初始化调用。</p>
+    <p>时基由 1 ms SysTick 中断累加 <code>Systick_1ms</code>,再由 <code>Time_check()</code> 把它折算成 <code>uc5ms</code>/<code>uc10ms</code>/<code>uc20ms</code>/<code>uc100ms</code>/<code>uc300ms</code>/<code>uc500ms</code>/<code>uc1s</code>/<code>uc1m</code>/<code>uc1h</code> 标志位;所有"任务"都是 <code>User()</code> 里靠这些标志位门控的函数。</p>
+  </div>
+
+  <h3>判定依据</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>检查项</th><th>外机 PSC316</th><th>内机 PSC330</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>main 结构</td><td>裸超循环</td><td>裸超循环</td></tr>
+        <tr><td><code>SysTick_Handler</code> 内容</td><td>仅 <code>Systick_1ms++</code></td><td>仅 <code>Systick_1ms++</code></td></tr>
+        <tr><td><code>SVC_Handler</code> / <code>PendSV_Handler</code></td><td>空函数</td><td>未实现</td></tr>
+        <tr><td><code>OSTaskCreate</code> / <code>xTaskCreate</code> / <code>OSInit</code> / <code>vTaskStartScheduler</code></td><td>零命中</td><td>零命中</td></tr>
+        <tr><td>UCOS 痕迹</td><td><code>delay.c</code> 内有 <code>OSTimeDly</code> 版本,但整段位于 <code>#if SYSTEM_SUPPORT_OS</code> 内,<strong>未参与编译</strong></td><td>无</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="secnote">唯一匹配到 RTOS 关键字的是 <code>SYSTEM/delay/delay.c</code> 与 <code>delay.h</code> —— 那是正点原子模板留下的注释和一段被条件编译排除的 UCOS 适配代码。空实现的 <code>PendSV</code>/<code>SVC</code> 恰好是 RTOS 用来做上下文切换的中断,它们为空即可排除 RTOS。</p>
+
+  <h3>实际含义</h3>
+  <ul class="items">
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k06">
+      <div>
+        <div class="head"><span class="t">没有抢占,长函数会阻塞整个系统</span><span class="chip clean">认知</span><span class="chip conf">置信度 高</span></div>
+        <p class="d">好处是没有优先级反转、没有竞态;代价是没有栈隔离 —— 任何函数一旦进入就跑到返回为止,期间其它所有逻辑都停摆。这就是为什么 <code>uc100ms</code> 这类标志必须在每轮循环里被及时消费,也是超长函数(见 §7)不只是风格问题的原因。</p>
+        <p class="act"><b>动作</b>评估长函数时以"最坏执行时间"为准,而不是可读性。串口中断仍在正常抢断,收发不受影响。</p>
+      </div>
+    </li>
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k07">
+      <div>
+        <div class="head"><span class="t">内机的时基实现已随 <code>sysrun.c</code> 一起变成不可读的二进制</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · PSC316 SYSTEM/src/sysrun.c:620-699(外机同名实现仍在)</span>
+        <p class="d">外机的 <code>Time_check()</code> 是活源码、可读可改;内机的一份在丢失的 <code>sysrun.c</code> 里。任何内机时序问题都无法从源码层面排查。建议按外机那份重建。</p>
+        <p class="act"><b>动作</b>与 §0 第 1 条合并处理。</p>
+      </div>
+    </li>
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k08">
+      <div>
+        <div class="head"><span class="t">外机 <code>Time_check()</code> 里 <code>uc20ms</code> 阈值为 10 ms,但该标志无人读取</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316RK-V12-外机/SYSTEM/src/sysrun.c:659</span>
+        <p class="d"><code>if(Systick_1ms &gt;= (Systick_20ms+10)) //10毫秒标志位</code> —— 阈值写成 +10(应为 +20),注释也从上一行复制。但全项目 <code>uc20ms</code> 只有定义、清零、置位三处,<strong>没有任何读取点</strong>,所以阈值错误目前不产生任何行为。这是"死变量掩盖了真错误",一旦将来有人开始用 <code>uc20ms</code>,会直接踩到 10 ms 的坑。</p>
+        <p class="act"><b>动作</b>阈值改回 20,或连同 <code>uc20ms</code> 一起删除。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ══════════════ §2 ══════════════ -->
+<section id="s2">
+  <h2><span class="num">§2</span>待确认的功能性缺陷</h2>
+  <p class="secnote">这一节里的条目会改变实际行为,不是风格问题。其中两条我已逐行核实过完整调用链。</p>
+
+  <ul class="items">
+
+    <li class="item sev-crit" data-sev="crit">
+      <input type="checkbox" id="k09">
+      <div>
+        <div class="head"><span class="t"><code>UnitWriteStatus[]</code> / <code>UnitReadStatus[]</code> 索引无边界检查,可被参数写触发越界</span><span class="chip crit">严重</span><span class="chip conf">置信度 高(调用链已核实)</span></div>
+        <span class="loc">PSC316 · UserAction.c:2040 · User.h:372,376 · moduleAction.c:146-147</span>
+        <p class="d">两个结构体数组各 <code>[18]</code>。索引 <code>BoardAddressSet</code> 在 <code>OutdoorUnitAction()</code> 里直接取自 <code>IndoorAddrSet = Parameter[RS485_ADDR_BASE+3] = Parameter[197]</code>,头文件注释标注其量程为 <strong>0~247</strong>,且 Modbus 参数写入路径(<code>modbus.c:457/652/845/1038/1230</code> 等)只校验地址、<strong>不校验值</strong>。全项目没有任何一处对 <code>BoardAddressSet</code> 做钳位。取到 ≥18 即越界写,跨入相邻结构体;该索引随后被 <code>ErrorCheck.c</code>、<code>DefAction.c</code>、<code>DispAction.c</code> 大量使用,扩散面广。</p>
+        <p class="act"><b>动作</b>在 <code>UserAction.c:2040</code> 赋值处钳位,例如 <code>BoardAddressSet = (IndoorAddrSet &gt;= 18) ? 0 : IndoorAddrSet;</code>,或在参数写入侧限制 <code>Parameter[197]</code> 的取值范围。</p>
+      </div>
+    </li>
+
+    <li class="item sev-crit" data-sev="crit">
+      <input type="checkbox" id="k10">
+      <div>
+        <div class="head"><span class="t">内机 <code>Parameter[16]</code> 被两个宏名占用,PID 扫描周期被钳到 10 s 而非规格的 5 s</span><span class="chip crit">严重</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330RK-V10-内机/User/UserHead/User.h:227 与 :757</span>
+        <p class="d">旧宏 <code>EEVAdjustTimeSet1</code> = <code>Parameter[EEVPARAMETER+6]</code> = <code>Parameter[16]</code>;新宏 <code>EEVPidScanTimeSet</code> 也是 <code>Parameter[16]</code>。规格 2.3.9 要求 TP=5 s,而 <code>EEVSpecPidStep()</code> 里 <code>t = EEVSpecLimitValue(t, 1, 10)</code> 会把旧默认值(60~90)钳成 <strong>10</strong>。连带影响:每周期最大加减 20 步的限幅不随 TP 缩放,所以最大调节速率从规格的 4 步/秒降到 <strong>2 步/秒</strong>。该值还会经 <code>Addr=198, Num=9</code> 同步广播写进外机的 <code>Parameter[203]</code>,两边一起偏。写入 HMI 地址 16(文档标注"EEV调节时间1")会静默改掉 TP。</p>
+        <p class="act"><b>动作</b>为 <code>EEVPidScanTimeSet</code> 分配一个独立地址。365~373 已被规格参数占满,需另行选槽。同步偏移槽位已存在,外机与协议侧无需改动。</p>
+      </div>
+    </li>
+
+    <li class="item sev-crit" data-sev="crit">
+      <input type="checkbox" id="k11">
+      <div>
+        <div class="head"><span class="t">外机 <code>MOTOR_PWM3Config</code> 占空比上限写成 100 而非 1000</span><span class="chip crit">严重</span><span class="chip conf">置信度 高(但当前无现场影响)</span></div>
+        <span class="loc">PSC316 · WELLTHINKER/EEV/THB6128.c:101-104</span>
+        <p class="d"><code>if(duty &gt; 1000){ duty = 100; }</code> —— 同文件的 <code>MOTOR_PWM4Config</code>(:121-124)写的是正确的 <code>duty = 1000</code>。通道 3 的占空比上限被钳到 10%,与通道 4 不一致,是复制粘贴漏改。该文件<strong>不在 Keil 工程成员内</strong>,所以现在不会影响运行;但一旦启用即暴露出 100 倍的量程差。</p>
+        <p class="act"><b>动作</b>改为 <code>duty = 1000</code>。同处 <code>CCR_Val = 1000 * duty / 1000;</code>(:76,106,126)是恒等运算,可直接写成 <code>CCR_Val = duty;</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k12">
+      <div>
+        <div class="head"><span class="t"><code>SystemNengry</code> 的 4/5 分支内部不可达,但该参数可被外部写入 —— 删之前请确认</span><span class="chip warn">待确认</span><span class="chip conf">置信度 中</span></div>
+        <span class="loc">PSC330 · User.h:946(<code>Parameter[707]</code>) · CompAction.c:1373,1378</span>
+        <p class="d">代码里全部写点的取值域是 0/1/2/3(实测 <code>NergryAdjust.c:250</code> 的 <code>command</code> 最大为 3,其余写 0/1/2),从不写 4 或 5,所以 <code>CompMainAction</code> 的 <code>case 4</code>/<code>case 5</code> 内部走不到,连带 <code>CompEnvLowLoad</code>、<code>CompEnvHoldLoad</code> 及其下游 5 个函数成为死链。</p>
+        <p class="d"><strong>但</strong> <code>SystemNengry</code> 是持久化参数 <code>Parameter[707]</code>,Modbus 可写;而且 <code>User.h:946</code> 的注释本身把值 4 记为合法状态("停机,每 6 停一台压缩机")。这更像是<strong>尚未接线的功能</strong>,不是废弃代码。</p>
+        <p class="act"><b>动作</b>先与规格负责人确认 case 4/5 是否规划中。若已放弃则删除整条链;若在规划中则保留并加注释说明"仅外部写入可触发"。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k13">
+      <div>
+        <div class="head"><span class="t">同目录两套 CRC-16 实现,字节序相反</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · modbus.c:299-340 vs crc16.c:7-83</span>
+        <p class="d"><code>modbus.c</code> 的 <code>CreatCRC</code> 输出高字节在前,<code>crc16.c</code> 的 <code>mb_chk_crc16</code> 低字节在前。两者用途重叠,将来混用会静默破坏每一帧通讯。其中 <code>crc16.c</code> 不在工程成员内、函数零调用。</p>
+        <p class="act"><b>动作</b>保留 modbus.c 的实现,删除 <code>crc16.c</code>/<code>crc16.h</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k14">
+      <div>
+        <div class="head"><span class="t">参数越界定位可能被赋成 0,而 0 恰好是"无故障"取值</span><span class="chip warn">建议</span><span class="chip conf">置信度 中</span></div>
+        <span class="loc">PSC330 · User/UserSrc/ErrorCheck.c:589-596</span>
+        <p class="d">循环里越界时执行 <code>WriteEEpromErr = i;</code>。若越界发生在 <code>i == 0</code>,该变量被赋 0;而 0 在别处表示正常,故障被静默吞掉。</p>
+        <p class="act"><b>动作</b>改为 <code>i + 1</code>,或改用独立的布尔标志。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k15">
+      <div>
+        <div class="head"><span class="t">NTC 查表循环缺少"未命中"兜底,表尾有越界读的可能</span><span class="chip warn">建议</span><span class="chip conf">置信度 中</span></div>
+        <span class="loc">PSC316 · NTC16bit.c:163-168</span>
+        <p class="d"><code>for(j=0;j&lt;200;j++) if(res&lt;=NTCtable[j] &amp;&amp; res&gt;NTCtable[j+1]) break;</code> 之后没有对"循环走完仍未 break"的处理。若表非严格单调,<code>j</code> 会到 200,随后 <code>NTCtable[j+1]</code> 越界访问 <code>NTCtable[201]</code>。当前表数据单调,不会触发。</p>
+        <p class="act"><b>动作</b>循环后补 <code>if(j&gt;=200){ NTC[i]=9999; SensorStatus[i+6]=1; continue; }</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k16">
+      <div>
+        <div class="head"><span class="t">硬编码的循环上限与可配置数量脱钩</span><span class="chip warn">建议</span><span class="chip conf">置信度 中</span></div>
+        <span class="loc">PSC316 · NTC16bit.c:155(<code>i&lt;8</code> vs 同文件 <code>NTCNum</code>)</span>
+        <p class="d">同文件中 130/141 行用 <code>NTCNum</code> 驱动循环,155 行却硬编码 8。一旦 <code>NTCNum</code> 调大就会越界写 <code>NTC[i]</code> / <code>SensorStatus[i+6]</code> / <code>AI[6+i]</code>。</p>
+        <p class="act"><b>动作</b>统一改用 <code>NTCNum</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k17">
+      <div>
+        <div class="head"><span class="t"><code>CreatCRC</code> 的 <code>while(len--)</code> 与无意义的 <code>volatile</code> 形参</span><span class="chip warn">建议</span><span class="chip conf">置信度 中</span></div>
+        <span class="loc">PSC316 · modbus.c:343-354</span>
+        <p class="d">传 0 时局部 <code>len</code> 回绕到 65535,虽然条件当次为假、不会进循环,但这个惯用法的防护意图被破坏了。另外 <code>volatile</code> 加在按值传递的形参上没有意义,加在指针上则强制每字节重新读取。</p>
+        <p class="act"><b>动作</b>改成 <code>while(len &gt; 0){ ...; len--; }</code>,去掉多余的 <code>volatile</code>。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k18">
+      <div>
+        <div class="head"><span class="t">内机外机上电回零策略不一致:外机用固定 23 秒等待,不确认到位</span><span class="chip warn">待确认</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · eevCTRL.c:528-543</span>
+        <p class="d">外机 <code>EEV_Action()</code> 里 <code>Init[i]</code> 置 1 后<strong>在文件内任何地方都没有被清回 0</strong>,且只靠 <code>TimeCount[i] &lt; 23</code> 的固定时长判断归零完成,不检查 <code>Parameter[OldAddValue+i]</code> 是否已到 0。内机 <code>eevCTRL.c</code> 用的是 <code>if(Parameter[OldAddValue+i] != 0) return;</code> 的到位确认写法,更稳妥。</p>
+        <p class="act"><b>动作</b>确认 23 秒是否覆盖最慢阀门的全行程;若是则加注释说明,若否则改为回读到位判断。</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ §3 ══════════════ -->
+<section id="s3">
+  <h2><span class="num">§3</span>可删除:死文件</h2>
+  <p class="secnote">这些文件不在 Keil 工程成员内(不参与编译),或整个文件正文已被注释。删除不会影响构建。</p>
+
+  <ul class="items">
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k19">
+      <div>
+        <div class="head"><span class="t">内机 <code>ErrCheck.c</code> / <code>ErrCheck.h</code> —— 482 行里只有 8 行是活代码</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · User/UserSrc/ErrCheck.c:11-482 全部注释;正文仅 1-8 行的 <code>#include</code></span>
+        <p class="d">实测活代码 8 行、总行数 482。内容还是<strong>别的项目</strong>的模板(<code>pumpctrl</code>/<code>licterr</code>/<code>vterr</code>/<code>lic_fault</code>)。不在工程内;<code>ErrCheck.h</code> 只被它自己 include;它声明的 <code>ErrDataInit</code>/<code>ErrCheck(char)</code>/<code>ErrReset(char)</code> 三个函数<strong>均无定义</strong>,与 <code>User.h:85</code> 的 <code>void ErrorCheck(void)</code> 没有关系。活的实现是 <code>ErrorCheck.c</code>,由 <code>user.c:1482</code> 调用。</p>
+        <p class="act"><b>动作</b>删除两个文件,保留 <code>ErrorCheck.c</code>。这是本次审计投入产出比最高的一条。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k20">
+      <div>
+        <div class="head"><span class="t">内机 <code>test.c</code>(140 行)不在工程内</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · User/UserSrc/test.c</span>
+        <p class="d">残留的测试文件,内部也有整段注释掉的旧逻辑(如 :98 的 <code>//FallCount += uc100ms;</code>)。</p>
+        <p class="act"><b>动作</b>删除,或移出源码树归档。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k21">
+      <div>
+        <div class="head"><span class="t">外机 <code>modbusport.c/.h</code> 整个文件不在工程内,且依赖不存在的头文件</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · WELLTHINKER/modbus/modbusport.c(136 行)</span>
+        <p class="d">include 了 <code>stm32f4xx.h</code>(本工程是 F10x)和 <code>./Ethernet/MODBUS/modbus_tcp.h</code>,两者都不存在。它依赖的 <code>UART4_Send</code>/<code>USART6_Send</code>/<code>modbusRTU()</code> 在本项目中也没有定义。文件内部还有真实的缓冲区无边界检查(:44、:74-75),只是因为不编译才没有影响。</p>
+        <p class="act"><b>动作</b>删除 <code>modbusport.c</code> / <code>modbusport.h</code>。若将来要启用,必须先补边界检查。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k22">
+      <div>
+        <div class="head"><span class="t">外机 <code>THB6128.c/.h</code> 是 STM32F4 代码,误留在 F10x 工程里</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · WELLTHINKER/EEV/THB6128.c:1(<code>#include "stm32f4xx.h"</code>)</span>
+        <p class="d">用了 <code>RCC_AHB1PeriphClockCmd</code>、<code>GPIO_PinAFConfig</code>、<code>GPIO_Mode_AF</code> 等 F4 专有 API。不在工程成员内,也不在任何 axf 的符号表里。<code>THB6128_init</code>/<code>MOTOR_PWM</code>/<code>Microstep</code> 三个函数零调用。注释还写着"84 000 000 / arr / psc = 25Khz"(84 MHz 是 F4 的时钟,且按公式实算约 250 Hz)。</p>
+        <p class="act"><b>动作</b>删除;若确需保留,先修 §2 里那条 <code>duty = 100</code> 并移出工程目录。注意 <code>eevCTRL.c</code> 的 <code>EEV_Priority</code> 现在是外机 EEV 优先级的实际实现,删除此文件不影响它。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k23">
+      <div>
+        <div class="head"><span class="t">外机 <code>PortTest.c</code> 模块初始化了但任务函数从未被调用</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · PortTest.c:157-181 <code>PortTestTask()</code> · sys.c:34 只调 <code>PortTestInit()</code></span>
+        <p class="d"><code>PortTestTask()</code> 和 <code>PortTestSendAll()</code> 都是零调用点。<code>sys.c</code> 的主循环只调用了初始化,所以<strong>整个端口标识测试功能实际不生效</strong> —— 初始化完不会发出任何数据。该文件同时也受 §0 影响(它不在编译成员缺失之列,但依赖的 <code>io.o</code>/<code>usart.o</code> 是二进制)。</p>
+        <p class="act"><b>动作</b>二选一:在 <code>SystemAction()</code> 中接入 <code>PortTestTask()</code>,或删除整个模块。取决于这个功能是否还要用。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k24">
+      <div>
+        <div class="head"><span class="t">内机 <code>modbus.c</code> 的整条 UART3 链路是死的(191 行)</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · modbus.c:748-938 <code>CheckUart3Data()</code> 及配套函数</span>
+        <p class="d"><code>CheckUart3Data()</code> 零调用点,<code>sys.c</code> 只调用 UART 1/4/5/2 四路。连带 <code>StartUart3SendData</code>/<code>ModbusUart3Fun1/3/5/6/16</code> 全部为死代码。旁证:<code>USART3Init()</code> 只有声明、无定义、无调用,系统从不初始化 USART3。该段内 <code>:910</code> 还留着一处硬编码 <code>if(ucUart3Buff[0]==0)</code>(20260615 重构漏改)。</p>
+        <p class="act"><b>动作</b>整体删除,或补上 USART3 初始化使其可用。若删除,请同时移除 <code>modbus.h:76</code> 的声明。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k25">
+      <div>
+        <div class="head"><span class="t">陈旧临时目录与重复源码副本</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330RK-V10-内机/.codex-tmp/ · PSC316RK-V12-外机/_utf8tmp/</span>
+        <p class="d">里面是编码修复前的旧副本与一次性脚本产物(<code>before-encoding-repair/*.work</code>、<code>CompAction.c</code>、<code>NergryAdjust.c</code>、<code>User.h.head/roundtrip</code>)。这些副本会让全文搜索产生<strong>假命中</strong>——搜到的符号、行号可能来自废弃副本而不是正式源码,排查时极易误判。</p>
+        <p class="act"><b>动作</b>确认无需回滚后删除,或移出源码树归档。日常搜索请始终排除这两个目录。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k26">
+      <div>
+        <div class="head"><span class="t">约 80 个历史构建日志堆在工程目录里</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · Project/ 下的 <code>build_*.log</code>、<code>flash_*.log</code>、<code>*_2026*.log</code> 等</span>
+        <p class="d">从 2026-07-27 到 2026-09-10 的构建/烧录日志全部平铺在工程目录,与 <code>.uvprojx</code>、<code>.uvoptx</code> 混在一起。信息有价值,但位置不对。</p>
+        <p class="act"><b>动作</b>移到 <code>docs/build-logs/</code> 或归档;工程目录只留工程文件。</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ §4 ══════════════ -->
+<section id="s4">
+  <h2><span class="num">§4</span>可删除:整段注释掉的旧代码</h2>
+  <p class="secnote">这些是<strong>被注释的源码文本</strong>,不是正常注释。它们不编译,但会干扰阅读、撑大文件、并让"搜索到的行号"失去意义。</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>位置</th><th>行数</th><th>内容</th><th>置信度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="m">PSC316 FanControl.c:574-740</td><td class="num">~166</td><td>整个 <code>FanAction()</code> 函数体被注释。这就是常被提到的"保留供参考"死代码。注意:它<strong>不是</strong>被 return 挡住的活代码,<code>User.h:67</code> 仍有声明,<code>UserAction.c:2211</code> 留有 <code>//FanAction();</code></td><td>高</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:1836-1900</td><td class="num">65</td><td>"机型切换改默认参数"旧逻辑,连续 5 段重复</td><td>高</td></tr>
+        <tr><td class="m">PSC316 ErrorCheck.c:749-817</td><td class="num">69</td><td><code>IoOutAction()</code> 内旧风机输出逻辑(<code>FanTypeSet==0</code> 分支),已被 <code>OutdoorFanTypeSet</code> switch 取代</td><td>高</td></tr>
+        <tr><td class="m">PSC330 modulecontrol.c:983-1023</td><td class="num">41</td><td>"温湿度传感器通讯"整段分支</td><td>高</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:3172-3184</td><td class="num">13</td><td>整个旧函数 <code>ReHeatY11Control</code></td><td>高</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:3213-3233</td><td class="num">21</td><td>EEV 初始开度旧逻辑</td><td>高</td></tr>
+        <tr><td class="m">PSC330 NergryAdjust.c:1-18</td><td class="num">18</td><td>旧全局量 <code>Capacity_N</code>/<code>InitCapacityDone</code> 与测试横幅</td><td>高</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:2065-2079 / 2268-2281</td><td class="num">29</td><td><code>RealTemp</code> 来源分支 / 除霜停水泵逻辑</td><td>高</td></tr>
+        <tr><td class="m">PSC316 DispAction.c:59-71</td><td class="num">13</td><td><code>W5070Disp()</code> 内 <code>WriteOrder==1/2/3</code> 三个分支</td><td>高</td></tr>
+        <tr><td class="m">PSC330 modulecontrol.c:877-882 等 6 处</td><td class="num">~40</td><td>零散注释旧代码,含被注释的 <code>#define ModErrTotal</code></td><td>高</td></tr>
+        <tr><td class="m">PSC316 eevCTRL.c 多处</td><td class="num">20</td><td><code>ColdEEV</code> 守卫、EEV2 手动控制分支、<code>EEVpriority[4]/[5]</code> 处理。删除后 <code>ColdEEV</code> 宏可一并退役</td><td>高</td></tr>
+        <tr><td class="m">PSC316 modbus.c:752,358,1327-1333</td><td class="num">~24</td><td><code>//RS485_3E_TE();</code>(该宏全项目<strong>无定义</strong>,取消注释即编译失败)、残留旧函数签名、过期 banner</td><td>高</td></tr>
+        <tr><td class="m">PSC330 module.h:46 / PSC316 module.h:46</td><td class="num">2</td><td>struct 成员里的重复注释声明 <code>//signed int AII[18];</code>(上一行已是活声明)</td><td>高</td></tr>
+        <tr><td class="m">PSC330 UserAction.c 零散 7 处</td><td class="num">~165</td><td>1965-1968 / 2045-2056 / 2217-2222 / 2423-2425 / 2963-2969 / 3254-3256 / 3315-3317</td><td>高</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="secnote">合计约 <strong>690 行</strong>注释掉的源码文本。注意区分:函数头部的 <code>//</code> 横幅(如 <code>CompAction.c:1120-1122</code>)是正常注释,不算死代码。</p>
+</section>
+
+<!-- ══════════════ §5 ══════════════ -->
+<section id="s5">
+  <h2><span class="num">§5</span>可删除:死变量与死赋值</h2>
+  <p class="secnote">标注 <strong>编译器确认</strong> 的条目来自历史构建日志中 ARMCC 实际报出的警告,不是我的人工推断。其余为全项目 grep 确认零引用。</p>
+
+  <h3>编译器直接报出的</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>位置</th><th>变量</th><th>警告</th><th>是否仍在</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="m">PSC316 eevCTRL.c:505</td><td><code>Time3[10]</code></td><td>#550-D set but never used</td><td>是(最新重编译仍报)</td></tr>
+        <tr><td class="m">PSC316 FanControl.c:346, 486</td><td><code>errorfan</code></td><td>#177-D declared but never referenced</td><td>需复核行号已漂移</td></tr>
+        <tr><td class="m">PSC316 FanControl.c:484</td><td><code>MES1</code>、<code>MES2</code></td><td>#177-D declared but never referenced</td><td>需复核行号已漂移</td></tr>
+        <tr><td class="m">PSC316 UserAction.c:631-635</td><td><code>FanCount</code>、<code>FanCount2</code>、<code>FanInit1</code>、<code>fanflag2</code></td><td>#177-D declared but never referenced</td><td>需复核行号已漂移</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:1650-1801</td><td><code>count</code>(多处)</td><td>#550-D set but never used</td><td>需复核行号已漂移</td></tr>
+        <tr><td class="m">PSC330 UserAction.c:1824-1976</td><td><code>InitialSizeFlag</code>、<code>InitialSizeCount</code></td><td>#550-D set but never used</td><td>需复核行号已漂移</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="secnote">这些警告出自不同时期的构建日志,行号已随文件编辑漂移。上表后四行需要按当前位置复核后再删。<code>InitialSizeFlag</code>/<code>InitialSizeCount</code> 这组名字同时出现在 <code>PSC316 eevCTRL.c</code> 的 <code>EEV_Action()</code> 里 —— 说明 EEV 逻辑从 <code>UserAction.c</code> 迁到 <code>eevCTRL.c</code> 时,旧局部变量被留在了原处。</p>
+
+  <h3>grep 确认零引用</h3>
+  <ul class="items">
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k27">
+      <div>
+        <div class="head"><span class="t">内机 <code>CompPriory[70]</code> 只写不读,配套排序循环纯属白算</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · CompAction.c:6 定义,:1135 与 :1198 写入 · User.h:64 extern</span>
+        <p class="d">全项目仅此 3 处,<strong>没有任何读取点</strong>。代价不只是 70 字节:它旁边的 <code>DeviceStatusCount()</code> 里那段排序循环(约 :1183-1199)每个周期都在跑但结果无人使用。</p>
+        <p class="act"><b>动作</b>删除数组、extern 声明和排序循环。删除前确认它不属于上面那条 case 4/5 待确认链的一部分(实测不相干)。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k28">
+      <div>
+        <div class="head"><span class="t">外机 <code>MErrListDisp[515]</code> / <code>MErrList[515]</code> 零引用,白占约 1.5 KB RAM</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · DispAction.c:6-7(另有 <code>SysErrListDisp[15]</code>)</span>
+        <p class="d">全项目零引用,只在 <code>dispaction.o</code> 里有符号。外机 RAM 是全系统最紧的资源(见页首:27 KB / 48 KB,已用 57%),这 1.5 KB 值得回收。</p>
+        <p class="act"><b>动作</b>删除。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k29">
+      <div>
+        <div class="head"><span class="t">外机 <code>Temp_Val_Filter2/3</code> 及其整条支路恒为 0</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · TempFilter.c:5-6, 122-123, 161-162</span>
+        <p class="d">只有 <code>Filter0</code>/<code>Filter1</code> 被写入,<code>Filter2</code>/<code>Filter3</code> 除初始化外全项目无写入点 → 恒为 0。连带 <code>Temp_ValMax[2]/[3]</code>、<code>Temp_ValMin[2]/[3]</code>、<code>tempPara[2]/[3]</code>、<code>Filter_A[2]/[3]</code> 全在空转。<code>Filter_A[2]/[3]</code> 属"写后不读"。</p>
+        <p class="act"><b>动作</b>删除两个数组及 <code>Temp_Real</code> 中约 20 行相关代码。若后续要接入第 3/4 路温度,再按需恢复。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k30">
+      <div>
+        <div class="head"><span class="t">内机 <code>UnitReadStatus[].VVF[0..13]</code> 每帧 14 次死写</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · modulecontrol.c:1492-1503 与 1595-1597</span>
+        <p class="d">全部赋常量 0,全项目 <code>.VVF[</code> 无任何读取点。且 1595-1597 与 1492-1503 的兄弟语句相隔 90 行,像是被打断的一次编辑留下的。</p>
+        <p class="act"><b>动作</b>删除这 14 行,或标注 <code>/* reserved */</code> 说明用途。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k31">
+      <div>
+        <div class="head"><span class="t">其余零引用/只写不读的变量</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">见下表</span>
+        <div class="tw">
+          <table>
+            <thead><tr><th>位置</th><th>符号</th><th>情况</th></tr></thead>
+            <tbody>
+              <tr><td class="m">PSC316 modbus.c:32,40,49,58,66</td><td><code>OLDUart1..5Systick_1ms</code></td><td>5 × uint64_t = 40 字节纯死变量</td></tr>
+              <tr><td class="m">PSC316 modbus.c:31,39,48,57,65</td><td><code>ucUart1..5ReceTimeOut</code></td><td>写而不读,全项目无读取点</td></tr>
+              <tr><td class="m">PSC316 modbus.c:72</td><td><code>CheckUartError</code></td><td>仅定义处出现,从不读写</td></tr>
+              <tr><td class="m">PSC316 modbus.c:18</td><td><code>Com5Error</code></td><td>从不赋值也不读取;<code>ComErrCheck</code> 只处理 COM1..4</td></tr>
+              <tr><td class="m">PSC316 TempFilter.c:8-9</td><td><code>PresFack[2]</code>、<code>PTempDisp[2]</code></td><td>全项目零引用</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:5</td><td><code>eeVInitialSizeSet0[8]</code></td><td>大小写笔误(小写 <code>eeV</code>),没命中 <code>User.h:610</code> 的宏 <code>EEVInitialSizeSet0</code>,成了孤儿对象。疑似从 V10 内机移植的残留</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:952-953</td><td><code>EEVpriority[6]</code>、<code>EEVRunGroup[6]</code>、<code>OLD_EEVRunGroup[6]</code></td><td>声明尺寸 6,所有循环硬编码 <code>i&lt;4</code>,下标 4/5 只在初始化与已注释代码中</td></tr>
+              <tr><td class="m">PSC316 modbus.c:384,416,441,489,575,610,636,685,771,804,829,878,964,997,1022,1071,1156,1189,1214,1263</td><td>自赋值 ×20</td><td><code>ucUartNBuff[0] = ucUartNBuff[0];</code> 无意义自赋值</td></tr>
+              <tr><td class="m">PSC316 ErrorCheck.c:16, 6-7, 8-12</td><td><code>ErrmsCount[40]</code>、<code>SensorErr[30]</code>、<code>Old_Err[30]</code> 等</td><td>实际下标域分别为 30 / 13 / 19,尾部槽位永不使用,虚占 RAM</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="act"><b>动作</b>逐项确认后删除;数组按实际下标域收窄。<code>eevCTRL.c</code> 里"按通道"的数组同时存在 <code>[10]</code>/<code>[8]</code>/<code>[4]</code>/<code>[2]</code> 四种尺寸描述同一概念,建议统一定义一个 <code>EEV_CH_NUM</code>。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ══════════════ §6 ══════════════ -->
+<section id="s6">
+  <h2><span class="num">§6</span>精简:重复代码</h2>
+  <p class="secnote">这一节是"精简"的主要落点。重复不只是行数问题 —— 五份各自演化的副本意味着<strong>修一处漏四处</strong>,这是缺陷的真正来源。</p>
+
+  <ul class="items">
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k32">
+      <div>
+        <div class="head"><span class="t">外机 <code>modbus.c</code>:1414 行里约 962 行是同一套逻辑复制 5 份</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · modbus.c:362-549, 553-745, 749-938, 942-1130, 1134-1323</span>
+        <p class="d">五个约 188 行的通道块,每块含 <code>StartUartNSendData</code> + <code>ModbusUartNFun1/3/5/6/16</code> + <code>CheckUartNData</code>。差异只有 UART 编号、从站地址宏、功能码宏族和一处注释。另有 <code>ComErrCheck()</code>(:1343-1404)里 COM1..COM4 四块除索引与常量外完全相同。</p>
+        <p class="act"><b>动作</b>合并为按端口结构体/表驱动的单一驱动,<code>ComErrCheck</code> 改为数组循环。这是本次审计里重构收益最大的一处。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k33">
+      <div>
+        <div class="head"><span class="t">内机 <code>eev.c</code> 的 <code>MT1..MT8</code> 八份相似块</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · User/EEV/eev.c(1958 行,不在工程编译成员内)</span>
+        <p class="d">八段结构一一对应、仅 GPIO 宏与通道号不同的代码(<code>MT1Output:236</code>、<code>MT2Output:451</code>、…、<code>MT8Output:1745</code>),每段约 215 行。这是 1958 行里最主要的构成。</p>
+        <p class="act"><b>动作</b>抽成带通道参数的单一驱动 + 通道表。<strong>注意</strong>:该文件当前不参与编译(见 §0),重构前要先把工程成员改回 <code>.c</code>,否则改了不生效。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k34">
+      <div>
+        <div class="head"><span class="t">内机压缩机判据在两个文件里各写一份</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC330 · CompAction.c:94-102,104-107,151-158,160-169 vs NergryAdjust.c:57-61,63-70,72-80,82-92</span>
+        <p class="d">四组函数逐字相同:<code>CompIsConfigured</code>/<code>IndoorCompConfigured</code>、<code>CompIsRunningStatus</code>/<code>IndoorCompIsRunning</code>、<code>CompEvapLowBlocked</code>/<code>IndoorCompEvapLowBlocked</code>、<code>CompFaultBlocked</code>/<code>IndoorCompFaultBlocked</code>(故障位掩码 <code>0x0070</code>/<code>0x000a</code>/<code>0x0005</code> 也重复)。</p>
+        <p class="act"><b>动作</b>合并到一处,另一侧改为调用。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k35">
+      <div>
+        <div class="head"><span class="t">其余可合并的重复块</span><span class="chip warn">建议</span><span class="chip conf">置信度 高/中</span></div>
+        <span class="loc">见下表</span>
+        <div class="tw">
+          <table>
+            <thead><tr><th>位置</th><th>重复内容</th><th>建议</th></tr></thead>
+            <tbody>
+              <tr><td class="m">PSC316 TempFilter.c:169-201 vs 204-235</td><td>压力→温度换算两份约 33 行,仅 <code>Filter_A[0]→[1]</code> 与目标变量不同</td><td>抽 <code>PressureToTemp()</code></td></tr>
+              <tr><td class="m">PSC316 ErrorCheck.c:600-623</td><td>同一段 4 行位打包循环重复 8 次(<code>ERR1Disp</code>…<code>ERR8Disp</code>),仅偏移不同</td><td>抽辅助函数或改循环</td></tr>
+              <tr><td class="m">PSC316 ErrorCheck.c:274-294 vs 295-319</td><td><code>PressSensor==1</code> / <code>==2</code> 两分支探头扫描近乎重复</td><td>合并</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:630-664</td><td>六个 LOAD/UNLOAD 分支</td><td>改表驱动,省约 24 行</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:1017-1055</td><td>四段逐字节相同的优先级轮换</td><td>省约 30 行</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:512-522 vs 819-834</td><td>压缩机运行标志推导重复。第二处<strong>缺少</strong> <code>EveNumSet==0</code> 的单系统耦合分支,差异是否有意待确认</td><td>合并前先确认意图</td></tr>
+              <tr><td class="m">PSC330 NergryAdjust.c:380-421 vs 426-471</td><td>制冷/制热两段 PID 积分与限幅近乎逐行重复</td><td>抽公共子函数</td></tr>
+              <tr><td class="m">PSC330 CompAction.c:1261-1298</td><td><code>Loading()</code> 与 <code>Unloading()</code> 函数体都只是 <code>CompTargetApply()</code></td><td>删壳,直接调用</td></tr>
+              <tr><td class="m">PSC330 CompAction.c:876-894 vs 905-923</td><td>"选最短运行时间模块"两个循环重复</td><td>抽子函数</td></tr>
+              <tr><td class="m">PSC316 NTC16bit.c:49-83</td><td><code>Get_AD()</code> 的 <code>case 0-17</code> 中 8 个通道按同一模式展开</td><td>表驱动</td></tr>
+              <tr><td class="m">PSC316 modbus.c:241-264</td><td>同一组 5 个功能码定义了 4 套平行宏,其中 <code>ModRTUCommand*</code> 全部未使用</td><td>合并为一套</td></tr>
+              <tr><td class="m">PSC316 modbus.c:74,215 vs modbus.h:81-82</td><td><code>BitSize</code>、<code>BitAddrMax</code> 在 .c 与 .h 各定义一次</td><td>删除 .c 内副本,避免改 .h 时静默漏改</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="act"><b>动作</b>按行逐项处理。表中"待确认意图"的一项不要盲改。</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ §7 ══════════════ -->
+<section id="s7">
+  <h2><span class="num">§7</span>架构:超长函数</h2>
+  <p class="secnote">因为没有 RTOS(§1),函数一旦进入就独占 CPU 直到返回 —— 所以超长函数不只是可读性问题。</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>文件:函数</th><th class="num">行数</th><th>切分方向</th><th>置信度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="m">PSC330 UserAction.c:1525-2179 <code>IndoorDisinfectExhaustAction</code></td><td class="num">655</td><td>按 消毒 → 停机快照 → 风机时序 → 正反转 拆 4 个 static 子函数</td><td>高</td></tr>
+        <tr><td class="m">PSC330 DispAction.c:140-661 <code>W5070Disp</code></td><td class="num">522</td><td>按 状态显示 / 故障显示 / PLC 点映射 拆 3 个</td><td>高</td></tr>
+        <tr><td class="m">PSC330 modulecontrol.c:794-1257 <code>ModuleSendData</code></td><td class="num">464</td><td>按 读命令构造 / 写命令构造 / 发送调度 拆</td><td>高</td></tr>
+        <tr><td class="m">PSC330 modulecontrol.c:1265-1631 <code>ModuleReciData</code></td><td class="num">367</td><td>按命令码分支拆为 <code>HandleVersion</code>/<code>HandleStatus</code>/<code>HandleSet</code></td><td>高</td></tr>
+        <tr><td class="m">PSC330 user.c:220-496 <code>ParameterInit</code></td><td class="num">277</td><td>接近阈值,可暂不动</td><td>高</td></tr>
+        <tr><td class="m">PSC316 eevCTRL.c:726-768(<code>EEV_ActionAll</code> 内联查找表)</td><td class="num">43</td><td>内联查找表移出;<code>EEV_ActionAll</code> 混了 PID 模式切换复位、急停、环境温度→初始开度查表、通道分派四件事</td><td>高</td></tr>
+        <tr><td class="m">PSC316 ErrorCheck.c:664-819 <code>IoOutAction</code></td><td class="num">156</td><td>混了 参数校验 / 压缩机输出 / 四通阀 / 风机类型映射 四件事</td><td>高</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="secnote">外机的实际最长函数是 <code>EEV_Action</code>(<code>eevCTRL.c:502-691</code>,190 行),嵌套达 5-6 层(<code>else</code>→<code>if</code>→<code>if</code>→<code>switch</code>→<code>if</code>)。没有函数超过 300 行 —— 内机的问题集中在上表前四行。</p>
+</section>
+
+<!-- ══════════════ §8 ══════════════ -->
+<section id="s8">
+  <h2><span class="num">§8</span>编码损坏、命名与误导性注释</h2>
+
+  <ul class="items">
+
+    <li class="item sev-crit" data-sev="crit">
+      <input type="checkbox" id="k36">
+      <div>
+        <div class="head"><span class="t">8,687 处注释字符已不可逆损坏</span><span class="chip crit">严重</span><span class="chip conf">置信度 高(逐字节实测)</span></div>
+        <span class="loc">PSC316 · User.h(5282) · modbus.c(1394) · UserAction.c(1103) · user.c(908)</span>
+        <p class="d">文件里含有真实的 U+FFFD 替换字符(字节序列 <code>EF BF BD</code>),显示为 <code>锟斤拷</code> 之类的乱码。这是 UTF-8 与 GBK 之间往返转换失败留下的痕迹,<strong>原文字信息已经丢失,无法靠转码还原</strong>,只能重写。外机这四个文件受影响最重,而 <code>User.h</code> 正是全部参数地址宏的所在 —— 5282 处损坏意味着大量地址宏的说明文字已不可读。</p>
+        <p class="act"><b>动作</b>对这四个文件的关键宏与函数头补写注释(优先 <code>User.h</code> 的参数地址区)。不要尝试自动转码恢复。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k37">
+      <div>
+        <div class="head"><span class="t">同一工程内 GBK 与 UTF-8 混用</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · <code>PortTest.c</code>、<code>modbus.c</code> 是 UTF-8;其余为 GBK。PSC330 同样混用(如 <code>CompAction.c</code> UTF-8、<code>ErrorCheck.c</code>/<code>NergryAdjust.c</code> GBK)</span>
+        <p class="d">任何编辑器打开都会有一半文件的中文注释是乱码,而 IDE 的"另存为 UTF-8"操作正是上面那 8687 处损坏的成因。</p>
+        <p class="act"><b>动作</b>统一为一种编码(建议 GBK,与 Keil 默认一致)并在工程说明里写明;统一前先备份。</p>
+      </div>
+    </li>
+
+    <li class="item sev-warn" data-sev="warn">
+      <input type="checkbox" id="k38">
+      <div>
+        <div class="head"><span class="t">与代码矛盾的注释(会直接误导排查)</span><span class="chip warn">建议</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">见下表</span>
+        <div class="tw">
+          <table>
+            <thead><tr><th>位置</th><th>注释说的</th><th>代码实际做的</th></tr></thead>
+            <tbody>
+              <tr><td class="m">PSC330 module.h:49</td><td><code>BII[12]; //2个过热度+4个开度</code></td><td>实际是 <code>BII[0]/[1]</code>=主路过热度、<code>BII[2]/[3]</code>=蒸发温度、<code>BII[5..8]</code>=4 个开度。漏了 2 个蒸发温度</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:495,805</td><td>"压缩机停止时,将膨胀阀开度开到50步"</td><td>按 20 步/秒<strong>关</strong>阀。同文件 707 行的英文注释 <em>close at 20 steps per second</em> 是对的,中文注释把方向说反了</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:946 vs 1004-1016</td><td>一处说"每隔650ms执行",另一处说"每隔1秒轮换"</td><td>实际 <code>TimeCount += uc10ms; if(TimeCount&gt;=130)</code> = <strong>1300 ms</strong>。三方互相矛盾</td></tr>
+              <tr><td class="m">PSC316 modbus.c:497</td><td><code>CheckUart1Data(void) //RS232</code></td><td>该口实为 RS485(<code>modbus.c:365</code> 有 <code>RS485_1E_TE()</code>)</td></tr>
+              <tr><td class="m">PSC316 module.h:52-53</td><td><code>Err5</code>、<code>Err6</code> 的注释都写"故障4"</td><td>复制粘贴残留</td></tr>
+              <tr><td class="m">PSC330 module.h:6,7,10,15-19</td><td>Uart1/Uart5 的缓冲区注释全写成"串口2"</td><td>复制粘贴残留</td></tr>
+              <tr><td class="m">PSC330 DispAction.c:195-200</td><td><code>ModFinTemp2AI7Disp</code>、<code>ModCompExhaustAI12Disp</code>、<code>ModMainTempAI16Disp</code> 等</td><td>名字里的编号与所读的 <code>AII[]</code> 下标全部错位(<code>AI7</code> 读 <code>AII[6]</code>、<code>AI12</code> 读 <code>AII[7]</code>、<code>AI16</code> 读 <code>AII[9]</code>)</td></tr>
+              <tr><td class="m">PSC316 Adciic.c:41,61,78,107,126,144,180,210,233</td><td>文档注释里的函数名仍是 <code>i2c_Start</code>/<code>i2c_Stop</code>/<code>Write_ADS1115</code></td><td>实现已改名为 <code>IIC_Start0</code>/<code>IIC_Stop0</code>/<code>IIC_SendByte0</code></td></tr>
+              <tr><td class="m">PSC316 THB6128.c:65</td><td><code>/* 84 000 000 / arr / psc = 25Khz的PWM */</code></td><td>84 MHz 是 F4 的 TIM3 时钟(本工程是 F10x),且按公式实算约 250 Hz,差 100 倍</td></tr>
+              <tr><td class="m">PSC316 Adciic.c:30-33</td><td>延时注释写"CPU 主频 168MHz"</td><td>F4 的主频,本工程是 F10x</td></tr>
+              <tr><td class="m">PSC316 modbus.c:74</td><td><code>#define BitSize 30</code> 注释写"最大10个16位参数"</td><td>它现在决定 32 位位带数组 <code>coil[30]</code>(30 字 = 960 位)</td></tr>
+              <tr><td class="m">PSC330 ErrorCheck.c:147 vs 220</td><td>两处都标为 <code>20130730A</code> 的 Pcoil 清零</td><td>范围不一致:147 清 <code>[100,1300)</code>,220 清 <code>[130,300)</code>;<code>DispAction.c:151</code> 又清 <code>[9,1599)</code>。三处范围互不相同</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="act"><b>动作</b>逐条改注释。<code>module.h:49</code> 和 <code>eevCTRL.c</code> 那两条尤其重要 —— 它们已经实际误导过排查。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k39">
+      <div>
+        <div class="head"><span class="t">未命名的魔数</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">见下表</span>
+        <div class="tw">
+          <table>
+            <thead><tr><th>位置</th><th>魔数</th><th>建议</th></tr></thead>
+            <tbody>
+              <tr><td class="m">PSC316 modbus.c:1295</td><td><code>ucUart5Buff[0]==254</code></td><td>Modbus 广播地址,无宏无注释,且只有 UART5 判断了它</td></tr>
+              <tr><td class="m">PSC330 CompAction.c:142</td><td><code>7200U</code>(2 小时并列判定)</td><td>同文件其它阈值都有 <code>SPEC_*</code> 宏,唯独这个没有</td></tr>
+              <tr><td class="m">PSC330 CompAction.c:166-167</td><td>故障位掩码 <code>0x0070</code>/<code>0x000a</code>/<code>0x0005</code></td><td>提为具名宏</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:945-1059</td><td>哨兵值 <code>99</code> 出现 14 次</td><td>提为具名宏</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:533 vs 839</td><td><code>MotorTotalPulseSet+30</code> 与硬编码 <code>530</code></td><td>同一物理量两个无关常量,530 需硬件确认</td></tr>
+              <tr><td class="m">PSC316 eevCTRL.c:374-428,890</td><td><code>*10</code>(100ms→秒)裸写 7 次</td><td>提为宏或统一换算函数</td></tr>
+              <tr><td class="m">PSC330 ErrorCheck.c:105,229,247,434,461</td><td><code>30000 / 5000 / 20000 / 15 / 30 / 11</code></td><td>压力阈值与上电宽限值,提为具名宏</td></tr>
+              <tr><td class="m">PSC316 ErrorCheck.c:192,199,252,163,367,384,370,387</td><td><code>3800 / 13000 / 30000 / 20</code></td><td>压力阈值与计时饱和值</td></tr>
+              <tr><td class="m">PSC330 CompAction.c:7</td><td><code>CompMinRunCount[70]</code>、<code>CompMinStopCount[70]</code></td><td>注释说"16压缩机",尺寸 70 来源不明,需确认</td></tr>
+              <tr><td class="m">PSC316 modbus.c:1335-1336 vs 1343-1404</td><td><code>COMDELAYTIME</code>(1) 与 <code>ErrorDelayResetTime</code>(3)</td><td>同一意图两个宏两个值,且定义在文件中部</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="act"><b>动作</b>逐项提为具名宏。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k40">
+      <div>
+        <div class="head"><span class="t">拼写错误的标识符</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">跨多文件,改动面大,建议择机批量处理</span>
+        <p class="d"><code>EveNumSet</code>(应为 <code>EevNumSet</code>)、<code>SystemComunicateErr</code>、<code>Comp1HightPressErr</code>/<code>Comp2HightPressErr</code>/<code>Comp1HightOverX06</code>(<code>High</code>)、<code>EEVNergryWorkCount</code>(14 处,<code>Energy</code>)、<code>conut1</code>/<code>conut2</code>、<code>Fanlag</code>、<code>EEV2_ActionALL</code> vs <code>EEV_ActionAll</code>(大小写不一致)。</p>
+        <p class="d"><strong>注意</strong>:<code>ModuleCommunicaiton</code> 虽然拼错,但该名字在 <code>README.md</code> 与 <code>docs/</code> 里被引用,重命名需同步文档。另外它在 <code>modbus.h:79</code> 只有声明、没有定义也没有调用(外机侧)。</p>
+        <p class="act"><b>动作</b>集中一次批量重命名,不要零散改。改完务必重新编译确认,并同步文档。</p>
+      </div>
+    </li>
+
+    <li class="item sev-clean" data-sev="clean">
+      <input type="checkbox" id="k41">
+      <div>
+        <div class="head"><span class="t">版本号字符串停留在旧日期</span><span class="chip clean">清理</span><span class="chip conf">置信度 高</span></div>
+        <span class="loc">PSC316 · uvprojx 的 <code>OutputName</code> = <code>PSC316RK-V12-20250327</code>;构建日志里的 axf 同名</span>
+        <p class="d">2026-09 的构建产物仍以 2025-03-27 命名,容易在多个固件版本之间混淆烧录对象。</p>
+        <p class="act"><b>动作</b>改为版本号或构建日期自动注入。</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ §9 ══════════════ -->
+<section id="s9">
+  <h2><span class="num">§9</span>已核实:这些不是缺陷,请勿误伤</h2>
+  <p class="secnote">排查过程中这些地方看起来可疑,但逐条核实后确认是对的。列出来是为了避免后续有人"顺手改坏"。</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>位置</th><th>看起来像问题的地方</th><th>核实结论</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="m">PSC330 eevCTRL.c <code>EEVSpecChannelMap</code></td>
+          <td><code>if(*module &gt;= ModuleNumSet) return 0;</code> 看着像差一错误,把 4 号模块排除了</td>
+          <td>不是 bug。<code>ModuleNumSet = 外机数量 + 1</code>,4 台外机时该值为 5,模块 1..4 全部有效</td>
+        </tr>
+        <tr>
+          <td class="m">PSC316 FanControl.c <code>FanCommAction2</code> / <code>FanReceive2/4</code> / <code>FanSendData2/4</code> / <code>FanError</code> / <code>FanCommErr</code> / <code>VVFFanError1</code></td>
+          <td>完整的 RS485 变频风机通讯实现,故障检测恒假,像是检测盲区</td>
+          <td><strong>有意废弃</strong>。变频轴流风机实际用 0-10V 模拟量(DA0)调速,现场不接 485。风机故障检测走硬件过载触点(X12/X17 → <code>Fan1OverErr</code>/<code>Fan2OverErr</code>)。归入 §3 可删除项即可,不作为缺陷</td>
+        </tr>
+        <tr>
+          <td class="m">PSC316 eevCTRL.c <code>EEVSpecSensorValid</code></td>
+          <td>传感器无效时关闭阀门,规范未提及</td>
+          <td>合理的失效安全增强。配对关系已核实正确:<code>comp==0</code> 用 <code>SensorStatus[2]</code>/<code>[11]</code>,<code>comp==1</code> 用 <code>[3]</code>/<code>[12]</code></td>
+        </tr>
+        <tr>
+          <td class="m">PSC330 eevCTRL.c <code>EEVSpecPidStep</code></td>
+          <td>用 <code>EEVSpecResidualMilli[]</code> 累积亚步余数,规范未提及</td>
+          <td>合理的定点数精度补偿。规格的 PID 公式与 A/B/C 分区判据均已逐行核实与规范 2.3.9 一致</td>
+        </tr>
+        <tr>
+          <td class="m">PSC330 modulecontrol.c 全部 <code>UnitReadStatus[ucUart5Buff[0]]</code>(40+ 处)</td>
+          <td>数组下标来自串口缓冲区,像是可被外部构造的越界写</td>
+          <td>已核实安全。所有使用点都被 <code>ucUart5Buff[0]&gt;=1 &amp;&amp; &lt;=4</code> 保护,数组 <code>[18]</code> 不会越界</td>
+        </tr>
+        <tr>
+          <td class="m">PSC316 modbus.c Pcoil 全部索引</td>
+          <td>位带数组索引范围不明</td>
+          <td>已核实安全。<code>coil[BitSize=50]</code> = 1600 bit,<code>Pcoil</code> 域 <code>[0,1599]</code>,实测最大索引 1598</td>
+        </tr>
+        <tr>
+          <td class="m">PSC316 modbus.c CRC 查表数组 / ErrorCheck.c:667 循环 / TempFilter.c 四张温度表</td>
+          <td>查表类代码易越界</td>
+          <td>已核实安全。<code>auchCRCHi/Lo</code> 各 256 项;参数循环 <code>i&lt;500</code> 与 <code>ParameterSaveSize=500</code> 吻合;四张表初始化项数恰为 385/385/385/872,无零填充尾巴,j 钳位后 <code>[j+1]</code> 不越界</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ 收尾 ══════════════ -->
+<section id="s10">
+  <h2><span class="num">§10</span>建议的处理顺序</h2>
+  <div class="callout">
+    <h4>先修构建完整性,再谈代码质量</h4>
+    <p><strong>1.</strong> 找回或重建 §0 那 15 个缺失源文件,把工程成员从 <code>.o</code> 换回 <code>.c</code>,并把固件纳入版本控制。在此之前,任何针对这些模块的"修复"都不会生效 —— 而构建不会给出任何提示。</p>
+    <p><strong>2.</strong> 处理 §2 里两条已核实完整调用链的缺陷:<code>UnitWriteStatus</code> 越界(可被参数写触发)与 <code>Parameter[16]</code> 地址冲突(使 PID 扫描周期与最大调节速率都减半)。</p>
+    <p><strong>3.</strong> 与规格负责人确认 §2 的 <code>SystemNengry</code> case 4/5 是否在规划中 —— 它决定了 §5 里一串函数是可删还是应保留。</p>
+    <p><strong>4.</strong> 删除 §3 的死文件与 §5 的死变量。这两类改动风险低、收益直接,其中 <code>ErrCheck.c</code> 与 <code>MErrListDisp/MErrList</code> 是投入产出比最高的两条。</p>
+    <p><strong>5.</strong> 最后做 §6 的重复代码合并。这是收益最大但也最容易引入回归的一步,建议放在前面几步稳定之后,每合并一处就编译验证。</p>
+  </div>
+</section>
+
+<footer>
+  <p>本清单为只读审计结果,<strong>未对任何源文件做修改</strong>。</p>
+  <p>标注"置信度 高"的条目均已实际读取代码或命令输出验证;"置信度 中"的条目已在原处说明不确定的原因。§5 中来自历史构建日志的编译器警告,行号可能已随文件编辑漂移,删除前请按当前内容复核。</p>
+  <p>依据的规格基线:20260428 版规格书。<code>采用电子膨胀阀定频直膨机控制规格书260124.doc</code> 已作废,不作为判据。</p>
+  <p>搜索源码时请始终排除 <code>.codex-tmp/</code> 与 <code>_utf8tmp/</code>,其中的陈旧副本会产生假命中。</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY = "audit-psc-done-v1";
+  var list = Array.prototype.slice.call(document.querySelectorAll("li.item"));
+  var bar  = document.querySelector(".toolbar");
+  var out  = document.getElementById("p-done");
+  var tot  = document.getElementById("p-total");
+
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e){ done = {}; }
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  }
+  function sync(){
+    var n = 0;
+    list.forEach(function(li){
+      var cb = li.querySelector("input[type=checkbox]");
+      if(cb && cb.checked){ li.classList.add("done"); n++; }
+      else { li.classList.remove("done"); }
+    });
+    if(out) out.textContent = n;
+    if(tot) tot.textContent = list.length;
+  }
+
+  list.forEach(function(li){
+    var cb = li.querySelector("input[type=checkbox]");
+    if(!cb) return;
+    if(done[cb.id]) cb.checked = true;
+    cb.addEventListener("change", function(){
+      if(cb.checked) done[cb.id] = 1; else delete done[cb.id];
+      save(); sync();
+    });
+  });
+
+  var btns = Array.prototype.slice.call(document.querySelectorAll(".fbtn"));
+  function apply(f){
+    list.forEach(function(li){
+      var sev = li.getAttribute("data-sev");
+      var show;
+      if(f === "all")        show = true;
+      else if(f === "todo")  show = !li.classList.contains("done");
+      else                   show = (sev === f);
+      li.style.display = show ? "" : "none";
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      btns.forEach(function(o){ o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      apply(b.getAttribute("data-f"));
+    });
+  });
+
+  sync();
+})();
+</script>

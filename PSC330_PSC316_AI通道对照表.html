@@ -1,0 +1,617 @@
+<title>PSC330/316 AI 通道对照表</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+
+<style>
+  :root{
+    --bg:#F5F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#EDF0F4;
+    --ink:#15181E;
+    --ink-2:#3B424D;
+    --muted:#69717E;
+    --rule:#DBE0E6;
+    --rule-2:#C2C9D2;
+    --accent:#0B6E7F;
+    --accent-soft:#E0EFF1;
+    --ok:#2E6B4C;
+    --ok-soft:#E3EFE8;
+    --warn:#8F5D0E;
+    --warn-soft:#F8EEDB;
+    --crit:#9E2A2A;
+    --crit-soft:#F8E4E4;
+    --shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px -16px rgba(16,24,40,.28);
+    --sans:"Noto Sans SC","Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --display:"Archivo","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1116;
+      --surface:#151A21;
+      --surface-2:#1C222B;
+      --ink:#E7EAEE;
+      --ink-2:#B7BEC9;
+      --muted:#8A929E;
+      --rule:#252C36;
+      --rule-2:#343D49;
+      --accent:#43B8CB;
+      --accent-soft:#113039;
+      --ok:#71C098;
+      --ok-soft:#142A20;
+      --warn:#D9A24A;
+      --warn-soft:#2B2214;
+      --crit:#E27C7C;
+      --crit-soft:#2E1A1A;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1116;
+    --surface:#151A21;
+    --surface-2:#1C222B;
+    --ink:#E7EAEE;
+    --ink-2:#B7BEC9;
+    --muted:#8A929E;
+    --rule:#252C36;
+    --rule-2:#343D49;
+    --accent:#43B8CB;
+    --accent-soft:#113039;
+    --ok:#71C098;
+    --ok-soft:#142A20;
+    --warn:#D9A24A;
+    --warn-soft:#2B2214;
+    --crit:#E27C7C;
+    --crit-soft:#2E1A1A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:14px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding-inline:20px;
+    padding-block:40px 64px;
+    display:flex;
+    flex-direction:column;
+    gap:36px;
+  }
+
+  /* ---------- header ---------- */
+  header{display:flex;flex-direction:column;gap:14px}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+  }
+  h1{
+    font-family:var(--display);
+    font-size:clamp(26px,4.4vw,38px);
+    line-height:1.18;
+    font-weight:700;
+    letter-spacing:-.015em;
+    margin:0;
+    text-wrap:balance;
+  }
+  .lede{
+    margin:0;
+    max-width:64ch;
+    color:var(--ink-2);
+    font-size:15px;
+  }
+  .basis{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--muted);
+  }
+  .basis span{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:3px 8px;
+  }
+
+  /* ---------- legend ---------- */
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    padding-block:12px;
+    border-block:1px solid var(--rule);
+  }
+  .legend .lg-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-right:2px;
+  }
+
+  .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    line-height:1;
+    padding:4px 7px;
+    border-radius:3px;
+    white-space:nowrap;
+    border:1px solid transparent;
+  }
+  .tag.ok{background:var(--ok-soft);color:var(--ok);border-color:color-mix(in srgb,var(--ok) 28%,transparent)}
+  .tag.warn{background:var(--warn-soft);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 28%,transparent)}
+  .tag.crit{background:var(--crit-soft);color:var(--crit);border-color:color-mix(in srgb,var(--crit) 28%,transparent)}
+
+  /* ---------- section ---------- */
+  section{display:flex;flex-direction:column;gap:16px}
+  .sec-head{display:flex;flex-direction:column;gap:5px}
+  h2{
+    font-family:var(--display);
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:-.01em;
+    margin:0;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  h2 .chip{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border-radius:3px;
+    padding:3px 7px;
+    letter-spacing:.02em;
+  }
+  .sec-note{margin:0;color:var(--muted);font-size:13px;max-width:70ch}
+
+  /* ---------- tables ---------- */
+  .tw{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:940px;font-size:13px}
+  caption{
+    caption-side:top;
+    text-align:left;
+    padding:12px 14px 10px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    border-bottom:1px solid var(--rule);
+  }
+  thead th{
+    text-align:left;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:11.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding:9px 12px;
+    background:var(--surface-2);
+    border-bottom:1px solid var(--rule-2);
+    white-space:nowrap;
+    vertical-align:bottom;
+  }
+  tbody td{
+    padding:10px 12px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+    color:var(--ink-2);
+  }
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover td{background:var(--surface-2)}
+  .ch{
+    font-family:var(--mono);
+    font-weight:600;
+    color:var(--ink);
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  .qty{color:var(--ink);font-weight:500}
+  .fx{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+  .addr{
+    font-family:var(--mono);
+    font-size:12px;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+    color:var(--ink);
+  }
+  .addr b{font-weight:600;color:var(--accent)}
+  code{
+    font-family:var(--mono);
+    font-size:11.5px;
+    background:var(--surface-2);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1px 4px;
+    white-space:nowrap;
+    color:var(--ink-2);
+  }
+  tr.gap td{background:var(--crit-soft)}
+  tr.gap:hover td{background:var(--crit-soft)}
+  tr.gap .qty{color:var(--crit)}
+  tr.ntc .qty{color:var(--ink-2)}
+
+  /* ---------- gaps ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--crit);
+    border-radius:5px;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    box-shadow:var(--shadow);
+  }
+  .card.warn{border-left-color:var(--warn)}
+  .card h3{
+    font-family:var(--display);
+    font-size:14px;
+    font-weight:600;
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .card p{margin:0;font-size:13px;color:var(--ink-2)}
+  .card .refs{font-family:var(--mono);font-size:11px;color:var(--muted);word-break:break-all}
+
+  /* ---------- blindspot ---------- */
+  .blind{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-top:3px solid var(--warn);
+    border-radius:5px;
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    box-shadow:var(--shadow);
+  }
+  .blind h3{margin:0;font-family:var(--display);font-size:15px;font-weight:600}
+  .blind p{margin:0;font-size:13px;color:var(--ink-2);max-width:78ch}
+  .blind ul{margin:0;padding-left:20px;font-size:13px;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--rule);
+    padding-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:12px;
+    color:var(--muted);
+  }
+  footer .src{font-family:var(--mono);font-size:11.5px;display:flex;flex-direction:column;gap:4px;word-break:break-all}
+  a{color:var(--accent)}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+  @media (max-width:520px){
+    .wrap{padding-inline:16px;padding-block:28px 48px;gap:28px}
+    .legend{padding-block:10px}
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">固件核查存档 · 2026-09-12</div>
+    <h1>PSC330/316 模拟量通道对照表</h1>
+    <p class="lede">
+      内机 PSC330 与外机 PSC316 的每一个 AI 通道，其换算公式、量程参数、校准偏移与工程量落点，
+      以及"有通道无公式 / 有公式无通道 / 有参数无公式"三类缺口。全部依源码逐行核对，未采信推测。
+    </p>
+    <div class="basis">
+      <span>规格基准 20260428</span>
+      <span>只读核查，未改动任何代码</span>
+      <span>330 源：User/UserSrc/UserAction.c</span>
+      <span>316 源：WELLTHINKER/User/UserAction.c</span>
+    </div>
+  </header>
+
+  <div class="legend">
+    <span class="lg-label">状态</span>
+    <span class="tag ok">✅ 有换算公式</span>
+    <span class="tag warn">⚠️ 有参数无公式</span>
+    <span class="tag crit">❌ 无公式 / 零引用</span>
+  </div>
+
+  <!-- ======================= PSC330 ======================= -->
+  <section>
+    <div class="sec-head">
+      <h2>PSC330 内机 <span class="chip">AI[18] · AD_CHANELL_NUM = 8</span></h2>
+      <p class="sec-note">
+        模拟量原始值单位约 <b>0.01V</b>（400 ≈ 4.00V）。量程参数存 <b>0.1V / 0.1mA</b>，
+        换算时统一 ×10 对齐原始值单位。工程量 = 线性插值后先钳位到工程量上下限，再加校准偏移。
+      </p>
+    </div>
+    <div class="tw">
+      <table>
+        <caption>330 通道明细</caption>
+        <thead>
+          <tr>
+            <th>通道</th><th>物理量</th><th>换算公式</th><th>原始值单位</th>
+            <th>量程 / 配置参数</th><th>校准偏移</th><th>工程量落点</th><th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ch">AI[0]</td>
+            <td class="qty">房间压差</td>
+            <td class="fx">IndoorScaleAnalogByType</td>
+            <td>0.01 V</td>
+            <td>类型 <code>459</code> · 电压量程 <code>282/283</code> · 工程量 <code>284/285</code>（0–3000 Pa）</td>
+            <td class="addr"><b>499</b></td>
+            <td class="addr">Parameter[500] PressSensorAI0Disp</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[1]</td>
+            <td class="qty">房间 / 回风湿度</td>
+            <td class="fx">IndoorScaleTempHumidityAI</td>
+            <td>0.01 V</td>
+            <td>类型 <code>460</code> · 湿度方式 <code>432</code> · 电压 <code>438/437</code> · 电流 <code>446/445</code> · 工程量 <code>440/439</code>(压) <code>448/447</code>(流)</td>
+            <td class="addr"><b>498</b></td>
+            <td class="addr">Parameter[501] HumiditySensorAI1Disp</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[2]</td>
+            <td class="qty">CO₂ 浓度</td>
+            <td class="fx">IndoorScaleAnalogByType</td>
+            <td>0.01 V</td>
+            <td>类型 <code>461</code> · 电压量程 <code>282/283</code> · 工程量 0–<code>466</code>（默认 5000 ppm）</td>
+            <td class="addr"><b>497</b></td>
+            <td class="addr">Parameter[903] CO2Disp</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[3]</td>
+            <td class="qty">送风压力 <b>或</b> 风量（复用）</td>
+            <td class="fx">IndoorScaleAnalogByType ×2</td>
+            <td>0.01 V</td>
+            <td>类型 <code>462</code> · 压力 <code>282/283</code>→<code>284/285</code> · 风量 <code>286/287</code>→<code>288/289</code></td>
+            <td class="addr"><b>496</b></td>
+            <td class="addr">Parameter[1125] Pa / [1126] CMH<br>（按 <code>308</code> 切换显示）</td>
+            <td><span class="tag ok">✅ ×2</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[4]</td>
+            <td class="qty">新风湿度</td>
+            <td class="fx">IndoorScaleTempHumidityAI</td>
+            <td>0.01 V</td>
+            <td>类型 <code>463</code> · 湿度方式 <code>432</code> · 量程组同 AI[1]</td>
+            <td class="addr"><b>457</b></td>
+            <td class="addr">Parameter[519] FreshAirHumidityDisp</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr class="ntc">
+            <td class="ch">AI[5]…AI[16]</td>
+            <td class="qty">NTC0–NTC11 温度</td>
+            <td class="fx">阻值表线性插值（Get_temp16）＋校准</td>
+            <td>ADS1115 码<br>（经 ADS1115 采集）</td>
+            <td>无效判据 <code>raw ≤ 5</code> 或 <code>≥ 32760</code> → NTC=9999 且 SensorStatus=1</td>
+            <td class="addr"><b>495…484</b><br>(UserA5–A16)</td>
+            <td class="addr">511 / 510 / 512 / 513 / 515 / 516 / 514 / 517 / 520 / 521 / 522 / 523</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr class="gap">
+            <td class="ch">AI[17]</td>
+            <td class="qty">—</td>
+            <td class="fx">❌ 无换算公式</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>未使用（全树零引用）</td>
+            <td><span class="tag crit">❌</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======================= PSC316 ======================= -->
+  <section>
+    <div class="sec-head">
+      <h2>PSC316 外机 <span class="chip">AI[14] · AD_CHANELL_NUM = 6</span></h2>
+      <p class="sec-note">
+        压力换算为 <code>Value = (Raw − 400) × Range ÷ (2000 − 400) + Offset</code>，
+        采样端点 <b>400–2000</b> 对应 <b>0.5–4.5V</b>。注意源码中该端点被每次扫描硬编码覆盖，改参数无效。
+      </p>
+    </div>
+    <div class="tw">
+      <table>
+        <caption>316 通道明细</caption>
+        <thead>
+          <tr>
+            <th>通道</th><th>物理量</th><th>换算公式</th><th>原始值端点</th>
+            <th>量程 / 配置参数</th><th>校准偏移</th><th>工程量落点</th><th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ch">AI[0]</td>
+            <td class="qty">1# 高压</td>
+            <td class="fx">PressureToDisplay</td>
+            <td>400–2000<br>(0.5–4.5 V)</td>
+            <td>高压量程 <code>52</code>（默认 4600 = 46.00 Bar）；受 <code>107</code> 压力传感器配置约束</td>
+            <td class="addr"><b>499</b></td>
+            <td class="addr">HighPressDisp1 → 镜像 <b>1573</b></td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[1]</td>
+            <td class="qty">2# 高压</td>
+            <td class="fx">PressureToDisplay</td>
+            <td>400–2000</td>
+            <td>高压量程 <code>52</code></td>
+            <td class="addr"><b>498</b></td>
+            <td class="addr">HighPressDisp2 → 镜像 <b>1575</b></td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[2]</td>
+            <td class="qty">1# 低压</td>
+            <td class="fx">PressureToDisplay</td>
+            <td>400–2000</td>
+            <td>低压量程 <code>51</code>（<b>运行时被强制 = 2000 kPa</b>）</td>
+            <td class="addr"><b>497</b></td>
+            <td class="addr">LowPressDisp1 → 镜像 <b>1574</b><br>原始值 → Parameter[730]</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr>
+            <td class="ch">AI[3]</td>
+            <td class="qty">2# 低压</td>
+            <td class="fx">PressureToDisplay</td>
+            <td>400–2000</td>
+            <td>低压量程 <code>51</code>（运行时被强制 = 2000 kPa）</td>
+            <td class="addr"><b>496</b></td>
+            <td class="addr">LowPressDisp2 → 镜像 <b>1576</b><br>原始值 → Parameter[732]</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr class="gap">
+            <td class="ch">AI[4]</td>
+            <td class="qty">—</td>
+            <td class="fx">❌ 无换算公式</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>硬件兼容预留槽，全树零引用</td>
+            <td><span class="tag crit">❌</span></td>
+          </tr>
+          <tr class="gap">
+            <td class="ch">AI[5]</td>
+            <td class="qty">—</td>
+            <td class="fx">❌ 无换算公式</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>硬件兼容预留槽，全树零引用</td>
+            <td><span class="tag crit">❌</span></td>
+          </tr>
+          <tr class="ntc">
+            <td class="ch">AI[6]…AI[13]</td>
+            <td class="qty">NTC0–NTC7 温度</td>
+            <td class="fx">阻值表线性插值＋校准</td>
+            <td>ADS1115 码</td>
+            <td>阻值表范围判定失败即无效 → NTC=9999 且 SensorStatus=1</td>
+            <td class="addr"><b>493…486</b></td>
+            <td class="addr">环温 / 翅片1 / 翅片2 / 排气1 / 排气2 / 吸气1 / 吸气2 / 阀后1</td>
+            <td><span class="tag ok">✅</span></td>
+          </tr>
+          <tr class="gap">
+            <td class="ch">（无通道）</td>
+            <td class="qty">阀后温度2</td>
+            <td class="fx">❌ 硬编码 9999</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="addr">SlaveTempAI21Disp</td>
+            <td><span class="tag crit">❌</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======================= gaps ======================= -->
+  <section>
+    <div class="sec-head">
+      <h2>缺口汇总 <span class="chip">4 类</span></h2>
+      <p class="sec-note">"有通道就有公式"并不成立——以下四类偏离，按性质分组。</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>有通道 · 无公式 <span class="tag crit">❌</span></h3>
+        <p>
+          316 的 <b>AI[4]、AI[5]</b> 与 330 的 <b>AI[17]</b>：除数组声明外全工程零出现。
+          316 两槽为硬件兼容预留，点位文档已注明"未作为现场测量点使用"。
+        </p>
+        <div class="refs">316: UserAction.c 全树 grep 零命中 · 330: UserAction.c</div>
+      </div>
+      <div class="card">
+        <h3>有公式 · 无通道 <span class="tag crit">❌</span></h3>
+        <p>
+          316 的 <b>阀后温度2</b> 直接赋常量 9999，没有对应的物理 NTC 输入。
+          监控软件已就此加了"不参与校准"提示。
+        </p>
+        <div class="refs">316: UserAction.c:122</div>
+      </div>
+      <div class="card warn">
+        <h3>有参数 · 无公式 <span class="tag warn">⚠️</span></h3>
+        <p>
+          330 的 <b>IndTemp*</b> 共 <b>8 个</b>参数（<code>433/434/435/436</code> 电压组，
+          <code>441/442/443/444</code> 电流组），是温湿度一体变送器<b>温度那一路</b>的量程组，
+          与湿度组 <b>IndHumi*</b>（<code>437–440 / 445–448</code>）完全对称。
+          但两处 <code>IndoorScaleTempHumidityAI</code> 调用只传了湿度组，
+          <b>温度组在 .c 中零引用</b>——改了不生效；监控软件亦未暴露这 16 个参数。
+        </p>
+        <div class="refs">330: User.h:785-800 · UserAction.c:1929,1947</div>
+      </div>
+      <div class="card warn">
+        <h3>一通道 · 两公式 <span class="tag warn">⚠️</span></h3>
+        <p>
+          330 的 <b>AI[3]</b> 每周期同时算出压力与风量两个工程量，
+          由 <code>330[308]</code> 决定上位显示哪一个。校准偏移只有一个，两种量纲共用。
+        </p>
+        <div class="refs">330: UserAction.c:1939,1942</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= blindspot ======================= -->
+  <div class="blind">
+    <h3>核查盲区 · adc.c 源文件缺失</h3>
+    <p>
+      330 与 316 的 <code>adc.c</code> <b>均不在工作树内</b>，只剩编译产物
+      （<code>Project/Obj/adc.o</code>、<code>OBJ/adc.o</code>）。依赖文件 <code>adc.d</code> 显示源路径分别为
+      <code>User/wellthinker/src/adc.c</code> 与 <code>SYSTEM/src/adc.c</code>。因此以下两点无法逐行核对：
+    </p>
+    <ul>
+      <li><b>AI 原始值的采集与滤波过程</b>——无法确认 ADC 实际填充到第几路。</li>
+      <li><b>SensorStatus[0..4]（330）/ [0..5]（316）的故障判阈</b>——它正是"无输入时工程量被强制为 0 / 9999"的触发条件。</li>
+    </ul>
+    <p>
+      <b>由此带来一个未验证的疑点：</b>330 声明 AD 通道数 8（AI[0..7]），但 AI[5]/[6]/[7]
+      随后被 NTC16bit.c 用 NTC0/NTC1/NTC2 <b>覆盖赋值</b>。若 ADC 确实填到第 7 路，则这 3 路采样被白白覆盖。
+      需 <code>adc.c</code> 才能定论。
+    </p>
+  </div>
+
+  <footer>
+    <div>核查基准：规格书 20260428 ｜ 本次为只读核查，未改动任何固件或工具代码。</div>
+    <div class="src">
+      <span>330 源码 · PSC330RK-V10-内机/User/UserSrc/UserAction.c、User/UserHead/User.h、User/NTC16bit/NTC16bit.c</span>
+      <span>316 源码 · PSC316RK-V12-外机/WELLTHINKER/User/UserAction.c、User/User.h、NTC16bit/NTC16bit.c</span>
+      <span>交叉印证 · PSC330接HMI读写地址逐点表.md、PSC330_PSC316_IO点位说明_20260907.md</span>
+    </div>
+  </footer>
+
+</div>
