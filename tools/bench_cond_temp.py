@@ -14,11 +14,22 @@
 
 两路都设成同一个值，让 CondTempMax == CondTempMin，段判据干净。
 
+环温同理：`EnviTempAI0Disp = AI[6] = NTC[0]`，而
+`NTC[0] = round(Tempbuf*10) + Parameter[493]`；`Parameter[493]` 由 316 从镜像块
+`Parameter[1586]` 自动同步（UserAction.c: 1580+i <-> 499-i）。所以
+
+    330[2534 + (u-1)*16 + 0]   -> 316[1586]   环境温度校准偏移 (0.1C)
+
+⚠ 台面 2#外机的环温偏移现在是 127（+12.7C），真实室温 7.3C 被报成 20.0C。
+   改之前记下原值，测完要用 `--ambient-offset` 放回去，**不要清 0**。
+
 跑法：
-    python tools/bench_cond_temp.py 35.0                 # 1#外机 -> 35.0C，然后盯 60 秒
-    python tools/bench_cond_temp.py 47.0 --watch 120
-    python tools/bench_cond_temp.py --restore            # 两路偏移清零
-    python tools/bench_cond_temp.py 35.0 --dry-run       # 只算不写
+    python tools/bench_cond_temp.py 35.0                     # 1#外机 -> 35.0C，盯 60 秒
+    python tools/bench_cond_temp.py 47.0 --unit 2 --watch 120
+    python tools/bench_cond_temp.py --restore                # 两路高压偏移清零
+    python tools/bench_cond_temp.py --unit 2 --ambient 7.0   # 把 2# 环温推到 7.0C
+    python tools/bench_cond_temp.py --unit 2 --ambient-offset 127   # 放回原偏移
+    python tools/bench_cond_temp.py 35.0 --dry-run           # 只算不写
 """
 
 from __future__ import annotations
@@ -71,13 +82,30 @@ def kpa_for(temp_c: float, ref: int = REF) -> int:
 def main() -> int:
     import app as m
 
+    def opt(name: str, default=None):
+        if name not in sys.argv:
+            return default
+        idx = sys.argv.index(name)
+        if idx + 1 >= len(sys.argv):
+            return default
+        return sys.argv[idx + 1]
+
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    watch = 60.0
-    if "--watch" in sys.argv:
-        watch = float(sys.argv[sys.argv.index("--watch") + 1])
+    # 去掉紧跟选项后面的值，免得被当成目标温度
+    for name in ("--unit", "--watch", "--ambient", "--ambient-offset", "--hp1", "--hp2"):
+        v = opt(name)
+        if v is not None and v in args:
+            args.remove(v)
+    watch = float(opt("--watch", 60.0))
     dry = "--dry-run" in sys.argv
     restore = "--restore" in sys.argv
-    unit = 1
+    unit = int(opt("--unit", 1))
+    ambient = opt("--ambient")
+    ambient_offset = opt("--ambient-offset")
+    # 分别设两路高压（验「强制段4」必需：强制判据用 CondTempMax，段界用 CondTempMin，
+    # 两路设成同一个值就分不出是常规段4 还是强制段4）
+    hp1 = opt("--hp1")
+    hp2 = opt("--hp2")
 
     client = m.ModbusRtuClient()
     client.open(PORT, m.DEFAULT_BAUD)
@@ -101,11 +129,59 @@ def main() -> int:
     p316 = [AI_P316_BASE + 0 * AI_CH_WORDS + AI_OFFSET_IN_CH,
             AI_P316_BASE + 1 * AI_CH_WORDS + AI_OFFSET_IN_CH]
 
+    compact = m.OUTDOOR_COMPACT_BASE + (unit - 1) * m.OUTDOOR_COMPACT_COUNT
+
     ref = s16(rd(39)[0])
     if ref not in (0, 1, 2, 3):
         ref = REF
     say(f"外机{unit}#  制冷剂={pt.REFRIGERANT_NAMES.get(ref, ref)}  网关基址={gw}  AI窗口={win}")
-    say(f"  偏移寄存器: 330[{hmi[0]}]->316[{p316[0]}] (AI0 1#高压)   330[{hmi[1]}]->316[{p316[1]}] (AI1 2#高压)")
+    say(f"  高压偏移: 330[{hmi[0]}]->316[{p316[0]}] (AI0)   330[{hmi[1]}]->316[{p316[1]}] (AI1)")
+    say(f"  环温偏移: 330[{compact}]->316[1586] (环境温度)")
+
+    # ---- 环温 ----
+    amb_now = s16(rd(st + 2)[0])
+    amb_off = s16(rd(compact)[0])
+    amb_base = amb_now - amb_off
+    say(f"  当前环温={amb_now / 10.0:.1f}C（偏移={amb_off}，无偏移读数={amb_base / 10.0:.1f}C）")
+
+    def write_gw(addr: int, target: int, tag: str) -> None:
+        deadline = time.time() + 30
+        state = -1
+        while time.time() < deadline:
+            state = s16(rd(gw + GW_DIAG + 1)[0])
+            if state != 1:
+                break
+            time.sleep(0.35)
+        say(f"  [{tag}] 网关空闲(状态={state})，写 330[{addr}] = {target} ...")
+        t0 = time.time()
+        try:
+            client.write_single_register(SLAVE, addr, target & 0xFFFF)
+        except Exception as exc:  # noqa: BLE001
+            say(f"  !! 写 330[{addr}] 异常: {exc}")
+            return
+        time.sleep(0.08)
+        ok = False
+        while time.time() - t0 < 45:
+            time.sleep(0.5)
+            if s16(rd(addr)[0]) == target:
+                ok = True
+                break
+        say(f"  [{tag}] {'OK' if ok else '!! 超时'}  用时 {time.time() - t0:.1f}s  "
+            f"回读 330[{addr}]={s16(rd(addr)[0])}")
+
+    if ambient is not None or ambient_offset is not None:
+        want = int(round(float(ambient_offset))) if ambient_offset is not None \
+            else int(round(float(ambient) * 10)) - amb_base
+        say(f"  >>> 环温偏移 -> {want}（目标环温 "
+            f"{(amb_base + want) / 10.0:.1f}C）")
+        if dry:
+            say("  (--dry-run，不写)")
+        else:
+            write_gw(compact, want, "环温")
+        say(f"  现在环温={s16(rd(st + 2)[0]) / 10.0:.1f}C（偏移={s16(rd(compact)[0])}）")
+        client.close()
+        _write()
+        return 0
 
     hp = [s16(rd(st + OFF_HP1_IN_STATUS)[0]), s16(rd(st + OFF_HP2_IN_STATUS)[0])]
     off = [s16(rd(hmi[0])[0]), s16(rd(hmi[1])[0])]
@@ -116,19 +192,28 @@ def main() -> int:
         targets = [0, 0]
         say("  >>> 恢复：两路偏移清零")
     else:
-        if not args:
+        if not args and hp1 is None and hp2 is None:
             say("用法: bench_cond_temp.py <目标温度C> [--watch 秒] [--dry-run] [--restore]")
+            say("      bench_cond_temp.py --unit N --ambient T | --ambient-offset V")
+            say("      bench_cond_temp.py --unit N --hp1 T1 --hp2 T2   （两路分别设）")
             return 2
-        want_c = float(args[0])
-        want_kpa = kpa_for(want_c, ref)
-        if want_kpa > MAX_TARGET_KPA:
-            say(f"!! 目标 {want_kpa} kPa 超过安全上限 {MAX_TARGET_KPA}（高压保护 3800），拒绝")
-            return 2
-        # 无偏移读数 = 当前读数 - 当前偏移；新偏移 = 目标 - 无偏移读数
         base_kpa = [hp[i] - off[i] for i in range(2)]
-        targets = [want_kpa - base_kpa[i] for i in range(2)]
-        say(f"  目标: 冷凝 {want_c:.1f}C = {want_kpa} kPa"
-            f"（无偏移读数 {base_kpa[0]}/{base_kpa[1]} kPa）")
+        if args:
+            want_c = float(args[0])
+            want_kpa = kpa_for(want_c, ref)
+            want_cs = [want_c, want_c]
+        else:
+            want_cs = [float(hp1 if hp1 is not None else hp2),
+                       float(hp2 if hp2 is not None else hp1)]
+            want_kpa = None
+        kpas = [kpa_for(c, ref) for c in want_cs]
+        for k in kpas:
+            if k > MAX_TARGET_KPA:
+                say(f"!! 目标 {k} kPa 超过安全上限 {MAX_TARGET_KPA}（高压保护 3800），拒绝")
+                return 2
+        targets = [kpas[i] - base_kpa[i] for i in range(2)]
+        say(f"  无偏移读数 {base_kpa[0]}/{base_kpa[1]} kPa")
+        say(f"  目标: 高压1 {want_cs[0]:.1f}C = {kpas[0]} kPa   高压2 {want_cs[1]:.1f}C = {kpas[1]} kPa")
         say(f"  >>> 新偏移: AI0={targets[0]}  AI1={targets[1]}")
         for t in targets:
             if not -5000 <= t <= 5000:

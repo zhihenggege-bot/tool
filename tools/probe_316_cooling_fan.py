@@ -132,7 +132,10 @@ def main() -> int:
                r8(A_VFD_ON), r8(A_FIXED_ON), r32(A_VFD_SPEED),
                r32(A_VFD_LOAD), r32(A_VFD_UNLOAD), r32(A_VFD_FULL),
                r32(A_CHGSEC), out[2], out[3], out[7])
-        if el >= next_tl or cur != prev_key:
+        # 变化判据只看状态字段：ChgSec 之类单调递增的计数器每秒都在变，
+        # 带上它们会让每一行都被判成"有变化"，日志没法看。
+        state_key = cur[:15] + cur[16:]
+        if el >= next_tl or state_key != prev_key:
             c = cur
             line("  ".join((
                 "%5.0f" % el,
@@ -147,7 +150,7 @@ def main() -> int:
                 "%3d" % c[16], "%3d" % c[17], "%3d" % c[18],
             )))
             next_tl = el + every
-            prev_key = cur
+        prev_key = state_key
         if el >= next_flush:
             next_flush = el + 5.0
             _write()
