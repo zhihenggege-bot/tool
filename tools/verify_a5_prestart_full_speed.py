@@ -103,7 +103,7 @@ def main() -> int:
     # ---- 立刻高频采样，抓启动瞬间 ----
     say()
     say("=== 复位后 10Hz 采样（只记变化）===")
-    say("   t(s)  VfdOn  VfdHz  Comp   NoCmp  ChgSec  Stop0  Load Unld Full  Y02 Y03 Y07")
+    say("   t(s)  冷凝  VfdOn  VfdHz  Comp   NoCmp  ChgSec  Stop0  Load Unld Full  Y02 Y03 Y07")
     prev = None
     first_on = None
     started = False
@@ -120,7 +120,10 @@ def main() -> int:
                 pass
         try:
             out = [r8(A_OUTPUT + i) for i in range(8)]
-            cur = (r8(A_VFD_ON), r32(A_VFD_SPEED), r8(A_COMP), r8(A_COMP + 1),
+            # 冷凝实时值：判据源是 OutdoorCondTempMax()，复位后跟着压机排气走，
+            # 不记下来的话没法判断「>45」在启动那一刻到底成不成立。
+            cnd = max(pt.pt_temp(ref, r16(1443)), pt.pt_temp(ref, r16(1445)))
+            cur = (round(cnd, 1), r8(A_VFD_ON), r32(A_VFD_SPEED), r8(A_COMP), r8(A_COMP + 1),
                    r32(A_NOCOMP), r32(A_CHGSEC), r32(A_STOP0),
                    r32(A_VFD_LOAD), r32(A_VFD_UNLOAD), r32(A_VFD_FULL),
                    out[2], out[3], out[7])
@@ -128,13 +131,16 @@ def main() -> int:
             say(f"  [{el:5.1f}] !! 读失败: {exc}")
             time.sleep(0.2)
             continue
-        if cur != prev:
-            say("  %5.1f %6d %6.1f  %d,%d %6d %7d %6d %5d %4d %4d  %d   %d   %d"
-                % ((el, cur[0], cur[1] / 10.0, cur[2], cur[3]) + cur[4:]))
-            if cur[0] == 1 and not started:
+        # 变化判据：状态字段用精确值，冷凝温度只取整到 1C —— 否则压力传感器
+        # 每 0.1C 的漂移都会印一行，日志会被淹没。
+        key = (cur[1:], round(cur[0]))
+        if key != prev:
+            say("  %5.1f %5.1f %6d %6.1f  %d,%d %6d %7d %6d %5d %4d %4d  %d   %d   %d"
+                % ((el, cur[0], cur[1], cur[2] / 10.0, cur[3], cur[4]) + cur[5:]))
+            if cur[1] == 1 and not started:
                 started = True
-                first_on = (el, cur[1] / 10.0)
-            prev = cur
+                first_on = (el, cur[2] / 10.0)
+            prev = key
         time.sleep(0.1)
 
     say()
