@@ -82,6 +82,12 @@ P_DEFROSTASK1 = 1420 + 0         # DefrostAsk1（化霜请求信号 -> 室内机
 P_DEFROSTASK2 = 1420 + 1
 P_C1DEFFLAG = 1400 + 10
 P_C2DEFFLAG = 1400 + 11
+P_330EN1 = 1400 + 0              # 330 下发的「1# 压机使能」
+P_330EN2 = 1400 + 3              # 330 下发的「2# 压机使能」
+# ⚠ 330 侧 CompAction.c:1019-1028 会在化霜中把 CompControl 清 0
+#   （CompIsRunningStatus 只认 2/3，状态 4=除霜不算"运行"），
+#   如果清到了这里，化霜中压机就可能被 330 停掉 —— 与规格 item3「所有压缩机开」冲突。
+#   所以必须逐帧盯这两个字。
 P_OUTDOOR_SPEC = 165
 DEFROST_PARAMS = [
     (17, "环境温度定时化霜温度设定值", 10),
@@ -193,7 +199,7 @@ def main() -> int:
     say("=== 10Hz 采样（只记变化）===")
     say("  t | WMd 环温 翅片1|2 | St Tmd InD | Elig End Strt | DefRT StateT | Comp |"
         " Gap0 Gap1 | CRT0 CRT1 | FinLow0/1 | NEnv TEnv | DefComp0/1 | RedBnd |"
-        " Perm Ask | CanDef | Sig | Fan Four | Y02 Y03 Y07")
+        " Perm Ask | CanDef | Sig | Fan Four | Y02 Y03 Y07 | 330En")
     prev = None
     t0 = time.time()
     nxt_wd = 0.0
@@ -225,6 +231,7 @@ def main() -> int:
                 tuple(min(r32(A_FINLOW + 4 * i), 60) for i in range(2)),
                 min(r32(A_NORMALENV), 60), min(r32(A_TIMEDENV), 60),
                 r8(A_ENVHIGHBAND),
+                r16(P_330EN1), r16(P_330EN2),        # 23, 24
             )
             rt = [r32(A_DEF_RUNTIME + 4 * i) for i in range(2)]
             st = r32(A_DEF_STATETIME)
@@ -254,6 +261,7 @@ def main() -> int:
                 "%s" % (cur[14],),            # DefrostSignal（化霜开始/结束指令）
                 "%s %s" % (cur[8], cur[9]),   # Fan Four
                 "%d  %d   %d" % (outc[2], outc[3], outc[7]),   # Y02 Y03 Y07
+                "%d%d" % (cur[23], cur[24]),  # 330 压机使能 1#/2#
             )))
             prev = cur
         time.sleep(0.1)
