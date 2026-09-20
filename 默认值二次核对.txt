@@ -1,0 +1,25 @@
+idx   宏名                             有效默认       规格要求  结果
+42    MinStopTimeSet                  120        120  OK   3.4.2 正文 压缩机最小停机 2 分钟
+346   MinValveOpenSet                 200        200  OK   3.11.10 冬季阀门最小开度
+110   DiskCheckSet                      5          5  OK   3.4 蒸发盘管维持最低温度时间 5 分钟
+112   DiskSet                          50         50  OK   3.4 蒸发盘管解禁温度 5 度
+412   PidAdjustTimeSet1                 5          5  OK   3.4 PID 扫描周期 T 5 秒
+417   IntegralCoeSet1                 100        100  OK   3.4 TIL 100 秒
+426   ProportionCoeSet2                 5          5  OK   3.4 KPR 5
+427   IntegralCoeSet2                 100        100  OK   3.4 TIR 100 秒
+428   DerivativeCoeSet2                 0          0  OK   3.4 KDR 0
+321   QHBSet                           50         50  OK   3.5 QHB 0.5
+322   QHSSet                          600        600  OK   3.5 QHS 600 秒
+348   ReheatTiSet                     100        100  OK   3.6 TIRZ 100 秒
+350   PreheatKpSet                      5          5  OK   3.7 KPY 5
+351   PreheatTiSet                    100        100  OK   3.7 TIY 100 秒
+352   PreheatTdSet                      0          0  OK   3.7 KDY 0
+356   PreheatStartTempSet               0          0  OK   3.7 预热开启温度 0 度
+357   PreheatFullLoadTempSet          -50        -50  OK   3.7 预热满载温度 -5 度
+375   PreheatAfterTempSet              50         50  OK   3.7 YWD 5 度
+354   HumidTiSet                      100        100  OK   3.8 TIS 100 秒
+339   VentilationFanVoltSet            80         80  OK   3.10 通风送风机 8V
+343   AirVolumeSet                   1000       1000  OK   3.10 风量 10000 CMH
+
+共 21 项，不符 0 项
+结论：新机出厂这 21 项全部等于规格值 ✓

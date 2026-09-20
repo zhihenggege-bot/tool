@@ -1,0 +1,94 @@
+已连接 ST-Link -> STM32F103RC  state=RUNNING
+
+=== 316（外机1）内部量 初值 ===
+  OutdoorFanStage            = 1
+  OutdoorVfdOn               = 0
+  OutdoorFixedOn             = 0
+  OutdoorHeatTwoFan          = 1
+  OutdoorTypeIIFan2High      = 0
+  OutdoorTypeIIFan2SwapDead  = 0
+  OutdoorTypeIIStage         = 1
+  OutdoorTypeIIPendingStage  = 1
+  OutdoorFaultHoldFanMask    = 0
+  AmbientLockout             = 0
+  OutdoorFanChangeSeconds    = 3
+  OutdoorFanNoCompSeconds    = 0
+  OutdoorVfdSpeed            = 0
+  OutdoorHeatFanHighCount    = 0
+  OutdoorHeatFanLowCount     = 30
+  OutdoorTypeIIPendingCount  = 0
+  InDefrost                  = 0
+  P.UserWorkModeSet          = 1
+  P.OutdoorFanTypeSet        = 3
+  P.FanOpenSet               = 0
+  P.FanOpenSet2              = 1
+  P.FanSpeedCtrl             = 0
+  P.EnviTempAI0Disp          = 50
+  AI[6]                      = 50
+  SensorStatus[0..6]         = (0, 0, 0, 0, 1, 1, 0)
+  FanRunSec                  = (0, 199)
+  FanStopSec                 = (1081, 0)
+  FanCmdRunSec               = (48630, 47471)
+  Comp[0..1]                 = (1, 1)
+  output[0..7]               = (1, 1, 0, 1, 1, 1, 0, 0)
+
+=== 采样 300 秒：关键量一变化就记；每 30s 打一行时间线 ===
+  T+   1s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+  31s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+  61s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+  91s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+ 121s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+ 151s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+ 181s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=4
+  T+ 212s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=5
+  T+ 242s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=5
+  T+ 272s | 1]=(1, 1)  FanOpenSet=0  FanOpenSet2=1  OutdoorFanStage=1  OutdoorHeatTwoFan=1  OutdoorTypeIIStage=1  OutdoorTypeIIFan2High=0  EnviTempAI0Disp=50  OutdoorFanNoCompSeconds=0  OutdoorHeatFanLowCount=30  OutdoorHeatFanHighCount=0  OutdoorFanChangeSeconds=5
+
+=== 316 内部量 终值 ===
+  OutdoorFanStage            = 1
+  OutdoorVfdOn               = 0
+  OutdoorFixedOn             = 0
+  OutdoorHeatTwoFan          = 1
+  OutdoorTypeIIFan2High      = 0
+  OutdoorTypeIIFan2SwapDead  = 0
+  OutdoorTypeIIStage         = 1
+  OutdoorTypeIIPendingStage  = 1
+  OutdoorFaultHoldFanMask    = 0
+  AmbientLockout             = 0
+  OutdoorFanChangeSeconds    = 3
+  OutdoorFanNoCompSeconds    = 0
+  OutdoorVfdSpeed            = 0
+  OutdoorHeatFanHighCount    = 0
+  OutdoorHeatFanLowCount     = 30
+  OutdoorTypeIIPendingCount  = 0
+  InDefrost                  = 0
+  P.UserWorkModeSet          = 1
+  P.OutdoorFanTypeSet        = 3
+  P.FanOpenSet               = 0
+  P.FanOpenSet2              = 1
+  P.FanSpeedCtrl             = 0
+  P.EnviTempAI0Disp          = 50
+  AI[6]                      = 50
+  SensorStatus[0..6]         = (0, 0, 0, 0, 1, 1, 0)
+  FanRunSec                  = (0, 499)
+  FanStopSec                 = (1381, 0)
+  FanCmdRunSec               = (48630, 47771)
+  Comp[0..1]                 = (1, 1)
+  output[0..7]               = (1, 1, 0, 1, 1, 1, 0, 0)
+结束 state=RUNNING
+
+=== 330 侧（COM6）寄存器 ===
+--- 1#外机 ---
+  环温镜像 330[1552] = 5.0 C
+  压机1/2 状态 = 3/3
+  风机目标=0 反馈1=0 反馈2=0 DA0=0.00V
+  Y位 = 00111011  Y02单速=0 Y03双速低=1 Y07双速高=0 Y06曲轴=0
+  机型=1 风机类型=3  Z=7.0C ZD=4.0C (Z+ZD=11.0C)
+--- 2#外机 ---
+  环温镜像 330[1622] = 5.0 C
+  压机1/2 状态 = 3/3
+  风机目标=50 反馈1=0 反馈2=0 DA0=0.00V
+  Y位 = 00111111  Y02单速=1 Y03双速低=1 Y07双速高=0 Y06曲轴=0
+  机型=0 风机类型=1  Z=7.0C ZD=5.0C (Z+ZD=12.0C)
+
+  330[700] SysStatus=4  330[709] SysStep=2  330[723] OilHeatingFlag=0  330[236] 模式=1

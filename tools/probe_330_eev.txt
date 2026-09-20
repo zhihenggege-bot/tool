@@ -1,0 +1,12 @@
+=== 330 电子膨胀阀探针 ===
+  [ 10] MotorTotalPulseSet 总脉冲             = 500
+  [ 11] EEVCloseMinSizeSet 最小开度            = 48
+  [ 12] EEVOpenMaxSizeSet 最大开度             = 500
+  [ 21] DefrostEXVOpenSizeSet 化霜开度(派生)     = 350
+  [372] DefrostEEVStepSet 化霜开度(HMI真配)      = 350
+  [411] EEVStartStepSet 起始开度               = 200
+  => EEVSpecMaxStep() = clamp([12]=500,200,clamp([10]=500,200,500)) = **500**
+  => 化霜开度实际会取 clamp([372]=350,100,500) = **350**   （规格要求 350）
+
+--- 当前 EEV 步数 ---
+  外机 CompStatus: 外机1=['制热', '制热']  外机2=['制热', '制热']

@@ -41,12 +41,22 @@ COMPACT_NUM = 16
 PARAM_BASE = 0x2000164A
 PLCREAD = 1420
 
-# NTC 下标 -> (316 Parameter 下标, 名字)
-SHOW = {
-    0: (PLCREAD + 2, "环温"),
-    1: (PLCREAD + 11, "翅片1"),
-    2: (PLCREAD + 12, "翅片2"),
+# 显示值统一从 316 的 AI[6+i] 读（NTC16bit.c:182-189 就是 AI[6..13]=NTC[0..7]），
+# 比原先只认 3 路的 Parameter[PLCREAD+..] 通用。
+A_AI = 0x20001172          # int16 AI[14]，NTC[i] == AI[6+i]
+
+# NTC 下标 -> 名字（User.h:223-229）
+NTC_NAME = {
+    0: "环温   NTC1",
+    1: "翅片1  NTC2",
+    2: "翅片2  NTC3",
+    3: "排气   NTC4",
+    4: "排气   NTC5",
+    5: "吸气1  NTC6",   # SuctionTempAI16 = AI[11]  <- 3.9 过热度用这个
+    6: "吸气2  NTC7",   # SuctionTempAI17 = AI[12]
+    7: "(未用)",
 }
+SHOW = {i: (None, NTC_NAME[i]) for i in NTC_NAME}
 
 LINES: list[str] = []
 
@@ -110,10 +120,16 @@ def main() -> int:
         v = b[0] | (b[1] << 8)
         return v - 0x10000 if v & 0x8000 else v
 
+    def ai(i):
+        """NTC[i] 的当前显示值（0.1C），来自 AI[6+i]。"""
+        b = tgt.read_memory_block8(A_AI + (6 + i) * 2, 2)
+        v = b[0] | (b[1] << 8)
+        return v - 0x10000 if v & 0x8000 else v
+
     def snapshot():
         out = {}
-        for i, (pst, nm) in SHOW.items():
-            out[i] = (p16(pst), s16(rd(comp + i)[0]))
+        for i in SHOW:
+            out[i] = (ai(i), s16(rd(comp + i)[0]))
         return out
 
     def show(snap):

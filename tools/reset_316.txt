@@ -1,0 +1,69 @@
+已连接 state=RUNNING
+
+=== 复位前 ===
+    AI0 偏移 (AI0 1#高压)          = 875
+    AI1 偏移 (AI1 2#高压)          = 800
+    A2/A3 偏移                   = 0
+    AI配置版本标记 [350]             = 12641
+    UserA0ValueSet [499]       = 252
+    机型 [165]                   = 1
+    风机类型 [166]                 = 2
+    TL [172]                   = 300
+    TLD [173]                  = 150
+    制冷剂 [39]                   = 3
+    高压1 [1443]                 = 2690
+    高压2 [1445]                 = 2690
+    环温 [1422]                  = 200
+    OutdoorVfdOn               = 1
+    OutdoorFixedOn             = 0
+    OutdoorFanStage            = 1
+    OutdoorVfdSpeed (0.1Hz)    = 500
+    OutdoorVfdForceFullCount   = 30
+    -- 推算: 无偏移高压1 = 1815, 冷凝1 = 47.0 C
+
+等 20 秒让参数存盘 ...
+
+>>> 执行 tgt.reset()（复位并运行）
+    复位后立即 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+    持续确认 state=RUNNING
+已断开（复位完成）
+
+等 8 秒让 316 重新初始化，再连上读回 ...
+已重连 state=RUNNING
+
+=== 复位后 ===
+    AI0 偏移 (AI0 1#高压)          = 875
+    AI1 偏移 (AI1 2#高压)          = 800
+    A2/A3 偏移                   = 0
+    AI配置版本标记 [350]             = 12641
+    UserA0ValueSet [499]       = 252
+    机型 [165]                   = 1
+    风机类型 [166]                 = 2
+    TL [172]                   = 300
+    TLD [173]                  = 150
+    制冷剂 [39]                   = 3
+    高压1 [1443]                 = 2690
+    高压2 [1445]                 = 2690
+    环温 [1422]                  = 200
+    OutdoorVfdOn               = 1
+    OutdoorFixedOn             = 0
+    OutdoorFanStage            = 1
+    OutdoorVfdSpeed (0.1Hz)    = 200
+    OutdoorVfdForceFullCount   = 0
+    -- 推算: 无偏移高压1 = 1815, 冷凝1 = 47.0 C
+
+=== 对比（只看变化的）===
+    OutdoorVfdSpeed (0.1Hz)     500  ->  200
+    OutdoorVfdForceFullCount    30  ->  0
+
+>>> AI0 偏移复位后**还在**（875）：偏移进了 EEPROM，能扛住复位 ✓
+!! 复位后重连失败: 'gbk' codec can't encode character '\u2713' in position 43: illegal multibyte sequence

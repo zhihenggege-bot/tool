@@ -1,0 +1,13 @@
+已连接（attach）-> STM32F103RC   进入时 state = HALTED
+内核是 HALTED —— 执行 resume()
+resume 后 state = RUNNING
+  持续确认 state = RUNNING
+  持续确认 state = RUNNING
+  持续确认 state = RUNNING
+  持续确认 state = RUNNING
+已断开
+
+=== 从 330 侧看外机是否恢复（COM6）===
+  1#外机: 在线=1  写状态=2  错误码=0
+  2#外机: 在线=1  写状态=0  错误码=0
+  330[700] SysStatus=4  330[709] SysStep=2

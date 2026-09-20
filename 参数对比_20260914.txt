@@ -1,0 +1,611 @@
+﻿330 内机 Parameter[0..499] 设备值 vs 固件有效默认值    2026-09-14 17:37:03
+有效默认值 = user.c 的 Parameter_def[] 数组 + ParameterInit() 的 422 条覆盖
+
+差异总数: 102 / 500
+
+idx   固件默认      设备实际      min       max       备注
+13    5         10        0         99        
+14    10        20        0         99        
+15    20        40        0         99        
+21    50        350       0         999       
+23    650       170       0         999       
+24    700       350       0         999       
+30    5         0         0         9999      
+32    -100      0         -300      200       
+42    120       180       120       600       
+46    40        50        -99       999       
+47    40        50        -99       999       
+89    10        3         0         999       
+94    0         3         0         3         
+110   5         15        1         20        
+112   50        100       0         150       
+115   0         1000      -1000     1000      
+116   0         70        -1000     1000      
+118   0         4         0         2         ★ 越界(上电会被回退)
+119   0         4         0         2         ★ 越界(上电会被回退)
+120   20        30        20        50        
+125   0         1         0         1         
+126   0         1         0         1         
+127   0         1         0         1         
+131   0         50        0         100       
+157   0         1         0         1         
+161   250       260       150       320       
+162   500       400       200       1000      
+164   0         1         0         1         
+166   0         1         0         1         
+167   0         196       0         29999     
+206   150       60        0         999       
+214   2         3         1         16        
+215   0         1         0         2         
+216   1         0         0         1         
+220   0         500       0         999       
+248   0         1         -1000     32767     
+321   50        10        10        80        
+322   600       60        60        1200      
+323   60        5         0         999       
+324   60        5         0         999       
+325   0         1         0         1         
+328   30        0         -90       90        
+329   1         3         1         3         
+330   0         2         0         2         
+332   0         1         0         4         
+334   0         1         0         2         
+335   0         2         0         2         
+336   0         1         0         2         
+338   0         2         0         2         
+339   80        30        0         100       
+343   1000      30        0         10000     
+344   100       80        10        3000      
+345   5         0         0         9999      
+346   200       0         0         1000      
+348   100       20        1         1000      
+350   5         2         1         100       
+351   100       1         1         1000      
+352   0         3         0         1000      
+354   100       20        1         1000      
+356   0         50        -100      100       
+357   -50       1         -300      100       
+358   20        0         0         300       
+359   5         1         0         300       
+360   50        0         0         100       
+361   200       100       100       800       
+363   0         37        0         30000     
+373   0         44        0         30000     
+375   50        0         0         100       
+377   0         1         0         2         
+378   0         300       -500      500       
+379   800       1500      0         5000      
+380   80        0         0         100       
+383   20        0         0         300       
+384   10        0         0         300       
+387   0         1         0         1         
+388   1         2         1         4         
+398   0         1         0         1         
+412   5         1         1         10        
+417   100       20        1         1000      
+420   30        10        1         100       
+426   5         3         1         100       
+427   100       20        1         1000      
+428   0         1         0         1000      
+449   0         80        0         100       
+454   1         0         0         1         
+455   0         341       0         32767     
+457   0         5         -9999     32767     
+458   0         330       0         32767     
+484   0         -146      -9999     32767     
+485   0         -160      -9999     32767     
+486   0         -162      -9999     32767     
+487   0         -163      -9999     32767     
+488   0         -161      -9999     32767     
+489   0         -160      -9999     32767     
+490   0         -163      -9999     32767     
+491   0         -159      -9999     32767     
+492   0         -164      -9999     32767     
+493   0         -88       -9999     32767     
+494   0         -170      -9999     32767     
+495   0         -44       -9999     32767     
+496   0         4         -9999     32767     
+497   0         3         -9999     32767     
+
+
+=== 供核对：全部 500 项列出（有差异的标 *）===
+ 0    def=0       dev=0       min=-1000   max=32767  
+ 1    def=0       dev=0       min=0       max=2      
+ 2    def=0       dev=0       min=0       max=1      
+ 3    def=0       dev=0       min=0       max=1      
+ 4    def=0       dev=0       min=0       max=1      
+ 5    def=0       dev=0       min=0       max=1      
+ 6    def=0       dev=0       min=0       max=1      
+ 7    def=0       dev=0       min=0       max=1      
+ 8    def=0       dev=0       min=0       max=1      
+ 9    def=0       dev=0       min=0       max=1      
+ 10   def=500     dev=500     min=0       max=9999   
+ 11   def=48      dev=48      min=0       max=999    
+ 12   def=500     dev=500     min=200     max=500    
+*13   def=5       dev=10      min=0       max=99     
+*14   def=10      dev=20      min=0       max=99     
+*15   def=20      dev=40      min=0       max=99     
+ 16   def=5       dev=5       min=1       max=10     
+ 17   def=30      dev=30      min=0       max=999    
+ 18   def=2       dev=2       min=0       max=999    
+ 19   def=90      dev=90      min=0       max=999    
+ 20   def=3       dev=3       min=0       max=60     
+*21   def=50      dev=350     min=0       max=999    
+ 22   def=100     dev=100     min=0       max=999    
+*23   def=650     dev=170     min=0       max=999    
+*24   def=700     dev=350     min=0       max=999    
+ 25   def=2       dev=2       min=1       max=255    
+ 26   def=3       dev=3       min=1       max=255    
+ 27   def=60      dev=60      min=1       max=255    
+ 28   def=1100    dev=1100    min=1000    max=1250   
+ 29   def=900     dev=900     min=800     max=1000   
+*30   def=5       dev=0       min=0       max=9999   
+ 31   def=0       dev=0       min=-300    max=200    
+*32   def=-100    dev=0       min=-300    max=200    
+ 33   def=0       dev=0       min=0       max=1000   
+ 34   def=2000    dev=2000    min=0       max=2000   
+ 35   def=0       dev=0       min=-300    max=300    
+ 36   def=3       dev=3       min=0       max=3      
+ 37   def=900     dev=900     min=0       max=9999   
+ 38   def=1       dev=1       min=0       max=2      
+ 39   def=3       dev=3       min=0       max=5      
+ 40   def=24      dev=24      min=0       max=99     
+ 41   def=10      dev=10      min=0       max=255    
+*42   def=120     dev=180     min=120     max=600    
+ 43   def=180     dev=180     min=180     max=600    
+ 44   def=90      dev=90      min=30      max=600    
+ 45   def=15      dev=15      min=0       max=255    
+*46   def=40      dev=50      min=-99     max=999    
+*47   def=40      dev=50      min=-99     max=999    
+ 48   def=90      dev=90      min=0       max=200    
+ 49   def=30      dev=30      min=0       max=200    
+ 50   def=2000    dev=2000    min=0       max=9999   
+ 51   def=2000    dev=2000    min=0       max=9999   
+ 52   def=5000    dev=5000    min=0       max=9999   
+ 53   def=900     dev=900     min=0       max=9999   
+ 54   def=150     dev=150     min=0       max=9999   
+ 55   def=2300    dev=2300    min=0       max=9999   
+ 56   def=4000    dev=4000    min=0       max=9999   
+ 57   def=300     dev=300     min=0       max=9999   
+ 58   def=1       dev=1       min=0       max=1      
+ 59   def=7       dev=7       min=0       max=255    
+ 60   def=5       dev=5       min=0       max=60     
+ 61   def=-20     dev=-20     min=-100    max=100    
+ 62   def=80      dev=80      min=0       max=250    
+ 63   def=30      dev=30      min=0       max=250    
+ 64   def=70      dev=70      min=0       max=250    
+ 65   def=0       dev=0       min=-100    max=250    
+ 66   def=-50     dev=-50     min=-100    max=250    
+ 67   def=60      dev=60      min=0       max=255    
+ 68   def=45      dev=45      min=0       max=255    
+ 69   def=30      dev=30      min=0       max=255    
+ 70   def=300     dev=300     min=60      max=1500   
+ 71   def=40      dev=40      min=0       max=250    
+ 72   def=280     dev=280     min=0       max=350    
+ 73   def=10      dev=10      min=0       max=255    
+ 74   def=80      dev=80      min=0       max=250    
+ 75   def=150     dev=150     min=-100    max=200    
+ 76   def=0       dev=0       min=0       max=1      
+ 77   def=30      dev=30      min=1       max=999    
+ 78   def=1       dev=1       min=0       max=1      
+ 79   def=1       dev=1       min=0       max=1      
+ 80   def=1       dev=1       min=-99     max=1      
+ 81   def=1       dev=1       min=-99     max=255    
+ 82   def=0       dev=0       min=0       max=1      
+ 83   def=500     dev=500     min=0       max=1000   
+ 84   def=500     dev=500     min=0       max=1000   
+ 85   def=200     dev=200     min=0       max=1000   
+ 86   def=1000    dev=1000    min=0       max=1000   
+ 87   def=1900    dev=1900    min=0       max=9999   
+ 88   def=2600    dev=2600    min=0       max=9999   
+*89   def=10      dev=3       min=0       max=999    
+ 90   def=0       dev=0       min=0       max=9999   
+ 91   def=0       dev=0       min=0       max=999    
+ 92   def=0       dev=0       min=0       max=999    
+ 93   def=3       dev=3       min=2       max=4      
+*94   def=0       dev=3       min=0       max=3      
+ 95   def=300     dev=300     min=0       max=9999   
+ 96   def=600     dev=600     min=0       max=1300   
+ 97   def=250     dev=250     min=-300    max=500    
+ 98   def=375     dev=375     min=0       max=999    
+ 99   def=1       dev=1       min=0       max=1      
+ 100  def=1       dev=1       min=0       max=1      
+ 101  def=10      dev=10      min=0       max=999    
+ 102  def=50      dev=50      min=0       max=1000   
+ 103  def=100     dev=100     min=0       max=9999   
+ 104  def=100     dev=100     min=0       max=9999   
+ 105  def=3       dev=3       min=2       max=4      
+ 106  def=0       dev=0       min=0       max=1      
+ 107  def=1       dev=1       min=1       max=2      
+ 108  def=1       dev=1       min=0       max=1      
+ 109  def=0       dev=0       min=0       max=999    
+*110  def=5       dev=15      min=1       max=20     
+ 111  def=-20     dev=-20     min=-50     max=50     
+*112  def=50      dev=100     min=0       max=150    
+ 113  def=950     dev=950     min=-500    max=9999   
+ 114  def=2       dev=2       min=1       max=10     
+*115  def=0       dev=1000    min=-1000   max=1000   
+*116  def=0       dev=70      min=-1000   max=1000   
+ 117  def=0       dev=0       min=-1000   max=1000   
+*118  def=0       dev=4       min=0       max=2      
+*119  def=0       dev=4       min=0       max=2      
+*120  def=20      dev=30      min=20      max=50     
+ 121  def=30      dev=30      min=0       max=1000   
+ 122  def=300     dev=300     min=0       max=1000   
+ 123  def=40      dev=40      min=0       max=1000   
+ 124  def=280     dev=280     min=0       max=1000   
+*125  def=0       dev=1       min=0       max=1      
+*126  def=0       dev=1       min=0       max=1      
+*127  def=0       dev=1       min=0       max=1      
+ 128  def=1       dev=1       min=0       max=5      
+ 129  def=1       dev=1       min=0       max=1      
+ 130  def=0       dev=0       min=0       max=100    
+*131  def=0       dev=50      min=0       max=100    
+ 132  def=30      dev=30      min=0       max=90     
+ 133  def=0       dev=0       min=0       max=1      
+ 134  def=100     dev=100     min=0       max=100    
+ 135  def=30      dev=30      min=0       max=90     
+ 136  def=375     dev=375     min=0       max=999    
+ 137  def=800     dev=800     min=0       max=1300   
+ 138  def=250     dev=250     min=-300    max=500    
+ 139  def=900     dev=900     min=0       max=1300   
+ 140  def=0       dev=0       min=0       max=1      
+ 141  def=0       dev=0       min=0       max=1      
+ 142  def=0       dev=0       min=0       max=1      
+ 143  def=1       dev=1       min=0       max=255    
+ 144  def=0       dev=0       min=0       max=1      
+ 145  def=0       dev=0       min=0       max=1      
+ 146  def=0       dev=0       min=0       max=1      
+ 147  def=0       dev=0       min=0       max=1      
+ 148  def=0       dev=0       min=0       max=1      
+ 149  def=0       dev=0       min=0       max=1      
+ 150  def=0       dev=0       min=0       max=29999  
+ 151  def=0       dev=0       min=0       max=29999  
+ 152  def=3       dev=3       min=0       max=255    
+ 153  def=60      dev=60      min=0       max=255    
+ 154  def=30      dev=30      min=0       max=70     
+ 155  def=0       dev=0       min=0       max=1      
+ 156  def=0       dev=0       min=0       max=1      
+*157  def=0       dev=1       min=0       max=1      
+ 158  def=0       dev=0       min=0       max=1      
+ 159  def=0       dev=0       min=0       max=1      
+ 160  def=250     dev=250     min=150     max=320    
+*161  def=250     dev=260     min=150     max=320    
+*162  def=500     dev=400     min=200     max=1000   
+ 163  def=0       dev=0       min=-300    max=2      
+*164  def=0       dev=1       min=0       max=1      
+ 165  def=0       dev=0       min=0       max=1      
+*166  def=0       dev=1       min=0       max=1      
+*167  def=0       dev=196     min=0       max=29999  
+ 168  def=0       dev=0       min=0       max=1      
+ 169  def=0       dev=0       min=0       max=1      
+ 170  def=80      dev=80      min=0       max=200    
+ 171  def=45      dev=45      min=0       max=200    
+ 172  def=350     dev=350     min=100     max=999    
+ 173  def=10      dev=10      min=0       max=200    
+ 174  def=1       dev=1       min=1       max=50     
+ 175  def=5       dev=5       min=1       max=999    
+ 176  def=70      dev=70      min=0       max=200    
+ 177  def=105     dev=105     min=1       max=999    
+ 178  def=101     dev=101     min=101     max=150    
+ 179  def=80      dev=80      min=60      max=100    
+ 180  def=40      dev=40      min=0       max=49     
+ 181  def=120     dev=120     min=0       max=999    
+ 182  def=120     dev=120     min=0       max=999    
+ 183  def=120     dev=120     min=0       max=999    
+ 184  def=5       dev=5       min=0       max=999    
+ 185  def=60      dev=60      min=0       max=200    
+ 186  def=3800    dev=3800    min=0       max=9999   
+ 187  def=80      dev=80      min=0       max=120    
+ 188  def=300     dev=300     min=0       max=9999   
+ 189  def=0       dev=0       min=0       max=500    
+ 190  def=30      dev=30      min=0       max=255    
+ 191  def=10      dev=10      min=0       max=255    
+ 192  def=10      dev=10      min=0       max=255    
+ 193  def=20      dev=20      min=0       max=255    
+ 194  def=10      dev=10      min=0       max=255    
+ 195  def=20      dev=20      min=0       max=255    
+ 196  def=10      dev=10      min=0       max=255    
+ 197  def=5       dev=5       min=0       max=255    
+ 198  def=3       dev=3       min=0       max=999    
+ 199  def=0       dev=0       min=0       max=1      
+ 200  def=15      dev=15      min=1       max=255    
+ 201  def=30      dev=30      min=-300    max=70     
+ 202  def=550     dev=550     min=400     max=800    
+ 203  def=30      dev=30      min=1       max=255    
+ 204  def=30      dev=30      min=1       max=255    
+ 205  def=30      dev=30      min=0       max=100    
+*206  def=150     dev=60      min=0       max=999    
+ 207  def=350     dev=350     min=-300    max=800    
+ 208  def=3       dev=3       min=0       max=90     
+ 209  def=15      dev=15      min=0       max=255    
+ 210  def=0       dev=0       min=0       max=1      
+ 211  def=4       dev=4       min=0       max=4      
+ 212  def=0       dev=0       min=-300    max=500    
+ 213  def=500     dev=500     min=0       max=800    
+*214  def=2       dev=3       min=1       max=16     
+*215  def=0       dev=1       min=0       max=2      
+*216  def=1       dev=0       min=0       max=1      
+ 217  def=0       dev=0       min=0       max=1      
+ 218  def=0       dev=0       min=0       max=30000  
+ 219  def=0       dev=0       min=0       max=1      
+*220  def=0       dev=500     min=0       max=999    
+ 221  def=0       dev=0       min=0       max=1      
+ 222  def=0       dev=0       min=0       max=999    
+ 223  def=0       dev=0       min=0       max=1      
+ 224  def=0       dev=0       min=0       max=999    
+ 225  def=0       dev=0       min=0       max=1      
+ 226  def=0       dev=0       min=0       max=999    
+ 227  def=0       dev=0       min=0       max=1      
+ 228  def=0       dev=0       min=0       max=999    
+ 229  def=0       dev=0       min=0       max=1      
+ 230  def=0       dev=0       min=0       max=999    
+ 231  def=0       dev=0       min=0       max=1      
+ 232  def=0       dev=0       min=0       max=999    
+ 233  def=0       dev=0       min=0       max=1      
+ 234  def=0       dev=0       min=0       max=999    
+ 235  def=0       dev=0       min=-1      max=100    
+ 236  def=0       dev=0       min=0       max=5      
+ 237  def=30      dev=30      min=0       max=1000   
+ 238  def=5       dev=5       min=0       max=100    
+ 239  def=1000    dev=1000    min=-1000   max=32767  
+ 240  def=3       dev=3       min=-1000   max=32767  
+ 241  def=50      dev=50      min=-1000   max=32767  
+ 242  def=5       dev=5       min=-1000   max=32767  
+ 243  def=0       dev=0       min=-1000   max=32767  
+ 244  def=5       dev=5       min=-1000   max=32767  
+ 245  def=0       dev=0       min=-1000   max=32767  
+ 246  def=50      dev=50      min=-1000   max=32767  
+ 247  def=500     dev=500     min=-1000   max=32767  
+*248  def=0       dev=1       min=-1000   max=32767  
+ 249  def=20      dev=20      min=0       max=100    
+ 250  def=1       dev=1       min=0       max=255    
+ 251  def=1       dev=1       min=0       max=255    
+ 252  def=1       dev=1       min=0       max=255    
+ 253  def=1       dev=1       min=0       max=255    
+ 254  def=1       dev=1       min=0       max=255    
+ 255  def=1       dev=1       min=0       max=255    
+ 256  def=1       dev=1       min=0       max=255    
+ 257  def=1       dev=1       min=0       max=255    
+ 258  def=0       dev=0       min=0       max=255    
+ 259  def=0       dev=0       min=0       max=1      
+ 260  def=42      dev=42      min=0       max=140    
+ 261  def=39      dev=39      min=0       max=140    
+ 262  def=10      dev=10      min=-200    max=999    
+ 263  def=10      dev=10      min=0       max=999    
+ 264  def=0       dev=0       min=-1000   max=1      
+ 265  def=48      dev=48      min=-1000   max=140    
+ 266  def=45      dev=45      min=-1000   max=140    
+ 267  def=3       dev=3       min=-1000   max=999    
+ 268  def=3       dev=3       min=-1000   max=999    
+ 269  def=300     dev=300     min=-1000   max=550    
+ 270  def=100     dev=100     min=0       max=500    
+ 271  def=45      dev=45      min=0       max=500    
+ 272  def=0       dev=0       min=0       max=500    
+ 273  def=10      dev=10      min=0       max=500    
+ 274  def=3       dev=3       min=0       max=99     
+ 275  def=1       dev=1       min=0       max=1      
+ 276  def=1       dev=1       min=0       max=1      
+ 277  def=200     dev=200     min=0       max=999    
+ 278  def=0       dev=0       min=-300    max=800    
+ 279  def=600     dev=600     min=-300    max=800    
+ 280  def=-120    dev=-120    min=-300    max=800    
+ 281  def=350     dev=350     min=-300    max=800    
+ 282  def=5       dev=5       min=0       max=100    
+ 283  def=100     dev=100     min=0       max=100    
+ 284  def=0       dev=0       min=0       max=9999   
+ 285  def=3000    dev=3000    min=0       max=9999   
+ 286  def=5       dev=5       min=0       max=100    
+ 287  def=100     dev=100     min=0       max=100    
+ 288  def=0       dev=0       min=0       max=30000  
+ 289  def=30      dev=30      min=0       max=30000  
+ 290  def=10      dev=10      min=1       max=999    
+ 291  def=10      dev=10      min=1       max=100    
+ 292  def=300     dev=300     min=0       max=1000   
+ 293  def=900     dev=900     min=0       max=1000   
+ 294  def=20      dev=20      min=0       max=9999   
+ 295  def=3       dev=3       min=0       max=9999   
+ 296  def=0       dev=0       min=0       max=1      
+ 297  def=900     dev=900     min=0       max=1000   
+ 298  def=0       dev=0       min=0       max=1      
+ 299  def=500     dev=500     min=400     max=650    
+ 300  def=30      dev=30      min=1       max=999    
+ 301  def=1       dev=1       min=1       max=999    
+ 302  def=500     dev=500     min=1       max=999    
+ 303  def=50      dev=50      min=1       max=999    
+ 304  def=0       dev=0       min=0       max=1      
+ 305  def=2       dev=2       min=0       max=3      
+ 306  def=1       dev=1       min=0       max=1      
+ 307  def=3       dev=3       min=0       max=3      
+ 308  def=0       dev=0       min=0       max=2      
+ 309  def=0       dev=0       min=0       max=1      
+ 310  def=3000    dev=3000    min=0       max=9999   
+ 311  def=10      dev=10      min=0       max=9999   
+ 312  def=1       dev=1       min=0       max=1      
+ 313  def=1       dev=1       min=0       max=1      
+ 314  def=0       dev=0       min=0       max=1      
+ 315  def=0       dev=0       min=0       max=1      
+ 316  def=350     dev=350     min=260     max=430    
+ 317  def=220     dev=220     min=150     max=250    
+ 318  def=0       dev=0       min=-50     max=50     
+ 319  def=120     dev=120     min=60      max=150    
+ 320  def=0       dev=0       min=0       max=1      
+*321  def=50      dev=10      min=10      max=80     
+*322  def=600     dev=60      min=60      max=1200   
+*323  def=60      dev=5       min=0       max=999    
+*324  def=60      dev=5       min=0       max=999    
+*325  def=0       dev=1       min=0       max=1      
+ 326  def=0       dev=0       min=0       max=5      
+ 327  def=0       dev=0       min=0       max=2      
+*328  def=30      dev=0       min=-90     max=90     
+*329  def=1       dev=3       min=1       max=3      
+*330  def=0       dev=2       min=0       max=2      
+ 331  def=0       dev=0       min=0       max=1      
+*332  def=0       dev=1       min=0       max=4      
+ 333  def=0       dev=0       min=0       max=4      
+*334  def=0       dev=1       min=0       max=2      
+*335  def=0       dev=2       min=0       max=2      
+*336  def=0       dev=1       min=0       max=2      
+ 337  def=0       dev=0       min=0       max=2      
+*338  def=0       dev=2       min=0       max=2      
+*339  def=80      dev=30      min=0       max=100    
+ 340  def=100     dev=100     min=50      max=100    
+ 341  def=30      dev=30      min=0       max=100    
+ 342  def=100     dev=100     min=50      max=100    
+*343  def=1000    dev=30      min=0       max=10000  
+*344  def=100     dev=80      min=10      max=3000   
+*345  def=5       dev=0       min=0       max=9999   
+*346  def=200     dev=0       min=0       max=1000   
+ 347  def=5       dev=5       min=1       max=100    
+*348  def=100     dev=20      min=1       max=1000   
+ 349  def=0       dev=0       min=0       max=1000   
+*350  def=5       dev=2       min=1       max=100    
+*351  def=100     dev=1       min=1       max=1000   
+*352  def=0       dev=3       min=0       max=1000   
+ 353  def=5       dev=5       min=1       max=100    
+*354  def=100     dev=20      min=1       max=1000   
+ 355  def=0       dev=0       min=0       max=1000   
+*356  def=0       dev=50      min=-100    max=100    
+*357  def=-50     dev=1       min=-300    max=100    
+*358  def=20      dev=0       min=0       max=300    
+*359  def=5       dev=1       min=0       max=300    
+*360  def=50      dev=0       min=0       max=100    
+*361  def=200     dev=100     min=100     max=800    
+ 362  def=1       dev=1       min=0       max=1      
+*363  def=0       dev=37      min=0       max=30000  
+ 364  def=0       dev=0       min=0       max=1      
+ 365  def=1       dev=1       min=0       max=1      
+ 366  def=50      dev=50      min=20      max=100    
+ 367  def=20      dev=20      min=20      max=50     
+ 368  def=5       dev=5       min=1       max=100    
+ 369  def=100     dev=100     min=1       max=1000   
+ 370  def=0       dev=0       min=0       max=1000   
+ 371  def=20      dev=20      min=3       max=50     
+ 372  def=350     dev=350     min=100     max=500    
+*373  def=0       dev=44      min=0       max=30000  
+ 374  def=0       dev=0       min=0       max=1      
+*375  def=50      dev=0       min=0       max=100    
+ 376  def=40      dev=40      min=0       max=80     
+*377  def=0       dev=1       min=0       max=2      
+*378  def=0       dev=300     min=-500    max=500    
+*379  def=800     dev=1500    min=0       max=5000   
+*380  def=80      dev=0       min=0       max=100    
+ 381  def=0       dev=0       min=0       max=1      
+ 382  def=0       dev=0       min=0       max=1      
+*383  def=20      dev=0       min=0       max=300    
+*384  def=10      dev=0       min=0       max=300    
+ 385  def=3       dev=3       min=1       max=3      
+ 386  def=2       dev=2       min=0       max=2      
+*387  def=0       dev=1       min=0       max=1      
+*388  def=1       dev=2       min=1       max=4      
+ 389  def=0       dev=0       min=0       max=1      
+ 390  def=0       dev=0       min=0       max=1      
+ 391  def=0       dev=0       min=0       max=1      
+ 392  def=0       dev=0       min=0       max=1      
+ 393  def=0       dev=0       min=0       max=1      
+ 394  def=0       dev=0       min=0       max=1      
+ 395  def=0       dev=0       min=0       max=1      
+ 396  def=1       dev=1       min=0       max=1      
+ 397  def=1       dev=1       min=0       max=1      
+*398  def=0       dev=1       min=0       max=1      
+ 399  def=0       dev=0       min=0       max=1      
+ 400  def=0       dev=0       min=-1000   max=32767  
+ 401  def=0       dev=0       min=-1000   max=32767  
+ 402  def=0       dev=0       min=0       max=1      
+ 403  def=30      dev=30      min=0       max=255    
+ 404  def=10      dev=10      min=0       max=255    
+ 405  def=5       dev=5       min=0       max=255    
+ 406  def=10      dev=10      min=0       max=255    
+ 407  def=10      dev=10      min=0       max=255    
+ 408  def=20      dev=20      min=0       max=255    
+ 409  def=10      dev=10      min=0       max=255    
+ 410  def=5       dev=5       min=0       max=255    
+ 411  def=200     dev=200     min=0       max=500    
+*412  def=5       dev=1       min=1       max=10     
+ 413  def=50      dev=50      min=0       max=999    
+ 414  def=50      dev=50      min=0       max=300    
+ 415  def=50      dev=50      min=0       max=300    
+ 416  def=5       dev=5       min=1       max=100    
+*417  def=100     dev=20      min=1       max=1000   
+ 418  def=0       dev=0       min=0       max=1000   
+ 419  def=15      dev=15      min=1       max=99     
+*420  def=30      dev=10      min=1       max=100    
+ 421  def=30      dev=30      min=0       max=999    
+ 422  def=5       dev=5       min=5       max=999    
+ 423  def=50      dev=50      min=0       max=999    
+ 424  def=50      dev=50      min=0       max=300    
+ 425  def=50      dev=50      min=0       max=300    
+*426  def=5       dev=3       min=1       max=100    
+*427  def=100     dev=20      min=1       max=1000   
+*428  def=0       dev=1       min=0       max=1000   
+ 429  def=15      dev=15      min=1       max=99     
+ 430  def=10      dev=10      min=1       max=100    
+ 431  def=0       dev=0       min=0       max=1      
+ 432  def=0       dev=0       min=0       max=1      
+ 433  def=45      dev=45      min=0       max=50     
+ 434  def=5       dev=5       min=0       max=50     
+ 435  def=900     dev=900     min=300     max=1500   
+ 436  def=-300    dev=-300    min=-800    max=0      
+ 437  def=45      dev=45      min=0       max=50     
+ 438  def=5       dev=5       min=0       max=50     
+ 439  def=1000    dev=1000    min=0       max=1000   
+ 440  def=0       dev=0       min=0       max=1000   
+ 441  def=200     dev=200     min=40      max=500    
+ 442  def=40      dev=40      min=0       max=200    
+ 443  def=900     dev=900     min=300     max=1500   
+ 444  def=-300    dev=-300    min=-800    max=0      
+ 445  def=200     dev=200     min=40      max=500    
+ 446  def=40      dev=40      min=0       max=200    
+ 447  def=1000    dev=1000    min=0       max=1000   
+ 448  def=0       dev=0       min=0       max=1000   
+*449  def=0       dev=80      min=0       max=100    
+ 450  def=0       dev=0       min=0       max=2      
+ 451  def=0       dev=0       min=0       max=2      
+ 452  def=0       dev=0       min=0       max=2      
+ 453  def=1       dev=1       min=0       max=1      
+*454  def=1       dev=0       min=0       max=1      
+*455  def=0       dev=341     min=0       max=32767  
+ 456  def=0       dev=0       min=-9999   max=32767  
+*457  def=0       dev=5       min=-9999   max=32767  
+*458  def=0       dev=330     min=0       max=32767  
+ 459  def=0       dev=0       min=0       max=1      
+ 460  def=0       dev=0       min=0       max=1      
+ 461  def=0       dev=0       min=0       max=1      
+ 462  def=0       dev=0       min=0       max=1      
+ 463  def=0       dev=0       min=0       max=1      
+ 464  def=0       dev=0       min=-9999   max=32767  
+ 465  def=1200    dev=1200    min=1000    max=1400   
+ 466  def=5000    dev=5000    min=4500    max=5500   
+ 467  def=3300    dev=3300    min=3000    max=3600   
+ 468  def=0       dev=0       min=0       max=2      
+ 469  def=0       dev=0       min=0       max=2      
+ 470  def=0       dev=0       min=-9999   max=32767  
+ 471  def=0       dev=0       min=-9999   max=32767  
+ 472  def=0       dev=0       min=-9999   max=32767  
+ 473  def=0       dev=0       min=-9999   max=32767  
+ 474  def=0       dev=0       min=-9999   max=32767  
+ 475  def=0       dev=0       min=-9999   max=32767  
+ 476  def=0       dev=0       min=-9999   max=32767  
+ 477  def=0       dev=0       min=-9999   max=32767  
+ 478  def=0       dev=0       min=-9999   max=32767  
+ 479  def=0       dev=0       min=-9999   max=32767  
+ 480  def=30000   dev=30000   min=29000   max=32767  
+ 481  def=30000   dev=30000   min=29000   max=32767  
+ 482  def=30000   dev=30000   min=29000   max=32767  
+ 483  def=30000   dev=30000   min=29000   max=32767  
+*484  def=0       dev=-146    min=-9999   max=32767  
+*485  def=0       dev=-160    min=-9999   max=32767  
+*486  def=0       dev=-162    min=-9999   max=32767  
+*487  def=0       dev=-163    min=-9999   max=32767  
+*488  def=0       dev=-161    min=-9999   max=32767  
+*489  def=0       dev=-160    min=-9999   max=32767  
+*490  def=0       dev=-163    min=-9999   max=32767  
+*491  def=0       dev=-159    min=-9999   max=32767  
+*492  def=0       dev=-164    min=-9999   max=32767  
+*493  def=0       dev=-88     min=-9999   max=32767  
+*494  def=0       dev=-170    min=-9999   max=32767  
+*495  def=0       dev=-44     min=-9999   max=32767  
+*496  def=0       dev=4       min=-9999   max=32767  
+*497  def=0       dev=3       min=-9999   max=32767  
+ 498  def=0       dev=0       min=-9999   max=32767  
+ 499  def=0       dev=0       min=-9999   max=32767  
