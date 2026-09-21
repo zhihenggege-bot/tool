@@ -11,7 +11,10 @@ from openpyxl.utils import get_column_letter
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STAMP = "20260907"
+STAMP = "20260921"
+# ⚠ 日期只能有一个来源：此前 Excel 说明页与 markdown 各自硬写 "2026-09-07"，
+#   改 STAMP 换日期时漏改了那两处，导致文件名 20260921 / 内容 2026-09-07。
+ISO_DATE = "%s-%s-%s" % (STAMP[:4], STAMP[4:6], STAMP[6:])
 XLSX_PATH = ROOT / f"PSC330_PSC316_IO点位表_{STAMP}.xlsx"
 CSV_PATH = ROOT / f"PSC330_PSC316_IO点位表_{STAMP}.csv"
 MD_PATH = ROOT / f"PSC330_PSC316_IO点位说明_{STAMP}.md"
@@ -117,6 +120,13 @@ di330 = [
     ("X14", "X14", "回风压差开关", 1362, 396),
     ("X15", "X15", "送风压差开关", 1363, 397),
 ]
+# ⚠ 固件宏名里的 X 号**不是管脚号**，两个绑错位的要标出来，否则看宏名会认错管脚：
+#     User.h:159  #define PumpOverX00  X03_En            名字写 X00，实际是 X03
+#     User.h:170  #define FWaterFlowX06 SupplyPressureX15 名字写 X06，实际是 X15
+DI_TRAP = {
+    "X03": "⚠ 固件宏名为 PumpOverX00，但绑的是 X03（User.h:159）——别按宏名认管脚。",
+    "X15": "⚠ 固件宏 FWaterFlowX06 = SupplyPressureX15，绑的是 X15（User.h:170）。",
+}
 for point, variable, function, status_addr, polarity_addr in di330:
     rows.append(
         row(
@@ -129,7 +139,8 @@ for point, variable, function, status_addr, polarity_addr in di330:
             config_address=str(polarity_addr),
             signal="开关量；极性0=反相/常闭断开报警，1=正相/常开闭合报警",
             access="状态RO；极性RW",
-            note="状态地址显示的是固件采集后的点位状态；报警是否成立还受延时、模式和锁存逻辑影响。",
+            note=("状态地址显示的是固件采集后的点位状态；报警是否成立还受延时、模式和锁存逻辑影响。"
+                  + DI_TRAP.get(point, "")),
             source=f"{SRC330_IO}; {SRC330_USER}",
         )
     )
@@ -153,6 +164,18 @@ for point, status_addr in (("X16", 1364), ("X17", 1365)):
 
 
 # PSC330 DO
+# ⚠ note 原先是**所有 DO 行共用**一句"分段1:2:4三路组合…"——那只对 Y00/Y01/Y02
+#   （再热 1/2/4 份）和 Y15/Y16/Y17（新风预热 1/2/4 份）成立；
+#   送风机/排风机/综合报警挂这句是错的。改成按位取。
+DO_NOTE = {
+    "Y00": "1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为最低权重。",
+    "Y01": "1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为中间权重。",
+    "Y02": "1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为最高权重。",
+    "Y05": "综合报警（ErrTotal>0 时输出）。急停实测：其余负载全失电时本路仍带电（调试记录 §37）。",
+    "Y15": "新风预热 1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为最低权重。",
+    "Y16": "新风预热 1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为中间权重。",
+    "Y17": "新风预热 1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出；本路为最高权重。",
+}
 do330 = [
     ("Y00", "Y00", "再热/电加热1份", 814, "1:2:4分段最低权重"),
     ("Y01", "Y01", "再热/电加热2份", 815, "1:2:4分段中间权重"),
@@ -183,7 +206,7 @@ for point, variable, function, status_addr, reuse in do330:
             signal="继电器/开关量输出；0=断开，1=吸合",
             access="RO（状态监视）",
             reuse=reuse,
-            note="分段1:2:4三路组合可形成约0/15/30/45/60/75/90/100%输出。",
+            note=DO_NOTE.get(point, ""),
             source=f"{SRC330_IO}; psc330_monitor_tool/psc330_monitor/app.py",
         )
     )
@@ -582,7 +605,7 @@ def write_xlsx() -> None:
 
     ws = wb.create_sheet("地址说明")
     notes = [
-        ("生成日期", date(2026, 9, 7).isoformat()),
+        ("生成日期", ISO_DATE),
         ("地址基准", "表内Modbus地址按源码Parameter[]的0基地址填写。MCGS若设备驱动采用40001基准显示，应按驱动规则换算。"),
         ("PSC330数量", "14 DI + 16 DO + 5 AI + 12 NTC + 10 AO = 57个物理点；另列X16/X17两个逻辑预留显示位。"),
         ("PSC316数量", "8 DI + 8 DO + 4压力AI + 8 NTC + 2 AO = 30个物理点。"),
@@ -648,7 +671,7 @@ def write_markdown() -> None:
     ]
     content = f"""# PSC330/PSC316 IO点位说明
 
-生成日期：2026-09-07
+生成日期：{ISO_DATE}
 
 ## 数量
 
