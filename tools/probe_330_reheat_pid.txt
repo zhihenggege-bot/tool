@@ -1,0 +1,53 @@
+=== 330 §3.6 再热/辅热/非热泵制热 逐拍对账 ===
+模式[236]=制热  制热方式[128]=可控硅  SysStep[709]=1
+KPRZ[347]=5 TIRZ[348]=20 KDRZ[349]=0 T[412]=5 WDF[120]=3.0C
+WD[739]=26.0C  室内温度[738]=23.8C
+
+  …等 SysStep=2（当前 1），已等 0s
+  …等 SysStep=2（当前 1），已等 10s
+  …等 SysStep=2（当前 1），已等 20s
+  …等 SysStep=2（当前 1），已等 31s
+  …等 SysStep=2（当前 1），已等 41s
+  …等 SysStep=2（当前 1），已等 50s
+  …等 SysStep=2（当前 1），已等 60s
+  …等 SysStep=2（当前 1），已等 70s
+  …等 SysStep=2（当前 1），已等 81s
+  …等 SysStep=2（当前 1），已等 91s
+  …等 SysStep=2（当前 1），已等 101s
+  …等 SysStep=2（当前 1），已等 110s
+  …等 SysStep=2（当前 1），已等 120s
+已进入运行态（SysStep=2），开始采样 150 秒 …
+
+  拍 |    t | E(927) 室内(738) WD(739) | 实际Z 实际N | 期望Z 期望N | 状态     | 判定
+     |      | 全关线 WD*1.25=32.5C  全开线 WD*0.5=13.0C
+    1 |    15 |     22     23.8    26.0 |     2     2 |     0     0 | REGULATING | PID Z✗
+    2 |    20 |     22     23.8    26.0 |     3     5 |     2     2 | REGULATING | PID Z✗
+    3 |    25 |     22     23.8    26.0 |     3     8 |     3     5 | REGULATING | PID OK
+    4 |    30 |     22     23.8    26.0 |     3    11 |     3     8 | REGULATING | PID OK
+    5 |    35 |     22     23.8    26.0 |     2    13 |     3    11 | REGULATING | PID Z✗
+    6 |    40 |     22     23.8    26.0 |     3    16 |     2    13 | REGULATING | PID Z✗
+    7 |    45 |     22     23.8    26.0 |     3    19 |     3    16 | REGULATING | PID OK
+    8 |    50 |     22     23.8    26.0 |     3    22 |     3    19 | REGULATING | PID OK
+    9 |    55 |     22     23.8    26.0 |     2    22 |     3    22 | REGULATING | PID Z✗
+   10 |    55 |     22     23.8    26.0 |     2    24 |     2    24 | REGULATING | PID OK
+   11 |    60 |     22     23.8    26.0 |     3    27 |     3    27 | REGULATING | PID OK
+   12 |    65 |     22     23.8    26.0 |     3    30 |     3    30 | REGULATING | PID OK
+   13 |    70 |     22     23.8    26.0 |     3    33 |     3    33 | REGULATING | PID OK
+   14 |    75 |     22     23.8    26.0 |     2    35 |     2    35 | REGULATING | PID OK
+   15 |    80 |     22     23.8    26.0 |     3    38 |     3    38 | REGULATING | PID OK
+   16 |    85 |     22     23.8    26.0 |     3    41 |     3    41 | REGULATING | PID OK
+   17 |    90 |     22     23.8    26.0 |     3    44 |     3    44 | REGULATING | PID OK
+   18 |    95 |     22     23.8    26.0 |     2    46 |     2    46 | REGULATING | PID OK
+   19 |   100 |     22     23.8    26.0 |     3    49 |     3    49 | REGULATING | PID OK
+   20 |   105 |     22     23.8    26.0 |     3    52 |     3    52 | REGULATING | PID OK
+   21 |   110 |     22     23.8    26.0 |     3    55 |     3    55 | REGULATING | PID OK
+   22 |   115 |     22     23.8    26.0 |     2    57 |     2    57 | REGULATING | PID OK
+   23 |   120 |     22     23.8    26.0 |     3    60 |     3    60 | REGULATING | PID OK
+   24 |   125 |     22     23.8    26.0 |     3    63 |     3    63 | REGULATING | PID OK
+   25 |   130 |     22     23.8    26.0 |     3    66 |     3    66 | REGULATING | PID OK
+   26 |   135 |     22     23.8    26.0 |     2    68 |     2    68 | REGULATING | PID OK
+   27 |   140 |     22     23.8    26.0 |     3    71 |     3    71 | REGULATING | PID OK
+   28 |   145 |     22     23.8    26.0 |     3    74 |     3    74 | REGULATING | PID OK
+   29 |   150 |     22     23.8    26.0 |     3    77 |     3    77 | REGULATING | PID OK
+
+结束（29 拍）
