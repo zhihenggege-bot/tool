@@ -16,7 +16,7 @@ tr.auto{background:#eef3ff}
 tbody tr:hover{filter:brightness(0.96)}
 </style></head><body>
 <h1>PSC316 外机 —— 全部寄存器总表</h1>
-<p class="note">共 <b>463</b> 个具名寄存器。绿色 = 330/MCGS 可直接写（79 个），蓝色 = 330 自动下发（184 个，改 330 侧才生效），白色 = 330 改不了、只能直连 316。</p>
+<p class="note">共 <b>463</b> 个具名寄存器。绿色 = 330/MCGS 可直接写（78 个），蓝色 = 330 自动下发（184 个，改 330 侧才生效），白色 = 330 改不了、只能直连 316。</p>
 <p class="legend"><span class="l1">★ HMI 可写</span><span class="l2">○ 330 自动下发</span><span class="l3">✗ 只能直连 316</span></p>
 <input id="q" placeholder="筛选：下标 / 宏名 / 含义，例如 1501、LWS、化霜、★">
 <table><thead><tr><th>下标</th><th>宏名</th><th>含义</th><th>max</th><th>min</th><th>默认</th><th>引用</th><th>330 可写通路</th></tr></thead>
@@ -214,7 +214,7 @@ tbody tr:hover{filter:brightness(0.96)}
 <tr><td>190</td><td>DefrostFinTempEndSet</td><td>defrost end fin temp</td><td>600</td><td>300</td><td>400</td><td>4</td><td>✗共享中拒写 → 改 330[1397]</td></tr>
 <tr><td>191</td><td>DefrostTimeAbove0Set</td><td>max defrost time when ambient &gt; 0C, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>✗共享中拒写 → 改 330[1398]</td></tr>
 <tr><td>192</td><td>DefrostTimeBelow0Set</td><td>max defrost time when ambient &lt; 0C, min</td><td>8</td><td>2</td><td>3</td><td>3</td><td>✗共享中拒写 → 改 330[1399]</td></tr>
-<tr class="hmi"><td>193</td><td>FourWayValveDelaySet</td><td>spec four-way valve delay, sec</td><td>120</td><td>20</td><td>30</td><td>4</td><td>★HMI 设置窗 330[1830+(x-1)*48+28]</td></tr>
+<tr><td>193</td><td>FourWayValveDelaySet</td><td>spec four-way valve delay, sec</td><td>120</td><td>20</td><td>30</td><td>4</td><td>✗被本地[41]镜像覆盖(错误码4)</td></tr>
 <tr class="hmi"><td>194</td><td>HMIAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+29]</td></tr>
 <tr class="hmi"><td>195</td><td>AuxAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+30]</td></tr>
 <tr class="hmi"><td>196</td><td>VFDAddrParam</td><td></td><td>247</td><td>0</td><td>0</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+31]</td></tr>

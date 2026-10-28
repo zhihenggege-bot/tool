@@ -192,7 +192,7 @@
 190,DefrostFinTempEndSet,defrost end fin temp,600,300,400,4,✗共享中拒写 → 改 330[1397]
 191,DefrostTimeAbove0Set,"max defrost time when ambient > 0C, min",8,2,4,3,✗共享中拒写 → 改 330[1398]
 192,DefrostTimeBelow0Set,"max defrost time when ambient < 0C, min",8,2,3,3,✗共享中拒写 → 改 330[1399]
-193,FourWayValveDelaySet,"spec four-way valve delay, sec",120,20,30,4,★HMI 设置窗 330[1830+(x-1)*48+28]
+193,FourWayValveDelaySet,"spec four-way valve delay, sec",120,20,30,4,✗被本地[41]镜像覆盖(错误码4)
 194,HMIAddrParam,,247,1,1,9,★HMI 设置窗 330[1830+(x-1)*48+29]
 195,AuxAddrParam,,247,1,1,9,★HMI 设置窗 330[1830+(x-1)*48+30]
 196,VFDAddrParam,,247,0,0,9,★HMI 设置窗 330[1830+(x-1)*48+31]
