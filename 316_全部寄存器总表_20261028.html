@@ -16,7 +16,7 @@ tr.auto{background:#eef3ff}
 tbody tr:hover{filter:brightness(0.96)}
 </style></head><body>
 <h1>PSC316 外机 —— 全部寄存器总表</h1>
-<p class="note">共 <b>463</b> 个具名寄存器。绿色 = 330/MCGS 可直接写（99 个），蓝色 = 330 自动下发（184 个，改 330 侧才生效），白色 = 330 改不了、只能直连 316。</p>
+<p class="note">共 <b>463</b> 个具名寄存器。绿色 = 330/MCGS 可直接写（79 个），蓝色 = 330 自动下发（184 个，改 330 侧才生效），白色 = 330 改不了、只能直连 316。</p>
 <p class="legend"><span class="l1">★ HMI 可写</span><span class="l2">○ 330 自动下发</span><span class="l3">✗ 只能直连 316</span></p>
 <input id="q" placeholder="筛选：下标 / 宏名 / 含义，例如 1501、LWS、化霜、★">
 <table><thead><tr><th>下标</th><th>宏名</th><th>含义</th><th>max</th><th>min</th><th>默认</th><th>引用</th><th>330 可写通路</th></tr></thead>
@@ -191,43 +191,43 @@ tbody tr:hover{filter:brightness(0.96)}
 <tr class="hmi"><td>167</td><td>OutdoorDisableSet</td><td>0=normal, 1=disabled</td><td>1</td><td>0</td><td>0</td><td>2</td><td>★HMI 设置窗 330[1830+(x-1)*48+2]</td></tr>
 <tr class="hmi"><td>168</td><td>CompDisableSet1</td><td>1# compressor disable</td><td>1</td><td>0</td><td>0</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+3]</td></tr>
 <tr class="hmi"><td>169</td><td>CompDisableSet2</td><td>2# compressor disable</td><td>1</td><td>0</td><td>0</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+4]</td></tr>
-<tr class="hmi"><td>170</td><td>LWS</td><td>cooling low ambient start point, default 15.0C</td><td>250</td><td>150</td><td>150</td><td>5</td><td>★但共享覆盖 → 改 330[1331]</td></tr>
-<tr class="hmi"><td>171</td><td>RWS</td><td>heating high ambient start point, default 18.0C</td><td>200</td><td>50</td><td>180</td><td>15</td><td>★但共享覆盖 → 改 330[1332]</td></tr>
-<tr class="hmi"><td>172</td><td>CondFanTLSet</td><td>condensing target temp</td><td>350</td><td>200</td><td>300</td><td>6</td><td>★但共享覆盖 → 改 330[1333]</td></tr>
-<tr class="hmi"><td>173</td><td>CondFanTLDSet</td><td>condensing temp differential</td><td>200</td><td>100</td><td>150</td><td>4</td><td>★但共享覆盖 → 改 330[1334]</td></tr>
-<tr class="hmi"><td>174</td><td>HeatFanZSet</td><td>heat fan ambient switch temp</td><td>100</td><td>50</td><td>70</td><td>2</td><td>★但共享覆盖 → 改 330[1335]</td></tr>
-<tr class="hmi"><td>175</td><td>HeatFanZDSet</td><td>heat fan ambient differential</td><td>80</td><td>30</td><td>50</td><td>1</td><td>★但共享覆盖 → 改 330[1336]</td></tr>
+<tr><td>170</td><td>LWS</td><td>cooling low ambient start point, default 15.0C</td><td>250</td><td>150</td><td>150</td><td>5</td><td>✗共享中拒写 → 改 330[1331]</td></tr>
+<tr><td>171</td><td>RWS</td><td>heating high ambient start point, default 18.0C</td><td>200</td><td>50</td><td>180</td><td>15</td><td>✗共享中拒写 → 改 330[1332]</td></tr>
+<tr><td>172</td><td>CondFanTLSet</td><td>condensing target temp</td><td>350</td><td>200</td><td>300</td><td>6</td><td>✗共享中拒写 → 改 330[1333]</td></tr>
+<tr><td>173</td><td>CondFanTLDSet</td><td>condensing temp differential</td><td>200</td><td>100</td><td>150</td><td>4</td><td>✗共享中拒写 → 改 330[1334]</td></tr>
+<tr><td>174</td><td>HeatFanZSet</td><td>heat fan ambient switch temp</td><td>100</td><td>50</td><td>70</td><td>2</td><td>✗共享中拒写 → 改 330[1335]</td></tr>
+<tr><td>175</td><td>HeatFanZDSet</td><td>heat fan ambient differential</td><td>80</td><td>30</td><td>50</td><td>1</td><td>✗共享中拒写 → 改 330[1336]</td></tr>
 <tr class="hmi"><td>176</td><td>FanMaxFreqSet</td><td>VFD fan max frequency</td><td>50</td><td>30</td><td>50</td><td>10</td><td>★HMI 设置窗 330[1830+(x-1)*48+11]</td></tr>
 <tr class="hmi"><td>177</td><td>FanMinFreqSet</td><td>VFD fan min frequency</td><td>20</td><td>1</td><td>10</td><td>6</td><td>★HMI 设置窗 330[1830+(x-1)*48+12]</td></tr>
 <tr class="hmi"><td>178</td><td>FanStepSpeedSet</td><td>VFD fan speed step</td><td>20</td><td>1</td><td>10</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+13]</td></tr>
-<tr class="hmi"><td>179</td><td>FanMinRunTimeSet</td><td>fan minimum run time</td><td>300</td><td>10</td><td>30</td><td>8</td><td>★但共享覆盖 → 改 330[1337]</td></tr>
-<tr class="hmi"><td>180</td><td>FanMinStopTimeSet</td><td>fan minimum stop time</td><td>300</td><td>10</td><td>30</td><td>7</td><td>★但共享覆盖 → 改 330[1338]</td></tr>
-<tr class="hmi"><td>181</td><td>FanTempHoldTimeSet</td><td>condensing temp hold time</td><td>300</td><td>0</td><td>60</td><td>2</td><td>★但共享覆盖 → 改 330[1339]</td></tr>
-<tr class="hmi"><td>182</td><td>DefrostEnvTempSet</td><td>timed defrost ambient temp</td><td>150</td><td>50</td><td>100</td><td>2</td><td>★但共享覆盖 → 改 330[1389]</td></tr>
-<tr class="hmi"><td>183</td><td>DefrostEnvIntervalSet</td><td>timed defrost interval, min</td><td>50</td><td>20</td><td>30</td><td>1</td><td>★但共享覆盖 → 改 330[1390]</td></tr>
-<tr class="hmi"><td>184</td><td>DefrostEnvTimeSet</td><td>timed defrost max time, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>★但共享覆盖 → 改 330[1391]</td></tr>
-<tr class="hmi"><td>185</td><td>DefrostCompRunMinSet</td><td>minimum comp run before defrost, min</td><td>30</td><td>5</td><td>10</td><td>1</td><td>★但共享覆盖 → 改 330[1392]</td></tr>
-<tr class="hmi"><td>186</td><td>DefrostFinTempStartSet</td><td>defrost start fin temp</td><td>-10</td><td>-40</td><td>-20</td><td>1</td><td>★但共享覆盖 → 改 330[1393]</td></tr>
-<tr class="hmi"><td>187</td><td>DefrostEnvFinGapSet</td><td>ambient-fin temp gap</td><td>150</td><td>50</td><td>100</td><td>3</td><td>★但共享覆盖 → 改 330[1394]</td></tr>
-<tr class="hmi"><td>188</td><td>DefrostIntervalAbove0Set</td><td>min defrost interval when ambient &gt; 0C</td><td>60</td><td>15</td><td>30</td><td>3</td><td>★但共享覆盖 → 改 330[1395]</td></tr>
-<tr class="hmi"><td>189</td><td>DefrostIntervalBelow0Set</td><td>min defrost interval when ambient &lt; 0C</td><td>70</td><td>15</td><td>35</td><td>5</td><td>★但共享覆盖 → 改 330[1396]</td></tr>
-<tr class="hmi"><td>190</td><td>DefrostFinTempEndSet</td><td>defrost end fin temp</td><td>600</td><td>300</td><td>400</td><td>4</td><td>★但共享覆盖 → 改 330[1397]</td></tr>
-<tr class="hmi"><td>191</td><td>DefrostTimeAbove0Set</td><td>max defrost time when ambient &gt; 0C, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>★但共享覆盖 → 改 330[1398]</td></tr>
-<tr class="hmi"><td>192</td><td>DefrostTimeBelow0Set</td><td>max defrost time when ambient &lt; 0C, min</td><td>8</td><td>2</td><td>3</td><td>3</td><td>★但共享覆盖 → 改 330[1399]</td></tr>
+<tr><td>179</td><td>FanMinRunTimeSet</td><td>fan minimum run time</td><td>300</td><td>10</td><td>30</td><td>8</td><td>✗共享中拒写 → 改 330[1337]</td></tr>
+<tr><td>180</td><td>FanMinStopTimeSet</td><td>fan minimum stop time</td><td>300</td><td>10</td><td>30</td><td>7</td><td>✗共享中拒写 → 改 330[1338]</td></tr>
+<tr><td>181</td><td>FanTempHoldTimeSet</td><td>condensing temp hold time</td><td>300</td><td>0</td><td>60</td><td>2</td><td>✗共享中拒写 → 改 330[1339]</td></tr>
+<tr><td>182</td><td>DefrostEnvTempSet</td><td>timed defrost ambient temp</td><td>150</td><td>50</td><td>100</td><td>2</td><td>✗共享中拒写 → 改 330[1389]</td></tr>
+<tr><td>183</td><td>DefrostEnvIntervalSet</td><td>timed defrost interval, min</td><td>50</td><td>20</td><td>30</td><td>1</td><td>✗共享中拒写 → 改 330[1390]</td></tr>
+<tr><td>184</td><td>DefrostEnvTimeSet</td><td>timed defrost max time, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>✗共享中拒写 → 改 330[1391]</td></tr>
+<tr><td>185</td><td>DefrostCompRunMinSet</td><td>minimum comp run before defrost, min</td><td>30</td><td>5</td><td>10</td><td>1</td><td>✗共享中拒写 → 改 330[1392]</td></tr>
+<tr><td>186</td><td>DefrostFinTempStartSet</td><td>defrost start fin temp</td><td>-10</td><td>-40</td><td>-20</td><td>1</td><td>✗共享中拒写 → 改 330[1393]</td></tr>
+<tr><td>187</td><td>DefrostEnvFinGapSet</td><td>ambient-fin temp gap</td><td>150</td><td>50</td><td>100</td><td>3</td><td>✗共享中拒写 → 改 330[1394]</td></tr>
+<tr><td>188</td><td>DefrostIntervalAbove0Set</td><td>min defrost interval when ambient &gt; 0C</td><td>60</td><td>15</td><td>30</td><td>3</td><td>✗共享中拒写 → 改 330[1395]</td></tr>
+<tr><td>189</td><td>DefrostIntervalBelow0Set</td><td>min defrost interval when ambient &lt; 0C</td><td>70</td><td>15</td><td>35</td><td>5</td><td>✗共享中拒写 → 改 330[1396]</td></tr>
+<tr><td>190</td><td>DefrostFinTempEndSet</td><td>defrost end fin temp</td><td>600</td><td>300</td><td>400</td><td>4</td><td>✗共享中拒写 → 改 330[1397]</td></tr>
+<tr><td>191</td><td>DefrostTimeAbove0Set</td><td>max defrost time when ambient &gt; 0C, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>✗共享中拒写 → 改 330[1398]</td></tr>
+<tr><td>192</td><td>DefrostTimeBelow0Set</td><td>max defrost time when ambient &lt; 0C, min</td><td>8</td><td>2</td><td>3</td><td>3</td><td>✗共享中拒写 → 改 330[1399]</td></tr>
 <tr class="hmi"><td>193</td><td>FourWayValveDelaySet</td><td>spec four-way valve delay, sec</td><td>120</td><td>20</td><td>30</td><td>4</td><td>★HMI 设置窗 330[1830+(x-1)*48+28]</td></tr>
 <tr class="hmi"><td>194</td><td>HMIAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+29]</td></tr>
 <tr class="hmi"><td>195</td><td>AuxAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+30]</td></tr>
 <tr class="hmi"><td>196</td><td>VFDAddrParam</td><td></td><td>247</td><td>0</td><td>0</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+31]</td></tr>
 <tr class="hmi"><td>197</td><td>IndoorAddrParam</td><td></td><td>247</td><td>0</td><td>0</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+32]</td></tr>
-<tr class="hmi"><td>198</td><td>EEVSuperHeatTargetSet</td><td>x0.1C, default 5.0C</td><td>100</td><td>20</td><td>50</td><td>1</td><td>★但EEV覆盖 → 改 330[366]</td></tr>
-<tr class="hmi"><td>199</td><td>EEVPidKpSet</td><td>1~100</td><td>100</td><td>1</td><td>5</td><td>1</td><td>★但EEV覆盖 → 改 330[368]</td></tr>
-<tr class="hmi"><td>200</td><td>EEVSpecPidEnableSet</td><td>0=legacy staged control, 1=specification PID</td><td>1</td><td>0</td><td>1</td><td>4</td><td>★但EEV覆盖 → 改 330[365]</td></tr>
-<tr class="hmi"><td>201</td><td>EEVStartStepSet</td><td>0~500 steps</td><td>500</td><td>0</td><td>200</td><td>1</td><td>★但EEV覆盖 → 改 330[411]</td></tr>
-<tr class="hmi"><td>202</td><td>EEVSuperHeatDeadSet</td><td>YD x0.1C, 20~50</td><td>50</td><td>20</td><td>20</td><td>1</td><td>★但EEV覆盖 → 改 330[367]</td></tr>
-<tr class="hmi"><td>203</td><td>EEVPidScanTimeSet</td><td>TP 1~10s</td><td>10</td><td>1</td><td>5</td><td>1</td><td>★但EEV覆盖 → 改 330[16]</td></tr>
-<tr class="hmi"><td>204</td><td>EEVPidTiSet</td><td>TI 1~1000s</td><td>1000</td><td>1</td><td>100</td><td>1</td><td>★但EEV覆盖 → 改 330[369]</td></tr>
-<tr class="hmi"><td>205</td><td>EEVPidTdSet</td><td>TD 0~1000s</td><td>1000</td><td>0</td><td>0</td><td>1</td><td>★但EEV覆盖 → 改 330[370]</td></tr>
-<tr class="hmi"><td>206</td><td>EEVStepLimitSet</td><td>3~50 steps/cycle</td><td>50</td><td>3</td><td>20</td><td>1</td><td>★但EEV覆盖 → 改 330[371]</td></tr>
+<tr class="hmi"><td>198</td><td>EEVSuperHeatTargetSet</td><td>x0.1C, default 5.0C</td><td>100</td><td>20</td><td>50</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[366]</td></tr>
+<tr class="hmi"><td>199</td><td>EEVPidKpSet</td><td>1~100</td><td>100</td><td>1</td><td>5</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[368]</td></tr>
+<tr class="hmi"><td>200</td><td>EEVSpecPidEnableSet</td><td>0=legacy staged control, 1=specification PID</td><td>1</td><td>0</td><td>1</td><td>4</td><td>★但每轮被EEV覆盖 → 改 330[365]</td></tr>
+<tr class="hmi"><td>201</td><td>EEVStartStepSet</td><td>0~500 steps</td><td>500</td><td>0</td><td>200</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[411]</td></tr>
+<tr class="hmi"><td>202</td><td>EEVSuperHeatDeadSet</td><td>YD x0.1C, 20~50</td><td>50</td><td>20</td><td>20</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[367]</td></tr>
+<tr class="hmi"><td>203</td><td>EEVPidScanTimeSet</td><td>TP 1~10s</td><td>10</td><td>1</td><td>5</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[16]</td></tr>
+<tr class="hmi"><td>204</td><td>EEVPidTiSet</td><td>TI 1~1000s</td><td>1000</td><td>1</td><td>100</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[369]</td></tr>
+<tr class="hmi"><td>205</td><td>EEVPidTdSet</td><td>TD 0~1000s</td><td>1000</td><td>0</td><td>0</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[370]</td></tr>
+<tr class="hmi"><td>206</td><td>EEVStepLimitSet</td><td>3~50 steps/cycle</td><td>50</td><td>3</td><td>20</td><td>1</td><td>★但每轮被EEV覆盖 → 改 330[371]</td></tr>
 <tr><td>207</td><td></td><td></td><td>600</td><td>30</td><td>90</td><td></td><td></td></tr>
 <tr><td>208</td><td></td><td></td><td>90</td><td>0</td><td>3</td><td></td><td></td></tr>
 <tr><td>209</td><td></td><td></td><td>255</td><td>0</td><td>15</td><td></td><td></td></tr>
