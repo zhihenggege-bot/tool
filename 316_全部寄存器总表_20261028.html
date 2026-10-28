@@ -1,0 +1,868 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>316 全部寄存器总表</title>
+<style>
+body{font:14px/1.5 system-ui,"Microsoft YaHei",sans-serif;margin:16px;background:#fafafa;color:#222}
+h1{font-size:20px;margin:0 0 6px}
+p.note{color:#555;margin:0 0 10px}
+.legend span{display:inline-block;margin-right:16px;padding:2px 8px;border-radius:4px}
+.l1{background:#e6f4ea}.l2{background:#eef3ff}.l3{background:#f4f4f4}
+input{width:100%;max-width:560px;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:6px;margin:10px 0}
+table{border-collapse:collapse;width:100%;background:#fff}
+th,td{border:1px solid #e2e2e2;padding:4px 8px;vertical-align:top}
+th{background:#f0f0f0;position:sticky;top:0;z-index:1}
+td:nth-child(1),td:nth-child(4),td:nth-child(5),td:nth-child(6),td:nth-child(7){white-space:nowrap;text-align:right}
+tr.hmi{background:#e6f4ea}
+tr.auto{background:#eef3ff}
+tbody tr:hover{filter:brightness(0.96)}
+</style></head><body>
+<h1>PSC316 外机 —— 全部寄存器总表</h1>
+<p class="note">共 <b>463</b> 个具名寄存器。绿色 = 330/MCGS 可直接写（99 个），蓝色 = 330 自动下发（184 个，改 330 侧才生效），白色 = 330 改不了、只能直连 316。</p>
+<p class="legend"><span class="l1">★ HMI 可写</span><span class="l2">○ 330 自动下发</span><span class="l3">✗ 只能直连 316</span></p>
+<input id="q" placeholder="筛选：下标 / 宏名 / 含义，例如 1501、LWS、化霜、★">
+<table><thead><tr><th>下标</th><th>宏名</th><th>含义</th><th>max</th><th>min</th><th>默认</th><th>引用</th><th>330 可写通路</th></tr></thead>
+<tbody>
+<tr><td>0</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr class="auto"><td>1</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>2</td><td>InPutStatusSet0</td><td>0 （0~1）1#高压</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>3</td><td>InPutStatusSet1</td><td>0 （0~1）1#低压</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>4</td><td>InPutStatusSet2</td><td>0 （0~1）2#高压</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>5</td><td>InPutStatusSet3</td><td>0 （0~1）2#低压</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>6</td><td>InPutStatusSet4</td><td>1#冷凝风机</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>7</td><td>InPutStatusSet5</td><td>2#冷凝风机</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>8</td><td>InPutStatusSet6</td><td>1#压机过载</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>9</td><td>InPutStatusSet7</td><td>2#压机过载</td><td>1</td><td>0</td><td>0</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>10</td><td>MotorTotalPulseSet</td><td>电机总步数 500 （0-9999）</td><td>9999</td><td>0</td><td>500</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>11</td><td>EEVCloseMinSizeSet</td><td>膨胀阀最小开度 48 （0-999）</td><td>999</td><td>0</td><td>48</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>12</td><td>EEVOpenMaxSizeSet</td><td>膨胀阀最大开度 500 （0-999）</td><td>999</td><td>0</td><td>500</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>13</td><td>EEVTempDev1Set</td><td>膨胀阀调节偏差1 2.0℃ （0-9.9）</td><td>99</td><td>0</td><td>5</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>14</td><td>EEVTempDev2Set</td><td>膨胀阀调节偏差2 3.5℃ （0-9.9）</td><td>99</td><td>0</td><td>10</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>15</td><td>EEVTempDev3Set</td><td>膨胀阀调节偏差3 5.0℃ （0-9.9）</td><td>99</td><td>0</td><td>20</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>16</td><td>EEVAdjustTimeSet1</td><td>周期1   90S(0-999)</td><td>999</td><td>0</td><td>60</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>17</td><td>EEVAdjustTimeSet2</td><td>周期2   60S(0-999)</td><td>999</td><td>0</td><td>30</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>18</td><td>EEVAdjustTimeSet3</td><td>周期3   30S(0-999)</td><td>999</td><td>0</td><td>2</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>19</td><td>EEVInitialSizeDlySet</td><td>初始开度延时 90S （0-999）</td><td>999</td><td>0</td><td>90</td><td>8</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>20</td><td>GetTempTimeSet</td><td>采样周期 3S （0-60）备用</td><td>60</td><td>0</td><td>3</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>21</td><td>DefrostEXVOpenSizeSet</td><td>除霜膨胀阀开度350步 （0-999）</td><td>999</td><td>0</td><td>350</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>22</td><td>EEVInitialSizeSet1</td><td>-20℃初始开度  49（0-999）步</td><td>999</td><td>0</td><td>100</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>23</td><td>EEVInitialSizeSet4</td><td>0℃初始开度		89（0-999）步</td><td>999</td><td>0</td><td>170</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>24</td><td>EEVInitialSizeSet6</td><td>21℃初始开度		170（0-999）步</td><td>999</td><td>0</td><td>350</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>25</td><td></td><td></td><td>255</td><td>1</td><td>2</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>26</td><td></td><td></td><td>255</td><td>1</td><td>3</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>27</td><td></td><td></td><td>255</td><td>1</td><td>60</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>28</td><td></td><td></td><td>1250</td><td>1000</td><td>1100</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>29</td><td></td><td></td><td>1000</td><td>800</td><td>900</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>30</td><td>UnderHeaterOnSet</td><td>曲轴加热开启时间  5分  0-9999 分</td><td>9999</td><td>0</td><td>5</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>31</td><td>FanWaTempSet</td><td>曲轴加热开启环温 0℃  -30-20℃</td><td>200</td><td>-300</td><td>0</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>32</td><td>FanWaTempSet2</td><td>曲轴加热开启环温 -10℃  -30-20℃</td><td>200</td><td>-300</td><td>-100</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>33</td><td>PressureLow</td><td>压力传感器低	0.50</td><td>1000</td><td>0</td><td>0</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>34</td><td>PressureHigh</td><td>压力传感器高	3.50</td><td>2000</td><td>0</td><td>2000</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>35</td><td>Y12_ctrlTempSet</td><td>底盘加热开启环温 0  -30~30 ℃</td><td>300</td><td>-300</td><td>0</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>36</td><td>FanType</td><td>0 	冷凝风机模式 0定频 1变频0-10V 2;V9 3:WT600</td><td>3</td><td>0</td><td>3</td><td>77</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>37</td><td>FanLimitHigh</td><td>900 0-9999		冷凝风机最大转速</td><td>9999</td><td>0</td><td>900</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="hmi"><td>38</td><td>CompChoice</td><td>压机类型  0定频 1华蓝变频 2汇川变频</td><td>3</td><td>0</td><td>3</td><td>12</td><td>★HMI 330[1877]→CompChoice</td></tr>
+<tr class="auto"><td>39</td><td>RefrigerantSetP02</td><td>制冷剂类型</td><td>5</td><td>0</td><td>3</td><td>15</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>40</td><td>MachineOilSet</td><td>曲轴加热开启间隔	   	24小时 （0~99）</td><td>99</td><td>0</td><td>24</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>41</td><td></td><td></td><td>120</td><td>-60</td><td>30</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>42</td><td></td><td></td><td>600</td><td>120</td><td>120</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>43</td><td></td><td></td><td>600</td><td>180</td><td>180</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>44</td><td></td><td></td><td>600</td><td>30</td><td>90</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>45</td><td></td><td></td><td>255</td><td>0</td><td>15</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>46</td><td>SuperheatSet1</td><td>制冷过热度设定值1 4.0℃ （-9.9~99.9） 被调用 往下24个参数顺序地址不能改</td><td>999</td><td>-99</td><td>40</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>47</td><td>SuperheatSet2</td><td>制热过热度设定值1 4.0℃ （-9.9~99.9）</td><td>999</td><td>-99</td><td>40</td><td>1</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>48</td><td>CompVVFMaxFreSet</td><td>压缩机最大频率 90hz (0~200)</td><td>200</td><td>0</td><td>90</td><td>18</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>49</td><td>CompVVFMinFreSet</td><td>压缩机最小频率 30hz (0~200)</td><td>200</td><td>0</td><td>30</td><td>8</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>50</td><td>PressRange</td><td>压差量程		2000 （0-9999）</td><td>9999</td><td>0</td><td>2000</td><td>9</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>51</td><td>LowPressRange</td><td>低压力量程		2000 （0-9999）</td><td>9999</td><td>0</td><td>2000</td><td>7</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>52</td><td>HighPressRange</td><td>高压压力量程		4600	（0-9999）</td><td>9999</td><td>0</td><td>5000</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>53</td><td>LowPressProctect</td><td>压机低压降载	500 Kpa （0-9999）室外机用于冷凝风机调速</td><td>9999</td><td>0</td><td>900</td><td>16</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>54</td><td>LowPressWarn</td><td>压机低压报警	150 Kpa	（0-9999）</td><td>9999</td><td>0</td><td>150</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>55</td><td>HighPressureSet</td><td>风机高压设定值  3000kpa  （0~9999）</td><td>9999</td><td>0</td><td>2300</td><td>16</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>56</td><td>VVFHighPressWarn</td><td>高压报警  3500		0~9999</td><td>9999</td><td>0</td><td>4000</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>57</td><td>FanLimit</td><td>风机最小转速  30rps  0~50</td><td>9999</td><td>0</td><td>300</td><td>10</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>58</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>59</td><td></td><td></td><td>255</td><td>0</td><td>7</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>60</td><td></td><td></td><td>60</td><td>0</td><td>5</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>61</td><td></td><td></td><td>100</td><td>-100</td><td>-20</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>62</td><td></td><td></td><td>250</td><td>0</td><td>80</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>63</td><td></td><td></td><td>250</td><td>0</td><td>30</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>64</td><td></td><td></td><td>250</td><td>0</td><td>70</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>65</td><td></td><td></td><td>250</td><td>-100</td><td>0</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>66</td><td></td><td></td><td>250</td><td>-100</td><td>-50</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>67</td><td></td><td></td><td>255</td><td>0</td><td>60</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>68</td><td></td><td></td><td>255</td><td>0</td><td>45</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>69</td><td></td><td></td><td>255</td><td>0</td><td>30</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>70</td><td></td><td></td><td>1500</td><td>60</td><td>300</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>71</td><td></td><td></td><td>250</td><td>0</td><td>40</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>72</td><td></td><td></td><td>600</td><td>0</td><td>280</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>73</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>74</td><td></td><td></td><td>250</td><td>0</td><td>80</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>75</td><td></td><td></td><td>200</td><td>-100</td><td>150</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>76</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>77</td><td></td><td></td><td>999</td><td>1</td><td>30</td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>78</td><td>FourValveSet</td><td>四通阀  0 单系统 1双系统（0~1）</td><td>1</td><td>0</td><td>1</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>79</td><td>FanTypeSet</td><td>风机类型 0：单系统  1：双系统（0~1）</td><td>1</td><td>0</td><td>1</td><td>55</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>80</td><td>EveNumSet</td><td>电子膨胀阀  0：单系统 1：双系统</td><td>1</td><td>-99</td><td>1</td><td>7</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>81</td><td>PLCAddress</td><td>PLC地址</td><td>255</td><td>-99</td><td>1</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>82</td><td>DefrostCompSet</td><td>除霜压机动作  0：停了再开  1：不停</td><td>1</td><td>0</td><td>0</td><td>9</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>83</td><td>FanValue1</td><td>风机1固定输出  5.00V   	0~10.00</td><td>1000</td><td>0</td><td>500</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>84</td><td>FanValue2</td><td>风机2固定输出  5.00V		0~10.00</td><td>1000</td><td>0</td><td>500</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>85</td><td>FanValueDOWN</td><td>风机最小输出  2.00V			0~10.00</td><td>1000</td><td>0</td><td>200</td><td>12</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>86</td><td>FanValueUP</td><td>风机最大输出  10.00V		0~10.00</td><td>1000</td><td>0</td><td>1000</td><td>12</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>87</td><td>FanClosePressure</td><td>1900  (0~140)  关冷凝风机高压</td><td>9999</td><td>0</td><td>1900</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>88</td><td>FanOpenPressure</td><td>2600  (0~140)  开冷凝风机高压</td><td>9999</td><td>0</td><td>2600</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>89</td><td>SendtoModule</td><td>向外机板传输机器类型</td><td>999</td><td>0</td><td>10</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>90</td><td>RS485AddrPackA0A3</td><td>high byte=A0B0, low byte=A3B3</td><td>32767</td><td>-32768</td><td>0</td><td>8</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>91</td><td>RS485AddrPackA1A2</td><td>high byte=A1B1, low byte=A2B2</td><td>32767</td><td>-32768</td><td>0</td><td>8</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>92</td><td>RS485AddrPackSign</td><td>signature for valid low EEPROM mirror</td><td>32767</td><td>0</td><td>0</td><td>5</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>93</td><td>CompCouple</td><td>电机极对数 3  2——4</td><td>4</td><td>2</td><td>3</td><td>6</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>94</td><td>MachineTypeSet</td><td>机型设置//0风冷恒温恒湿热泵电加热再热型 1风冷电冷暖型 2风冷恒温恒湿冷凝热回收型 3风冷恒温恒湿电加热再热型</td><td>3</td><td>0</td><td>0</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>95</td><td>CurrentHighSet</td><td>30.0A 0-999.9A</td><td>9999</td><td>0</td><td>300</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>96</td><td>ExhuastTempSet1</td><td>排气温度1   60.0 （0-130.0）</td><td>1300</td><td>0</td><td>600</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>97</td><td>ExvAdjExhTempDevSet</td><td>关阀环温设置  25.0℃ （-30.0~50.0</td><td>500</td><td>-300</td><td>250</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>98</td><td>EEVOpenSizeSet5</td><td>95℃最大开度   375（0-999）步</td><td>999</td><td>0</td><td>375</td><td>4</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>99</td><td>Copheatfunction</td><td>压缩机制热功能 0：无，1：有		20230615A</td><td>1</td><td>0</td><td>1</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>100</td><td>ColdEEV</td><td>制冷膨胀阀室内室外可选	20230616A</td><td>1</td><td>0</td><td>1</td><td>2</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>101</td><td>ColdFan_Ctrl_Cycle</td><td>10 	 0-999 s     冷凝风机控制周期  维修参数		20230620A</td><td>999</td><td>0</td><td>10</td><td>3</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>102</td><td>ColdFan_Ctrl_Step</td><td>5.0%  0-100.0 % 	 冷凝风机调节幅度  维修参数</td><td>1000</td><td>0</td><td>50</td><td>40</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>103</td><td>ColdFan_Ctrl_Div</td><td>100  0-9999 Kpa  冷凝风机高压偏差  维修参数</td><td>9999</td><td>0</td><td>100</td><td>10</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>104</td><td>ColdFan_Ctrl_Div1</td><td>100  0-9999 Kpa  冷凝风机低压偏差  维修参数</td><td>9999</td><td>0</td><td>100</td><td>5</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>105</td><td>FanCouple1</td><td>冷凝风机极对数	20230625A</td><td>4</td><td>2</td><td>3</td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>106</td><td>VVFMotorSelect</td><td>压缩机变频器电机控制方式检测  0：是 1：否</td><td>1</td><td>0</td><td>0</td><td>9</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>107</td><td>PressSensor</td><td>1=high+low, 2=low only</td><td>2</td><td>1</td><td>1</td><td>37</td><td>○330下发 广播</td></tr>
+<tr><td>108</td><td></td><td></td><td>99</td><td>0</td><td>20</td><td></td><td></td></tr>
+<tr><td>109</td><td></td><td></td><td>99</td><td>0</td><td>35</td><td></td><td></td></tr>
+<tr><td>110</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>111</td><td></td><td></td><td>255</td><td>0</td><td>7</td><td></td><td></td></tr>
+<tr><td>112</td><td></td><td></td><td>60</td><td>0</td><td>5</td><td></td><td></td></tr>
+<tr><td>113</td><td></td><td></td><td>100</td><td>-100</td><td>-20</td><td></td><td></td></tr>
+<tr><td>114</td><td></td><td></td><td>250</td><td>0</td><td>80</td><td></td><td></td></tr>
+<tr><td>115</td><td></td><td></td><td>250</td><td>0</td><td>30</td><td></td><td></td></tr>
+<tr><td>116</td><td></td><td></td><td>250</td><td>0</td><td>70</td><td></td><td></td></tr>
+<tr><td>117</td><td></td><td></td><td>250</td><td>-100</td><td>0</td><td></td><td></td></tr>
+<tr><td>118</td><td></td><td></td><td>250</td><td>-100</td><td>-50</td><td></td><td></td></tr>
+<tr><td>119</td><td></td><td></td><td>255</td><td>0</td><td>60</td><td></td><td></td></tr>
+<tr><td>120</td><td></td><td></td><td>255</td><td>0</td><td>45</td><td></td><td></td></tr>
+<tr><td>121</td><td></td><td></td><td>255</td><td>0</td><td>30</td><td></td><td></td></tr>
+<tr><td>122</td><td></td><td></td><td>1500</td><td>60</td><td>300</td><td></td><td></td></tr>
+<tr><td>123</td><td></td><td></td><td>250</td><td>0</td><td>40</td><td></td><td></td></tr>
+<tr><td>124</td><td></td><td></td><td>350</td><td>0</td><td>280</td><td></td><td></td></tr>
+<tr><td>125</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>126</td><td></td><td></td><td>250</td><td>0</td><td>80</td><td></td><td></td></tr>
+<tr><td>127</td><td></td><td></td><td>200</td><td>-100</td><td>150</td><td></td><td></td></tr>
+<tr><td>128</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>129</td><td></td><td></td><td>999</td><td>1</td><td>30</td><td></td><td></td></tr>
+<tr><td>130</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>131</td><td></td><td></td><td>999</td><td>0</td><td>50</td><td></td><td></td></tr>
+<tr><td>132</td><td></td><td></td><td>1300</td><td>0</td><td>700</td><td></td><td></td></tr>
+<tr><td>133</td><td></td><td></td><td>999</td><td>0</td><td>3</td><td></td><td></td></tr>
+<tr><td>134</td><td></td><td></td><td>999</td><td>0</td><td>100</td><td></td><td></td></tr>
+<tr><td>135</td><td></td><td></td><td>999</td><td>0</td><td>200</td><td></td><td></td></tr>
+<tr><td>136</td><td></td><td></td><td>999</td><td>0</td><td>375</td><td></td><td></td></tr>
+<tr><td>137</td><td></td><td></td><td>1300</td><td>0</td><td>800</td><td></td><td></td></tr>
+<tr><td>138</td><td></td><td></td><td>500</td><td>-300</td><td>250</td><td></td><td></td></tr>
+<tr><td>139</td><td></td><td></td><td>1300</td><td>0</td><td>900</td><td></td><td></td></tr>
+<tr><td>140</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>141</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>142</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>143</td><td></td><td></td><td>255</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>144</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>145</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>146</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>147</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>148</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>149</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>150</td><td>Comp1RunHour</td><td>压缩机1运行小时数</td><td>32767</td><td>0</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>151</td><td>Comp2RunHour</td><td>压缩机2运行小时数</td><td>32767</td><td>0</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>152</td><td>Comp1Enable</td><td>1压缩机使能	0 （0~1）</td><td>1</td><td>0</td><td>0</td><td>12</td><td></td></tr>
+<tr><td>153</td><td>Comp2Enable</td><td>2压缩机使能	0 （0~1）</td><td>1</td><td>0</td><td>0</td><td>18</td><td></td></tr>
+<tr><td>154</td><td></td><td></td><td>70</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr class="auto"><td>155</td><td>EEVManuOpenSizeSet</td><td>膨胀阀1手动开度设置  0 （0-999）</td><td>999</td><td>0</td><td>0</td><td>4</td><td>○330下发 EEV 手动桥</td></tr>
+<tr class="auto"><td>156</td><td>ManuCtrlEEVSet</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td>1</td><td>0</td><td>0</td><td>5</td><td>○330下发 EEV 手动桥</td></tr>
+<tr class="auto"><td>157</td><td>EEV2ManuOpenSizeSet</td><td>膨胀阀2手动调节步数 0 （0-999）</td><td>999</td><td>0</td><td>0</td><td>5</td><td>○330下发 EEV 手动桥</td></tr>
+<tr class="auto"><td>158</td><td>ManuCtrlEEV2Set</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td>1</td><td>0</td><td>0</td><td>6</td><td>○330下发 EEV 手动桥</td></tr>
+<tr><td>159</td><td>EEV3ManuOpenSizeSet</td><td>膨胀阀3手动开度设置  0 （0-999）</td><td>999</td><td>0</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>160</td><td>ManuCtrlEEV3Set</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td>1</td><td>0</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>161</td><td>EEV4ManuOpenSizeSet</td><td>膨胀阀4手动调节步数 0 （0-999）</td><td>999</td><td>0</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>162</td><td>ManuCtrlEEV4Set</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td>1</td><td>0</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>163</td><td></td><td></td><td>32767</td><td>-32768</td><td>0</td><td></td><td></td></tr>
+<tr><td>164</td><td></td><td></td><td>32767</td><td>-32768</td><td>0</td><td></td><td></td></tr>
+<tr class="hmi"><td>165</td><td>OutdoorUnitTypeSet</td><td>0=15-43C, 1=0-43C, 2=-15-43C</td><td>2</td><td>0</td><td>0</td><td>11</td><td>★HMI 设置窗 330[1830+(x-1)*48+0]</td></tr>
+<tr class="hmi"><td>166</td><td>OutdoorFanTypeSet</td><td>0=1fan-2spd,1=2fan-1spd,2=1fan-VFD,3=1fix+1-2spd,4=1fix+1VFD</td><td>4</td><td>0</td><td>1</td><td>46</td><td>★HMI 设置窗 330[1830+(x-1)*48+1]</td></tr>
+<tr class="hmi"><td>167</td><td>OutdoorDisableSet</td><td>0=normal, 1=disabled</td><td>1</td><td>0</td><td>0</td><td>2</td><td>★HMI 设置窗 330[1830+(x-1)*48+2]</td></tr>
+<tr class="hmi"><td>168</td><td>CompDisableSet1</td><td>1# compressor disable</td><td>1</td><td>0</td><td>0</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+3]</td></tr>
+<tr class="hmi"><td>169</td><td>CompDisableSet2</td><td>2# compressor disable</td><td>1</td><td>0</td><td>0</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+4]</td></tr>
+<tr class="hmi"><td>170</td><td>LWS</td><td>cooling low ambient start point, default 15.0C</td><td>250</td><td>150</td><td>150</td><td>5</td><td>★但共享覆盖 → 改 330[1331]</td></tr>
+<tr class="hmi"><td>171</td><td>RWS</td><td>heating high ambient start point, default 18.0C</td><td>200</td><td>50</td><td>180</td><td>15</td><td>★但共享覆盖 → 改 330[1332]</td></tr>
+<tr class="hmi"><td>172</td><td>CondFanTLSet</td><td>condensing target temp</td><td>350</td><td>200</td><td>300</td><td>6</td><td>★但共享覆盖 → 改 330[1333]</td></tr>
+<tr class="hmi"><td>173</td><td>CondFanTLDSet</td><td>condensing temp differential</td><td>200</td><td>100</td><td>150</td><td>4</td><td>★但共享覆盖 → 改 330[1334]</td></tr>
+<tr class="hmi"><td>174</td><td>HeatFanZSet</td><td>heat fan ambient switch temp</td><td>100</td><td>50</td><td>70</td><td>2</td><td>★但共享覆盖 → 改 330[1335]</td></tr>
+<tr class="hmi"><td>175</td><td>HeatFanZDSet</td><td>heat fan ambient differential</td><td>80</td><td>30</td><td>50</td><td>1</td><td>★但共享覆盖 → 改 330[1336]</td></tr>
+<tr class="hmi"><td>176</td><td>FanMaxFreqSet</td><td>VFD fan max frequency</td><td>50</td><td>30</td><td>50</td><td>10</td><td>★HMI 设置窗 330[1830+(x-1)*48+11]</td></tr>
+<tr class="hmi"><td>177</td><td>FanMinFreqSet</td><td>VFD fan min frequency</td><td>20</td><td>1</td><td>10</td><td>6</td><td>★HMI 设置窗 330[1830+(x-1)*48+12]</td></tr>
+<tr class="hmi"><td>178</td><td>FanStepSpeedSet</td><td>VFD fan speed step</td><td>20</td><td>1</td><td>10</td><td>1</td><td>★HMI 设置窗 330[1830+(x-1)*48+13]</td></tr>
+<tr class="hmi"><td>179</td><td>FanMinRunTimeSet</td><td>fan minimum run time</td><td>300</td><td>10</td><td>30</td><td>8</td><td>★但共享覆盖 → 改 330[1337]</td></tr>
+<tr class="hmi"><td>180</td><td>FanMinStopTimeSet</td><td>fan minimum stop time</td><td>300</td><td>10</td><td>30</td><td>7</td><td>★但共享覆盖 → 改 330[1338]</td></tr>
+<tr class="hmi"><td>181</td><td>FanTempHoldTimeSet</td><td>condensing temp hold time</td><td>300</td><td>0</td><td>60</td><td>2</td><td>★但共享覆盖 → 改 330[1339]</td></tr>
+<tr class="hmi"><td>182</td><td>DefrostEnvTempSet</td><td>timed defrost ambient temp</td><td>150</td><td>50</td><td>100</td><td>2</td><td>★但共享覆盖 → 改 330[1389]</td></tr>
+<tr class="hmi"><td>183</td><td>DefrostEnvIntervalSet</td><td>timed defrost interval, min</td><td>50</td><td>20</td><td>30</td><td>1</td><td>★但共享覆盖 → 改 330[1390]</td></tr>
+<tr class="hmi"><td>184</td><td>DefrostEnvTimeSet</td><td>timed defrost max time, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>★但共享覆盖 → 改 330[1391]</td></tr>
+<tr class="hmi"><td>185</td><td>DefrostCompRunMinSet</td><td>minimum comp run before defrost, min</td><td>30</td><td>5</td><td>10</td><td>1</td><td>★但共享覆盖 → 改 330[1392]</td></tr>
+<tr class="hmi"><td>186</td><td>DefrostFinTempStartSet</td><td>defrost start fin temp</td><td>-10</td><td>-40</td><td>-20</td><td>1</td><td>★但共享覆盖 → 改 330[1393]</td></tr>
+<tr class="hmi"><td>187</td><td>DefrostEnvFinGapSet</td><td>ambient-fin temp gap</td><td>150</td><td>50</td><td>100</td><td>3</td><td>★但共享覆盖 → 改 330[1394]</td></tr>
+<tr class="hmi"><td>188</td><td>DefrostIntervalAbove0Set</td><td>min defrost interval when ambient &gt; 0C</td><td>60</td><td>15</td><td>30</td><td>3</td><td>★但共享覆盖 → 改 330[1395]</td></tr>
+<tr class="hmi"><td>189</td><td>DefrostIntervalBelow0Set</td><td>min defrost interval when ambient &lt; 0C</td><td>70</td><td>15</td><td>35</td><td>5</td><td>★但共享覆盖 → 改 330[1396]</td></tr>
+<tr class="hmi"><td>190</td><td>DefrostFinTempEndSet</td><td>defrost end fin temp</td><td>600</td><td>300</td><td>400</td><td>4</td><td>★但共享覆盖 → 改 330[1397]</td></tr>
+<tr class="hmi"><td>191</td><td>DefrostTimeAbove0Set</td><td>max defrost time when ambient &gt; 0C, min</td><td>8</td><td>2</td><td>4</td><td>3</td><td>★但共享覆盖 → 改 330[1398]</td></tr>
+<tr class="hmi"><td>192</td><td>DefrostTimeBelow0Set</td><td>max defrost time when ambient &lt; 0C, min</td><td>8</td><td>2</td><td>3</td><td>3</td><td>★但共享覆盖 → 改 330[1399]</td></tr>
+<tr class="hmi"><td>193</td><td>FourWayValveDelaySet</td><td>spec four-way valve delay, sec</td><td>120</td><td>20</td><td>30</td><td>4</td><td>★HMI 设置窗 330[1830+(x-1)*48+28]</td></tr>
+<tr class="hmi"><td>194</td><td>HMIAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+29]</td></tr>
+<tr class="hmi"><td>195</td><td>AuxAddrParam</td><td></td><td>247</td><td>1</td><td>1</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+30]</td></tr>
+<tr class="hmi"><td>196</td><td>VFDAddrParam</td><td></td><td>247</td><td>0</td><td>0</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+31]</td></tr>
+<tr class="hmi"><td>197</td><td>IndoorAddrParam</td><td></td><td>247</td><td>0</td><td>0</td><td>9</td><td>★HMI 设置窗 330[1830+(x-1)*48+32]</td></tr>
+<tr class="hmi"><td>198</td><td>EEVSuperHeatTargetSet</td><td>x0.1C, default 5.0C</td><td>100</td><td>20</td><td>50</td><td>1</td><td>★但EEV覆盖 → 改 330[366]</td></tr>
+<tr class="hmi"><td>199</td><td>EEVPidKpSet</td><td>1~100</td><td>100</td><td>1</td><td>5</td><td>1</td><td>★但EEV覆盖 → 改 330[368]</td></tr>
+<tr class="hmi"><td>200</td><td>EEVSpecPidEnableSet</td><td>0=legacy staged control, 1=specification PID</td><td>1</td><td>0</td><td>1</td><td>4</td><td>★但EEV覆盖 → 改 330[365]</td></tr>
+<tr class="hmi"><td>201</td><td>EEVStartStepSet</td><td>0~500 steps</td><td>500</td><td>0</td><td>200</td><td>1</td><td>★但EEV覆盖 → 改 330[411]</td></tr>
+<tr class="hmi"><td>202</td><td>EEVSuperHeatDeadSet</td><td>YD x0.1C, 20~50</td><td>50</td><td>20</td><td>20</td><td>1</td><td>★但EEV覆盖 → 改 330[367]</td></tr>
+<tr class="hmi"><td>203</td><td>EEVPidScanTimeSet</td><td>TP 1~10s</td><td>10</td><td>1</td><td>5</td><td>1</td><td>★但EEV覆盖 → 改 330[16]</td></tr>
+<tr class="hmi"><td>204</td><td>EEVPidTiSet</td><td>TI 1~1000s</td><td>1000</td><td>1</td><td>100</td><td>1</td><td>★但EEV覆盖 → 改 330[369]</td></tr>
+<tr class="hmi"><td>205</td><td>EEVPidTdSet</td><td>TD 0~1000s</td><td>1000</td><td>0</td><td>0</td><td>1</td><td>★但EEV覆盖 → 改 330[370]</td></tr>
+<tr class="hmi"><td>206</td><td>EEVStepLimitSet</td><td>3~50 steps/cycle</td><td>50</td><td>3</td><td>20</td><td>1</td><td>★但EEV覆盖 → 改 330[371]</td></tr>
+<tr><td>207</td><td></td><td></td><td>600</td><td>30</td><td>90</td><td></td><td></td></tr>
+<tr><td>208</td><td></td><td></td><td>90</td><td>0</td><td>3</td><td></td><td></td></tr>
+<tr><td>209</td><td></td><td></td><td>255</td><td>0</td><td>15</td><td></td><td></td></tr>
+<tr><td>210</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>211</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>212</td><td></td><td></td><td>200</td><td>50</td><td>50</td><td></td><td></td></tr>
+<tr><td>213</td><td></td><td></td><td>800</td><td>500</td><td>500</td><td></td><td></td></tr>
+<tr><td>214</td><td></td><td></td><td>16</td><td>1</td><td>2</td><td></td><td></td></tr>
+<tr><td>215</td><td></td><td></td><td>2</td><td>0</td><td>2</td><td></td><td></td></tr>
+<tr><td>216</td><td></td><td></td><td>2</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>217</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>218</td><td></td><td></td><td>30000</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>219</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>220</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>221</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>222</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>223</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>224</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>225</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>226</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>227</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>228</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>229</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>230</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>231</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>232</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>233</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>234</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>235</td><td></td><td></td><td>100</td><td>-1</td><td>0</td><td></td><td></td></tr>
+<tr><td>236</td><td></td><td></td><td>999</td><td>0</td><td>3</td><td></td><td></td></tr>
+<tr><td>237</td><td></td><td></td><td>100</td><td>0</td><td>50</td><td></td><td></td></tr>
+<tr><td>238</td><td></td><td></td><td>999</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>239</td><td></td><td></td><td>32767</td><td>-1000</td><td>40</td><td></td><td></td></tr>
+<tr><td>240</td><td></td><td></td><td>32767</td><td>-1000</td><td>90</td><td></td><td></td></tr>
+<tr><td>241</td><td></td><td></td><td>32767</td><td>-1000</td><td>30</td><td></td><td></td></tr>
+<tr><td>242</td><td></td><td></td><td>32767</td><td>-1000</td><td>80</td><td></td><td></td></tr>
+<tr><td>243</td><td></td><td></td><td>32767</td><td>-1000</td><td>45</td><td></td><td></td></tr>
+<tr><td>244</td><td></td><td></td><td>32767</td><td>-1000</td><td>350</td><td></td><td></td></tr>
+<tr><td>245</td><td></td><td></td><td>32767</td><td>-1000</td><td>10</td><td></td><td></td></tr>
+<tr><td>246</td><td></td><td></td><td>32767</td><td>-1000</td><td>1</td><td></td><td></td></tr>
+<tr><td>247</td><td></td><td></td><td>32767</td><td>-1000</td><td>5</td><td></td><td></td></tr>
+<tr><td>248</td><td></td><td></td><td>32767</td><td>-1000</td><td>60</td><td></td><td></td></tr>
+<tr><td>249</td><td></td><td></td><td>32767</td><td>-1000</td><td>60</td><td></td><td></td></tr>
+<tr><td>250</td><td></td><td></td><td>255</td><td>0</td><td>30</td><td></td><td></td></tr>
+<tr><td>251</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>252</td><td></td><td></td><td>255</td><td>0</td><td>5</td><td></td><td></td></tr>
+<tr><td>253</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>254</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>255</td><td></td><td></td><td>255</td><td>0</td><td>20</td><td></td><td></td></tr>
+<tr><td>256</td><td></td><td></td><td>255</td><td>0</td><td>10</td><td></td><td></td></tr>
+<tr><td>257</td><td></td><td></td><td>255</td><td>0</td><td>6</td><td></td><td></td></tr>
+<tr><td>258</td><td></td><td></td><td>255</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>259</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>260</td><td></td><td></td><td>99</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>261</td><td></td><td></td><td>255</td><td>1</td><td>60</td><td></td><td></td></tr>
+<tr><td>262</td><td></td><td></td><td>200</td><td>-200</td><td>-80</td><td></td><td></td></tr>
+<tr><td>263</td><td></td><td></td><td>255</td><td>0</td><td>20</td><td></td><td></td></tr>
+<tr><td>264</td><td></td><td></td><td>450</td><td>-1000</td><td>-100</td><td></td><td></td></tr>
+<tr><td>265</td><td></td><td></td><td>450</td><td>-1000</td><td>440</td><td></td><td></td></tr>
+<tr><td>266</td><td></td><td></td><td>550</td><td>-1000</td><td>100</td><td></td><td></td></tr>
+<tr><td>267</td><td></td><td></td><td>550</td><td>-1000</td><td>450</td><td></td><td></td></tr>
+<tr><td>268</td><td></td><td></td><td>550</td><td>-1000</td><td>-260</td><td></td><td></td></tr>
+<tr><td>269</td><td></td><td></td><td>550</td><td>-1000</td><td>300</td><td></td><td></td></tr>
+<tr><td>270</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>271</td><td></td><td></td><td>450</td><td>-1000</td><td>210</td><td></td><td></td></tr>
+<tr><td>272</td><td></td><td></td><td>450</td><td>-1000</td><td>200</td><td></td><td></td></tr>
+<tr><td>273</td><td></td><td></td><td>450</td><td>-1000</td><td>440</td><td></td><td></td></tr>
+<tr><td>274</td><td></td><td></td><td>9999</td><td>-1000</td><td>2000</td><td></td><td></td></tr>
+<tr><td>275</td><td></td><td></td><td>9999</td><td>-1000</td><td>2000</td><td></td><td></td></tr>
+<tr><td>276</td><td></td><td></td><td>9999</td><td>-1000</td><td>4600</td><td></td><td></td></tr>
+<tr><td>277</td><td></td><td></td><td>9999</td><td>-1000</td><td>500</td><td></td><td></td></tr>
+<tr><td>278</td><td></td><td></td><td>9999</td><td>-1000</td><td>150</td><td></td><td></td></tr>
+<tr><td>279</td><td></td><td></td><td>9999</td><td>-1000</td><td>3000</td><td></td><td></td></tr>
+<tr><td>280</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>281</td><td></td><td></td><td>32767</td><td>-1000</td><td>5</td><td></td><td></td></tr>
+<tr><td>282</td><td></td><td></td><td>32767</td><td>-1000</td><td>2</td><td></td><td></td></tr>
+<tr><td>283</td><td></td><td></td><td>32767</td><td>-1000</td><td>900</td><td></td><td></td></tr>
+<tr><td>284</td><td></td><td></td><td>32767</td><td>-1000</td><td>90</td><td></td><td></td></tr>
+<tr><td>285</td><td></td><td></td><td>999</td><td>-1000</td><td>60</td><td></td><td></td></tr>
+<tr><td>286</td><td></td><td></td><td>999</td><td>-1000</td><td>40</td><td></td><td></td></tr>
+<tr><td>287</td><td></td><td></td><td>999</td><td>-1000</td><td>120</td><td></td><td></td></tr>
+<tr><td>288</td><td></td><td></td><td>999</td><td>-1000</td><td>120</td><td></td><td></td></tr>
+<tr><td>289</td><td></td><td></td><td>999</td><td>-1000</td><td>120</td><td></td><td></td></tr>
+<tr><td>290</td><td></td><td></td><td>999</td><td>-1000</td><td>5</td><td></td><td></td></tr>
+<tr><td>291</td><td></td><td></td><td>9999</td><td>-1000</td><td>3000</td><td></td><td></td></tr>
+<tr><td>292</td><td></td><td></td><td>1200</td><td>-1000</td><td>800</td><td></td><td></td></tr>
+<tr><td>293</td><td></td><td></td><td>9999</td><td>-1000</td><td>3500</td><td></td><td></td></tr>
+<tr><td>294</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>295</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>296</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>297</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>298</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>299</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>300</td><td>Comp1VVFNum</td><td>压缩机1的编号</td><td>999</td><td>0</td><td>0</td><td>3</td><td></td></tr>
+<tr><td>301</td><td>Comp2VVFNum</td><td>压缩机2的编号</td><td>999</td><td>0</td><td>0</td><td>3</td><td></td></tr>
+<tr class="hmi"><td>302</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+0]</td></tr>
+<tr class="hmi"><td>303</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+1]</td></tr>
+<tr class="hmi"><td>304</td><td></td><td></td><td>2000</td><td>0</td><td>400</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+2]</td></tr>
+<tr class="hmi"><td>305</td><td></td><td></td><td>2000</td><td>0</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+3]</td></tr>
+<tr class="hmi"><td>306</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+4]</td></tr>
+<tr class="hmi"><td>307</td><td></td><td></td><td>20000</td><td>-20000</td><td>4600</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+5]</td></tr>
+<tr class="hmi"><td>308</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+6]</td></tr>
+<tr class="hmi"><td>309</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+7]</td></tr>
+<tr class="hmi"><td>310</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+8]</td></tr>
+<tr class="hmi"><td>311</td><td></td><td></td><td>2000</td><td>0</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+9]</td></tr>
+<tr class="hmi"><td>312</td><td></td><td></td><td>4</td><td>0</td><td>4</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+10]</td></tr>
+<tr class="hmi"><td>313</td><td></td><td></td><td>3</td><td>0</td><td>2</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+11]</td></tr>
+<tr class="hmi"><td>314</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+12]</td></tr>
+<tr class="hmi"><td>315</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+13]</td></tr>
+<tr class="hmi"><td>316</td><td></td><td></td><td>2000</td><td>0</td><td>400</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+14]</td></tr>
+<tr class="hmi"><td>317</td><td></td><td></td><td>2000</td><td>0</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+15]</td></tr>
+<tr class="hmi"><td>318</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+16]</td></tr>
+<tr class="hmi"><td>319</td><td></td><td></td><td>20000</td><td>-20000</td><td>4600</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+17]</td></tr>
+<tr class="hmi"><td>320</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+18]</td></tr>
+<tr class="hmi"><td>321</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+19]</td></tr>
+<tr class="hmi"><td>322</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+20]</td></tr>
+<tr class="hmi"><td>323</td><td></td><td></td><td>2000</td><td>0</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+21]</td></tr>
+<tr class="hmi"><td>324</td><td></td><td></td><td>4</td><td>0</td><td>4</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+22]</td></tr>
+<tr class="hmi"><td>325</td><td></td><td></td><td>3</td><td>0</td><td>2</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+23]</td></tr>
+<tr class="hmi"><td>326</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+24]</td></tr>
+<tr class="hmi"><td>327</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+25]</td></tr>
+<tr class="hmi"><td>328</td><td></td><td></td><td>2000</td><td>0</td><td>400</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+26]</td></tr>
+<tr class="hmi"><td>329</td><td></td><td></td><td>2000</td><td>0</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+27]</td></tr>
+<tr class="hmi"><td>330</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+28]</td></tr>
+<tr class="hmi"><td>331</td><td></td><td></td><td>20000</td><td>-20000</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+29]</td></tr>
+<tr class="hmi"><td>332</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+30]</td></tr>
+<tr class="hmi"><td>333</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+31]</td></tr>
+<tr class="hmi"><td>334</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+32]</td></tr>
+<tr class="hmi"><td>335</td><td></td><td></td><td>2000</td><td>0</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+33]</td></tr>
+<tr class="hmi"><td>336</td><td></td><td></td><td>4</td><td>0</td><td>4</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+34]</td></tr>
+<tr class="hmi"><td>337</td><td></td><td></td><td>3</td><td>0</td><td>2</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+35]</td></tr>
+<tr class="hmi"><td>338</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+36]</td></tr>
+<tr class="hmi"><td>339</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+37]</td></tr>
+<tr class="hmi"><td>340</td><td></td><td></td><td>2000</td><td>0</td><td>400</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+38]</td></tr>
+<tr class="hmi"><td>341</td><td></td><td></td><td>2000</td><td>0</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+39]</td></tr>
+<tr class="hmi"><td>342</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+40]</td></tr>
+<tr class="hmi"><td>343</td><td></td><td></td><td>20000</td><td>-20000</td><td>2000</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+41]</td></tr>
+<tr class="hmi"><td>344</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+42]</td></tr>
+<tr class="hmi"><td>345</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+43]</td></tr>
+<tr class="hmi"><td>346</td><td></td><td></td><td>20000</td><td>-20000</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+44]</td></tr>
+<tr class="hmi"><td>347</td><td></td><td></td><td>2000</td><td>0</td><td>0</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+45]</td></tr>
+<tr class="hmi"><td>348</td><td></td><td></td><td>4</td><td>0</td><td>4</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+46]</td></tr>
+<tr class="hmi"><td>349</td><td></td><td></td><td>3</td><td>0</td><td>2</td><td></td><td>★HMI AI配置块 330[2680+(x-1)*49+47]</td></tr>
+<tr><td>350</td><td></td><td></td><td>32767</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>351</td><td></td><td></td><td>32767</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>352</td><td></td><td></td><td>4</td><td>0</td><td>3</td><td></td><td></td></tr>
+<tr><td>353</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>354</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>355</td><td></td><td></td><td>300</td><td>-300</td><td>50</td><td></td><td></td></tr>
+<tr><td>356</td><td></td><td></td><td>800</td><td>250</td><td>500</td><td></td><td></td></tr>
+<tr><td>357</td><td></td><td></td><td>2</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>358</td><td></td><td></td><td>2</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>359</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>360</td><td></td><td></td><td>1</td><td>-99</td><td>0</td><td></td><td></td></tr>
+<tr><td>361</td><td></td><td></td><td>2</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>362</td><td></td><td></td><td>2</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>363</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>364</td><td></td><td></td><td>999</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>365</td><td></td><td></td><td>800</td><td>0</td><td>600</td><td></td><td></td></tr>
+<tr><td>366</td><td></td><td></td><td>800</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>367</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>368</td><td></td><td></td><td>2</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>369</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>370</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>371</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>372</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>373</td><td></td><td></td><td>1</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>374</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>375</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>376</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>377</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>378</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>379</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>380</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>381</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>382</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>383</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>384</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>385</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>386</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>387</td><td></td><td></td><td>32767</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>388</td><td></td><td></td><td>32767</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>389</td><td></td><td></td><td>32767</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>390</td><td></td><td></td><td>32767</td><td>0</td><td>6666</td><td></td><td></td></tr>
+<tr><td>391</td><td></td><td></td><td>32767</td><td>0</td><td>5555</td><td></td><td></td></tr>
+<tr><td>392</td><td></td><td></td><td>32767</td><td>0</td><td>4444</td><td></td><td></td></tr>
+<tr><td>393</td><td></td><td></td><td>255</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td>394</td><td></td><td></td><td>1</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>395</td><td></td><td></td><td>32767</td><td>1</td><td>1111</td><td></td><td></td></tr>
+<tr><td>396</td><td></td><td></td><td>32767</td><td>1</td><td>2222</td><td></td><td></td></tr>
+<tr><td>397</td><td></td><td></td><td>32767</td><td>1</td><td>3333</td><td></td><td></td></tr>
+<tr><td>398</td><td></td><td></td><td>32767</td><td>1</td><td>4444</td><td></td><td></td></tr>
+<tr><td>399</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>400</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>401</td><td></td><td></td><td>32767</td><td>-1000</td><td>0</td><td></td><td></td></tr>
+<tr><td>402</td><td></td><td></td><td>23</td><td>0</td><td>8</td><td></td><td></td></tr>
+<tr><td>403</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>404</td><td></td><td></td><td>23</td><td>0</td><td>17</td><td></td><td></td></tr>
+<tr><td>405</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>406</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>407</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>408</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>409</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>410</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>411</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>412</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>413</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>414</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>415</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>416</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>417</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>418</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>419</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>420</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>421</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>422</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>423</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>424</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>425</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>426</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>427</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>428</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>429</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>430</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>431</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>432</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>433</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>434</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>435</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>436</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>437</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>438</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>439</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>440</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>441</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>442</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>443</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>444</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>445</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>446</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>447</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>448</td><td></td><td></td><td>23</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>449</td><td></td><td></td><td>59</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td>450</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>451</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>452</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>453</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>454</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>455</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>456</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>457</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>458</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>459</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>460</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>461</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>462</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>463</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>464</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>465</td><td>A465ValueSet</td><td>1200</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>466</td><td>A466ValueSet</td><td>5000</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>467</td><td>A467ValueSet</td><td>3300</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>468</td><td>UserA0Set</td><td>A0选择</td><td>32767</td><td>-9999</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>469</td><td>UserA1Set</td><td>A1选择</td><td>32767</td><td>-9999</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>470</td><td>UserA2Set</td><td>A2选择</td><td>32767</td><td>-9999</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>471</td><td>UserA3Set</td><td>A3选择</td><td>32767</td><td>-9999</td><td>0</td><td>2</td><td></td></tr>
+<tr><td>472</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>473</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>474</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>475</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>476</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>477</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>478</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>479</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>480</td><td>UserA330000Set</td><td>A3通道系数</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>481</td><td>UserA230000Set</td><td>A2通道系数</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>482</td><td>UserA130000Set</td><td>A1通道系数</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>483</td><td>UserA030000Set</td><td>A0通道系数</td><td>32767</td><td>-9999</td><td>0</td><td>0</td><td></td></tr>
+<tr><td>484</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>485</td><td></td><td></td><td>32767</td><td>-9999</td><td>0</td><td></td><td></td></tr>
+<tr><td>486</td><td>UserA13ValueSet</td><td>A13 temperature calibration</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>487</td><td>UserA12ValueSet</td><td>A12和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>488</td><td>UserA11ValueSet</td><td>A11和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>489</td><td>UserA10ValueSet</td><td>A10和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>490</td><td>UserA9ValueSet</td><td>A9和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>491</td><td>UserA8ValueSet</td><td>A8和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>492</td><td>UserA7ValueSet</td><td>A7和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>493</td><td>UserA6ValueSet</td><td>A6和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>494</td><td>UserA5ValueSet</td><td>A5和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>495</td><td>UserA4ValueSet</td><td>A4和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>4</td><td></td></tr>
+<tr><td>496</td><td>UserA3ValueSet</td><td>A3和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>5</td><td></td></tr>
+<tr><td>497</td><td>UserA2ValueSet</td><td>A2和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>5</td><td></td></tr>
+<tr><td>498</td><td>UserA1ValueSet</td><td>A1和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>5</td><td></td></tr>
+<tr><td>499</td><td>UserA0ValueSet</td><td>A0和检验值</td><td>32767</td><td>-9999</td><td>0</td><td>5</td><td></td></tr>
+<tr><td>600</td><td>CompLowPress1Err</td><td>压机1低压保护	   0</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>601</td><td>CompLowPress2Err</td><td>压机2低压保护	   1</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>602</td><td>Unit1HTempErr</td><td>排气1温度保护 	 8</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>603</td><td>Unit2HTempErr</td><td>排气2温度保护</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>604</td><td>OilProtectErr</td><td>油位保护</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>606</td><td>Comp1HightPressErr</td><td>压机1高压保护、过载	13</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>607</td><td>Comp2HightPressErr</td><td>压机2高压保护		14</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>608</td><td>AI0TempErr</td><td>1#低压</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>609</td><td>AI1TempErr</td><td>1#高压</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>610</td><td>AI2TempErr</td><td>2#低压</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>611</td><td>AI3TempErr</td><td>2#高压</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>612</td><td>EnviTempErr</td><td>环境温度探头故障</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>613</td><td>Fin1TempErr</td><td>翅片1探头故障</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>614</td><td>Fin2TempErr</td><td>翅片2探头故障</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>615</td><td>Exhaust1TempErr</td><td>排气1探头故障</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>616</td><td>Exhaust2TempErr</td><td>排气2探头故障</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>617</td><td>XiQi1TempErr</td><td>吸气1探头故障</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>618</td><td>XiQi2TempErr</td><td>吸气2探头故障</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>619</td><td>Valve1TempErr</td><td>阀后1探头故障</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>620</td><td>Valve2TempErr</td><td>阀后2探头故障</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>621</td><td>Fan1OverErr</td><td>风机1过载</td><td></td><td></td><td></td><td>8</td><td></td></tr>
+<tr><td>622</td><td>Fan2OverErr</td><td>风机2过载</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>623</td><td>ModulePowerErr</td><td>模块电源故障</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>624</td><td>SystemComunicateErr</td><td>系统通讯故障</td><td></td><td></td><td></td><td>5</td><td></td></tr>
+<tr><td>625</td><td>REEParameterFlag</td><td>EEProm故障</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>626</td><td>Comp1OverErr</td><td>压机1过载</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>627</td><td>Comp2OverErr</td><td>压机2过载</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>629</td><td>ModuleVVF1CommErr</td><td>变频器通讯故障</td><td></td><td></td><td></td><td>12</td><td></td></tr>
+<tr><td>630</td><td>VVF1USCurOLErr</td><td>变频1:加速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>631</td><td>VVF1DSCurOLErr</td><td>变频1:减速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>632</td><td>VVF1RUCurOLErr</td><td>变频1:恒速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>633</td><td>VVF1USPreOLErr</td><td>变频1:加速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>634</td><td>VVF1DSPreOLErr</td><td>变频1:减速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>635</td><td>VVF1RUPreOLErr</td><td>变频1:恒速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>636</td><td>VVF1SPPreOLErr</td><td>变频1:缓冲电阻过载故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>637</td><td>VVF1RUPreLOErr</td><td>变频1:欠压故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>638</td><td>VVF1EMCDistErr</td><td>变频1:变频器过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>639</td><td>VVF1OLErr</td><td>变频1:电机过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>640</td><td>VVF1MotorOLErr</td><td>变频1:输入缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>641</td><td>VVF1TempTPErr</td><td>变频1:输出缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>642</td><td>VVF1SPDevHPErr</td><td>变频:模块过热</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>643</td><td>VVF1UPhaseCurErr</td><td>变频:通讯异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>644</td><td>VVF1VPhaseCurErr</td><td>变频:电流检测故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>645</td><td>VVF1WPhaseCurErr</td><td>变频:电机调谐故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>646</td><td>VVF1WPhaseCurErr2</td><td>变频:参数读写异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>647</td><td>VVF1WPhaseCurErr3</td><td>变频:变频器硬件故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>648</td><td>VVF1WPhaseCurErr4</td><td>变频:电机对地短路故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>649</td><td>VVF1WOTHER</td><td>变频1:速度偏差过大</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>650</td><td>ModuleVVF2CommErr</td><td>变频器通讯故障</td><td></td><td></td><td></td><td>15</td><td></td></tr>
+<tr><td>651</td><td>VVF2USCurOLErr</td><td>变频2:加速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>652</td><td>VVF2DSCurOLErr</td><td>变频2:减速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>653</td><td>VVF2RUCurOLErr</td><td>变频2:恒速过电流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>654</td><td>VVF2USPreOLErr</td><td>变频2:加速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>655</td><td>VVF2DSPreOLErr</td><td>变频2:减速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>656</td><td>VVF2RUPreOLErr</td><td>变频2:恒速过电压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>657</td><td>VVF2SPPreOLErr</td><td>变频2:缓冲电阻过载故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>658</td><td>VVF2RUPreLOErr</td><td>变频2:欠压故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>659</td><td>VVF2EMCDistErr</td><td>变频2:变频器过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>660</td><td>VVF2OLErr</td><td>变频2:电机过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>661</td><td>VVF2MotorOLErr</td><td>变频2:输入缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>662</td><td>VVF2TempTPErr</td><td>变频2:输出缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>663</td><td>VVF2SPDevHPErr</td><td>变频2:模块过热</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>664</td><td>VVF2UPhaseCurErr</td><td>变频2:通讯异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>665</td><td>VVF2VPhaseCurErr</td><td>变频2:电流检测故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>666</td><td>VVF2WPhaseCurErr</td><td>变频2:电机调谐故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>667</td><td>VVF2WPhaseCurErr2</td><td>变频2:参数读写异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>668</td><td>VVF2WPhaseCurErr3</td><td>变频2:变频器硬件故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>669</td><td>VVF2WPhaseCurErr4</td><td>变频2:电机对地短路故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>670</td><td>VVF2WOTHER</td><td>变频2:速度偏差过大</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>671</td><td>VVF1Err1</td><td>1#变频:外部故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>672</td><td>VVF1Err2</td><td>1#变频:变频器过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>673</td><td>VVF1Err3</td><td>1#变频:电机过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>674</td><td>VVF1Err4</td><td>1#变频:模块过热</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>675</td><td>VVF1Err5</td><td>1#变频:过流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>676</td><td>VVF1Err6</td><td>1#变频:底座异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>677</td><td>VVF1Err7</td><td>1#变频:过压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>678</td><td>VVF1Err8</td><td>1#变频:欠压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>679</td><td>VVF1Err9</td><td>1#变频:输出缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>680</td><td>VVF1Err10</td><td>1#变频:存储异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>681</td><td>VVF1Err11</td><td>1#变频:未授权</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>682</td><td>VVF1Err12</td><td>1#变频:485通讯超时</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>683</td><td>VVF1Err13</td><td>1#变频:电流检测异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>684</td><td>VVF1Err14</td><td>1#变频:电机堵转</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>685</td><td>VVF1Err15</td><td>1#变频:应用故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>686</td><td>VVF1Err16</td><td>1#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>687</td><td>VVF1Err17</td><td>1#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>688</td><td>VVF1Err18</td><td>1#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>689</td><td>VVF1Err19</td><td>1#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>690</td><td>VVF1Err20</td><td>1#变频:变频器故障总输出</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>691</td><td>VVF2Err1</td><td>2#变频:外部故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>692</td><td>VVF2Err2</td><td>2#变频:变频器过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>693</td><td>VVF2Err3</td><td>2#变频:电机过载</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>694</td><td>VVF2Err4</td><td>2#变频:模块过热</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>695</td><td>VVF2Err5</td><td>2#变频:过流</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>696</td><td>VVF2Err6</td><td>2#变频:底座异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>697</td><td>VVF2Err7</td><td>2#变频:过压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>698</td><td>VVF2Err8</td><td>2#变频:欠压</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>699</td><td>VVF2Err9</td><td>2#变频:输出缺相</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>700</td><td>VVF2Err10</td><td>2#变频:存储异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>701</td><td>VVF2Err11</td><td>2#变频:未授权</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>702</td><td>VVF2Err12</td><td>2#变频:485通讯超时</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>703</td><td>VVF2Err13</td><td>2#变频:电流检测异常</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>704</td><td>VVF2Err14</td><td>2#变频:电机堵转</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>705</td><td>VVF2Err15</td><td>2#变频:应用故障</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>706</td><td>VVF2Err16</td><td>2#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>707</td><td>VVF2Err17</td><td>2#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>708</td><td>VVF2Err18</td><td>2#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>709</td><td>VVF2Err19</td><td>2#变频:备用</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>710</td><td>VVF2Err20</td><td>2#变频:变频器故障总输出</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>711</td><td>FanCommErr</td><td>风机通讯故障</td><td></td><td></td><td></td><td>16</td><td></td></tr>
+<tr><td>712</td><td>FanCommErr2</td><td>风机通讯故障2</td><td></td><td></td><td></td><td>5</td><td></td></tr>
+<tr><td>713</td><td>VVFFanError1</td><td>风机故障代码1</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>714</td><td>VVFFanError2</td><td>风机故障代码2</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>715</td><td>VVFSpeedErr1</td><td>转速异常1</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>716</td><td>VVFSpeedErr2</td><td>转速异常2</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>717</td><td>VVFOtherErr1</td><td>变频故障，详见故障代码</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>718</td><td>VVFOtherErr2</td><td>转速异常，详见故障代码</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>719</td><td>VVFMotorSelect1</td><td>1#压缩机变频器电机控制方式	20230718A</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>720</td><td>VVFMotorSelect2</td><td>2#压缩机变频器电机控制方式	20230718A</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>800</td><td>Comp1Err</td><td>压缩机1故障 被调用，顺序不能改</td><td></td><td></td><td></td><td>13</td><td></td></tr>
+<tr><td>801</td><td>Comp2Err</td><td>压缩机2故障</td><td></td><td></td><td></td><td>13</td><td></td></tr>
+<tr><td>802</td><td>EEVPulseTimeSet</td><td>膨胀阀脉冲时间 32ms (0-1000)</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>803</td><td>ErrorOutFlag</td><td>系统故障标识</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>804</td><td>EEVCtrlNum</td><td>这个数是多少就控制第几组膨胀阀</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>805</td><td>EEV1NewAddValue</td><td>电机1目的步数转动</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>806</td><td>EEV2NewAddValue</td><td>电机2目的步数转动</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>807</td><td>EEV3NewAddValue</td><td>电机3目的步数转动</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>808</td><td>EEV4NewAddValue</td><td>电机4目的步数转动</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>809</td><td>EEV1OldAddValue</td><td>电机1目前行动的步数</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>810</td><td>EEV2OldAddValue</td><td>电机2目前行动的步数</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>811</td><td>EEV3OldAddValue</td><td>电机3目前行动的步数</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>812</td><td>EEV4OldAddValue</td><td>电机4目前行动的步数</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>813</td><td>EEV1RunFlag</td><td>电机1运行指示</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>814</td><td>EEV2RunFlag</td><td>电机2运行指示</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>815</td><td>EEV3RunFlag</td><td>电机3运行指示</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>816</td><td>EEV4RunFlag</td><td>电机4运行指示</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>817</td><td>EEV_EnergryNeed1</td><td>膨胀阀能量需求   被调用 位置不能改</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>818</td><td>EEV_EnergryNeed2</td><td>膨胀阀能量需求</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>819</td><td>EEV_EnergryNeed3</td><td>膨胀阀能量需求</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>820</td><td>EEV_EnergryNeed4</td><td>膨胀阀能量需求</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>821</td><td>EEVInitialSizeSet0</td><td>初始开度检测临时</td><td></td><td></td><td></td><td>7</td><td></td></tr>
+<tr><td>822</td><td>EEVInitialSizeSet</td><td>初始开度检测最终</td><td></td><td></td><td></td><td>18</td><td></td></tr>
+<tr><td>823</td><td>ENvironmentCount</td><td>环温计时</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>824</td><td>SuperheatSet</td><td>过热度设定值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>830</td><td>VVF1OPVoltage</td><td>母线电压  0位 v</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>831</td><td>VVF1OPFre</td><td>运行频率  0位 hz</td><td></td><td></td><td></td><td>11</td><td></td></tr>
+<tr><td>833</td><td>VVF1OPCurrent</td><td>输出电流   1位 a</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>834</td><td>VVF1Torque</td><td>通信设定值   1位 %</td><td></td><td></td><td></td><td>8</td><td></td></tr>
+<tr><td>835</td><td>VVF1OPTorque</td><td>输出电压   0位 v</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>836</td><td>VVF1OPPower</td><td>反馈速度	hz</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>837</td><td>VVF1Temp</td><td>机体温度   0位 ℃</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>838</td><td>VVF1Accuracy</td><td>精度 0：0.01Hz  1：0.1Hz  2:1Hz</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>840</td><td>VVF2OPVoltage</td><td>母线电压  0位 v</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>841</td><td>VVF2OPFre</td><td>运行频率  0位 hz</td><td></td><td></td><td></td><td>11</td><td></td></tr>
+<tr><td>843</td><td>VVF2OPCurrent</td><td>输出电流   1位 a</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>844</td><td>VVF2Torque</td><td>通信设定值   1位 %</td><td></td><td></td><td></td><td>8</td><td></td></tr>
+<tr><td>845</td><td>VVF2OPTorque</td><td>输出电压   0位 v</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>846</td><td>VVF2OPPower</td><td>输出功率   0位 kw</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>847</td><td>VVF2Temp</td><td>机体温度   0位 ℃</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>848</td><td>VVF2Accuracy</td><td>精度 0：0.01Hz  1：0.1Hz  2:1Hz</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>851</td><td>Comp1FreControl</td><td>运行控制 0:停止 1:启动</td><td></td><td></td><td></td><td>11</td><td></td></tr>
+<tr><td>852</td><td>Comp1CommFreSet</td><td>控制频率 -30000~30000HZ --&gt; 1HZ</td><td></td><td></td><td></td><td>19</td><td></td></tr>
+<tr><td>857</td><td>Comp1VVFErrInfo</td><td>变频器故障,内容 		Y</td><td></td><td></td><td></td><td>9</td><td></td></tr>
+<tr><td>861</td><td>Comp2FreControl</td><td>运行控制 0:停止 1:启动</td><td></td><td></td><td></td><td>11</td><td></td></tr>
+<tr><td>862</td><td>Comp2CommFreSet</td><td>控制频率 -30000~30000HZ --&gt; 1HZ</td><td></td><td></td><td></td><td>19</td><td></td></tr>
+<tr><td>867</td><td>Comp2VVFErrInfo</td><td>变频器故障,内容 		Y</td><td></td><td></td><td></td><td>9</td><td></td></tr>
+<tr><td>870</td><td>VVFErrorReset</td><td>变频器故障复位</td><td></td><td></td><td></td><td>16</td><td></td></tr>
+<tr><td>871</td><td>VVFErrorReset2</td><td>变频器故障复位</td><td></td><td></td><td></td><td>8</td><td></td></tr>
+<tr><td>872</td><td>FanOpenSet</td><td>风机开启</td><td></td><td></td><td></td><td>75</td><td></td></tr>
+<tr><td>873</td><td>FanErrorReset</td><td>风机故障复位</td><td></td><td></td><td></td><td>8</td><td></td></tr>
+<tr><td>874</td><td>FanOpenSet2</td><td>风机开启</td><td></td><td></td><td></td><td>35</td><td></td></tr>
+<tr><td>875</td><td>FanErrorReset2</td><td>风机故障复位</td><td></td><td></td><td></td><td>4</td><td></td></tr>
+<tr><td>876</td><td>FanSpeedCtrl2</td><td>风机2转速控制 20220121</td><td></td><td></td><td></td><td>36</td><td></td></tr>
+<tr><td>979</td><td>VF1</td><td>当前步骤</td><td></td><td></td><td></td><td>75</td><td></td></tr>
+<tr><td>1008</td><td>DIPSet</td><td>外机板拨码设置</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr class="auto"><td>1020</td><td>VVFCompSetP0_02</td><td>电机控制模式</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1021</td><td>VVFCompSetP0_07</td><td>频率精度</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1022</td><td>VVFCompSetP0_12</td><td>最高频率</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1023</td><td>VVFCompSetP2_01</td><td>加速时间</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1024</td><td>VVFCompSetP2_02</td><td>减速时间</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1025</td><td>VVFCompSetP5_08</td><td>停车方式</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1026</td><td>VVFCompSetP5_14</td><td>停机零速延时</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1027</td><td>VVFCompSetP6_00</td><td>电机额定功率</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1028</td><td>VVFCompSetP6_01</td><td>电机额定电压</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1029</td><td>VVFCompSetP6_02</td><td>电机额定频率</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1030</td><td>VVFCompSetP6_03</td><td>电机额定转速</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1031</td><td>VVFCompSetP6_04</td><td>电机额定电流</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1032</td><td>VVFCompSetP6_05</td><td>电机极对数</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1033</td><td>VVFCompSetP6_06</td><td>电机惯量</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1034</td><td>VVFCompSetP6_08</td><td>定子电阻</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1035</td><td>VVFCompSetP6_10</td><td>D轴电感</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1036</td><td>VVFCompSetP6_11</td><td>Q轴电感</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1037</td><td>VVFCompSetP9_00</td><td>速度环比例1</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1038</td><td>VVFCompSetP9_01</td><td>速度环积分时间1</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1039</td><td>VVFCompSetP9_04</td><td>ASR切换频率</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1040</td><td>VVFCompSetP9_06</td><td>电流环增益</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1041</td><td>VVFCompSetP9_07</td><td>电流环积分</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1042</td><td>VVFCompSetP9_10</td><td>切换</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1043</td><td>VVFCompSetC0_02</td><td>接收数据间隔等待延时、奇偶校验、停止位、数据位</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1044</td><td>VVFCompSetC0_03</td><td>通讯应答延时</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1045</td><td>VVFCompSetC0_04</td><td>通讯超时时间</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1046</td><td>VVFCompSetD0_11</td><td>液晶背光</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1047</td><td>VVFCompSetD0_12</td><td>液晶对比度</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1048</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1049</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1050</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1051</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1052</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1053</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1054</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1055</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1056</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1057</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1058</td><td>VVFNumber1</td><td>压缩机编号1</td><td></td><td></td><td></td><td>0</td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1059</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 广播</td></tr>
+<tr class="auto"><td>1300</td><td>HandDebug</td><td>手动模式</td><td></td><td></td><td></td><td>34</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1301</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1302</td><td>HandDebugY00</td><td>外机1#压缩机手动</td><td></td><td></td><td></td><td>1</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1303</td><td>HandDebugY01</td><td>外机2#压缩机手动</td><td></td><td></td><td></td><td>1</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1304</td><td>HandDebugY02</td><td>外机1#冷凝风机手动</td><td></td><td></td><td></td><td>8</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1305</td><td>HandDebugY03</td><td>外机2#冷凝风机手动</td><td></td><td></td><td></td><td>6</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1306</td><td>HandDebugY04</td><td>外机1#四通阀手动</td><td></td><td></td><td></td><td>3</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1307</td><td>HandDebugY05</td><td>外机2#四通阀手动</td><td></td><td></td><td></td><td>1</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1308</td><td>HandDebugY06</td><td>外机1#曲轴加热手动</td><td></td><td></td><td></td><td>1</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1309</td><td>HandDebugY07</td><td>外机2#曲轴加热手动</td><td></td><td></td><td></td><td>6</td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1310</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1311</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1312</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1313</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1314</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1315</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1316</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1317</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1318</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1319</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 手动调试块</td></tr>
+<tr class="auto"><td>1400</td><td>Comp1OnOFFFalg</td><td>1#压机 写1开机 写0关机</td><td></td><td></td><td></td><td>11</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1401</td><td>Comp1Frency</td><td>1#压机频率给定</td><td></td><td></td><td></td><td>1</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1402</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1403</td><td>Comp2OnOFFFalg</td><td>2#压机 写1开机 写0关机</td><td></td><td></td><td></td><td>11</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1404</td><td>Comp2Frency</td><td>2#压机频率给定</td><td></td><td></td><td></td><td>1</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1405</td><td>RecorverSet</td><td>厂家恢复默认值</td><td></td><td></td><td></td><td>2</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1406</td><td>UrgencyStop</td><td>紧急停机信号</td><td></td><td></td><td></td><td>5</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1407</td><td>Comp1EnableRead</td><td>1#压缩机使能   0使能  1禁用</td><td></td><td></td><td></td><td>2</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1408</td><td>Comp2EnableRead</td><td>2#压缩机使能   0使能  1禁用</td><td></td><td></td><td></td><td>2</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1409</td><td>DefrostPermit</td><td></td><td></td><td></td><td></td><td>1</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1410</td><td>Comp1DefrostFlag</td><td>1#压机除霜信号</td><td></td><td></td><td></td><td>10</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1411</td><td>Comp2DefrostFlag</td><td>2#压机除霜信号</td><td></td><td></td><td></td><td>10</td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1412</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 控制块</td></tr>
+<tr class="auto"><td>1413</td><td></td><td></td><td></td><td></td><td></td><td></td><td>○330下发 控制块</td></tr>
+<tr><td>1420</td><td>DefrostAsk1</td><td>1#除霜请求信号</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>1421</td><td>DefrostAsk2</td><td>1#除霜请求信号</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>1422</td><td>EnviTempAI0Disp</td><td>环境温度</td><td></td><td></td><td></td><td>43</td><td></td></tr>
+<tr><td>1423</td><td>SlaveTempAI20Disp</td><td>阀后温度</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1424</td><td>SlaveTempAI21Disp</td><td>阀后温度</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1425</td><td>Comp1RunStatus</td><td>压缩机1运行状态（停止 故障  制冷  制热  除霜）</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>1426</td><td>Comp2RunStatus</td><td>压缩机2运行状态</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>1427</td><td>Comp1RunHourDisp</td><td>压缩机1运行小时数</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1428</td><td>Comp2RunHourDisp</td><td>压缩机2运行小时数</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1429</td><td>ErrTotal</td><td>故障总数</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1430</td><td>MaxUseCompNumDisp</td><td>系统压机台数</td><td></td><td></td><td></td><td>0</td><td></td></tr>
+<tr><td>1431</td><td>FinTemp1AI5Disp</td><td>翅片1温度</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1432</td><td>FinTemp2AI7Disp</td><td>翅片2温度</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1433</td><td>CompExhaustAI12Disp</td><td>排气温度</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>1434</td><td>CompExhaustAI13Disp</td><td>排气温度</td><td></td><td></td><td></td><td>3</td><td></td></tr>
+<tr><td>1435</td><td>MainTempAI16Disp</td><td>吸气温度1</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1436</td><td>MainTempAI17Disp</td><td>吸气温度2</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1437</td><td>MainOverHeat1Disp</td><td>主路过热度1  被调用 位置不能改</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>1438</td><td>MainOverHeat2Disp</td><td>主路过热度2</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>1439</td><td>EEV1OldAddValueDisp</td><td>电机1目前行动的步数</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1440</td><td>EEV2OldAddValueDisp</td><td>电机2目前行动的步数</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1441</td><td>Comp1VVFNumDisp</td><td>压缩机1编号</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1442</td><td>Comp2VVFNumDisp</td><td>压缩机2编号</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1443</td><td>HighPressDisp1</td><td>1#高压</td><td></td><td></td><td></td><td>18</td><td></td></tr>
+<tr><td>1444</td><td>LowPressDisp1</td><td>1#低压</td><td></td><td></td><td></td><td>20</td><td></td></tr>
+<tr><td>1445</td><td>HighPressDisp2</td><td>2#高压</td><td></td><td></td><td></td><td>18</td><td></td></tr>
+<tr><td>1446</td><td>LowPressDisp2</td><td>2#低压</td><td></td><td></td><td></td><td>22</td><td></td></tr>
+<tr><td>1447</td><td>VVFModel_1</td><td>变频器版本1  //AII[32]</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1448</td><td>VVFModel_2</td><td>变频器版本2    //AII[33]</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1449</td><td>VVF1OPVoltageDisp</td><td>母线电压  0位 v</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1450</td><td>VVF1OPFreDisp</td><td>运行频率  0位 hz</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1451</td><td>VVF1OPCurrentDisp</td><td>输出电流   1位 a</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1452</td><td>VVF1TorqueDisp</td><td>通信设定值   1位 %</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1453</td><td>VVF1OPTorqueDisp</td><td>输出电压   0位 v</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1454</td><td>VVF1OPPowerDisp</td><td>输出功率 kw</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1455</td><td>VVF1TempDisp</td><td>机体温度   0位 ℃</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1456</td><td>VVF2OPVoltageDisp</td><td>母线电压  0位 v</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1457</td><td>VVF2OPFreDisp</td><td>运行频率  0位 hz</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1458</td><td>VVF2OPCurrentDisp</td><td>输出电流   1位 a</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1459</td><td>VVF2TorqueDisp</td><td>通信设定值   1位 %</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1460</td><td>VVF2OPTorqueDisp</td><td>输出电压   0位 v</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1461</td><td>VVF2OPPowerDisp</td><td>输出功率 kw</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1462</td><td>VVF2TempDisp</td><td>机体温度   0位 ℃</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1463</td><td>FanSpeedCtrl</td><td>风机转速控制</td><td></td><td></td><td></td><td>104</td><td></td></tr>
+<tr><td>1464</td><td>FanSpeedDisp</td><td>风机转速1</td><td></td><td></td><td></td><td>12</td><td></td></tr>
+<tr><td>1465</td><td>FanSpeedDisp2</td><td>风机转速2</td><td></td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td>1466</td><td>FanError</td><td>风机故障代码1</td><td></td><td></td><td></td><td>21</td><td></td></tr>
+<tr><td>1467</td><td>FanError2</td><td>风机故障代码2</td><td></td><td></td><td></td><td>5</td><td></td></tr>
+<tr><td>1468</td><td>DA0ValueDisp</td><td>DA[0] 显示</td><td></td><td></td><td></td><td>13</td><td></td></tr>
+<tr><td>1469</td><td>DA1ValueDisp</td><td>DA[1] 显示</td><td></td><td></td><td></td><td>9</td><td></td></tr>
+<tr><td>1470</td><td>XYstatus</td><td>状态字   InStatus1</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1471</td><td>ERR1Disp</td><td>故障字   Err1</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1472</td><td>ERR2Disp</td><td>故障字   Err2</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1473</td><td>ERR3Disp</td><td>故障字   Err3</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1474</td><td>ERR4Disp</td><td>故障字   Err4</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1475</td><td>ERR5Disp</td><td>故障字   Err5</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1476</td><td>ERR6Disp</td><td>故障字   Err6</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1477</td><td>ERR7Disp</td><td>故障字   Err7</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1478</td><td>ERR8Disp</td><td>故障字   Err8</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1479</td><td>UserA0ValueSetTemp</td><td>A12和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1480</td><td>UserA1ValueSetTemp</td><td>A11和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1481</td><td>UserA2ValueSetTemp</td><td>A10和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1482</td><td>UserA3ValueSetTemp</td><td>A9和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1483</td><td>UserA4ValueSetTemp</td><td>A8和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1484</td><td>UserA5ValueSetTemp</td><td>A7和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1485</td><td>UserA6ValueSetTemp</td><td>A6和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1486</td><td>UserA7ValueSetTemp</td><td>A5和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1487</td><td>UserA8ValueSetTemp</td><td>A4和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1488</td><td>UserA9ValueSetTemp</td><td>A3和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1489</td><td>UserA10ValueSetTemp</td><td>A2和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1490</td><td>UserA11ValueSetTemp</td><td>A1和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1491</td><td>UserA12ValueSetTemp</td><td>A0和检验值</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1492</td><td>UserA13ValueSetTemp</td><td>A13 temperature calibration</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1493</td><td>EEVManuOpenSizeSetTemp</td><td>膨胀阀手动开度设置  0 （0-999）</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1494</td><td>ManuCtrlEEVSetTemp</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1495</td><td>EEV2ManuOpenSizeSetTemp</td><td>膨胀阀2手动调节步数 0 （0-999）</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1496</td><td>ManuCtrlEEV2SetTemp</td><td>手动控制电子膨胀阀 0 0:禁止 1:使能</td><td></td><td></td><td></td><td>2</td><td></td></tr>
+<tr><td>1497</td><td>EEV1PidErrorDisp</td><td>EEV1 E(K), x0.1C</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1498</td><td>EEV1PidStepDisp</td><td>EEV1 PID step/cycle</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1499</td><td>EEV2PidErrorDisp</td><td>EEV2 E(K), x0.1C</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1500</td><td>EEV2PidStepDisp</td><td>EEV2 PID step/cycle</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr><td>1501</td><td>OutdoorFaultStatusDisp</td><td>bit0-6: fault layers/lockout/config</td><td></td><td></td><td></td><td>1</td><td></td></tr>
+<tr class="hmi"><td>1586</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+0]</td></tr>
+<tr class="hmi"><td>1587</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+1]</td></tr>
+<tr class="hmi"><td>1588</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+2]</td></tr>
+<tr class="hmi"><td>1589</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+3]</td></tr>
+<tr class="hmi"><td>1590</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+4]</td></tr>
+<tr class="hmi"><td>1591</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+5]</td></tr>
+<tr class="hmi"><td>1592</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+6]</td></tr>
+<tr class="hmi"><td>1593</td><td></td><td></td><td></td><td></td><td></td><td></td><td>★HMI 温度校准 330[2534+(x-1)*16+7]</td></tr>
+</tbody></table>
+<script>
+const q=document.getElementById('q');
+q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();
+ document.querySelectorAll('tbody tr').forEach(tr=>{tr.style.display=!v||tr.textContent.toLowerCase().includes(v)?'':'none';});});
+</script></body></html>
