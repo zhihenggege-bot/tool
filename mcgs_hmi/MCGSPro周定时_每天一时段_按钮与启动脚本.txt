@@ -1,0 +1,25 @@
+﻿'以下是三个独立脚本，分别复制到对应按钮/启动策略，不要整份粘入一个策略。
+
+'一、“启用周定时”按钮：抬起脚本
+'周定时独立设置；仅163=0本地时执行，远程时保留计划并暂停，不改163。
+bWeeklyScheduleEnable = 1
+nWExit = 0
+nWPhase = 0
+nWZeroTicks = 0
+nWRetry = 0
+nWResult = 1
+
+'二、“停机并退出周定时”按钮：抬起脚本
+'本地时先正常停机，等709=0后再退出165；远程时退出任务等待回到本地再执行。
+bWeeklyScheduleEnable = 0
+nWExit = 1
+nWPhase = 0
+nWZeroTicks = 0
+nWRetry = 0
+nWResult = 5
+
+'三、HMI启动策略：重置过程变量，不覆盖保存的时间、星期选择、总使能及退出任务。
+nWPhase = 0
+nWZeroTicks = 0
+nWRetry = 0
+nWResult = 0

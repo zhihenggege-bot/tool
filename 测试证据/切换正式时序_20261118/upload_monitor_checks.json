@@ -1,0 +1,1425 @@
+{
+  "version": "FFP-2026.11.17c",
+  "hardware_access": false,
+  "source_sha256": "a404e7ed71184e8f5e36c09a06fdf64c780d6a7d1470f980ff243f5e64bd6363",
+  "total": 354,
+  "passed": 354,
+  "rows": [
+    {
+      "name": "1/all-zero",
+      "passed": true
+    },
+    {
+      "name": "1/missing388",
+      "passed": true
+    },
+    {
+      "name": "1/missing594",
+      "passed": true
+    },
+    {
+      "name": "1/missing2598",
+      "passed": true
+    },
+    {
+      "name": "1/missing2037",
+      "passed": true
+    },
+    {
+      "name": "1/missing2072",
+      "passed": true
+    },
+    {
+      "name": "1/missing2149",
+      "passed": true
+    },
+    {
+      "name": "1/missing1601",
+      "passed": true
+    },
+    {
+      "name": "1/missing1608",
+      "passed": true
+    },
+    {
+      "name": "1/sensor608/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor608/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor608/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor608/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor608/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor609/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor609/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor609/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor609/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor609/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor610/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor610/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor610/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor610/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor610/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor611/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor611/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor611/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor611/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor611/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor612/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor612/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor612/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor612/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor612/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor613/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor613/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor613/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor613/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor613/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor614/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor614/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor614/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor614/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor614/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor615/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor615/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor615/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor615/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor615/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor616/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor616/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor616/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor616/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor616/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor617/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor617/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor617/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor617/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor617/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor618/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor618/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor618/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor618/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor618/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor619/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor619/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor619/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor619/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor619/clear",
+      "passed": true
+    },
+    {
+      "name": "1/sensor620/name",
+      "passed": true
+    },
+    {
+      "name": "1/sensor620/in-sync",
+      "passed": true
+    },
+    {
+      "name": "1/sensor620/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor620/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "1/sensor620/clear",
+      "passed": true
+    },
+    {
+      "name": "1/layer-without-details",
+      "passed": true
+    },
+    {
+      "name": "1/ambient-lockout",
+      "passed": true
+    },
+    {
+      "name": "1/comm",
+      "passed": true
+    },
+    {
+      "name": "1/fresh",
+      "passed": true
+    },
+    {
+      "name": "1/stale",
+      "passed": true
+    },
+    {
+      "name": "1/unknown-age",
+      "passed": true
+    },
+    {
+      "name": "1/fault-addresses",
+      "passed": true
+    },
+    {
+      "name": "1/extended629",
+      "passed": true
+    },
+    {
+      "name": "1/extended650",
+      "passed": true
+    },
+    {
+      "name": "1/extended711",
+      "passed": true
+    },
+    {
+      "name": "1/extended713",
+      "passed": true
+    },
+    {
+      "name": "1/extended718",
+      "passed": true
+    },
+    {
+      "name": "1/extended727",
+      "passed": true
+    },
+    {
+      "name": "2/all-zero",
+      "passed": true
+    },
+    {
+      "name": "2/missing388",
+      "passed": true
+    },
+    {
+      "name": "2/missing595",
+      "passed": true
+    },
+    {
+      "name": "2/missing2599",
+      "passed": true
+    },
+    {
+      "name": "2/missing2165",
+      "passed": true
+    },
+    {
+      "name": "2/missing2200",
+      "passed": true
+    },
+    {
+      "name": "2/missing2277",
+      "passed": true
+    },
+    {
+      "name": "2/missing1671",
+      "passed": true
+    },
+    {
+      "name": "2/missing1678",
+      "passed": true
+    },
+    {
+      "name": "2/sensor608/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor608/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor608/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor608/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor608/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor609/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor609/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor609/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor609/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor609/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor610/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor610/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor610/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor610/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor610/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor611/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor611/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor611/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor611/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor611/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor612/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor612/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor612/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor612/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor612/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor613/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor613/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor613/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor613/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor613/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor614/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor614/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor614/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor614/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor614/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor615/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor615/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor615/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor615/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor615/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor616/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor616/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor616/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor616/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor616/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor617/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor617/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor617/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor617/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor617/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor618/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor618/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor618/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor618/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor618/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor619/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor619/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor619/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor619/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor619/clear",
+      "passed": true
+    },
+    {
+      "name": "2/sensor620/name",
+      "passed": true
+    },
+    {
+      "name": "2/sensor620/in-sync",
+      "passed": true
+    },
+    {
+      "name": "2/sensor620/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor620/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "2/sensor620/clear",
+      "passed": true
+    },
+    {
+      "name": "2/layer-without-details",
+      "passed": true
+    },
+    {
+      "name": "2/ambient-lockout",
+      "passed": true
+    },
+    {
+      "name": "2/comm",
+      "passed": true
+    },
+    {
+      "name": "2/fresh",
+      "passed": true
+    },
+    {
+      "name": "2/stale",
+      "passed": true
+    },
+    {
+      "name": "2/unknown-age",
+      "passed": true
+    },
+    {
+      "name": "2/unconfigured",
+      "passed": true
+    },
+    {
+      "name": "2/fault-addresses",
+      "passed": true
+    },
+    {
+      "name": "2/extended629",
+      "passed": true
+    },
+    {
+      "name": "2/extended650",
+      "passed": true
+    },
+    {
+      "name": "2/extended711",
+      "passed": true
+    },
+    {
+      "name": "2/extended713",
+      "passed": true
+    },
+    {
+      "name": "2/extended718",
+      "passed": true
+    },
+    {
+      "name": "2/extended727",
+      "passed": true
+    },
+    {
+      "name": "3/all-zero",
+      "passed": true
+    },
+    {
+      "name": "3/missing388",
+      "passed": true
+    },
+    {
+      "name": "3/missing596",
+      "passed": true
+    },
+    {
+      "name": "3/missing2600",
+      "passed": true
+    },
+    {
+      "name": "3/missing2293",
+      "passed": true
+    },
+    {
+      "name": "3/missing2328",
+      "passed": true
+    },
+    {
+      "name": "3/missing2405",
+      "passed": true
+    },
+    {
+      "name": "3/missing1741",
+      "passed": true
+    },
+    {
+      "name": "3/missing1748",
+      "passed": true
+    },
+    {
+      "name": "3/sensor608/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor608/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor608/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor608/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor608/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor609/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor609/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor609/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor609/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor609/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor610/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor610/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor610/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor610/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor610/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor611/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor611/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor611/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor611/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor611/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor612/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor612/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor612/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor612/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor612/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor613/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor613/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor613/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor613/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor613/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor614/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor614/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor614/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor614/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor614/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor615/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor615/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor615/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor615/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor615/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor616/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor616/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor616/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor616/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor616/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor617/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor617/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor617/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor617/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor617/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor618/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor618/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor618/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor618/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor618/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor619/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor619/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor619/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor619/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor619/clear",
+      "passed": true
+    },
+    {
+      "name": "3/sensor620/name",
+      "passed": true
+    },
+    {
+      "name": "3/sensor620/in-sync",
+      "passed": true
+    },
+    {
+      "name": "3/sensor620/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor620/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "3/sensor620/clear",
+      "passed": true
+    },
+    {
+      "name": "3/layer-without-details",
+      "passed": true
+    },
+    {
+      "name": "3/ambient-lockout",
+      "passed": true
+    },
+    {
+      "name": "3/comm",
+      "passed": true
+    },
+    {
+      "name": "3/fresh",
+      "passed": true
+    },
+    {
+      "name": "3/stale",
+      "passed": true
+    },
+    {
+      "name": "3/unknown-age",
+      "passed": true
+    },
+    {
+      "name": "3/unconfigured",
+      "passed": true
+    },
+    {
+      "name": "3/fault-addresses",
+      "passed": true
+    },
+    {
+      "name": "3/extended629",
+      "passed": true
+    },
+    {
+      "name": "3/extended650",
+      "passed": true
+    },
+    {
+      "name": "3/extended711",
+      "passed": true
+    },
+    {
+      "name": "3/extended713",
+      "passed": true
+    },
+    {
+      "name": "3/extended718",
+      "passed": true
+    },
+    {
+      "name": "3/extended727",
+      "passed": true
+    },
+    {
+      "name": "4/all-zero",
+      "passed": true
+    },
+    {
+      "name": "4/missing388",
+      "passed": true
+    },
+    {
+      "name": "4/missing597",
+      "passed": true
+    },
+    {
+      "name": "4/missing2601",
+      "passed": true
+    },
+    {
+      "name": "4/missing2421",
+      "passed": true
+    },
+    {
+      "name": "4/missing2456",
+      "passed": true
+    },
+    {
+      "name": "4/missing2533",
+      "passed": true
+    },
+    {
+      "name": "4/missing1811",
+      "passed": true
+    },
+    {
+      "name": "4/missing1818",
+      "passed": true
+    },
+    {
+      "name": "4/sensor608/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor608/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor608/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor608/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor608/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor609/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor609/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor609/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor609/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor609/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor610/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor610/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor610/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor610/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor610/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor611/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor611/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor611/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor611/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor611/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor612/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor612/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor612/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor612/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor612/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor613/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor613/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor613/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor613/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor613/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor614/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor614/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor614/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor614/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor614/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor615/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor615/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor615/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor615/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor615/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor616/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor616/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor616/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor616/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor616/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor617/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor617/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor617/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor617/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor617/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor618/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor618/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor618/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor618/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor618/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor619/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor619/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor619/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor619/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor619/clear",
+      "passed": true
+    },
+    {
+      "name": "4/sensor620/name",
+      "passed": true
+    },
+    {
+      "name": "4/sensor620/in-sync",
+      "passed": true
+    },
+    {
+      "name": "4/sensor620/ERR-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor620/raw-fallback",
+      "passed": true
+    },
+    {
+      "name": "4/sensor620/clear",
+      "passed": true
+    },
+    {
+      "name": "4/layer-without-details",
+      "passed": true
+    },
+    {
+      "name": "4/ambient-lockout",
+      "passed": true
+    },
+    {
+      "name": "4/comm",
+      "passed": true
+    },
+    {
+      "name": "4/fresh",
+      "passed": true
+    },
+    {
+      "name": "4/stale",
+      "passed": true
+    },
+    {
+      "name": "4/unknown-age",
+      "passed": true
+    },
+    {
+      "name": "4/unconfigured",
+      "passed": true
+    },
+    {
+      "name": "4/fault-addresses",
+      "passed": true
+    },
+    {
+      "name": "4/extended629",
+      "passed": true
+    },
+    {
+      "name": "4/extended650",
+      "passed": true
+    },
+    {
+      "name": "4/extended711",
+      "passed": true
+    },
+    {
+      "name": "4/extended713",
+      "passed": true
+    },
+    {
+      "name": "4/extended718",
+      "passed": true
+    },
+    {
+      "name": "4/extended727",
+      "passed": true
+    },
+    {
+      "name": "empty-snapshot",
+      "passed": true
+    },
+    {
+      "name": "invalid-unit0",
+      "passed": true
+    },
+    {
+      "name": "invalid-unit5",
+      "passed": true
+    }
+  ]
+}

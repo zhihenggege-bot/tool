@@ -1,0 +1,51 @@
+{
+  "scope": "PSC316 outdoor 4.1 through 4.6; 330 interface cross-check",
+  "provided_date": "2026-11-09",
+  "authoritative_text_source": "User message in this conversation beginning 4.室外机控制逻辑; manually preserved UTF-8, line endings normalized; message request sentence excluded",
+  "image_source": "采用电子膨胀阀定频直膨机控制规格书260124.doc; extracted .codex-tmp/indoor_spec_images_20261104/figure5..7.png",
+  "image_provenance": "Repository Word embedded originals; diagram nodes visually reviewed; original bytes preserved. Not a new screenshot capture.",
+  "image_mapping": [
+    {
+      "original": ".codex-tmp\\indoor_spec_images_20261104\\figure5.png",
+      "stored": "references/figures/cooling-ambient.png.base64",
+      "decoded_original_sha256": "8d4b24f0658cc7aa8cf35090a73b561478a6a921b902a0f4a78d3abe27661e70",
+      "size": [
+        682,
+        410
+      ]
+    },
+    {
+      "original": ".codex-tmp\\indoor_spec_images_20261104\\figure6.png",
+      "stored": "references/figures/heating-ambient.png.base64",
+      "decoded_original_sha256": "41513826a05da4f049dcf149d24129849752e3c2849736b01f2230633af9d68b",
+      "size": [
+        932,
+        435
+      ]
+    },
+    {
+      "original": ".codex-tmp\\indoor_spec_images_20261104\\figure7.png",
+      "stored": "references/figures/fixed-vfd.png.base64",
+      "decoded_original_sha256": "e41aab92316aeec454e79f300bab3dd98bb48a4e8e3eff902cba9c79741bab82",
+      "size": [
+        839,
+        643
+      ]
+    }
+  ],
+  "text_is_interpretation": false,
+  "transcription_and_unresolved_points": "flowcharts.md and clarifications.md; not user-confirmed amendments",
+  "files_sha256": {
+    "references/clarifications.md": "2620cdff55baf7c2d3392b5172912ddbfaa99030566afe306d216401ce7c081b",
+    "references/code-and-test-map.md": "a925949c1ca667f282530befe041b3688523090d7a3cbe1d56526e6675f66ec0",
+    "references/figures/cooling-ambient.png.base64": "b4df73c407d2fa01c07c64ed24b00f30d6c86587d6c082ff017844af0023650f",
+    "references/figures/fixed-vfd.png.base64": "9a14521d7e179c0c2335a3921cbf43f5c20b9bebcfdc13cf4dcd5a8aecb05687",
+    "references/figures/heating-ambient.png.base64": "124a0600ec5398b8e2d5395281fd8c9a9f0a742e08f77c009b489b010272e9bc",
+    "references/flowcharts.md": "38b32ebebaeb5a8fef91d1b0d55f7e6502c2404cdc41bc0a5e7bb365222c4fb6",
+    "references/outdoor-spec-original-20261109.txt": "4660f7f16e48be448409575727b900c72a99c4033737fe2d8fa7cfe5b6c08dca",
+    "references/spec-index.md": "0a835d3ebb9cc937f7a6df0c8dcf4dee3dcdf15d997d6b3ee8379cc5ed589264",
+    "SKILL.md": "4cddee4b94844ad165f8552c0dcb3fbe211fee7ade66dd1f5bc90efce4d83bae"
+  },
+  "image_storage": "Lossless base64 original PNG. Direct PNG copies and SVG wrappers acquired opaque 4096-byte wrapping after process exit in this environment and were removed. Decode base64 when viewing; no redrawing.",
+  "followup_user_statement_20261110": "Normal defrost: ambient<10C continuously60s and normal start conditions. Fault timed defrost: adjustable ambient threshold and timed interval; no fixed10C or60s ambient hold. Emergency: immediately stop loads and abort/clear the cycle,330 releases ownership after cleared feedback; no extra60s recovery. User authorized all four firmware fixes; hardware deployment/acceptance is separate."
+}

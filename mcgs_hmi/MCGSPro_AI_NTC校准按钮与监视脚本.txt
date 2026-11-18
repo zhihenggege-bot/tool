@@ -26,34 +26,34 @@ n330CalScale = 1
 If n330CalType = 0 Then
     If n330CalChannel = 0 Then
         n330CalCurrent = R0500_330_AI0房间压差
-        n330CalOldOffset = R0499_330_AI0偏移
+        n330CalOldOffset = R1237_330_AI0偏移
         n330CalSelectionOK = 1
     EndIf
     If n330CalChannel = 1 Then
         n330CalCurrent = R0501_330_AI1回风湿度
-        n330CalOldOffset = R0498_330_AI1偏移
+        n330CalOldOffset = R1249_330_AI1偏移
         n330CalScale = 10
         n330CalSelectionOK = 1
     EndIf
     If n330CalChannel = 2 Then
         n330CalCurrent = R0903_330_AI2_CO2
-        n330CalOldOffset = R0497_330_AI2偏移
+        n330CalOldOffset = R1261_330_AI2偏移
         n330CalSelectionOK = 1
     EndIf
     If n330CalChannel = 3 Then
         n330CalCurrent = R1125_330_AI3送风压力
-        n330CalOldOffset = R0496_330_AI3偏移
+        n330CalOldOffset = R1273_330_AI3偏移
         n330CalSelectionOK = 1
     EndIf
     If n330CalChannel = 4 Then
         n330CalCurrent = R1126_330_AI3送风风速
-        n330CalOldOffset = R0496_330_AI3偏移
+        n330CalOldOffset = R1273_330_AI3偏移
         n330CalScale = 10
         n330CalSelectionOK = 1
     EndIf
     If n330CalChannel = 5 Then
         n330CalCurrent = R0519_330_AI4新风湿度
-        n330CalOldOffset = R0457_330_AI4偏移
+        n330CalOldOffset = R1285_330_AI4偏移
         n330CalScale = 10
         n330CalSelectionOK = 1
     EndIf
@@ -226,22 +226,22 @@ n330CalResult = 3
 
 If n330CalWriteType = 0 Then
     If n330CalWriteChannel = 0 Then
-        R0499_330_AI0偏移 = n330CalExpectedOffset
+        R1237_330_AI0偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 1 Then
-        R0498_330_AI1偏移 = n330CalExpectedOffset
+        R1249_330_AI1偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 2 Then
-        R0497_330_AI2偏移 = n330CalExpectedOffset
+        R1261_330_AI2偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 3 Then
-        R0496_330_AI3偏移 = n330CalExpectedOffset
+        R1273_330_AI3偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 4 Then
-        R0496_330_AI3偏移 = n330CalExpectedOffset
+        R1273_330_AI3偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 5 Then
-        R0457_330_AI4偏移 = n330CalExpectedOffset
+        R1285_330_AI4偏移 = n330CalExpectedOffset
     EndIf
 Else
     If n330CalWriteChannel = 0 Then
@@ -321,19 +321,19 @@ n330CalResult = 3
 
 If n330CalWriteType = 0 Then
     If n330CalWriteChannel = 0 Then
-        R0499_330_AI0偏移 = n330CalExpectedOffset
+        R1237_330_AI0偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 1 Then
-        R0498_330_AI1偏移 = n330CalExpectedOffset
+        R1249_330_AI1偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 2 Then
-        R0497_330_AI2偏移 = n330CalExpectedOffset
+        R1261_330_AI2偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
-        R0496_330_AI3偏移 = n330CalExpectedOffset
+        R1273_330_AI3偏移 = n330CalExpectedOffset
     EndIf
     If n330CalWriteChannel = 5 Then
-        R0457_330_AI4偏移 = n330CalExpectedOffset
+        R1285_330_AI4偏移 = n330CalExpectedOffset
     EndIf
 Else
     If n330CalWriteChannel = 0 Then
@@ -404,19 +404,19 @@ n330CalResult = 3
 
 If n330CalWriteType = 0 Then
     If n330CalWriteChannel = 0 Then
-        R0499_330_AI0偏移 = 0
+        R1237_330_AI0偏移 = 0
     EndIf
     If n330CalWriteChannel = 1 Then
-        R0498_330_AI1偏移 = 0
+        R1249_330_AI1偏移 = 0
     EndIf
     If n330CalWriteChannel = 2 Then
-        R0497_330_AI2偏移 = 0
+        R1261_330_AI2偏移 = 0
     EndIf
     If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
-        R0496_330_AI3偏移 = 0
+        R1273_330_AI3偏移 = 0
     EndIf
     If n330CalWriteChannel = 5 Then
-        R0457_330_AI4偏移 = 0
+        R1285_330_AI4偏移 = 0
     EndIf
 Else
     If n330CalWriteChannel = 0 Then
@@ -1130,19 +1130,19 @@ If n330CalWriteCheck = 1 Then
 
     If n330CalWriteType = 0 Then
         If n330CalWriteChannel = 0 Then
-            n330CalReadback = R0499_330_AI0偏移
+            n330CalReadback = R1237_330_AI0偏移
         EndIf
         If n330CalWriteChannel = 1 Then
-            n330CalReadback = R0498_330_AI1偏移
+            n330CalReadback = R1249_330_AI1偏移
         EndIf
         If n330CalWriteChannel = 2 Then
-            n330CalReadback = R0497_330_AI2偏移
+            n330CalReadback = R1261_330_AI2偏移
         EndIf
         If n330CalWriteChannel = 3 Or n330CalWriteChannel = 4 Then
-            n330CalReadback = R0496_330_AI3偏移
+            n330CalReadback = R1273_330_AI3偏移
         EndIf
         If n330CalWriteChannel = 5 Then
-            n330CalReadback = R0457_330_AI4偏移
+            n330CalReadback = R1285_330_AI4偏移
         EndIf
     Else
         If n330CalWriteChannel = 0 Then

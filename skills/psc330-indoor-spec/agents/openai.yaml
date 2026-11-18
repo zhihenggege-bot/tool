@@ -1,0 +1,4 @@
+interface:
+  display_name: "PSC330内机规格书"
+  short_description: "按内机3.1至3.11规格核对固件、测试证据、启停保护与能力输出曲线"
+  default_prompt: "使用 $psc330-indoor-spec 核对内机代码与测试记录，列出已通过、存在差异、尚未实测及下一轮验证项目。"

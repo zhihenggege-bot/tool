@@ -1,0 +1,336 @@
+﻿'PSC330每周定时：每天一时段，保留原画面变量。2026-11-10
+'放入独立循环策略，周期1000ms；先停用旧的Keyboard_ONOFF定时策略。
+'$Week沿用用户原脚本约定：0周日、1周一至6周六，必须在实际屏上核对。
+'所有新增nW/bW变量和设备变量见同名变量表，不在脚本内声明。
+'设备连接变量直接赋值；不得连接成内部变量，不写398/1386/524或输出点。
+
+'1. 读取数值时钟，换算为周一0点起的分钟数。
+XINGQI = $Week
+nWHour = $Hour
+nWMinute = $Minute
+nWClockError = 0
+If XINGQI < 0 Or XINGQI > 6 Then
+    nWClockError = 1
+EndIf
+If nWHour < 0 Or nWHour > 23 Or nWMinute < 0 Or nWMinute > 59 Then
+    nWClockError = 1
+EndIf
+nWDayIndex = XINGQI - 1
+If XINGQI = 0 Then
+    nWDayIndex = 6
+EndIf
+nWNow = nWDayIndex * 1440 + nWHour * 60 + nWMinute
+nWTarget = 0
+nWConfigError = 0
+
+'2. 检查启用日的设置，起止相等表示该日无有效时段。
+If 星期一 = 1 Then
+    If open_hour_1 < 0 Or open_hour_1 > 23 Or close_hour_1 < 0 Or close_hour_1 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_1 < 0 Or open_minute_1 > 59 Or close_minute_1 < 0 Or close_minute_1 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期二 = 1 Then
+    If open_hour_2 < 0 Or open_hour_2 > 23 Or close_hour_2 < 0 Or close_hour_2 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_2 < 0 Or open_minute_2 > 59 Or close_minute_2 < 0 Or close_minute_2 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期三 = 1 Then
+    If open_hour_3 < 0 Or open_hour_3 > 23 Or close_hour_3 < 0 Or close_hour_3 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_3 < 0 Or open_minute_3 > 59 Or close_minute_3 < 0 Or close_minute_3 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期四 = 1 Then
+    If open_hour_4 < 0 Or open_hour_4 > 23 Or close_hour_4 < 0 Or close_hour_4 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_4 < 0 Or open_minute_4 > 59 Or close_minute_4 < 0 Or close_minute_4 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期五 = 1 Then
+    If open_hour_5 < 0 Or open_hour_5 > 23 Or close_hour_5 < 0 Or close_hour_5 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_5 < 0 Or open_minute_5 > 59 Or close_minute_5 < 0 Or close_minute_5 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期六 = 1 Then
+    If open_hour_6 < 0 Or open_hour_6 > 23 Or close_hour_6 < 0 Or close_hour_6 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_6 < 0 Or open_minute_6 > 59 Or close_minute_6 < 0 Or close_minute_6 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+If 星期日 = 1 Then
+    If open_hour_7 < 0 Or open_hour_7 > 23 Or close_hour_7 < 0 Or close_hour_7 > 23 Then
+        nWConfigError = 1
+    EndIf
+    If open_minute_7 < 0 Or open_minute_7 > 59 Or close_minute_7 < 0 Or close_minute_7 > 59 Then
+        nWConfigError = 1
+    EndIf
+EndIf
+
+'3. 所有已启用日做或运算；含开始、不含结束，允许跨午夜、周日跨周一。
+If nWClockError = 0 And nWConfigError = 0 Then
+    If 星期一 = 1 Then
+        If open_hour_1 <> close_hour_1 Or open_minute_1 <> close_minute_1 Then
+            nWStart = 0 * 1440 + open_hour_1 * 60 + open_minute_1
+            nWEnd = 0 * 1440 + close_hour_1 * 60 + close_minute_1
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期二 = 1 Then
+        If open_hour_2 <> close_hour_2 Or open_minute_2 <> close_minute_2 Then
+            nWStart = 1 * 1440 + open_hour_2 * 60 + open_minute_2
+            nWEnd = 1 * 1440 + close_hour_2 * 60 + close_minute_2
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期三 = 1 Then
+        If open_hour_3 <> close_hour_3 Or open_minute_3 <> close_minute_3 Then
+            nWStart = 2 * 1440 + open_hour_3 * 60 + open_minute_3
+            nWEnd = 2 * 1440 + close_hour_3 * 60 + close_minute_3
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期四 = 1 Then
+        If open_hour_4 <> close_hour_4 Or open_minute_4 <> close_minute_4 Then
+            nWStart = 3 * 1440 + open_hour_4 * 60 + open_minute_4
+            nWEnd = 3 * 1440 + close_hour_4 * 60 + close_minute_4
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期五 = 1 Then
+        If open_hour_5 <> close_hour_5 Or open_minute_5 <> close_minute_5 Then
+            nWStart = 4 * 1440 + open_hour_5 * 60 + open_minute_5
+            nWEnd = 4 * 1440 + close_hour_5 * 60 + close_minute_5
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期六 = 1 Then
+        If open_hour_6 <> close_hour_6 Or open_minute_6 <> close_minute_6 Then
+            nWStart = 5 * 1440 + open_hour_6 * 60 + open_minute_6
+            nWEnd = 5 * 1440 + close_hour_6 * 60 + close_minute_6
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+    If 星期日 = 1 Then
+        If open_hour_7 <> close_hour_7 Or open_minute_7 <> close_minute_7 Then
+            nWStart = 6 * 1440 + open_hour_7 * 60 + open_minute_7
+            nWEnd = 6 * 1440 + close_hour_7 * 60 + close_minute_7
+            If nWEnd < nWStart Then
+                nWEnd = nWEnd + 1440
+            EndIf
+            If nWNow >= nWStart And nWNow < nWEnd Then
+                nWTarget = 1
+            EndIf
+            If nWNow + 10080 >= nWStart And nWNow + 10080 < nWEnd Then
+                nWTarget = 1
+            EndIf
+        EndIf
+    EndIf
+EndIf
+
+'4. 相同命令只在设备连接值不一致时重试，写间隔至少5个循环。
+If nWRetry > 0 Then
+    nWRetry = nWRetry - 1
+EndIf
+
+'5. 周定时只在本地接管。远程保留计划/退出任务，不写任何设备命令。
+If R0163_控制来源 <> 0 Then
+    nWPhase = 0
+    nWZeroTicks = 0
+    nWRetry = 0
+    nWResult = 7
+Else
+'停机退出优先于时钟/配置检查，不能因时间设置错误而卡住退出。
+If nWExit = 1 Then
+    nWTarget = 0
+    nWResult = 5
+    If R1388_定时运行目标 <> 0 Then
+        nWZeroTicks = 0
+        If nWRetry = 0 Then
+            R1388_定时运行目标 = 0
+            nWRetry = 5
+        EndIf
+    Else
+        If R0165_定时模式使能 <> 1 Then
+            nWZeroTicks = 0
+            If nWRetry = 0 Then
+                R0165_定时模式使能 = 1
+                nWRetry = 5
+            EndIf
+        Else
+            If R0714_当前控制方式 = 3 And R0700_系统状态 <> 10 Then
+                nWZeroTicks = nWZeroTicks + 1
+                If nWZeroTicks >= 3 And R0709_开关机步骤 = 0 Then
+                    nWExit = 2
+                    nWZeroTicks = 0
+                EndIf
+            Else
+                nWZeroTicks = 0
+            EndIf
+        EndIf
+    EndIf
+Else
+    If nWExit = 2 Then
+        nWTarget = 0
+        nWResult = 5
+        If R0165_定时模式使能 <> 0 Then
+            If nWRetry = 0 Then
+                R0165_定时模式使能 = 0
+                nWRetry = 5
+            EndIf
+        Else
+            If R0714_当前控制方式 <> 3 Then
+                nWExit = 0
+                nWPhase = 0
+                nWResult = 6
+            EndIf
+        EndIf
+    Else
+        If bWeeklyScheduleEnable = 1 Then
+            If nWClockError = 0 And nWConfigError = 0 Then
+                'HMI重启：已处于定时启动/运行中的机组继续跟随当前时段。
+                If nWPhase = 0 Then
+                    nWPhase = 1
+                    nWZeroTicks = 0
+                    If R0165_定时模式使能 = 1 And R0714_当前控制方式 = 3 And R1388_定时运行目标 = 1 Then
+                        If R0700_系统状态 = 5 Or R0700_系统状态 = 7 Then
+                            If R0709_开关机步骤 = 1 Or R0709_开关机步骤 = 2 Then
+                                nWPhase = 3
+                            EndIf
+                        EndIf
+                    EndIf
+                EndIf
+
+                If nWPhase = 3 Then
+                    If R0165_定时模式使能 <> 1 Or R0714_当前控制方式 <> 3 Or R0700_系统状态 = 10 Then
+                        nWPhase = 1
+                        nWZeroTicks = 0
+                        nWResult = 4
+                    Else
+                        nWResult = 2
+                        If R1388_定时运行目标 <> nWTarget Then
+                            If nWRetry = 0 Then
+                                R1388_定时运行目标 = nWTarget
+                                nWRetry = 5
+                                nWResult = 3
+                            EndIf
+                        EndIf
+                    EndIf
+                Else
+                    '当前固件需要先见到1388=0才能接受定时启动。
+                    '先清旧目标，再启用定时，确认模式且零目标稳定3个循环。
+                    nWResult = 1
+                    If R1388_定时运行目标 <> 0 Then
+                        nWZeroTicks = 0
+                        If nWRetry = 0 Then
+                            R1388_定时运行目标 = 0
+                            nWRetry = 5
+                        EndIf
+                    Else
+                        If R0165_定时模式使能 <> 1 Then
+                            nWZeroTicks = 0
+                            If nWRetry = 0 Then
+                                R0165_定时模式使能 = 1
+                                nWRetry = 5
+                            EndIf
+                        Else
+                            If R0714_当前控制方式 = 3 And R0700_系统状态 <> 10 Then
+                                nWZeroTicks = nWZeroTicks + 1
+                                If nWZeroTicks >= 3 Then
+                                    nWPhase = 3
+                                    nWZeroTicks = 0
+                                EndIf
+                            Else
+                                nWZeroTicks = 0
+                            EndIf
+                        EndIf
+                    EndIf
+                EndIf
+            Else
+                '已启用周计划时，非法时间/设置要求正常停机；未启用不干涉。
+                nWTarget = 0
+                nWPhase = 1
+                nWZeroTicks = 0
+                nWResult = 101
+                If nWConfigError = 1 Then
+                    nWResult = 102
+                EndIf
+                If R1388_定时运行目标 <> 0 Then
+                    If nWRetry = 0 Then
+                        R1388_定时运行目标 = 0
+                        nWRetry = 5
+                    EndIf
+                EndIf
+            EndIf
+        Else
+            nWPhase = 0
+            nWZeroTicks = 0
+            If nWResult <> 6 Then
+                nWResult = 0
+            EndIf
+        EndIf
+    EndIf
+EndIf
+EndIf

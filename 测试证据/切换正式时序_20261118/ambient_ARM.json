@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "total": 24,
+  "hardware_access": false,
+  "rows": [
+    {
+      "label": "0/0/no-demand-299s-still-locked",
+      "passed": true
+    },
+    {
+      "label": "0/0/no-demand-300s-permitted",
+      "passed": true
+    },
+    {
+      "label": "0/0/no-demand-does-not-reset-count",
+      "passed": true
+    },
+    {
+      "label": "0/0/no-request-or-outputs-injected",
+      "passed": true
+    },
+    {
+      "label": "0/1/no-demand-299s-still-locked",
+      "passed": true
+    },
+    {
+      "label": "0/1/no-demand-300s-permitted",
+      "passed": true
+    },
+    {
+      "label": "0/1/no-demand-does-not-reset-count",
+      "passed": true
+    },
+    {
+      "label": "0/1/no-request-or-outputs-injected",
+      "passed": true
+    },
+    {
+      "label": "0/2/no-demand-299s-still-locked",
+      "passed": true
+    },
+    {
+      "label": "0/2/no-demand-300s-permitted",
+      "passed": true
+    },
+    {
+      "label": "0/2/no-demand-does-not-reset-count",
+      "passed": true
+    },
+    {
+      "label": "0/2/no-request-or-outputs-injected",
+      "passed": true
+    },
+    {
+      "label": "1/0/no-demand-299s-still-locked",
+      "passed": true
+    },
+    {
+      "label": "1/0/no-demand-300s-permitted",
+      "passed": true
+    },
+    {
+      "label": "1/0/no-demand-does-not-reset-count",
+      "passed": true
+    },
+    {
+      "label": "1/0/no-request-or-outputs-injected",
+      "passed": true
+    },
+    {
+      "label": "cool/start-condition-fails-count-reset",
+      "passed": true
+    },
+    {
+      "label": "cool/recovery-needs-new-300s",
+      "passed": true
+    },
+    {
+      "label": "cool/recovered-after-new-300s",
+      "passed": true
+    },
+    {
+      "label": "mode-change-clears-previous-permission",
+      "passed": true
+    },
+    {
+      "label": "new-mode-299s-locked",
+      "passed": true
+    },
+    {
+      "label": "new-mode-300s-permitted",
+      "passed": true
+    },
+    {
+      "label": "unit-type-change-resets",
+      "passed": true
+    },
+    {
+      "label": "ambient-sensor-fault-resets-counts",
+      "passed": true
+    }
+  ]
+}

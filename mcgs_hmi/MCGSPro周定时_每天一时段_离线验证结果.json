@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-10",
+  "passed": true,
+  "assertions": 121481,
+  "full_week_sets": 6,
+  "variables": 56,
+  "hardware_access": false,
+  "mcgs_compiler_checked": false,
+  "mcp_modified": false,
+  "files": [
+    "MCGSPro周定时_每天一时段_循环脚本.txt",
+    "MCGSPro周定时_每天一时段_按钮与启动脚本.txt",
+    "MCGSPro周定时_每天一时段_变量表.csv.txt",
+    "MCGSPro周定时_每天一时段_实施说明.md"
+  ]
+}
