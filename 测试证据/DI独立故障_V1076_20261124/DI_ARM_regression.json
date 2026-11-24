@@ -1,0 +1,827 @@
+{
+  "passed": true,
+  "hardware_access": false,
+  "checks": [
+    {
+      "name": "960 polarity0 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "960 polarity0 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "960 polarity0 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        1,
+        0,
+        0
+      ],
+      "observed": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "960 polarity0 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "960 polarity0 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "960 polarity0 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "960 polarity1 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "960 polarity1 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "960 polarity1 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        1,
+        0,
+        0
+      ],
+      "observed": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "960 polarity1 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "960 polarity1 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "960 polarity1 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "962 polarity0 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "962 polarity0 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "962 polarity0 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        0,
+        1,
+        0
+      ],
+      "observed": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "962 polarity0 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "962 polarity0 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "962 polarity0 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "962 polarity1 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "962 polarity1 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "962 polarity1 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        0,
+        1,
+        0
+      ],
+      "observed": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "962 polarity1 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "962 polarity1 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "962 polarity1 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "964 polarity0 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "964 polarity0 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "964 polarity0 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        0,
+        0,
+        1
+      ],
+      "observed": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "964 polarity0 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "964 polarity0 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "964 polarity0 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "964 polarity1 normal contact does not alarm",
+      "passed": true
+    },
+    {
+      "name": "964 polarity1 before existing3s filter no fault",
+      "passed": true
+    },
+    {
+      "name": "964 polarity1 confirmed SAME fault register",
+      "passed": true,
+      "expected": [
+        0,
+        0,
+        1
+      ],
+      "observed": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "964 polarity1 reset while active reasserts",
+      "passed": true
+    },
+    {
+      "name": "964 polarity1 contact restored retains cause",
+      "passed": true
+    },
+    {
+      "name": "964 polarity1 healthy reset clears cause and aggregate",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(0, 0, 0)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(0, 0, 1)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(0, 1, 0)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(0, 1, 1)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(1, 0, 0)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(1, 0, 1)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(1, 1, 0)",
+      "passed": true
+    },
+    {
+      "name": "independent causes mask(1, 1, 1)",
+      "passed": true
+    },
+    {
+      "name": "successive causes preserved until reset",
+      "passed": true
+    },
+    {
+      "name": "single existing reset clears all resolved causes",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode0 mask(1, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode1 mask(1, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode2 mask(1, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode3 mask(1, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode4 mask(1, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(0, 1, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 0, 1) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 0) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 0) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 0) reset",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 1) active",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 1) released",
+      "passed": true
+    },
+    {
+      "name": "unchanged all control state mode5 mask(1, 1, 1) reset",
+      "passed": true
+    }
+  ],
+  "image_sha256": "5b099a2e2d4796a9287dbc30ba1426c0893610e90ad496526cddb9880bb19089"
+}

@@ -1,0 +1,7 @@
+{
+  "version": "FFP-2026.11.24b",
+  "gui_created": true,
+  "outdoor_frames": 4,
+  "serial_opened": false,
+  "sample_fault": "系统1级故障 | 排气1探头故障（端子NTC3）（ERR报告，逐条待同步） | 逐条故障与ERR暂不一致，等待刷新核对 | 故障数据尚未读全"
+}

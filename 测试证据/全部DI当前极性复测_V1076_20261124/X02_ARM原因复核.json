@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "hardware_access": false,
+  "rows": [
+    {
+      "version": "10.75",
+      "polarity": 0,
+      "before": {
+        "398": 1,
+        "700": 4,
+        "709": 2,
+        "166": 0,
+        "1388": 0
+      },
+      "after": [
+        {
+          "tick100ms": 1,
+          "state": {
+            "398": 1,
+            "700": 4,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 1
+        },
+        {
+          "tick100ms": 2,
+          "state": {
+            "398": 0,
+            "700": 9,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 0
+        }
+      ],
+      "stop_request_by_200ms": true
+    },
+    {
+      "version": "10.75",
+      "polarity": 1,
+      "before": {
+        "398": 1,
+        "700": 4,
+        "709": 2,
+        "166": 0,
+        "1388": 0
+      },
+      "after": [
+        {
+          "tick100ms": 1,
+          "state": {
+            "398": 1,
+            "700": 4,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 1
+        },
+        {
+          "tick100ms": 2,
+          "state": {
+            "398": 0,
+            "700": 9,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 0
+        }
+      ],
+      "stop_request_by_200ms": true
+    },
+    {
+      "version": "10.76",
+      "polarity": 0,
+      "before": {
+        "398": 1,
+        "700": 4,
+        "709": 2,
+        "166": 0,
+        "1388": 0
+      },
+      "after": [
+        {
+          "tick100ms": 1,
+          "state": {
+            "398": 1,
+            "700": 4,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 1
+        },
+        {
+          "tick100ms": 2,
+          "state": {
+            "398": 0,
+            "700": 9,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 0
+        }
+      ],
+      "stop_request_by_200ms": true
+    },
+    {
+      "version": "10.76",
+      "polarity": 1,
+      "before": {
+        "398": 1,
+        "700": 4,
+        "709": 2,
+        "166": 0,
+        "1388": 0
+      },
+      "after": [
+        {
+          "tick100ms": 1,
+          "state": {
+            "398": 1,
+            "700": 4,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 1
+        },
+        {
+          "tick100ms": 2,
+          "state": {
+            "398": 0,
+            "700": 9,
+            "709": 2,
+            "166": 0,
+            "1388": 0
+          },
+          "raw": 0,
+          "filtered": 0
+        }
+      ],
+      "stop_request_by_200ms": true
+    }
+  ],
+  "cause": "DI_Points_Process qualifies assertion for3s but drops X02_En after deassertion without a3s off filter. SwitchStatusProcess consumes FarSwitchX02=X02_En and immediately clears the maintained remote run request. The separate BoardErrAction3s remote-interlock counter does not gate this direct stop path.",
+  "unchanged_from_previous_version": true,
+  "classification": "Existing remote command behavior, not introduced by new DI960/962/964 or polarity inversion; original spec external-interlock3s differs, while later user requirement says remote X02 maintained on/off without specifying an off delay. Retain discrepancy; no firmware edit."
+}

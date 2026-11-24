@@ -1,0 +1,233 @@
+{
+  "started": "2026-11-24T15:39:06.168+08:00",
+  "passed": true,
+  "images": [
+    {
+      "board": "316_WJ1",
+      "verified_bytes": 82840,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      }
+    },
+    {
+      "board": "316_WJ2",
+      "verified_bytes": 82840,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      }
+    },
+    {
+      "board": "330",
+      "verified_bytes": 140240,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      }
+    }
+  ],
+  "save_samples": [
+    {
+      "at": "2026-11-24T15:39:12.558+08:00",
+      "pending": {},
+      "save_state": 0,
+      "error": 0
+    }
+  ],
+  "snapshot": {
+    "2622": [
+      330,
+      10,
+      76,
+      2026,
+      11,
+      24,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23
+    ],
+    "1298": [
+      300,
+      0
+    ],
+    "700": [
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      160,
+      303,
+      0,
+      0
+    ],
+    "163": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "398": [
+      0
+    ],
+    "1352": [
+      0
+    ],
+    "1388": [
+      0
+    ],
+    "814": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1366": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "914": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "594": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1555": [
+      0,
+      0
+    ],
+    "1625": [
+      0,
+      0
+    ],
+    "1300": [
+      0
+    ]
+  },
+  "configuration_mismatches": {},
+  "final_feedback": {
+    "605": 0,
+    "710": 0,
+    "819": 0,
+    "861": 0,
+    "912": 0,
+    "913": 0,
+    "956": 0,
+    "958": 0
+  },
+  "restored": true,
+  "finished": "2026-11-24T15:39:12.590+08:00",
+  "checks": 127,
+  "timings": [
+    {
+      "test": "X11 overload mode1",
+      "input_write_t": 524500.015,
+      "first_confirmed_t": 524502.921,
+      "observed_delay_s": 2.905999999959022,
+      "timing_basis": "first fault rising-edge sample, excluding polling hold"
+    },
+    {
+      "test": "X12 overload mode1",
+      "input_write_t": 524551.484,
+      "first_confirmed_t": 524554.406,
+      "observed_delay_s": 2.9219999999040738,
+      "timing_basis": "first fault rising-edge sample, excluding polling hold"
+    },
+    {
+      "test": "X12 overload mode2",
+      "input_write_t": 524603.046,
+      "first_confirmed_t": 524605.984,
+      "observed_delay_s": 2.9380000000819564,
+      "timing_basis": "first fault rising-edge sample, excluding polling hold"
+    },
+    {
+      "test": "X15 pressure fanmode1",
+      "fan_first_seen_t": 524622.312,
+      "startup_qualification_s": 10.077999999979511,
+      "fault_input_write_t": 524692.187,
+      "fault_first_seen_t": 524702.281,
+      "observed_delay_s": 10.093999999924563
+    },
+    {
+      "test": "X14 pressure fanmode2",
+      "fan_first_seen_t": 524717.093,
+      "startup_qualification_s": 10.109000000054948,
+      "fault_input_write_t": 524786.953,
+      "fault_first_seen_t": 524797.203,
+      "observed_delay_s": 10.25
+    }
+  ]
+}

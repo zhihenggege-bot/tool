@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "firmware_version": "10.76",
+  "monitor_version": "FFP-2026.11.24b",
+  "changed_firmware_sources": [
+    "PSC330RK-V10-内机/User/UserHead/User.h",
+    "PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c"
+  ],
+  "firmware_artifacts": {
+    "PSC330_V10.76_PRODUCTION.axf": "5b099a2e2d4796a9287dbc30ba1426c0893610e90ad496526cddb9880bb19089",
+    "PSC330_V10.76_PRODUCTION.hex": "fe01c3ffc46417afd4fe18f7bcc5477a25c5adb2efdf97ffbc60842c6e0cd7b3"
+  },
+  "firmware_ARM_checks": 190,
+  "monitor_DI_checks": 115,
+  "outdoor_monitor_regression_checks": 362,
+  "source_sha256": "8bf56af67d0101ae978d0c1b8dfe020bfea23addec74e0558a6390ea31dc5bc8",
+  "exe_sha256": "9abdd8e4251cdd556575fb260e5221f47833be9bf8ffd685f294717ea925cb43",
+  "zip_sha256": "9f88bd5bef9e3937b9abcf4290aa54a8bbb55118b55468d2cf131837b397ffb2",
+  "archive_verified": true,
+  "flashed": true,
+  "hardware_tested": true,
+  "device_parameters_changed": true,
+  "board_checks": 129,
+  "device_parameters_restored": true,
+  "final_configuration_changed": false,
+  "final_faults_and_Y05_zero": true,
+  "physical_contacts_switched": false,
+  "physical_terminal_measured": false,
+  "board_scope": "Actual production board: unchanged physical inputs, polarity inversion via normal Modbus, independent fault/reset and Y05 software; three channels twice plus simultaneous causes",
+  "original_trace": "board_DI.json",
+  "final_audit": "final_board_audit.json",
+  "retained_test_issue": "Original cleanup assertion included read-only refresh counters1875/1923. All129 functional checks passed; independent final audit confirms all writable settings restored."
+}

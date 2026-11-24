@@ -1,0 +1,243 @@
+{
+  "started": "2026-11-24T14:47:08.689+08:00",
+  "passed": true,
+  "boards": [
+    {
+      "board": "316_WJ1",
+      "verified_image_bytes": 82840,
+      "image_sha256": "1698bfbafcda71cd13d7b8898736265c532e79742d475408f1c2c94065f03f94",
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      },
+      "gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "board": "316_WJ2",
+      "verified_image_bytes": 82840,
+      "image_sha256": "1698bfbafcda71cd13d7b8898736265c532e79742d475408f1c2c94065f03f94",
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      },
+      "gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "board": "330",
+      "verified_image_bytes": 140240,
+      "image_sha256": "fe01c3ffc46417afd4fe18f7bcc5477a25c5adb2efdf97ffbc60842c6e0cd7b3",
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      }
+    }
+  ],
+  "save_samples": [
+    {
+      "at": "2026-11-24T14:47:15.103+08:00",
+      "saved_polarities": {
+        "156": 0,
+        "159": 0,
+        "395": 0
+      },
+      "state": 0,
+      "error": 0
+    }
+  ],
+  "snapshot": {
+    "2622": [
+      330,
+      10,
+      76,
+      2026,
+      11,
+      24,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23
+    ],
+    "1298": [
+      300,
+      0
+    ],
+    "700": [
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      160,
+      302,
+      0,
+      0
+    ],
+    "163": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "398": [
+      0
+    ],
+    "1352": [
+      0
+    ],
+    "1388": [
+      0
+    ],
+    "814": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1366": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "914": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "594": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1555": [
+      0,
+      0
+    ],
+    "1625": [
+      0,
+      0
+    ],
+    "1300": [
+      0
+    ]
+  },
+  "read_only_counter_changes": {
+    "1875": [
+      34,
+      97
+    ],
+    "1923": [
+      34,
+      97
+    ]
+  },
+  "configuration_mismatches": {},
+  "final_feedback": {
+    "605": 0,
+    "710": 0,
+    "819": 0,
+    "861": 0,
+    "909": 0,
+    "910": 0,
+    "911": 0,
+    "912": 0,
+    "913": 0,
+    "956": 0,
+    "958": 0,
+    "960": 0,
+    "962": 0,
+    "964": 0,
+    "966": 0,
+    "968": 0
+  },
+  "finished": "2026-11-24T14:47:19.930+08:00",
+  "board_checks": 129,
+  "restored": true,
+  "retained_original_trace": "board_DI.json",
+  "original_cleanup_issue": "Restoration assertion included read-only gateway status refresh counters1875/1923; this independent audit confirms all writable settings restored",
+  "physical_contacts_switched": false,
+  "physical_terminal_measured": false
+}

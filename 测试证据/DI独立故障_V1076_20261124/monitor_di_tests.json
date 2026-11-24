@@ -1,0 +1,469 @@
+{
+  "version": "FFP-2026.11.24b",
+  "passed": true,
+  "total": 115,
+  "checks": [
+    {
+      "name": "14 physical inputs and13 fault addresses match firmware",
+      "passed": true
+    },
+    {
+      "name": "600 is fresh temperature sensor only",
+      "passed": true
+    },
+    {
+      "name": "no undefined legacy input addresses",
+      "passed": true
+    },
+    {
+      "name": "address909 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address910 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address911 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address912 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address913 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address819 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address956 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address2622 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address2623 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address2624 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address958 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address960 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address962 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address964 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1350 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1351 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1352 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1353 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1354 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1355 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1356 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1357 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address968 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address966 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1358 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1359 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1360 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1361 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1362 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address1363 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address601 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address605 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "address861 covered by polling",
+      "passed": true
+    },
+    {
+      "name": "no duplicate addresses within DI table",
+      "passed": true
+    },
+    {
+      "name": "X00 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X00 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X00 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X00 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X00 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X01 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X01 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X01 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X01 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X01 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X03 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X03 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X03 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X03 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X03 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X04 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X04 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X04 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X04 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X04 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X05 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X05 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X05 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X05 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X05 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X06 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X06 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X06 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X06 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X06 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X07 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X07 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X07 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X07 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X07 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X10 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X10 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X10 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X10 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X10 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X11 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X11 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X11 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X11 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X11 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X12 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X12 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X12 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X12 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X12 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X13 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X13 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X13 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X13 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X13 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X14 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X14 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X14 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X14 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X14 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "X15 polarity0 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X15 polarity0 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X15 polarity1 fault1 displayed",
+      "passed": true
+    },
+    {
+      "name": "X15 polarity1 key fault red",
+      "passed": true
+    },
+    {
+      "name": "X15 current input is not confirmed fault",
+      "passed": true
+    },
+    {
+      "name": "1362 pressure permission1 is normal",
+      "passed": true
+    },
+    {
+      "name": "1363 pressure permission1 is normal",
+      "passed": true
+    },
+    {
+      "name": "X02 control input not alarm",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{} 960 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{} 962 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{} 964 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 330, 2623: 10, 2624: 75} 960 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 330, 2623: 10, 2624: 75} 962 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 330, 2623: 10, 2624: 75} 964 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 316, 2623: 10, 2624: 76} 960 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 316, 2623: 10, 2624: 76} 962 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "unsupported firmware{2622: 316, 2623: 10, 2624: 76} 964 not reported healthy",
+      "passed": true
+    },
+    {
+      "name": "supported version restores real fault",
+      "passed": true
+    }
+  ],
+  "hardware_access": false,
+  "source_sha256": "8bf56af67d0101ae978d0c1b8dfe020bfea23addec74e0558a6390ea31dc5bc8"
+}
