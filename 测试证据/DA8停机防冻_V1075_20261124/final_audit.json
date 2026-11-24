@@ -1,0 +1,245 @@
+{
+  "started": "2026-11-24T10:05:21.613+08:00",
+  "passed": true,
+  "boards": [
+    {
+      "board": "316_WJ1",
+      "verified_bytes": 82840,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      },
+      "gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "board": "316_WJ2",
+      "verified_bytes": 82840,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      },
+      "gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "board": "330",
+      "verified_bytes": 140192,
+      "runtime": {
+        "recovery": 300,
+        "profile": 0,
+        "minimum_stop": 120,
+        "minimum_run": 180
+      }
+    }
+  ],
+  "save_samples": [
+    {
+      "at": "2026-11-24T10:05:28.856+08:00",
+      "storage": [
+        {
+          "board": "316_WJ1",
+          "write_error": 0
+        },
+        {
+          "board": "316_WJ2",
+          "write_error": 0
+        },
+        {
+          "board": "330",
+          "write_error": 0,
+          "scalar_state": 0,
+          "AI_dirty": 0,
+          "AI_state": 0,
+          "saved_values": {
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "160": 160,
+            "161": 310,
+            "164": 1,
+            "236": 0,
+            "245": 1,
+            "247": 500,
+            "333": 4,
+            "346": 200
+          }
+        }
+      ],
+      "pending": []
+    }
+  ],
+  "snapshot": {
+    "2622": [
+      330,
+      10,
+      75,
+      2026,
+      11,
+      24,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23,
+      316,
+      12,
+      56,
+      2026,
+      11,
+      23
+    ],
+    "1298": [
+      300,
+      0
+    ],
+    "700": [
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      160,
+      297,
+      0,
+      0
+    ],
+    "163": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "398": [
+      0
+    ],
+    "1352": [
+      0
+    ],
+    "1388": [
+      0
+    ],
+    "814": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1366": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "914": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      200,
+      0
+    ],
+    "594": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1555": [
+      0,
+      0
+    ],
+    "1625": [
+      0,
+      0
+    ],
+    "1300": [
+      0
+    ]
+  },
+  "config_differences": {},
+  "final_water": {
+    "fresh10": -32,
+    "manual": 500,
+    "minimum": 200,
+    "display": 200,
+    "final": 200,
+    "pwm": 196
+  },
+  "changed_sources": [
+    "PSC330RK-V10-内机/User/UserHead/User.h",
+    "PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c",
+    "PSC330RK-V10-内机/User/UserSrc/UserAction.c"
+  ],
+  "finished": "2026-11-24T10:05:28.890+08:00",
+  "physical_terminal_measured": false,
+  "physical_power_cycle_tested": false
+}

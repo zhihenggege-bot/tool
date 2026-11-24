@@ -1,0 +1,2380 @@
+{
+  "passed": true,
+  "hardware_access": false,
+  "checks": [
+    {
+      "name": "manual mode fixed range/default",
+      "passed": true
+    },
+    {
+      "name": "manual opening range/default",
+      "passed": true
+    },
+    {
+      "name": "retired automatic helpers removed",
+      "passed": true
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min0 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min200 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=0 min1000 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min0 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min200 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 old245=1 min1000 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min0 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min200 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=0 min1000 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min0 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min200 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target-1",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target100",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh-1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh0 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target-1",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target100",
+      "passed": true,
+      "observed": [
+        100,
+        100,
+        100,
+        98
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 old245=1 min1000 fresh1 target2000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "step0 water remains off",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "step1 water remains off",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "step3 water remains off",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "step4 water remains off",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "step5 water remains off",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "nonclimate mode2 water off",
+      "passed": true
+    },
+    {
+      "name": "nonclimate mode3 water off",
+      "passed": true
+    },
+    {
+      "name": "nonclimate mode4 water off",
+      "passed": true
+    },
+    {
+      "name": "nonclimate mode5 water off",
+      "passed": true
+    },
+    {
+      "name": "IndoorSensorPartialStopFlag blocks manual and minimum",
+      "passed": true
+    },
+    {
+      "name": "RemoteInterlockStopFlag blocks manual and minimum",
+      "passed": true
+    },
+    {
+      "name": "inhibit710 blocks manual and minimum",
+      "passed": true
+    },
+    {
+      "name": "inhibit1406 blocks manual and minimum",
+      "passed": true
+    },
+    {
+      "name": "warming to exactly0 releases minimum without losing manual target",
+      "passed": true
+    },
+    {
+      "name": "temperature/trend/retired parameters cannot alter manual output",
+      "passed": true
+    },
+    {
+      "name": "electric channel0 and preheat no cold floor",
+      "passed": true
+    },
+    {
+      "name": "electric channel0 and preheat no cold floor",
+      "passed": true
+    },
+    {
+      "name": "electric channel9 and preheat no cold floor",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share0 fresh-10 min0",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share0 fresh0 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share0 fresh1 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share0 fresh100 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share1 fresh-10 min0",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share1 fresh0 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share1 fresh1 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode0 share1 fresh100 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share0 fresh-10 min0",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share0 fresh0 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share0 fresh1 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share0 fresh100 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share1 fresh-10 min0",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share1 fresh0 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share1 fresh1 min300",
+      "passed": true
+    },
+    {
+      "name": "ordinary electric PID preserved mode1 share1 fresh100 min300",
+      "passed": true
+    },
+    {
+      "name": "unused fresh probe optional mode0",
+      "passed": true
+    },
+    {
+      "name": "frost minimum requires fresh probe mode0",
+      "passed": true
+    },
+    {
+      "name": "ventilation does not add frost probe requirement",
+      "passed": true
+    },
+    {
+      "name": "unused fresh probe optional mode1",
+      "passed": true
+    },
+    {
+      "name": "frost minimum requires fresh probe mode1",
+      "passed": true
+    },
+    {
+      "name": "ventilation does not add frost probe requirement",
+      "passed": true
+    },
+    {
+      "name": "existing antifreeze alarm emergency keeps final priority",
+      "passed": true,
+      "before_error": 1000,
+      "after_error": 0
+    },
+    {
+      "name": "old EEPROM automatic value normalized while stopped",
+      "passed": true
+    }
+  ],
+  "image_sha256": "6336962be2aaacd0a449905572cde4438034f61eb7b488c7485cc42e5fda29b0",
+  "scope": "Manual water setpoint and low-temperature floor, final software PWM, protections and adjacent electrical PID preservation"
+}

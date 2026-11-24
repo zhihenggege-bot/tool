@@ -34,18 +34,20 @@
     }
   ],
   "text_is_interpretation": false,
-  "transcription_and_unresolved_points": "flowcharts.md and clarifications.md; not user-confirmed amendments",
+  "transcription_and_unresolved_points": "flowcharts.md and clarifications.md preserve historical transcription; cooling-ambient-confirmed-20261123.md is the later authoritative user confirmation",
   "files_sha256": {
-    "references/clarifications.md": "2620cdff55baf7c2d3392b5172912ddbfaa99030566afe306d216401ce7c081b",
+    "references/clarifications.md": "c8c538df036b1c489218b614ec75fc1767566e911a080ecbfbc6052daf140113",
     "references/code-and-test-map.md": "a925949c1ca667f282530befe041b3688523090d7a3cbe1d56526e6675f66ec0",
     "references/figures/cooling-ambient.png.base64": "b4df73c407d2fa01c07c64ed24b00f30d6c86587d6c082ff017844af0023650f",
     "references/figures/fixed-vfd.png.base64": "9a14521d7e179c0c2335a3921cbf43f5c20b9bebcfdc13cf4dcd5a8aecb05687",
     "references/figures/heating-ambient.png.base64": "124a0600ec5398b8e2d5395281fd8c9a9f0a742e08f77c009b489b010272e9bc",
-    "references/flowcharts.md": "38b32ebebaeb5a8fef91d1b0d55f7e6502c2404cdc41bc0a5e7bb365222c4fb6",
+    "references/flowcharts.md": "6a34bd3e30cc05bcdaeadf3e2c5ac12385522a9b68b12b4be6a72b386e50f578",
     "references/outdoor-spec-original-20261109.txt": "4660f7f16e48be448409575727b900c72a99c4033737fe2d8fa7cfe5b6c08dca",
-    "references/spec-index.md": "0a835d3ebb9cc937f7a6df0c8dcf4dee3dcdf15d997d6b3ee8379cc5ed589264",
-    "SKILL.md": "4cddee4b94844ad165f8552c0dcb3fbe211fee7ade66dd1f5bc90efce4d83bae"
+    "references/spec-index.md": "c05eab1778b3ebe42c27bb8ed576b37ae2cc89a273403c1750a935b6e35ce3d9",
+    "SKILL.md": "4cddee4b94844ad165f8552c0dcb3fbe211fee7ade66dd1f5bc90efce4d83bae",
+    "references/cooling-ambient-confirmed-20261123.md": "a9dc08f6d1c3f981b54014f2f166b17f8c3a04e1d7840267bb5575c1bd8243ae"
   },
   "image_storage": "Lossless base64 original PNG. Direct PNG copies and SVG wrappers acquired opaque 4096-byte wrapping after process exit in this environment and were removed. Decode base64 when viewing; no redrawing.",
-  "followup_user_statement_20261110": "Normal defrost: ambient<10C continuously60s and normal start conditions. Fault timed defrost: adjustable ambient threshold and timed interval; no fixed10C or60s ambient hold. Emergency: immediately stop loads and abort/clear the cycle,330 releases ownership after cleared feedback; no extra60s recovery. User authorized all four firmware fixes; hardware deployment/acceptance is separate."
+  "followup_user_statement_20261110": "Normal defrost: ambient<10C continuously60s and normal start conditions. Fault timed defrost: adjustable ambient threshold and timed interval; no fixed10C or60s ambient hold. Emergency: immediately stop loads and abort/clear the cycle,330 releases ownership after cleared feedback; no extra60s recovery. User authorized all four firmware fixes; hardware deployment/acceptance is separate.",
+  "followup_user_statement_20261123": "User supplied complete12-step cooling ambient permission flow in this conversation. Entry ambient<43C continuously60s; otherwise prohibit/stop without additional60s running grace. TypeI stopped ambient>LWS300s and running ambient<13C300s. TypeII >0C/-2C. TypeIII >-14C/-15C. Strict comparisons. This resolves prior43C,13C and typeIII topology ambiguities; original source text/images retained."
 }

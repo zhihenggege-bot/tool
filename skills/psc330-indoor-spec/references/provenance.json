@@ -14,7 +14,7 @@
   },
   "files_sha256": {
     "agents/openai.yaml": "dd220c4c060ed8a2a8f7502b32e168cfceff1bf47668b17ab9ca62807d80b0d0",
-    "references/clarifications.md": "95bb10c4a3e025ba7aecc76f9598438e0001a19b11bc6dca4105c9a82557e35f",
+    "references/clarifications.md": "5566d0d5c42a7c9e2ae21e5e507d9cf1f75eb7f681776ed28105c2c274449544",
     "references/code-and-test-map.md": "5e694be90877e551c9b5377e85756b2a8e25573db438c2038369abd69944ded1",
     "references/compressor-3.4-confirmed-20261105.md": "f867aa843639bb78a2b97f11416e0de58f98cc2d89ba39d5cac41277f850fdb5",
     "references/figures/figure1.png": "72c4fb00b788a6c7b8f85bd86b12247bea290ea5b5ecf81c444c46530f1cf50a",
@@ -32,6 +32,18 @@
       "source": "User message confirming cleaned indoor compressor 3.4 parameters and ambient load section",
       "resource": "references/compressor-3.4-confirmed-20261105.md",
       "scope": "Final names, absolute temperature endpoints, installed-total CN and deletion markup; original 20261104 text preserved"
+    },
+    {
+      "date": "2026-11-24",
+      "source": "User confirmed DA0/DA1/DA9 electric heat and DA8 dual-purpose water coil; requested manual-only water control",
+      "resource": "references/clarifications.md",
+      "scope": "Water/electric frost distinction and DA8 manual-only requirement; original spec text preserved"
+    },
+    {
+      "date": "2026-11-24",
+      "source": "User requires below0C water-valve minimum even when normally stopped",
+      "resource": "references/clarifications.md",
+      "scope": "Standby frost independent of normal mode and running state; safety priorities retained; original spec text preserved"
     }
   ],
   "followup_emergency_defrost_20261110": "User confirmed immediate outdoor defrost abort/clear on emergency,330 releases ownership after cleared feedback; no extra60s recovery. Normal restart protections remain."

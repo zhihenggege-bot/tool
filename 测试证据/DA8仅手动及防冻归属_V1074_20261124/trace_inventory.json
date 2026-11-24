@@ -1,0 +1,16 @@
+{
+  "board_samples.jsonl": {
+    "samples": 2243,
+    "started": "2026-11-24T09:22:52.981+08:00",
+    "finished": "2026-11-24T09:30:53.797+08:00",
+    "sha256": "7a234151bedc981734cda0293fd8096458b388ca9ab2ab6fc13f83db1795aff5",
+    "unexpected_outdoor_compressor_gpio_samples": 0
+  },
+  "board_electric_separation_samples.jsonl": {
+    "samples": 1015,
+    "started": "2026-11-24T09:31:12.399+08:00",
+    "finished": "2026-11-24T09:34:49.418+08:00",
+    "sha256": "125697c094c0d8e805eacd1b01442501410126092a16545503c17e5228fae453",
+    "unexpected_outdoor_compressor_gpio_samples": 0
+  }
+}

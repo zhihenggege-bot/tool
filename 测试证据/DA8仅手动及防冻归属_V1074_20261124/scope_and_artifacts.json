@@ -1,0 +1,20 @@
+{
+  "changed_sources": [
+    "PSC330RK-V10-内机/User/UserHead/User.h",
+    "PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c",
+    "PSC330RK-V10-内机/User/UserSrc/user.c",
+    "PSC330RK-V10-内机/User/UserSrc/UserAction.c"
+  ],
+  "artifacts": {
+    "PSC330_V10.74_PRODUCTION.axf": "6336962be2aaacd0a449905572cde4438034f61eb7b488c7485cc42e5fda29b0",
+    "PSC330_V10.74_PRODUCTION.hex": "bdd42e1d36d7424e2c62b6b1018e210d8604e787ee60e7bb99d60c5da2fb2d74"
+  },
+  "source_inventory_matches": true,
+  "flashed": true,
+  "hardware_tested": true,
+  "profile": "PRODUCTION",
+  "board_cases": 47,
+  "final_baseline_restored": true,
+  "physical_terminal_measured": false,
+  "final_audit": "final_audit.json"
+}

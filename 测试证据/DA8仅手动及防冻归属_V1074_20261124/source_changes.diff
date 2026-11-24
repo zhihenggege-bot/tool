@@ -1,0 +1,461 @@
+--- PSC330RK-V10-内机/User/UserSrc/UserAction.c before
++++ PSC330RK-V10-内机/User/UserSrc/UserAction.c after
+@@ -1027,45 +1027,22 @@
+ 	IndoorApplyFanValveState(valveOpen, supplyOn, returnOn, exhaustOn);
+ }
+ 
++/* DA8 serves the user-confirmed dual-purpose water coil. */
+ static void IndoorEnforceWinterValveMinimum(void)
+ {
+-	int minimum;
+-	unsigned char shutdownFault;
+-
+-	minimum = IndoorLimitValue(MinValveOpenSet, 0, 1000);
+-	shutdownFault = ModUrgencyStop || RemoteInterlockStopFlag ||
+-		UserSidePumpOverLoadErr || AntiFreezeErr || EnviTempErr ||
+-		FireAlarmX1 || ValveLinkX4 || LeakProtectX13;
+-	if((SysStep != 2) || SysErrStatus ||
+-       ((UserWorkModeSetTEMP != MODE_HEAT) &&
+-        !((UserWorkModeSetTEMP == MODE_COOL) && ReheatEnableSet)) ||
+-       (minimum <= 0) || (FreshAirTempDisp >= 0) ||
+-	   TSysOutTempErr || shutdownFault)
+-	{
+-		return;
+-	}
+-
+-	/* The winter minimum belongs only to the active analog heat channel. */
+-	if(IndoorHeatAnalogMode == HEAT_OUTPUT_AO &&
+-       (UserWorkModeSetTEMP != MODE_HEAT || HeatModeSet != 1 ||
+-        IndoorDefrostActive() || IndoorHeatPumpFullLoad()))
+-	{
+-		if(!HeatFaultX6 && !MainHeatFaultLatchDisp)
+-		{
+-			if(!HeatReheatShareSet && (UserWorkModeSetTEMP==MODE_COOL || HeatModeSet==1))
+-            { if(HeatAO9<minimum)IndoorSetAO(&HeatAO9,minimum); }
+-            else if(ReheatAO0<minimum)IndoorSetAO(&ReheatAO0,minimum);
+-			if(ReheatDemandDisp < minimum)ReheatDemandDisp = minimum;
+-			if(IndoorHeatAnalogDemand < minimum)IndoorHeatAnalogDemand = minimum;
+-		}
+-	}
+-	if((IndoorPreheatAnalogMode == HEAT_OUTPUT_AO) &&
+-	   !PreHeatFaultX7 && !PreheatFaultLatchDisp)
+-	{
+-		if(PreheatAO1 < minimum)IndoorSetAO(&PreheatAO1, minimum);
+-		if(PreheatDemandDisp < minimum)PreheatDemandDisp = minimum;
+-		if(IndoorPreheatAnalogDemand < minimum)IndoorPreheatAnalogDemand = minimum;
+-	}
++    int minimum = IndoorLimitValue(MinValveOpenSet, 0, 1000);
++    unsigned char shutdownFault = ModUrgencyStop || RemoteInterlockStopFlag ||
++        UserSidePumpOverLoadErr || AntiFreezeErr || EnviTempErr ||
++        FireAlarmX1 || ValveLinkX4 || LeakProtectX13;
++
++    if((SysStep != 2) || SysErrStatus || IndoorSensorPartialStopFlag ||
++       ((UserWorkModeSetTEMP != MODE_COOL) && (UserWorkModeSetTEMP != MODE_HEAT)) ||
++       (minimum <= 0) || (FreshAirTempDisp >= 0) || TSysOutTempErr || shutdownFault)
++    {
++        return;
++    }
++    if(ColdWaterValveAO8Disp < minimum)ColdWaterValveAO8Disp = minimum;
++    if(ColdWaterValveAO8 < minimum)IndoorSetAO(&ColdWaterValveAO8, minimum);
+ }
+ 
+ void IndoorEnforceConfiguredOutputDisable(void)
+@@ -1150,6 +1127,7 @@
+ 		IndoorPreheatAnalogMode = HEAT_OUTPUT_NONE;
+ 		IndoorApplyHeatAnalogOutputs();
+ 	}
++
+ 	IndoorEnforceWinterValveMinimum();
+ 
+ 	/* Keep outdoor compressor commands de-energized for the whole phase fault. */
+@@ -2021,6 +1999,7 @@
+ 	if(SysErrorReset>=2)SysErrorReset=0;	//閿熸枻鎷烽敓杈冩唻鎷峰織浣嶉敓鏂ゆ嫹閿熸枻鎷?
+ 	if(CompRunTimeClear>=2)CompRunTimeClear=0;	//閿熸枻鎷烽敓杈冩唻鎷峰織浣嶉敓鏂ゆ嫹閿熸枻鎷?
+ 
++    UserFanMode = 1; /* Fixed manual-only readback, including while stopped. */
+ 	IndoorNormalizeWorkMode();
+ 	IndoorPressureReady();
+ 
+@@ -2345,14 +2324,6 @@
+ 		ReheatPidZDisp = 0;
+ 	}
+ 	demand = IndoorLimitValue(demand, 0, 1000);
+-	if(heatAllow && (FreshAirTempDisp < 0) &&
+-	   (outputMode == HEAT_OUTPUT_AO) &&
+-	   (demand < MinValveOpenSet))
+-	{
+-		demand = IndoorLimitValue(MinValveOpenSet, 0, 1000);
+-		residualMilli = 0;
+-		ReheatPidZDisp = 0;
+-	}
+ 	ReheatDemandDisp = demand;
+ 	Heat1Y00 = 0; Heat2Y01 = 0; Heat3Y02 = 0;
+ 	IndoorHeatAnalogMode = outputMode;
+@@ -2395,267 +2366,33 @@
+ 
+ /*************************************************************************/
+ //閿熸枻鎷峰墠閿熸枻鎷峰嵏閿熸枻鎷?
+-void PreUpORDown(void)
+-{
+-	int16_t  ControlTemp;
+-	static unsigned  int HumidtyTemp[60]={0},Humidtycount=0,HumidtyOnFlag=0,HumidtyOffFlag=0,count=0;
+-	unsigned int i=0,j=0,k=0;
+-	
+-	
+-	ControlTemp = ControlTempDisp;
+-	
+-	ELENergyNeed = 0;	//閿熸枻鎷峰嵏閿熸埅鎲嬫嫹蹇椾綅閿熸枻鎷?	20230829A
+-	
+-	if(uc1s) 
+-	{
+-		if(Humidtycount<60)		
+-		{
+-			HumidtyTemp[Humidtycount]=RealTempDisp;Humidtycount++;
+-		}
+-		else
+-		{
+-      for(i=0;i<59;i++)
+-			{
+-				HumidtyTemp[i]=HumidtyTemp[i+1];
+-			}
+-			HumidtyTemp[59]=RealTempDisp;
+-		}
+-  }
+-
+-	if(Humidtycount>=60)//閿熸枻鎷烽敓鎹烽噰纭锋嫹閿熸枻鎷烽敓鏂ゆ嫹
+-	{
+-		for(i=0;i<59;i++)
+-		{
+-			if(HumidtyTemp[59]>(HumidtyTemp[i]+HeatPumpUpGapSet))//閿熸枻鎷峰墠閿熼摪搴︽瘮鐧告嫹鍘?閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓閾拌鎷烽敓鏂ゆ嫹閿熸帴绛规嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷峰�?
+-			{
+-				j++;
+-			}
+-			if(HumidtyTemp[i]>(HumidtyTemp[59]+HeatPumpUpGapSet))//閿熸枻鎷峰墠閿熼摪搴︽瘮鐧告嫹鍘?閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓閾板害纭锋嫹灏忛敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷峰�?
+-			{
+-				k++;
+-			}
+-		}
+-		if(j>2)HumidtyOnFlag=1;//閿熸枻鎷锋閿熸枻鎷风澘顒婃嫹鍗搁敓?閿熸枻鎷烽敓鏂ゆ嫹
+-		else HumidtyOnFlag=0;
+-		if(k>2)HumidtyOffFlag=1;//閿熸枻鎷锋閿熸枻鎷风澘顒婃嫹鍗搁敓?閿熸枻鎷烽敓鏂ゆ嫹
+-		else HumidtyOffFlag=0;
+-	}
+-
+-	if(HeatPumpUpGapSet==0){HumidtyOnFlag=0;HumidtyOffFlag=0;}
+-
+-	if(HumidtyOnFlag)
+-	{
+-		HumidtyOnFlag=0;
+-
+-			if((RealTempDisp>(ControlTemp-UpLoadGap2Set1))&&(RealTempDisp<(ControlTemp+DownLoadGap2Set1))
+-			&&(DownEnableSet)&&(SysOutTempLowErr==0))
+-			{
+-				ColdWaterValveAO8Disp -= UserFanPressure;	//閿熼摪璁规嫹閿熸枻鎷烽敓鏂ゆ嫹,鍗搁敓鏂ゆ嫹
+-
+-				for(i=0;i<60;i++)
+-				{
+-					HumidtyTemp[i]=0;Humidtycount=0;
+-				} 
+-			}
+-		
+-	}
+-	if(HumidtyOffFlag)
+-	{
+-		HumidtyOffFlag=0; 
+-
+-			if((RealTempDisp>(ControlTemp-UpLoadGap2Set1))&&(RealTempDisp<(ControlTemp+DownLoadGap2Set1))
+-				&&(SysOutTempHightErr==0)&&(UpEnableSet))
+-			{
+-				ColdWaterValveAO8Disp += UserFanPressure;	//閿熼摪璁规嫹閿熼摪鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-
+-				for(i=0;i<60;i++)
+-				{
+-					HumidtyTemp[i]=0;Humidtycount=0;
+-				}					
+-			}
+-		
+-	}
+-
+-	
+-
+-		//1#閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?  閿熸枻鎷烽敓鍔》鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-		if(RealTempDisp<=(ControlTempDisp-UpLoadGap1Set1))
+-		{
+-			count += uc100ms;
+-			if(count>=(UpLoadTime1Set1*10))
+-			{					
+-				count = 0;
+-				ELENergyNeed = 4;	//閿熸枻鎷烽敓鍔》鎷烽敓鏂ゆ嫹
+-			}
+-		}
+-		//2#閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-		else if(RealTempDisp<=(ControlTempDisp-UpLoadGap2Set1))	
+-		{
+-			count += uc100ms;
+-			if(count>=(UpLoadTime2Set1*10))
+-			{					
+-				count = 0;
+-				ELENergyNeed = 3;	//閿熸枻鎷烽敓鍔》鎷烽敓鏂ゆ嫹
+-			}
+-		}
+-		//2#鍗搁敓鏂ゆ嫹閿熸枻鎷?閿熸枻鎷峰仠閿熸枻鎷?
+-		else if(RealTempDisp>=(ControlTempDisp+DownLoadGap2Set1))
+-		{
+-			count += uc100ms;
+-			if(count>=(DownLoadTime2Set1*10))
+-			{					
+-				count = 0;
+-				ELENergyNeed = 2;	//閿熸枻鎷烽敓鏂ゆ嫹鍗搁敓鏂ゆ嫹
+-			}	
+-		}	
+-		//1#鍗搁敓鏂ゆ嫹閿熸枻鎷?鍗搁敓鏂ゆ嫹閿熸枻鎷?
+-		else if(RealTempDisp>=(ControlTempDisp+DownLoadGap1Set1))
+-		{
+-			count += uc100ms;
+-			if(count>=(DownLoadTime1Set1*10))
+-			{					
+-				count = 0;
+-				ELENergyNeed = 1;	//閿熸枻鎷烽敓鏂ゆ嫹鍗搁敓鏂ゆ嫹
+-			}	
+-		}	
+-		else	count = 0;		
+-	
+-	
+-	
+-}
+-
+-/*************************************************************************/
+-
+-/****************EEV_AdjustAction***********************/
+-//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熷彨鏂尨鎷烽敓鏂ゆ嫹
+-void EEVCheck(volatile unsigned int *EEVDisp)		//20230828A  
+-{
+-	static signed int TempHeatNow[3]={0};
+-	static unsigned int TimeControl=0,TimeCount1=0;
+-/*******************閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熷彨璁规嫹***************************/
+-	TimeCount1+=uc100ms;
+-
+-
+-
+-	if(TimeCount1>=30)  {TimeCount1=0;	TimeControl=1;}
+-	if(TimeControl)
+-	{
+-		TimeControl=0;
+-		
+-		
+-		//閿熸枻鎷烽敓琛楀尅鎷烽敓鏂ゆ嫹
+-		TempHeatNow[2]= TempHeatNow[1];
+-		TempHeatNow[1]= TempHeatNow[0];
+-		TempHeatNow[0]= RealTempDisp;
+-		if(((TempHeatNow[0]>	TempHeatNow[1])&&(TempHeatNow[1]>TempHeatNow[2]))	//閿熸枻鎷峰�奸敓鏂ゆ嫹閿熻妭鎾呮嫹鍊?
+-		  || ((TempHeatNow[0]-TempHeatNow[1])>=3)
+-		  || ((TempHeatNow[0]-TempHeatNow[2])>=3))
+-		{
+-			*EEVDisp=1;	  //閿熸枻鎷烽敓鏂ゆ嫹
+-		}
+-		else if(((TempHeatNow[0]<TempHeatNow[1])&&(TempHeatNow[1]<TempHeatNow[2]))	//閿熸枻鎷峰�奸敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹鍊?
+-		  || ((TempHeatNow[1]-TempHeatNow[0])>=3)
+-		  || ((TempHeatNow[2]-TempHeatNow[0])>=3))
+-		{
+-			*EEVDisp=2;	  //閿熸枻鎷烽敓鏂ゆ嫹
+-		}
+-		else   {*EEVDisp=0; } //閿熸枻鎷烽敓鏂ゆ嫹
+-	}
+-/*******************閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熷彨璁规嫹***************************/
+-}
+-
+-
+-//閿熸枻鎷烽敓鏂ゆ嫹姘撮敓鏂ゆ嫹 0-10V閿熸枻鎷烽閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓?20220308
++/* DA8 water coil: manual opening in cooling/heating, with winter minimum. */
+ void ColdWaterValveDA8Control(void)
+ {
+-	static unsigned int UpDnDirect=0;	//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓琛楃枤?	20230829A
+-	DA0ValueDisp = ReheatAO0;
+-	if(AntiFreezeErr)//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹 閿熸枻鎷锋按閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿?20230706A
+-	{
+-			ColdWaterValveAO8Disp = 1000;
+-		  ColdWaterValveAO8 =1000;
+-		  return;	
+-	}
+-	if((SysStep != 2) || (UserWorkModeSetTEMP != MODE_COOL) || IndoorSensorPartialStopFlag)
+-	{
+-		UpDnDirect = 0;
+-		ColdWaterValveAO8Disp = 0;
+-		ColdWaterValveAO8 = 0;
+-		return;
+-	}
+-//	if((UserWorkModeSetTEMP!=1)&&(DA0Select==0))//閿熸枻鎷烽敓鏂ゆ嫹妯″紡閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓?	20230706A
+-//	{
+-//			count = 0;
+-//			ColdWaterValveAO8Disp = 0;
+-//		  ColdWaterValveAO8 =0;
+-//		  return;
+-//	}
+-	EEVCheck(&UpDnDirect);	//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓?	20230829A
+-	
+-	
+-	
+-	PreUpORDown();	//閿熸枻鎷峰墠閿熸枻鎷峰嵏閿熸枻鎷?	20230829A
+-	
+-	
+-	
+-	
+-	
+-	if(SysStep==2)	//閿熸枻鎷烽敓鏂ゆ嫹姘撮敓鏂ゆ嫹
+-	{		
+-		//閿熺殕璁规嫹妯″紡
+-		if(UserFanMode==0)
+-		{
+-			switch(ELENergyNeed)
+-			{
+-			
+-				case 0:	//閿熸枻鎷烽敓琛楄鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-				break;
+-				
+-				case 4:	//1#閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?  閿熸枻鎷烽敓鍔》鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-					if(UpDnDirect==0)ColdWaterValveAO8Disp += UserFanPressure;//閿熸枻鎷烽敓鏂ゆ嫹
+-					else if(UpDnDirect==2)ColdWaterValveAO8Disp += UserFanPressure*2;
+-					else ColdWaterValveAO8Disp += UserFanPressure/2;
+-				break;
+-			
+-				case 3:	//2#閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷?
+-					if(UpDnDirect==0)ColdWaterValveAO8Disp += UserFanPressure;//閿熸枻鎷烽敓鏂ゆ嫹
+-					else if(UpDnDirect==2)ColdWaterValveAO8Disp += UserFanPressure*2;
+-					else ColdWaterValveAO8Disp += UserFanPressure/2;
+-				break;
+-
+-				case 2:	//2#鍗搁敓鏂ゆ嫹閿熸枻鎷?閿熸枻鎷峰仠閿熸枻鎷?
+-					if(UpDnDirect==0)ColdWaterValveAO8Disp -= UserFanPressure;//鍗搁敓鏂ゆ嫹
+-					else if(UpDnDirect==1)ColdWaterValveAO8Disp -= UserFanPressure*2;
+-					else ColdWaterValveAO8Disp -= UserFanPressure/2;
+-				break;
+-	
+-				case 1:	//1#鍗搁敓鏂ゆ嫹閿熸枻鎷?鍗搁敓鏂ゆ嫹閿熸枻鎷?
+-					if(UpDnDirect==0)ColdWaterValveAO8Disp -= UserFanPressure;//鍗搁敓鏂ゆ嫹
+-					else if(UpDnDirect==1)ColdWaterValveAO8Disp -= UserFanPressure*2;
+-					else ColdWaterValveAO8Disp -= UserFanPressure/2;
+-				break;
+-			}			
+-		}
+-		//閿熻璁规嫹妯″紡
+-		else
+-		{
+-			ColdWaterValveAO8Disp=UserFanHand;
+-		}
+-		
+-		if(ColdWaterValveAO8Disp>1000)	ColdWaterValveAO8Disp=1000;
+-		if(ColdWaterValveAO8Disp<0)	ColdWaterValveAO8Disp=0;
+-		
+-		
+-	}
+-	else 
+-	{
+-		ColdWaterValveAO8Disp=0;
+-	}
+-	ColdWaterValveAO8 = ColdWaterValveAO8Disp;		// DA8 cold-water valve output
+-}
+-
+-
+-//閿熸枻鎷烽閿熼ズ鍖℃嫹閿熺嫛鐚存嫹閿熸枻鎷?
++    DA0ValueDisp = ReheatAO0;
++    UserFanMode = 1; /* Legacy automatic-mode values cannot re-enable control. */
++    ELENergyNeed = 0;
++    if(AntiFreezeErr)
++    {
++        /* Existing global emergency handling still has final priority. */
++        ColdWaterValveAO8Disp = 1000;
++        ColdWaterValveAO8 = 1000;
++        return;
++    }
++    if((SysStep != 2) || SysErrStatus || ModUrgencyStop || RemoteInterlockStopFlag ||
++       ((UserWorkModeSetTEMP != MODE_COOL) && (UserWorkModeSetTEMP != MODE_HEAT)) ||
++       IndoorSensorPartialStopFlag)
++    {
++        ColdWaterValveAO8Disp = 0;
++        ColdWaterValveAO8 = 0;
++        return;
++    }
++    ColdWaterValveAO8Disp = IndoorLimitValue(UserFanHand, 0, 1000);
++    ColdWaterValveAO8 = ColdWaterValveAO8Disp;
++    IndoorEnforceWinterValveMinimum();
++}
++
++
+ void PreHeatControl(void)
+ {
+ 	static int hist[3]={0,0,0};
+@@ -2718,14 +2455,6 @@
+ 		PreheatPidZDisp = 0;
+ 	}
+ 	demand = IndoorLimitValue(demand, 0, 1000);
+-	if((FreshAirTempDisp < 0) &&
+-	   (PreheatModeSet == HEAT_OUTPUT_AO) &&
+-	   (demand < MinValveOpenSet))
+-	{
+-		demand = IndoorLimitValue(MinValveOpenSet, 0, 1000);
+-		residualMilli = 0;
+-		PreheatPidZDisp = 0;
+-	}
+ 	PreheatDemandDisp = demand;
+ 	PreheatCtrlModeDisp = PreheatCtrlModeSet;
+ 	PreHeat1Y15 = 0; PreHeat2Y16 = 0; PreHeat3Y17 = 0;
+--- PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c before
++++ PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c after
+@@ -35,7 +35,7 @@
+         (FreshValveModeSet==VALVE_OUTPUT_AO || ExhaustValveModeSet==VALVE_OUTPUT_AO || MixAirValveTypeSet));
+     if(ch==0)return climate || enthalpy;
+     if(ch==1)return climate;
+-    if(ch==2)return (climate && CompControlModeSet==1) || enthalpy ||
++    if(ch==2)return (climate && (CompControlModeSet==1 || MinValveOpenSet>0)) || enthalpy ||
+         (PreheatModeSet!=HEAT_OUTPUT_NONE && PreheatCtrlModeSet==0);
+     if(ch==3)return PreheatModeSet==HEAT_OUTPUT_AO && PreheatCtrlModeSet==1;
+     return 1;
+@@ -369,6 +369,8 @@
+ 		  (HeatModeSet != 0))) ? 1 : 0;
+ 	freshTemperatureNeeded =
+ 		((CompControlModeSet == 1) ||
++         (((UserWorkModeSetTEMP == MODE_COOL) || (UserWorkModeSetTEMP == MODE_HEAT)) &&
++          (MinValveOpenSet > 0)) ||
+ 		 ((PreheatModeSet != HEAT_OUTPUT_NONE) && (PreheatCtrlModeSet == 0)) ||
+ 		 enthalpyControlNeeded) ? 1 : 0;
+ 	postPreheatTemperatureNeeded =
+--- PSC330RK-V10-内机/User/UserSrc/user.c before
++++ PSC330RK-V10-内机/User/UserSrc/user.c after
+@@ -259,6 +259,9 @@
+ 	Parameter_max[291]=100;  Parameter_min[291]=1;    Parameter_def[291]=10;  // Supply fan auto adjust step, 0.01V
+ 	Parameter_max[292]=1000; Parameter_min[292]=0;    Parameter_def[292]=300; // Legacy minimum demand
+ 	Parameter_max[293]=1000; Parameter_min[293]=0;    Parameter_def[293]=900; // Legacy maximum demand
++
++    Parameter_max[245]=1; Parameter_min[245]=1; Parameter_def[245]=1; /* DA8 manual only */
++    Parameter_max[247]=1000; Parameter_min[247]=0; Parameter_def[247]=500; /* DA8 opening, 0..100% */
+ 
+ 	/* PSC330 indoor spec parameters, saved in Parameter[315~373]. */
+ 	Parameter_max[315]=1;    Parameter_min[315]=0;    Parameter_def[315]=0;
+--- PSC330RK-V10-内机/User/UserHead/User.h before
++++ PSC330RK-V10-内机/User/UserHead/User.h after
+@@ -498,9 +498,9 @@
+ #define HumLoadTimeSet							Parameter[242]	//锟斤拷湿锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷	5s	1~999
+ #define WorkMachineMode							Parameter[243]  //锟斤拷锟揭伙拷锟斤拷选锟斤拷 0锟斤拷锟斤拷锟斤拷锟?1锟斤拷锟斤拷锟酵猴拷锟铰猴拷湿
+ #define HeatTempDown								Parameter[244]	//锟斤拷锟斤拷锟斤拷露锟叫讹拷锟狡拷锟?
+-#define UserFanMode    							Parameter[245]	//锟斤拷锟斤拷水锟斤拷 0锟皆讹拷 1锟街讹拷
+-#define UserFanPressure							Parameter[246]	//锟斤拷锟斤拷水锟斤拷 锟斤拷锟截凤拷锟斤拷 0~10.0%
+-#define UserFanHand									Parameter[247]	//锟斤拷锟斤拷水锟斤拷 锟街讹拷锟斤拷锟?50.0%
++#define UserFanMode    							Parameter[245] //DA8 manual-only compatibility value 1
++#define UserFanPressure							Parameter[246] //Retired DA8 automatic step setting; no output effect
++#define UserFanHand									Parameter[247] //DA8 manual opening, 0..1000 = 0..100%
+ #define HumUseSet										Parameter[248]	//锟斤拷湿锟饺达拷锟斤拷锟斤拷锟角凤拷使锟斤拷 0锟斤拷使锟斤拷 1使锟斤拷
+ #define HeatTempGAP								  Parameter[249]	//锟斤拷锟斤拷锟斤拷露燃锟斤拷锟狡拷锟?//压锟斤拷锟斤拷使锟斤拷 0锟斤拷使锟斤拷  1使锟斤拷
+ #define CompUse	250
+@@ -1660,10 +1660,10 @@
+ #define PSC330_VERSION_MODEL        330
+ #define PSC330_VERSION_MAJOR        10
+ #define PSC316_BUS_BAUD               19200
+-#define PSC330_VERSION_MINOR        73
++#define PSC330_VERSION_MINOR        74
+ #define PSC330_VERSION_YEAR         2026
+ #define PSC330_VERSION_MONTH        11
+-#define PSC330_VERSION_DAY          20
++#define PSC330_VERSION_DAY          24
+ #define PSC316_HMI_DIAG_OFFSET   42
+ #define PSC316_HMI_UNIT_NUM      4
+ 

@@ -1,0 +1,23 @@
+{
+  "board_standby_coherent_retry_samples.jsonl": {
+    "samples": 1135,
+    "sha256": "9b00074a605ec00a488326393aa3b17f49ec5bbef74035c17025491fa9d72ce4",
+    "first": "2026-11-24T09:55:48.164+08:00",
+    "last": "2026-11-24T09:59:22.150+08:00",
+    "unexpected_compressor_gpio": 0
+  },
+  "board_standby_final_samples.jsonl": {
+    "samples": 1114,
+    "sha256": "62c966f84c4840538228e3c64cc1c368f6ad435cf20fe4614c666a0c69a69434",
+    "first": "2026-11-24T10:01:31.647+08:00",
+    "last": "2026-11-24T10:05:04.913+08:00",
+    "unexpected_compressor_gpio": 0
+  },
+  "board_standby_samples.jsonl": {
+    "samples": 584,
+    "sha256": "08dcf1179aacbf3c3297735865dfc495054170789e655dcc3ca8ef440359c88f",
+    "first": "2026-11-24T09:52:51.558+08:00",
+    "last": "2026-11-24T09:54:57.915+08:00",
+    "unexpected_compressor_gpio": 0
+  }
+}

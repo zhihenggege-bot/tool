@@ -1,0 +1,64 @@
+--- PSC330RK-V10-内机/User/UserHead/User.h V10.74
++++ PSC330RK-V10-内机/User/UserHead/User.h V10.75
+@@ -1660,7 +1660,7 @@
+ #define PSC330_VERSION_MODEL        330
+ #define PSC330_VERSION_MAJOR        10
+ #define PSC316_BUS_BAUD               19200
+-#define PSC330_VERSION_MINOR        74
++#define PSC330_VERSION_MINOR        75
+ #define PSC330_VERSION_YEAR         2026
+ #define PSC330_VERSION_MONTH        11
+ #define PSC330_VERSION_DAY          24
+--- PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c V10.74
++++ PSC330RK-V10-内机/User/UserSrc/ErrorCheck.c V10.75
+@@ -35,7 +35,7 @@
+         (FreshValveModeSet==VALVE_OUTPUT_AO || ExhaustValveModeSet==VALVE_OUTPUT_AO || MixAirValveTypeSet));
+     if(ch==0)return climate || enthalpy;
+     if(ch==1)return climate;
+-    if(ch==2)return (climate && (CompControlModeSet==1 || MinValveOpenSet>0)) || enthalpy ||
++    if(ch==2)return (MinValveOpenSet>0) || (climate && CompControlModeSet==1) || enthalpy ||
+         (PreheatModeSet!=HEAT_OUTPUT_NONE && PreheatCtrlModeSet==0);
+     if(ch==3)return PreheatModeSet==HEAT_OUTPUT_AO && PreheatCtrlModeSet==1;
+     return 1;
+@@ -369,8 +369,7 @@
+ 		  (HeatModeSet != 0))) ? 1 : 0;
+ 	freshTemperatureNeeded =
+ 		((CompControlModeSet == 1) ||
+-         (((UserWorkModeSetTEMP == MODE_COOL) || (UserWorkModeSetTEMP == MODE_HEAT)) &&
+-          (MinValveOpenSet > 0)) ||
++         (MinValveOpenSet > 0) ||
+ 		 ((PreheatModeSet != HEAT_OUTPUT_NONE) && (PreheatCtrlModeSet == 0)) ||
+ 		 enthalpyControlNeeded) ? 1 : 0;
+ 	postPreheatTemperatureNeeded =
+--- PSC330RK-V10-内机/User/UserSrc/UserAction.c V10.74
++++ PSC330RK-V10-内机/User/UserSrc/UserAction.c V10.75
+@@ -1035,12 +1035,25 @@
+         UserSidePumpOverLoadErr || AntiFreezeErr || EnviTempErr ||
+         FireAlarmX1 || ValveLinkX4 || LeakProtectX13;
+ 
+-    if((SysStep != 2) || SysErrStatus || IndoorSensorPartialStopFlag ||
+-       ((UserWorkModeSetTEMP != MODE_COOL) && (UserWorkModeSetTEMP != MODE_HEAT)) ||
+-       (minimum <= 0) || (FreshAirTempDisp >= 0) || TSysOutTempErr || shutdownFault)
+-    {
++    /* Normal standby also protects the water coil. Safety inhibits
++       retain priority over both manual opening and frost minimum. */
++    if(SysErrStatus || IndoorSensorPartialStopFlag ||
++       ((minimum > 0) && TSysOutTempErr) || shutdownFault)
++    {
++        ColdWaterValveAO8Disp = 0;
++        IndoorSetAO(&ColdWaterValveAO8, 0);
+         return;
+     }
++    if((SysStep != 2) ||
++       ((UserWorkModeSetTEMP != MODE_COOL) && (UserWorkModeSetTEMP != MODE_HEAT)))
++    {
++        /* Only the frost minimum is active outside normal running.
++           Recompute from zero so warming or disabling releases it. */
++        ColdWaterValveAO8Disp = ((minimum > 0) && (FreshAirTempDisp < 0)) ? minimum : 0;
++        IndoorSetAO(&ColdWaterValveAO8, ColdWaterValveAO8Disp);
++        return;
++    }
++    if((minimum <= 0) || (FreshAirTempDisp >= 0))return;
+     if(ColdWaterValveAO8Disp < minimum)ColdWaterValveAO8Disp = minimum;
+     if(ColdWaterValveAO8 < minimum)IndoorSetAO(&ColdWaterValveAO8, minimum);
+ }

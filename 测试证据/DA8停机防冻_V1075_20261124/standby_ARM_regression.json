@@ -1,0 +1,10143 @@
+{
+  "passed": true,
+  "hardware_access": false,
+  "checks": [
+    {
+      "name": "mode0 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode0 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode0 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        500,
+        500,
+        500,
+        490
+      ]
+    },
+    {
+      "name": "mode1 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode1 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode2 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode3 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode4 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step0 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step1 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step2 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step3 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step4 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min0 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        200,
+        200,
+        200,
+        196
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min200 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp-1 manual0",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp-1 manual500",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp-1 manual1000",
+      "passed": true,
+      "observed": [
+        1000,
+        1000,
+        1000,
+        980
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp0 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp0 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp0 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp1 manual0",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp1 manual500",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mode5 step5 min1000 temp1 manual1000",
+      "passed": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "step0 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step0 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step1 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step2 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step3 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step4 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyIndoorSensorPartialStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyRemoteInterlockStopFlag keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetySysErrStatus keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyModUrgencyStop keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyTSysOutTempErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyAntiFreezeErr keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyFireAlarmX1 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyValveLinkX4 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "step5 safetyLeakProtectX13 keeps DA8 closed",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp-1 min200",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp0 min200",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp-1 min200",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp-1 min0",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp-1 min1000",
+      "passed": true
+    },
+    {
+      "name": "final guard alone releases prior output temp1 min1000",
+      "passed": true
+    },
+    {
+      "name": "allmode0 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode0 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "allmode1 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode1 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "allmode2 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode2 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "allmode3 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode3 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "allmode4 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode4 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "allmode5 requires fresh probe when minimum enabled",
+      "passed": true
+    },
+    {
+      "name": "allmode5 original optional probe when minimum disabled",
+      "passed": true
+    },
+    {
+      "name": "mode0 unused fresh fault with frost disabled preserves manual",
+      "passed": true
+    },
+    {
+      "name": "mode1 unused fresh fault with frost disabled preserves manual",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target0 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target0 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target0 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target100 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target100 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target100 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target500 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target500 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target500 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target1000 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target1000 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode0 target1000 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target0 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target0 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target0 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target100 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target100 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target100 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target500 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target500 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target500 fresh1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target1000 fresh-1",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target1000 fresh0",
+      "passed": true
+    },
+    {
+      "name": "unchanged running mode1 target1000 fresh1",
+      "passed": true
+    },
+    {
+      "name": "standby ignores manual1000 and holds only minimum200",
+      "passed": true
+    },
+    {
+      "name": "normal run resumes original manual1000",
+      "passed": true
+    },
+    {
+      "name": "normal shutdown immediately returns to minimum200",
+      "passed": true
+    },
+    {
+      "name": "electric frost separation mode1 heat2 share1",
+      "passed": true
+    },
+    {
+      "name": "electric frost separation mode0 heat1 share1",
+      "passed": true
+    },
+    {
+      "name": "electric frost separation mode0 heat1 share0",
+      "passed": true
+    }
+  ],
+  "image_sha256": "03b94184e57ba023aa34cee2ee8bc78317127fbfa675c3a77eca52a5faafa30a"
+}

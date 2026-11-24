@@ -1,0 +1,12 @@
+{
+  "changed_files": [
+    "PSC316RK-V12-外机/WELLTHINKER/User/User.h",
+    "PSC316RK-V12-外机/WELLTHINKER/User/UserAction.c"
+  ],
+  "only_expected_files": true,
+  "prefix_identical": true,
+  "suffix_identical": true,
+  "heating_branch_identical": true,
+  "source_matches_manifest": true,
+  "passed": true
+}
