@@ -1,0 +1,180 @@
+--- PSC330RK-V10-内机/User/UserHead/User.h V10.82
++++ PSC330RK-V10-内机/User/UserHead/User.h V10.83
+@@ -1468,6 +1468,12 @@
+ #define FourWayStopHoldMirrorBase 1346
+ void IndoorFourWayHoldSettingsTask(void);
+ #define SharedDefrostBase		1389
++/* V10.83: runtime pulse commands, unit1..4, two circuits each.
++   0=no operation,1=enter from heating feedback,2=exit active defrost group.
++   Command clear/RTU ACK is not proof of actual output; check phase mirrors. */
++#define PSC316_MANUAL_DEFROST_BASE 1323
++#define PSC316_MANUAL_DEFROST_END  1331
++unsigned char PSC316ManualDefrostCanWrite(unsigned short addr,int16_t value);
+ #define SharedSyncEnableAddr	1319
+ #define SharedFanAddr			1331
+ #define SharedFanEnd			1339
+@@ -1667,10 +1673,10 @@
+ #define PSC330_VERSION_MODEL        330
+ #define PSC330_VERSION_MAJOR        10
+ #define PSC316_BUS_BAUD               19200
+-#define PSC330_VERSION_MINOR        82
++#define PSC330_VERSION_MINOR        83
+ #define PSC330_VERSION_YEAR         2026
+ #define PSC330_VERSION_MONTH        11
+-#define PSC330_VERSION_DAY          26
++#define PSC330_VERSION_DAY          27
+ #define PSC316_HMI_DIAG_OFFSET   42
+ #define PSC316_HMI_UNIT_NUM      4
+ 
+--- PSC330RK-V10-内机/User/modbus/modbus.c V10.82
++++ PSC330RK-V10-内机/User/modbus/modbus.c V10.83
+@@ -254,6 +254,8 @@
+ {
+ 	uint16_t compactOffset;
+ 	if(addr >= ParameterSize)return 0;
++    if(addr>=PSC316_MANUAL_DEFROST_BASE && addr<PSC316_MANUAL_DEFROST_END)
++        return PSC316ManualDefrostCanWrite(addr,value);
+     if(addr==1412 || addr==1413)return 0;
+     if(addr==1345)return value>=0 && value<=120 && Systick_1ms>=6000U &&
+         (value==FourWayStopHoldSet || (SysStep==0 && PSC316SharedTypeCanWrite()));
+--- PSC330RK-V10-内机/User/UserSrc/modulecontrol.c V10.82
++++ PSC330RK-V10-内机/User/UserSrc/modulecontrol.c V10.83
+@@ -95,6 +95,68 @@
+ static int16_t PSC316CompChoiceMirror[PSC316_HMI_UNIT_NUM];
+ static uint8_t PSC316StatusValid[PSC316_HMI_UNIT_NUM];
+ static uint8_t PSC316SetValid[PSC316_HMI_UNIT_NUM];
++/* New HMI commands use the existing HandDef frame, but retain their own
++   bounded pending copy until matching ACK or observed state transition.
++   Legacy572/573 behavior and ordinary/automatic traffic stay unchanged. */
++static uint8_t PSC316ManualPending[4][2];
++static uint64_t PSC316ManualTick[4][2];
++static uint16_t PSC316ManualGeneration[4];
++static uint16_t PSC316ManualBusGeneration;
++static uint8_t PSC316ManualBusValue[2];
++static uint64_t PSC316ManualStatusTick[4];
++static unsigned char PSC316ManualAllowed(uint8_t unit,uint8_t comp,int16_t value)
++{
++    uint8_t k=unit-1;
++    if(unit<1 || unit>4 || unit>=ModuleNumSet || comp>1 || HandDebug || ModUrgencyStop ||
++       UnitCommErr[unit] || !PSC316SetValid[k] || !PSC316StatusValid[k] ||
++       !PSC316UnitLastRespTick[k] || Systick_1ms-PSC316UnitLastRespTick[k]>=3000U ||
++       !PSC316ManualStatusTick[k] || Systick_1ms-PSC316ManualStatusTick[k]>=5000U ||
++       UserWorkModeSetTEMP!=MODE_HEAT)return 0;
++    if(value==2)return (UnitReadStatus[unit].CompStatus[0]==4 ||
++                       UnitReadStatus[unit].CompStatus[1]==4) ? 1:0;
++    if(value!=1 || SysStep!=2 || !Parameter[CompUse+2*k+comp] ||
++       PSC316SetMirror[k][2] || PSC316SetMirror[k][3+comp])return 0;
++    return UnitReadStatus[unit].CompStatus[comp]==3 ? 1:0;
++}
++unsigned char PSC316ManualDefrostCanWrite(unsigned short addr,int16_t value)
++{
++    uint8_t n;
++    if(addr<PSC316_MANUAL_DEFROST_BASE || addr>=PSC316_MANUAL_DEFROST_END)return 0;
++    if(value==0)return 1;
++    n=(uint8_t)(addr-PSC316_MANUAL_DEFROST_BASE);
++    return PSC316ManualAllowed(n/2+1,n%2,value);
++}
++static void PSC316ManualDefrostTask(void)
++{
++    uint8_t k,c,j;int16_t command;
++    for(k=0;k<4;k++)for(c=0;c<2;c++)
++    {
++        command=Parameter[PSC316_MANUAL_DEFROST_BASE+2*k+c];
++        Parameter[PSC316_MANUAL_DEFROST_BASE+2*k+c]=0;
++        if(command && PSC316ManualAllowed(k+1,c,command))
++        {
++            PSC316ManualGeneration[k]++;
++            if(command==1)
++            {PSC316ManualPending[k][c]=1;PSC316ManualTick[k][c]=Systick_1ms;}
++            else for(j=0;j<2;j++)
++            {
++                /* An exit word means the active GROUP, including both
++                   healthy participants. Never manufacture an idle request. */
++                if(UnitReadStatus[k+1].CompStatus[j]==4)
++                {PSC316ManualPending[k][j]=2;PSC316ManualTick[k][j]=Systick_1ms;}
++                else PSC316ManualPending[k][j]=0;
++            }
++        }
++    }
++    for(k=0;k<4;k++)for(c=0;c<2;c++)
++    {
++        command=PSC316ManualPending[k][c];
++        if(command && (Systick_1ms-PSC316ManualTick[k][c]>=10000U ||
++           !PSC316ManualAllowed(k+1,c,command) ||
++           (command==2 && UnitReadStatus[k+1].CompStatus[c]!=4)))
++            PSC316ManualPending[k][c]=0;
++    }
++}
+ unsigned char PSC316UnitSettingsReady(unsigned int module)
+ {
+     return (module>=1 && module<=PSC316_HMI_UNIT_NUM && !UnitCommErr[module] && PSC316SetValid[module-1]) ? 1:0;
+@@ -276,6 +338,17 @@
+     if(fn==16 && PSC316BusAddress==PLCctrlPara && PSC316BusCount>=3 &&
+        (ucUart5Buff[11] || ucUart5Buff[12]) && PSC316ResetPending(unit))
+         PSC316BusResetGeneration=PSC316ResetGeneration;
++    PSC316ManualBusGeneration=0;
++    PSC316ManualBusValue[0]=PSC316ManualBusValue[1]=0;
++    if(fn==16 && unit>=1 && unit<=4 && PSC316BusAddress==PLCctrlPara && PSC316BusCount>=12)
++    {
++        uint8_t c;
++        PSC316ManualBusGeneration=PSC316ManualGeneration[unit-1];
++        for(c=0;c<2;c++)
++            if(PSC316ManualPending[unit-1][c] &&
++               (((uint16_t)ucUart5Buff[27+2*c]<<8)|ucUart5Buff[28+2*c])==PSC316ManualPending[unit-1][c])
++                PSC316ManualBusValue[c]=PSC316ManualPending[unit-1][c];
++    }
+     PSC316BusTick=Systick_1ms;
+     PSC316BusActive=1;
+ }
+@@ -313,7 +386,10 @@
+     {
+         if(ucUart5Buff[2]!=PSC316BusCount*2 || len!=PSC316BusCount*2+5)return 0;
+         if(PSC316BusUnit>=1 && PSC316BusUnit<=PSC316_HMI_UNIT_NUM)
++        {
+             PSC316LastReadAddr[PSC316BusUnit-1]=PSC316BusAddress;
++            if(PSC316BusAddress==1420)PSC316ManualStatusTick[PSC316BusUnit-1]=Systick_1ms;
++        }
+     }
+     else
+     {
+@@ -324,7 +400,12 @@
+         if(PSC316BusUnit>=1 && PSC316BusUnit<=PSC316_HMI_UNIT_NUM &&
+            PSC316BusFunction==16 && addr==PLCctrlPara)
+         {
++            uint8_t c;
+             PSC316CtrlShadowValid[PSC316BusUnit-1]=1;
++            if(PSC316ManualBusGeneration==PSC316ManualGeneration[PSC316BusUnit-1])
++                for(c=0;c<2;c++)
++                    if(PSC316ManualBusValue[c] && PSC316ManualPending[PSC316BusUnit-1][c]==PSC316ManualBusValue[c])
++                        PSC316ManualPending[PSC316BusUnit-1][c]=0;
+             if(PSC316BusResetGeneration)
+                 PSC316ResetAck[PSC316BusUnit-1]=PSC316BusResetGeneration;
+             PSC316Gateway_NoteResponse(PSC316BusUnit);
+@@ -1336,6 +1417,7 @@
+     uint8_t normalResume=0,normalPriority,pollSteps=0,normalPhase=255;
+     uint32_t serialBefore;
+ 	if(BoardAddressSet>0)return;
++    PSC316ManualDefrostTask();
+     if(!PSC316BusMaySend())return;
+     if(PSC316FactoryIOSend())return;
+     /* At most one online preemption per ordinary turn: broadcasts, jobs and
+@@ -1763,7 +1845,9 @@
+ 			ModComp2Frency = UnitWriteStatus[ModuleNum].CompVVFfre[1];				
+ 			//除霜信号赋值
+ 			ModComp1DefrostFlag = UnitWriteStatus[ModuleNum].HandDef[0];
+-			ModComp2DefrostFlag = UnitWriteStatus[ModuleNum].HandDef[1];	
++			ModComp2DefrostFlag = UnitWriteStatus[ModuleNum].HandDef[1];
++            if(PSC316ManualPending[ModuleNum-1][0])ModComp1DefrostFlag=PSC316ManualPending[ModuleNum-1][0];
++            if(PSC316ManualPending[ModuleNum-1][1])ModComp2DefrostFlag=PSC316ManualPending[ModuleNum-1][1];	
+ 			
+ //			VVFNumber2 = UnitWriteStatus[ModuleNum].VVFModNumber;
+ //			WriteOrder = UnitWriteStatus[ModuleNum].VVFModOrder;
+@@ -1775,7 +1859,7 @@
+ 			ModDefrostPermit = (PSC316DefrostOwner == ModuleNum) ? 1 : 0;
+ 			
+ 
+-			if(ModeNumDisp == ModuleNum)		//选中模块号后发送手动除霜信号
++			if(ModeNumDisp == ModuleNum || PSC316ManualPending[ModuleNum-1][0] || PSC316ManualPending[ModuleNum-1][1])		//选中模块号后发送手动除霜信号
+ 			{			
+ 				Addr = PLCctrlPara;
+ 				Num = 12;

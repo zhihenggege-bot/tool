@@ -1,0 +1,59 @@
+{
+  "functional_passed": true,
+  "strict_full120s_accepted": false,
+  "retained_timing_issue": "Existing global1s pulse can end duration less than1s early; not modified in this task",
+  "timeout": {
+    "configured_seconds": 120,
+    "observed_seconds": 119.56300000008196,
+    "entry": "2026-11-27T14:22:50.397+08:00",
+    "recovery": "2026-11-27T14:24:49.956+08:00",
+    "max_counter": [
+      120,
+      120
+    ]
+  },
+  "temperature": {
+    "first_stopped": "2026-11-27T14:26:04.229+08:00",
+    "group_recovery": "2026-11-27T14:26:09.344+08:00",
+    "active_duration_s": 14.140999999945052,
+    "threshold10": 400,
+    "stimuli": [
+      {
+        "at": "2026-11-27T14:26:03.987+08:00",
+        "t": 779638.015,
+        "station": 1,
+        "requested_temperature10": {
+          "1": 410
+        },
+        "raw": {
+          "1": 11533
+        }
+      },
+      {
+        "at": "2026-11-27T14:26:09.313+08:00",
+        "t": 779643.343,
+        "station": 1,
+        "requested_temperature10": {
+          "2": 410
+        },
+        "raw": {
+          "2": 11533
+        }
+      }
+    ]
+  },
+  "manual_exit_commands_sent": 0,
+  "feedback": {
+    "4": {
+      "first_both4": "2026-11-27T14:22:52.550+08:00",
+      "first_both0": "2026-11-27T14:24:50.704+08:00"
+    },
+    "1": {
+      "first_both4": "2026-11-27T14:25:55.877+08:00",
+      "first_both0": "2026-11-27T14:26:10.703+08:00"
+    }
+  },
+  "restored": true,
+  "limitations": "Probe GPIO latches/software AO/EEV; no physical contact/voltage/mechanical position measurements",
+  "full_raw_evidence_location": "完整JSONL、Flash/SRAM备份及含逐样本的分析保留本地，未纳入精简上传"
+}

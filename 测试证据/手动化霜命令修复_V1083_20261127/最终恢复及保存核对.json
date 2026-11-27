@@ -1,0 +1,670 @@
+{
+  "started": "2026-11-27T13:45:42.949+08:00",
+  "read_only": true,
+  "passed": true,
+  "boards": [
+    {
+      "board": "330",
+      "station": 0,
+      "verified_bytes": 144752,
+      "image_sha256": "98a7553fcc4e7362f9eb5d84c1a920a3087c7f62d8c364ddcf30d15619245bcc",
+      "expected_saved_settings": {
+        "236": 0,
+        "427": 100,
+        "426": 5,
+        "412": 5,
+        "161": 310,
+        "330": 2,
+        "329": 3,
+        "332": 0,
+        "128": 0,
+        "127": 1,
+        "126": 1,
+        "125": 1
+      },
+      "current": {
+        "236": 0,
+        "427": 100,
+        "426": 5,
+        "412": 5,
+        "161": 310,
+        "330": 2,
+        "329": 3,
+        "332": 0,
+        "128": 0,
+        "127": 1,
+        "126": 1,
+        "125": 1
+      },
+      "saved_shadow": {
+        "236": 0,
+        "427": 100,
+        "426": 5,
+        "412": 5,
+        "161": 310,
+        "330": 2,
+        "329": 3,
+        "332": 0,
+        "128": 0,
+        "127": 1,
+        "126": 1,
+        "125": 1
+      },
+      "flags": {
+        "IndoorParameterSaveState": 0,
+        "EEpflag": 0
+      },
+      "errors": {
+        "CPURomWriteError": 0
+      },
+      "mismatches": {},
+      "gate": 0,
+      "profile": 0
+    },
+    {
+      "board": "316_WJ1",
+      "station": 4,
+      "verified_bytes": 83160,
+      "image_sha256": "49b3f4770929a6fe54e8f74d5c665b64e2800bf3cf9e8ec9015d78e41dd665d7",
+      "expected_saved_settings": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "GPIO": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "faults": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "EEV": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        530,
+        530
+      ],
+      "current": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "saved_shadow": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "flags": {
+        "EEpflag": 0
+      },
+      "errors": {
+        "CPURomWriteError": 0
+      },
+      "mismatches": {},
+      "gate": 0,
+      "profile": 0
+    },
+    {
+      "board": "316_WJ2",
+      "station": 1,
+      "verified_bytes": 83160,
+      "image_sha256": "49b3f4770929a6fe54e8f74d5c665b64e2800bf3cf9e8ec9015d78e41dd665d7",
+      "expected_saved_settings": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "GPIO": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "faults": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "EEV": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        530,
+        530
+      ],
+      "current": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "saved_shadow": {
+        "182": 150,
+        "183": 20,
+        "184": 4,
+        "185": 5,
+        "186": 65516,
+        "187": 100,
+        "188": 30,
+        "189": 35,
+        "190": 300,
+        "191": 2,
+        "192": 2
+      },
+      "flags": {
+        "EEpflag": 0
+      },
+      "errors": {
+        "CPURomWriteError": 0
+      },
+      "mismatches": {},
+      "gate": 0,
+      "profile": 0
+    }
+  ],
+  "save_polls": [
+    {
+      "at": "2026-11-27T13:45:49.200+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:49.544+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:49.887+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:50.231+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:50.574+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:50.918+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    },
+    {
+      "at": "2026-11-27T13:45:51.262+08:00",
+      "boards": [
+        {
+          "board": "330",
+          "flags": {
+            "IndoorParameterSaveState": 0,
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ1",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        },
+        {
+          "board": "316_WJ2",
+          "flags": {
+            "EEpflag": 0
+          },
+          "errors": {
+            "CPURomWriteError": 0
+          },
+          "mismatches": {}
+        }
+      ]
+    }
+  ],
+  "hmi_snapshot": {
+    "398": [
+      0
+    ],
+    "700": [
+      0,
+      0,
+      0,
+      2,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1300": [
+      0
+    ],
+    "1298": [
+      300,
+      0
+    ],
+    "1389": [
+      150,
+      20,
+      4,
+      5,
+      65516,
+      100,
+      30,
+      35,
+      300,
+      2,
+      2
+    ],
+    "594": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1145": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1555": [
+      0,
+      0
+    ],
+    "1625": [
+      0,
+      0
+    ],
+    "1695": [
+      0,
+      0
+    ],
+    "1765": [
+      0,
+      0
+    ],
+    "1872": [
+      1
+    ],
+    "1920": [
+      0
+    ],
+    "1968": [
+      0
+    ],
+    "2016": [
+      1
+    ]
+  },
+  "changed_setting_mismatches": {},
+  "finished": "2026-11-27T13:45:51.327+08:00",
+  "source_unchanged": true
+}

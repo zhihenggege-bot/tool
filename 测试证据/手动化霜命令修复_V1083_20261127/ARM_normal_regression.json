@@ -1,0 +1,2682 @@
+{
+  "passed": true,
+  "hardware": false,
+  "checks": [
+    {
+      "name": "retained V10.81 count4/live3,4 actualARM reproduces false offline",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "retained V10.81 minstop repeatedly fails to reach120",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/180ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/180ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1,)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2,)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3,)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(4,)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(3, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms missing4: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms missing3: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms missing2: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 3, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms missing1: probes backedoff5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(2, 3, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit1: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit2: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit3: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: no false commfault",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: settings ready",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: stop observation continuous",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: response gap below3s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: actual status continues within5s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms unit4: ambient/wait readbacks stay under10s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "(1, 2, 3, 4)/50ms shared broadcasts keep advancing",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "true loss3 detected",
+      "actual": [
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "true loss3 minstop clears",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "true loss3 settings unready",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "healthy4 timer continues",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "return3 automatically reacquired",
+      "actual": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "return3 settings refreshed",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "return3 does not bypass120s",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "HMI unit3 write/readback continues underpriority",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "HMI unit3 peer actually gotsetting",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "HMI unit4 write/readback continues underpriority",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "HMI unit4 peer actually gotsetting",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port1 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port2 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port3 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port4 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port5 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn6 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn6 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn6 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn6 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn16 addr1302",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn16 addr1310",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn16 addr2892",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normal DO guard port6 fn16 addr2900",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "factory unit3 remains online",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "factory unit3 gate asserted",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "factory unit4 remains online",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "factory unit4 gate asserted",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "factory rapid0/1 releases3,4 before reentry",
+      "actual": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "factory exit returns normal owner",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "factory exit real units gate0",
+      "actual": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "real enabled missing21 protection retained",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "21 failure does not corrupt healthy peers",
+      "actual": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "count1 shared broadcast not mistaken forofflineunit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "count2 shared broadcast not mistaken forofflineunit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "count3 shared broadcast not mistaken forofflineunit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "scenarios": [
+    {
+      "live": [
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 3,
+      "response_gap": 1754,
+      "status_gap": 2410,
+      "ambient_gap": 5756,
+      "wait_gap": 5756,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 4,
+      "response_gap": 2476,
+      "status_gap": 3272,
+      "ambient_gap": 8372,
+      "wait_gap": 6552,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 1,
+      "response_gap": 1290,
+      "status_gap": 2650,
+      "ambient_gap": 5816,
+      "wait_gap": 6144,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 2,
+      "response_gap": 1548,
+      "status_gap": 3236,
+      "ambient_gap": 6730,
+      "wait_gap": 6402,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 3,
+      "response_gap": 1430,
+      "status_gap": 2392,
+      "ambient_gap": 6730,
+      "wait_gap": 6730,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 180,
+      "unit": 4,
+      "response_gap": 1688,
+      "status_gap": 2392,
+      "ambient_gap": 6730,
+      "wait_gap": 7058,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1948,
+      "status_gap": 2426,
+      "ambient_gap": 8222,
+      "wait_gap": 5166,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1948,
+      "status_gap": 2810,
+      "ambient_gap": 5096,
+      "wait_gap": 5096,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        3
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1248,
+      "status_gap": 2286,
+      "ambient_gap": 5224,
+      "wait_gap": 5224,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1948,
+      "status_gap": 2670,
+      "ambient_gap": 5096,
+      "wait_gap": 5096,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1236,
+      "status_gap": 1922,
+      "ambient_gap": 5338,
+      "wait_gap": 5396,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 2076,
+      "status_gap": 2612,
+      "ambient_gap": 5338,
+      "wait_gap": 5396,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        3
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1236,
+      "status_gap": 1922,
+      "ambient_gap": 5338,
+      "wait_gap": 5396,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        3
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1376,
+      "status_gap": 2542,
+      "ambient_gap": 5338,
+      "wait_gap": 5396,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        4
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 2076,
+      "status_gap": 2612,
+      "ambient_gap": 5210,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1306,
+      "status_gap": 1702,
+      "ambient_gap": 5210,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        3
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1376,
+      "status_gap": 2542,
+      "ambient_gap": 5268,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        3
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1376,
+      "status_gap": 2612,
+      "ambient_gap": 5268,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        4
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1376,
+      "status_gap": 2542,
+      "ambient_gap": 5268,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1306,
+      "status_gap": 1724,
+      "ambient_gap": 5210,
+      "wait_gap": 5268,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1306,
+      "status_gap": 2472,
+      "ambient_gap": 6434,
+      "wait_gap": 6458,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 2216,
+      "status_gap": 3288,
+      "ambient_gap": 7624,
+      "wait_gap": 7624,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1294,
+      "status_gap": 2598,
+      "ambient_gap": 5556,
+      "wait_gap": 7794,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1364,
+      "status_gap": 2668,
+      "ambient_gap": 5556,
+      "wait_gap": 7794,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1434,
+      "status_gap": 2738,
+      "ambient_gap": 5556,
+      "wait_gap": 7794,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        4
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1294,
+      "status_gap": 2540,
+      "ambient_gap": 5428,
+      "wait_gap": 7538,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        4
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1422,
+      "status_gap": 2668,
+      "ambient_gap": 5428,
+      "wait_gap": 7538,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1434,
+      "status_gap": 2342,
+      "ambient_gap": 5428,
+      "wait_gap": 5428,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 1294,
+      "status_gap": 2540,
+      "ambient_gap": 5312,
+      "wait_gap": 7282,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1434,
+      "status_gap": 2156,
+      "ambient_gap": 5428,
+      "wait_gap": 6022,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1434,
+      "status_gap": 2156,
+      "ambient_gap": 5428,
+      "wait_gap": 6022,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 1492,
+      "status_gap": 2796,
+      "ambient_gap": 6022,
+      "wait_gap": 5592,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 1492,
+      "status_gap": 2796,
+      "ambient_gap": 6022,
+      "wait_gap": 5592,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 1492,
+      "status_gap": 2796,
+      "ambient_gap": 6022,
+      "wait_gap": 5592,
+      "minstop": 44,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 1,
+      "response_gap": 710,
+      "status_gap": 2130,
+      "ambient_gap": 5448,
+      "wait_gap": 6752,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 2,
+      "response_gap": 710,
+      "status_gap": 2130,
+      "ambient_gap": 5448,
+      "wait_gap": 6752,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 3,
+      "response_gap": 710,
+      "status_gap": 2130,
+      "ambient_gap": 5448,
+      "wait_gap": 6752,
+      "minstop": 159,
+      "settings": 1
+    },
+    {
+      "live": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delay": 50,
+      "unit": 4,
+      "response_gap": 710,
+      "status_gap": 2130,
+      "ambient_gap": 5448,
+      "wait_gap": 6752,
+      "minstop": 159,
+      "settings": 1
+    }
+  ]
+}

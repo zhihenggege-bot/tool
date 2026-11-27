@@ -1,0 +1,770 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "four board cases finished",
+      "passed": true
+    },
+    {
+      "name": "every COM6 ACK/rejection matches expected",
+      "passed": true
+    },
+    {
+      "name": "unit4 two complete cycles",
+      "passed": true
+    },
+    {
+      "name": "unit4 no outdoor fault edges",
+      "passed": true
+    },
+    {
+      "name": "unit4 final all outputs off",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 phase1/2/0",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 stable defrost outputs",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 stable recovery outputs",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 complete60s recovery",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 330 compressor state4 feedback",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle1 330 state0 after exit",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 phase1/2/0",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 stable defrost outputs",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 stable recovery outputs",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 complete60s recovery",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 330 compressor state4 feedback",
+      "passed": true
+    },
+    {
+      "name": "unit4 cycle2 330 state0 after exit",
+      "passed": true
+    },
+    {
+      "name": "unit1 two complete cycles",
+      "passed": true
+    },
+    {
+      "name": "unit1 no outdoor fault edges",
+      "passed": true
+    },
+    {
+      "name": "unit1 final all outputs off",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 phase1/2/0",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 stable defrost outputs",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 stable recovery outputs",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 complete60s recovery",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 330 compressor state4 feedback",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle1 330 state0 after exit",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 phase1/2/0",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 stable defrost outputs",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 stable recovery outputs",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 complete60s recovery",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 330 compressor state4 feedback",
+      "passed": true
+    },
+    {
+      "name": "unit1 cycle2 330 state0 after exit",
+      "passed": true
+    },
+    {
+      "name": "final restoration audit",
+      "passed": true
+    },
+    {
+      "name": "actual ARM command checks",
+      "passed": true
+    },
+    {
+      "name": "normal/factory scheduler regression",
+      "passed": true
+    }
+  ],
+  "cycles": [
+    {
+      "unit": 4,
+      "circuit": 1,
+      "enter_address": 1329,
+      "enter_fn": 16,
+      "enter_command_at": "2026-11-27T13:34:44.205+08:00",
+      "defrost_at": "2026-11-27T13:34:46.546+08:00",
+      "enter_to_defrost_s": 2.343999999924563,
+      "exit_address": 1329,
+      "exit_fn": 6,
+      "exit_command_at": "2026-11-27T13:34:52.815+08:00",
+      "recovery_at": "2026-11-27T13:34:53.841+08:00",
+      "exit_to_recovery_s": 1.0160000000614673,
+      "idle_at": "2026-11-27T13:35:53.804+08:00",
+      "recovery_elapsed_ms": 60032,
+      "entry_gpio": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recovery_gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "idle_gpio": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first330_both_state4_at": "2026-11-27T13:34:47.735+08:00",
+      "first330_both_state0_after_exit_at": "2026-11-27T13:34:54.585+08:00"
+    },
+    {
+      "unit": 4,
+      "circuit": 2,
+      "enter_address": 1330,
+      "enter_fn": 6,
+      "enter_command_at": "2026-11-27T13:40:03.483+08:00",
+      "defrost_at": "2026-11-27T13:40:06.956+08:00",
+      "enter_to_defrost_s": 3.469000000040978,
+      "exit_address": 1330,
+      "exit_fn": 16,
+      "exit_command_at": "2026-11-27T13:40:13.202+08:00",
+      "recovery_at": "2026-11-27T13:40:13.711+08:00",
+      "exit_to_recovery_s": 0.5,
+      "idle_at": "2026-11-27T13:41:13.694+08:00",
+      "recovery_elapsed_ms": 60016,
+      "entry_gpio": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recovery_gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "idle_gpio": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first330_both_state4_at": "2026-11-27T13:40:08.700+08:00",
+      "first330_both_state0_after_exit_at": "2026-11-27T13:40:14.833+08:00"
+    },
+    {
+      "unit": 1,
+      "circuit": 1,
+      "enter_address": 1323,
+      "enter_fn": 6,
+      "enter_command_at": "2026-11-27T13:32:01.708+08:00",
+      "defrost_at": "2026-11-27T13:32:05.116+08:00",
+      "enter_to_defrost_s": 3.405999999959022,
+      "exit_address": 1323,
+      "exit_fn": 16,
+      "exit_command_at": "2026-11-27T13:32:13.316+08:00",
+      "recovery_at": "2026-11-27T13:32:14.777+08:00",
+      "exit_to_recovery_s": 1.452999999979511,
+      "idle_at": "2026-11-27T13:33:14.793+08:00",
+      "recovery_elapsed_ms": 60109,
+      "entry_gpio": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recovery_gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "idle_gpio": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first330_both_state4_at": "2026-11-27T13:32:05.554+08:00",
+      "first330_both_state0_after_exit_at": "2026-11-27T13:32:14.945+08:00"
+    },
+    {
+      "unit": 1,
+      "circuit": 2,
+      "enter_address": 1324,
+      "enter_fn": 16,
+      "enter_command_at": "2026-11-27T13:37:23.710+08:00",
+      "defrost_at": "2026-11-27T13:37:26.967+08:00",
+      "enter_to_defrost_s": 3.265999999945052,
+      "exit_address": 1324,
+      "exit_fn": 6,
+      "exit_command_at": "2026-11-27T13:37:33.331+08:00",
+      "recovery_at": "2026-11-27T13:37:33.850+08:00",
+      "exit_to_recovery_s": 0.515999999945052,
+      "idle_at": "2026-11-27T13:38:33.901+08:00",
+      "recovery_elapsed_ms": 60105,
+      "entry_gpio": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recovery_gpio": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "idle_gpio": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first330_both_state4_at": "2026-11-27T13:37:28.342+08:00",
+      "first330_both_state0_after_exit_at": "2026-11-27T13:37:34.563+08:00"
+    }
+  ],
+  "commands": [
+    {
+      "at": "2026-11-27T13:27:30.892+08:00",
+      "t": 776124.921,
+      "address": 1323,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:30.899+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:30.926+08:00",
+      "t": 776124.953,
+      "address": 1324,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:30.932+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:30.960+08:00",
+      "t": 776124.984,
+      "address": 1325,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:30.969+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:30.997+08:00",
+      "t": 776125.031,
+      "address": 1326,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.005+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.043+08:00",
+      "t": 776125.062,
+      "address": 1327,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.054+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.086+08:00",
+      "t": 776125.109,
+      "address": 1328,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.095+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.128+08:00",
+      "t": 776125.156,
+      "address": 1329,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.140+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.182+08:00",
+      "t": 776125.203,
+      "address": 1330,
+      "value": 0,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.198+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.241+08:00",
+      "t": 776125.265,
+      "address": 1323,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.256+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.301+08:00",
+      "t": 776125.328,
+      "address": 1324,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.314+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.356+08:00",
+      "t": 776125.375,
+      "address": 1325,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.370+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.416+08:00",
+      "t": 776125.437,
+      "address": 1326,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.436+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.483+08:00",
+      "t": 776125.515,
+      "address": 1327,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.499+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.555+08:00",
+      "t": 776125.578,
+      "address": 1328,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.572+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.620+08:00",
+      "t": 776125.64,
+      "address": 1329,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.638+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.686+08:00",
+      "t": 776125.718,
+      "address": 1330,
+      "value": 0,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:27:31.705+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:31.765+08:00",
+      "t": 776125.796,
+      "address": 1323,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:32.139+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:32.149+08:00",
+      "t": 776126.171,
+      "address": 1324,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:32.527+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:32.539+08:00",
+      "t": 776126.562,
+      "address": 1325,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:32.917+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:32.935+08:00",
+      "t": 776126.968,
+      "address": 1326,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:33.306+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:33.321+08:00",
+      "t": 776127.343,
+      "address": 1327,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:33.696+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:33.713+08:00",
+      "t": 776127.734,
+      "address": 1328,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:34.098+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:34.111+08:00",
+      "t": 776128.14,
+      "address": 1329,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:34.490+08:00"
+    },
+    {
+      "at": "2026-11-27T13:27:34.509+08:00",
+      "t": 776128.531,
+      "address": 1330,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:27:34.895+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:01.708+08:00",
+      "t": 776395.734,
+      "address": 1323,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:32:01.725+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:11.336+08:00",
+      "t": 776405.359,
+      "address": 1325,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:32:11.714+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:11.727+08:00",
+      "t": 776405.75,
+      "address": 1326,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:32:12.098+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:12.113+08:00",
+      "t": 776406.14,
+      "address": 1327,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:32:12.487+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:12.501+08:00",
+      "t": 776406.531,
+      "address": 1328,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:32:12.876+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:12.889+08:00",
+      "t": 776406.921,
+      "address": 1323,
+      "value": 3,
+      "fn": 6,
+      "expected_ack": false,
+      "method": "real COM6 Modbus",
+      "acknowledged": false,
+      "error": "应答长度不足（期望至少 8 字节，实际 0 字节，收到: 无应答）",
+      "finished": "2026-11-27T13:32:13.263+08:00"
+    },
+    {
+      "at": "2026-11-27T13:32:13.316+08:00",
+      "t": 776407.343,
+      "address": 1323,
+      "value": 2,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:32:13.335+08:00"
+    },
+    {
+      "at": "2026-11-27T13:34:44.205+08:00",
+      "t": 776558.234,
+      "address": 1329,
+      "value": 1,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:34:44.228+08:00"
+    },
+    {
+      "at": "2026-11-27T13:34:52.815+08:00",
+      "t": 776566.843,
+      "address": 1329,
+      "value": 2,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:34:52.840+08:00"
+    },
+    {
+      "at": "2026-11-27T13:37:23.710+08:00",
+      "t": 776717.734,
+      "address": 1324,
+      "value": 1,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:37:23.760+08:00"
+    },
+    {
+      "at": "2026-11-27T13:37:33.331+08:00",
+      "t": 776727.359,
+      "address": 1324,
+      "value": 2,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:37:33.375+08:00"
+    },
+    {
+      "at": "2026-11-27T13:40:03.483+08:00",
+      "t": 776877.515,
+      "address": 1330,
+      "value": 1,
+      "fn": 6,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:40:03.525+08:00"
+    },
+    {
+      "at": "2026-11-27T13:40:13.202+08:00",
+      "t": 776887.234,
+      "address": 1330,
+      "value": 2,
+      "fn": 16,
+      "expected_ack": true,
+      "method": "real COM6 Modbus",
+      "acknowledged": true,
+      "finished": "2026-11-27T13:40:13.240+08:00"
+    }
+  ],
+  "arm_checks": 628,
+  "normal_checks": 348,
+  "limitations": [
+    "Only stations1/4 physically present;2/3 routing tested against compiled ARM",
+    "GPIO latch/software AO/EEV samples; physical contacts/voltages/mechanical valve positions not measured",
+    "Independent pre-existing automatic-defrost end-time issue below1s unchanged"
+  ],
+  "acquisition": "~0.12s per probe; exact max gaps recorded per board; individual fields not atomic",
+  "full_raw_evidence_location": "完整JSONL、Flash/SRAM备份及含逐样本的分析保留本地，未纳入精简上传"
+}

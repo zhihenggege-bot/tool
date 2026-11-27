@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "ambient10": 80,
+      "seconds": 120,
+      "natural_state": 2,
+      "manual_exit_sent": false,
+      "runtime": [
+        120,
+        120
+      ],
+      "compressor_commands": [
+        0,
+        0
+      ]
+    },
+    {
+      "ambient10": -10,
+      "seconds": 180,
+      "natural_state": 2,
+      "manual_exit_sent": false,
+      "runtime": [
+        180,
+        180
+      ],
+      "compressor_commands": [
+        0,
+        0
+      ]
+    },
+    {
+      "ambient10": 0,
+      "seconds": 180,
+      "natural_state": 2,
+      "manual_exit_sent": false,
+      "runtime": [
+        180,
+        180
+      ],
+      "compressor_commands": [
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Compiled316 ARM full pulses from manual request; real subsecond phase tested separately"
+}

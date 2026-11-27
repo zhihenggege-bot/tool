@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "starts": "2026-11-27T13:50:59.190+08:00",
+  "ends": "2026-11-27T13:51:59.236+08:00",
+  "duration_s": 60.04700000002049,
+  "samples": 559,
+  "state4_continuous": true,
+  "recovery_ms": 60032,
+  "full_raw_evidence_location": "完整JSONL、Flash/SRAM备份及含逐样本的分析保留本地，未纳入精简上传"
+}
